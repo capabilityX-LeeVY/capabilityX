@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Why RegressShield?  
+## 🚀 Why capabilityX?  
 
 Customers face recurring issues in **accessibility, localization, quality, and performance**.  
 Today, **no industry solution** can:  
@@ -15,7 +15,7 @@ Today, **no industry solution** can:
 - **Automatically detect, file, and re-test bugs** after fixes  
 - Provide **cross-platform coverage** with accessibility-first assurance  
 
-**RegressShield fills this gap.**
+**capabilityX fills this gap.**
 
 ---
 
