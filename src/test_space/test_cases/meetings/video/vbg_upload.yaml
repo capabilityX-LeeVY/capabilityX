@@ -1,0 +1,56 @@
+test_case:
+  name: vbg_upload
+  team: RegressShield
+  owner: binbiwan
+  description: User starts a meeting, opens video options, and uploads a custom virtual background image 'Virtual_Background-Morning.jpg' to change the meeting background.
+  expect_result: The custom virtual background image is successfully uploaded and applied to the meeting, and the focus is returned to the video options button.
+  # Platform support configuration
+  platforms:
+    supported: ["windows"]
+
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Add virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "File name:"
+      action:
+        type: input
+        value: Morning.jpg
+      expect_state: ""
+    - name: "Open"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Video options"
+      ai_check: 
+        prompt: "Task: Verify if the correct virtual background image was successfully applied in the meeting. Compare the reference image (first) with the meeting screenshot (second). Focus ONLY on: 1) Overall color scheme and palette 2) General visual style and aesthetic 3) Basic compositional elements. DO NOT analyze text orientation, logo direction, or any specific element positioning - these are irrelevant due to video processing effects. If the meeting screenshot shows the same general visual theme, colors, and style as the reference image, consider it a SUCCESS regardless of any mirroring, rotation, or orientation differences. Ignore all people and foreground elements. Output format: ✅Success or ❌Failed"
+        reference: Morning-ref.jpg
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

@@ -1,0 +1,44 @@
+test_case:
+  name: vdi_meeting_start_screen_sharing
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: Complete test - Basic screen sharing workflow. User signs in, starts meeting, shares screen.
+  expect_result: Successfully completes basic screen sharing workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Start remote screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Remote Screen 1"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+  execution_duration: 1
+  execution_count: 1
+  check_point: ["Keyboard Navigation"]

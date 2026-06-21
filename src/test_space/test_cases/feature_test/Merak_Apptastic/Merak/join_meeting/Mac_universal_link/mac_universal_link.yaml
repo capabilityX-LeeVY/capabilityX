@@ -1,0 +1,99 @@
+test_case:
+  name: mac_universal_link
+  description: "Verify that clicking a Webex meeting universal link from Apple Notes launches Webex client and joins the meeting."
+  expect_result: "The meeting link in Notes opens the Webex client and the user successfully joins the meeting."
+  owner: minli
+  need_initialization: false
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+
+  steps:
+    - name: "Create Notes meeting link"
+      platforms: [mac,]
+      action:
+        type: function
+        value: create_macos_note_with_link
+        parameters:
+          title: "WRS Mac Universal Link"
+          link: "https://cisco.webex.com/meet/minl5"
+          display_text: "cisco.webex.com/meet/minl5"
+          delete_existing: true
+          allow_timeout: 20
+        wait_time: 2
+
+    - name: "Allow Notes automation permission if prompted"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_automation_permission
+        parameters:
+          button_name: "Allow"
+          retry: 3
+        wait_time: 2
+      optional: true
+
+    - name: "Click meeting link in Notes"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_note_link
+        parameters:
+          link_text: "cisco.webex.com/meet/minl5"
+        wait_time: 8
+      ai_check:
+        prompt: "Assert that clicking the meeting link from Apple Notes launches or redirects toward Webex client. Success criteria: Webex client, Webex launch prompt, pre-join page, or joining page is visible. Output [SUCCESS]Success or [FAILURE]Failed and briefly state the reason."
+
+    - name: "Open Webex from universal link dialog if present"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          button_name: "Open,Open Webex,Allow"
+          retry: 3
+        wait_time: 5
+      optional: true
+
+    - name: "Connect to Webex client window"
+      platforms: [mac,]
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          target_button: "Join meeting"
+          wait_time: 30
+        wait_time: 5
+      ai_check:
+        prompt: "Assert that the Webex client pre-join window is visible after opening the Notes meeting link. Success criteria: a Webex pre-join or guest information page is shown with meeting details and a Join meeting or Next button. Output [SUCCESS]Success or [FAILURE]Failed and briefly state the reason."
+
+    - name: "Fill guest name if required"
+      platforms: [mac,]
+      action:
+        type: function
+        value: fill_webex_guest_name
+        parameters:
+          process_name: "auto"
+          guest_name: "mia"
+          retry: 5
+        wait_time: 2
+      optional: true
+
+    - name: "Click Join meeting button"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Join meeting"
+          retry: 5
+        wait_time: 8
+      stop_on_ai_check_failure: true
+      ai_check:
+        prompt: "Assert that the user successfully joined the Webex meeting or reached the in-meeting/lobby state after clicking Join meeting. Success criteria: meeting controls, lobby waiting page, or in-meeting UI is visible. Output [SUCCESS]Success or [FAILURE]Failed and briefly state the reason."
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting

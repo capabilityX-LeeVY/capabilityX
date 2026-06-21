@@ -1,0 +1,15 @@
+test_suite:
+  name: calling
+  team: RegressShield
+  owner: yanfzhen
+  platform: windows
+  account: jianjzha
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - navigations/basic/sign_in_call
+    - acc_regression/calling/start_calling
+    - acc_regression/calling/answer_calling
+  check_points: [acc]

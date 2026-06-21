@@ -1,0 +1,11 @@
+test_suite:
+  name: meetings_sequence
+  team: regress_shield
+  owner: binbiwan
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - accessibility/sequence/meetings

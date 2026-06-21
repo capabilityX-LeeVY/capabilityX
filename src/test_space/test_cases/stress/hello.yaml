@@ -1,0 +1,19 @@
+test_case:
+  name: hello
+  owner: huanwan3
+  description: User starts the Personal Room meeting from the setup screen.
+  expect_result: The user successfully starts the Personal Room meeting.
+  steps:
+
+    - name: "Test basic function feature"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "Hello World! Function feature is working!"
+        wait_time: 2
+      expect_state: ""
+
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

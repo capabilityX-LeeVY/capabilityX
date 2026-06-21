@@ -1,0 +1,27 @@
+test_case:
+  name: navigation_full_meeting
+  description: login and navigate to the meetings
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+    - travel/navigation_to_meeting
+  steps:
+    - name: "Open Cisco AI Assistant panel (Alt + I)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Start"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    - name: "Set button when open AI Assistant panel"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      expect_state: ""
+

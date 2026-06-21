@@ -1,0 +1,39 @@
+test_case:
+  name: navigate
+  account: allianz31
+  description: navigate through all controls in your test case.
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions: null
+  steps:
+
+    - name: "add wait time for focus on feature window"
+      skip_screenshot: true
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+            seconds: 5
+
+    - name: "reset focus listener"
+      skip_screenshot: true
+      platforms: [windows]
+      action:
+        type: function
+        value: reset_focus_listener
+
+    - name: "forward navigation"
+      action:
+        type: acc_sequence
+        value: tab
+      expect_state: ""
+
+    - name: "backward navigation"
+      action:
+        type: acc_sequence
+        value: shift+tab
+      expect_state: ""
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true

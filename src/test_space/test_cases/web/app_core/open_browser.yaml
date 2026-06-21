@@ -1,0 +1,26 @@
+test_case:
+  name: open_browser
+  description: Open Microsoft Edge browser and navigate to Webex web application
+  expect_result: Browser opens successfully and navigates to https://web.webex.com
+  steps:
+    - name: "open_browser"
+      platforms: ["mac", "web"]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://web.webex.com"
+          browser: "chrome"
+      wait_time: 15
+      expect_state: ""
+
+    - name: "open_browser"
+      platforms: ["windows"]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://web.webex.com"
+          browser: "edge"
+        wait_time: 5
+      expect_state: ""

@@ -1,0 +1,36 @@
+test_case:
+  name: guest_join_a_meeting
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: ${meeting_link}
+
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 5      
+
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: ${name}
+
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      ai_check:
+        prompt: "Verify that the guest has successfully entered the meeting or the meeting lobby. **Success conditions:** (1) the in-meeting toolbar is visible with controls such as Mute and Stop video, OR (2) a waiting room screen is shown with a message like 'We'll start the meeting when the host joins' along with Mute and Stop video controls. Both states indicate the guest has joined successfully. **OUTPUT RULES:** If verification succeeds, output exactly '✅Success' with NO additional text. If verification fails, output '❌Failed: ' followed by a detailed explanation of what is shown in the screenshot and why it doesn't meet the success conditions. **Examples:** Success case: '✅Success' | Failure case: '❌Failed: Only a blank loading screen is visible, no Mute or Stop video controls detected, and no waiting room message shown'"
+
+
+

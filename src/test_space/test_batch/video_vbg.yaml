@@ -1,0 +1,10 @@
+test_case_batch:
+  name: video_vbg
+  team: video_vbg
+  owner: hongtzh2
+  platform: windows
+  language: [en]
+  test_cases:
+    - meetings/video/vbg_static
+    - meetings/video/vbg_dynamic
+    - meetings/video/vbg_upload

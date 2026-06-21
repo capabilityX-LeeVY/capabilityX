@@ -1,0 +1,229 @@
+{
+    "skipControl_common":[
+        "^adding Miro to Webex.*",
+        "^Add timer.*",
+        "^contact us page.*",
+        
+        "^\\\\(UTC.*", 
+        "^Datei hochladen und öffnen.*",
+        "^iPhone oder iPad via Kabel.*",
+        "^Meeting auf ein Videogerät verschieben.*",
+        "^Meeting beenden.*", 
+        "^Add phone number.*",
+
+        "^Hilfe aufrufen.*",
+        "^Geschäftsbedingungen.*",
+        "^Datenschutzerklärung.*",
+        "^Hinweise und Haftungsausschlüsse.*",
+        "^Drittanbieterlizenzen und -hinweise.*",
+        "^Standardmäßigen Dateispeicherort ändern.*",
+
+        "^Meeting starten$",
+        "^durchsuchen.*",
+        "^Dateien hinzufügen.*",
+        "^Include computer sound.*",
+        "^Standard-Speicherort für heruntergeladene Dateien ändern.*",
+        "^Alle eingeladenen Teilnehmer entfernen.*",
+        "^Emoticons und Symbole.*",
+        "^Ansetzen$",
+        "^Freigeben$",
+        "^Zugriff auf das Benutzerportal$",
+        "^Erweiterte Anrufoptionen.*$",
+        "^Virtuellen Hintergrund hinzufügen.*",
+        "^Aufnahmeoptionen.*",
+        "^Weiter$",
+
+        "^Verbindung trennen.*",
+        "^Offenbar ist im Meeting noch zu wenig besprochen worden, um eine Zusammenfassung zu erstellen.*",
+        "^Auswahl zur Bildschirmfreigabe auf dem Mac-System verwenden.*",
+
+        "^Energienutzung optimieren.*", 
+        "^Connect a calendar.*",
+        "^Slido (Umfragen und Frage-und-Antwort-Runden).*",
+        "^Bedingungen anzeigen.*",
+        "^Weitere Informationen über den Zugriff auf Nachrichten nach dem Meeting, Hilfeseite im Browser anzeigen.*",
+        
+        "^Bereich ausklappen.*",
+        "^Schließen.*",
+        "^\\\\d{1,2}$",
+        "^Webex neu starten.*"
+    ],
+
+    "skipControl_is_page":[
+        "^Test.*$",
+        "^Geräteinstellungen.*$"
+    ],
+
+    "skipControl_sign_in":[
+
+    ],
+
+    "skipControl_schedule":[
+
+    ],
+
+    "skipControl_full_meeting":[
+        "^Audioeinstellungen.*$",
+        "^Videoeinstellungen.*$",
+        "^Selbstansichtsstandort.*$",
+        "^Virtuellen Hintergrund ändern.*$",
+
+        "^Freigabeeinstellungen ändern.*$",
+        "^Handgesten erkennen.*$",
+        "^Tastenkombinationen für Reaktion anpassen.*$",
+        "^Bereich für AI Assistant öffnen.*$",
+        "^Whiteboards.*"
+    ],
+
+    "skipControl_app_core":[
+        "^Upload picture.*",
+        "^Other contacts.*",
+        "^Learn more about people insights.*",
+        "^email allianz.*",
+        "^refresh.*",
+        "^Edit current employments.*",
+        "^Profile Actions.*",
+        "^Sign Out.*",
+        ".*opens new tab.*",
+        "^View People Insights Profile.*",
+
+        "^Help Center.*",
+        "^Discover what else is new.*",
+        "^Start a Webex meeting.*",
+        "^Start a Personal Room meeting.*",
+        "^Schedule a meeting.*",
+        "^Schedule a webinar.*",
+        "^Meeting recap.*",
+        "^More start options.*",
+        "^More schedule options.*",
+        "^Join a meeting.*$",
+        "^Calendar.*$",
+
+        "^Whiteboards, \\\\d+ of \\\\d+$",
+        "^Voicemail, \\\\d+ of \\\\d+$",
+        "^Keypad, \\\\d+ of \\\\d+$",
+
+        "^Vidcast, \\\\d+ of \\\\d+$",
+        "^More, has popup, \\\\d+ of \\\\d+$",
+        "^Date, .*, \\\\d{4}$",
+        
+        "^Open Settings.*",
+        "^Settings.*",
+        "^Manage quiet hours.*",
+        "^Device settings.*",
+        "^Keyboard shortcuts.*$",
+        "^Open Call Preferences.*$",
+
+        "^Audio settings.*$",
+        "^Upload profile picture.*"
+    ],
+
+    "skipControl_calling":[
+        "^Anruf beenden.*",
+        "^Audioeinstellungen.*",
+        "^Virtuellen Hintergrund ändern.*",
+        "^Halten.*",
+        "^An Voicemail senden.*",
+        "^Jetzt treffen.*",
+        "^Statistiken.*",
+        "^Zu Meeting verschieben.*",
+        "^Videoeinstellungen.*"
+    ],
+
+    "skipControl_settings":[
+        "^Computersound einbeziehen.*",
+        "^Exportieren.*",
+        "^Auswahl zur Bildschirmfreigabe auf dem Mac-System verwenden.*"
+    ],
+    "skipControl_ai_assistant":[
+        "^Stummschalten.*",
+        "^Stumm\\..*",
+        "^Audiooptionen.*",
+        "^Video beenden.*",
+        "^Video starten.*",
+        "^Video-Optionen.*",
+        "^Freigeben.*",
+        "^Bereich für AI Assistant öffnen.*",
+        "^Aufzeichnen.*",
+        "^Hand heben.*",
+        "^Reaktionen.*",
+        "^Weitere Optionen.*",
+        "^Meeting beenden.*",
+        "^Apps anzeigen.*",
+        "^Teilnehmerbereich öffnen.*",
+        "^Chat-Bereich öffnen.*",
+        "^Weitere Bereiche.*",
+        "^Closed captions more options.*",
+        "^Closed caption options.*",
+        "^Step away from meeting.*",
+        "^More options for .*",
+        "^Personen einladen.*",
+        "^Meeting-Informationen kopieren.*",
+        "^Meeting-Info.*",
+        "^Netzwerkproblem.*",
+        "^Derzeit in Rasteransicht, Layout.*",
+
+        "^Mehr zusammenfassen.*",
+        "^Welche Aktionselemente gibt es.*",
+        "^Wurde mein Name erwähnt?.*",
+        "^Letzte 15 Minuten.*",
+        "^Vom Start der Übersicht.*",
+        "^Die letzten 15 Minuten zusammenfassen.*",
+        "^Meeting-Zusammenfassung und -Abschrift sind für alle aktiviert.*",
+        "^Die Meeting-Zusammenfassung ist für alle deaktiviert.*",
+        
+        "^Meeting-Steuerelemente ausblenden.*"
+    ],
+    
+    "skipByControlID":[
+        ["Customize reaction shortcuts","f8beea73cfe246a14291c5735a643690690ddc21f8a33982e2ceff29d4001c46"],
+        ["Keyboard Shortcuts","b960a5c64c065c13087b8c0d6b972e1bf95186d0947009bbfaf5be55d08bdc23"],
+        ["Message translation","b0fdb8f8d830d156db6f30075b2450c5bbe8a5e009a189c215a42d6f952a1b01"],
+        ["View call-in information","74d695a6a58c778104026b9ec95a20199d3a4a96bb913a4b3b3df07c0ed0c1ec"],
+        ["Show Apps","9eb9da97698b6c50b180c42fc4651c26788220a932b158b2dee9b4a06f1592ea"],
+        ["GIFs","1bf9b9a36fe5c0f68908386bc2a447fd1ee8b86848008353e64deb146d998c5a"],
+        ["Statistiken","c7bc7ecde8662c7ec8c2224b67d844495fb88bf2d996d5b6fb006361b84add6f"],
+        ["Translation language","07a22ac38ecb0fc97267ba0ef821769f489e028b7a883ec82f57d25120efee14"],
+
+        ["Health Checker","206ce81fa087b49dc0ff52ff1a0db291199f06ad08daa6a3c34da829f9d823a6"],
+        ["Other contacts","254a258959a4e02147464491550513cb9e1c6d28a698f22800379a337d7aa7ff"]
+    ],
+
+    "skipByByControlNameAndLevel":[
+
+    ],
+    "specialNames":{
+        "mute": "Stummschalten", 
+        "unmute": "Stumm\\..*", 
+        "Hide participants panel": "Teilnehmerbereich ausblenden",
+        "Reactions": "Reaktionen",
+        "Done": "Fertig",
+        "unknown": "Unbekannt", 
+        "StartMeeting": "Meeting starten",
+        "Schedule": "Ansetzen", 
+        "Cancel":"Abbrechen",
+        "AXOutlineDescription": "Gliederung",
+        "WindowsDescriptions":["Standardfenster","Systemdialog","Überblendung","Blatt","dialog","Fenster","Dialog","Schwebefenster"],
+        "SheetDescriptions":["Blatt"],
+        "PopoverDescriptions": ["Überblendung"],
+        "linkDescription": ["link","Link","hyperlink","Hyperlink"], 
+        "AXListDescription_collection": ["Sammlung","List","list","Raster","Liste","Optionsfeldgruppe"],
+        "AXListDescription_section": ["Bereich"],
+        "AXListItemDescription": ["Listenelement","list item","List item","Liste-Element"],
+        "AXUnknownDescription": ["Unbekannt"],
+        "AXButtonDescription": ["Taste"],
+        "TabDescription": ["tab","Titel"],
+        "ListDescription": ["Liste","liste","Inhaltsliste"],
+        "Selected":["Selected, ","selected, "],
+        "Checked":["Aktiviert, ","Checked, ","checked, "],
+        "MenuItem":["Menü-Element"],
+        "SeparatorRow": ["Nicht auswählbar, Trennzeichenreihe"],
+        "SectionHeader": ["Abschnittsüberschrift"], 
+        "CloseButtonDescription":["Verwerfen","Abbrechen","Schließen","OK","Fertig","Speichern","Weiter","Nächster","Überspringen","Zurück","Fertigstellen","Anwenden","Ja","Nein","Bestätigen"],
+        "AXSwitchDescription": ["Schalter"],
+        "EndCall":"^Anruf beenden.*",
+        "ShareDialogSelectScreen":"^Bildschirm, Verwenden Sie zum Auswählen eines Bildschirms die Leertaste.*",
+        "ShareDialogSelectApp":"^Anwendung, Wählen Sie mithilfe der Leertaste eine App aus.*",
+        "Dialpad": "Tastenfeldraster" 
+    }
+}

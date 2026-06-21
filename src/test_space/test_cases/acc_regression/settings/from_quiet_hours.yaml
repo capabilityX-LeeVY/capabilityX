@@ -1,0 +1,40 @@
+test_case:
+  name: settings_from_quiet_hours
+  owner: yanfzhen
+  description: settings_from_quiet_hours
+  expect_result: settings_from_quiet_hours
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Profile and preferences"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Availability"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Manage quiet hours"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 10
+
+    - name: "Cancel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3 
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Stress]

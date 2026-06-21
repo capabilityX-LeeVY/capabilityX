@@ -1,0 +1,55 @@
+{
+  "description": "Core Controls Tuning Configuration - Fine-tune control properties for test case generation",
+  "version": "2.0",
+  "overrides": {
+    "Sign in to app": {
+      "control_ui_path": [
+        " Sign in",
+        "Email address",
+        " Next",
+        "Welcome bts_tony2@mailinator.com Password",
+        " Sign In "
+      ],
+      "control_name": null,
+      "control_id": null,
+      "control_type": null,
+      "window_name": null,
+      "window_id": null,
+      "display_name": "Sign in to app",
+      "expect_state": [
+        "Profile and preferences, Available",
+        "Join a meeting",
+        " Use left and right arrow key to navigate, Personal Room",
+        " Personal Room",
+        "More options for scheduling a meeting",
+        "Add a contact or create a group"
+      ],
+      "ui_response": true,
+      "reason": "Add missing Password step, use clearer display name, and configure expected state validation",
+      "updated": "2025-12-13",
+      "enabled": true
+    },
+    "Write a message to everyone. Press Shift + Enter for new line. Ready, set, chat 💬. Share key points, ask questions, and track action items in real time.": {
+      "control_ui_path": null,
+      "control_name": null,
+      "control_id": null,
+      "control_type": null,
+      "window_name": null,
+      "window_id": null,
+      "display_name": "Write a message to everyone",
+      "reason": "Shorten overly long control name for better readability and file naming",
+      "updated": "2025-12-16",
+      "enabled": true
+    }
+  },
+  "notes": [
+    "Control names must match exactly (including spaces)",
+    "Set property to null to keep original value",
+    "Set property to a value to override original",
+    "Set enabled=false to temporarily disable an override",
+    "All properties in metadata.windows can be overridden",
+    "For UI path steps (non-independent controls), use 'optional_steps' in test_case_generation_config.json instead",
+    "Test behavior properties: expect_state, ui_response, ui_response_threshold_ms, wait_time",
+    "Performance properties: performance_cpu_threshold, performance_mem_threshold_mb, performance_gpu_threshold"
+  ]
+}

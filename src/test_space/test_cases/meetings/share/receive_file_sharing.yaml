@@ -1,0 +1,26 @@
+test_case:
+  name: receive_file_sharing
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User receives file sharing from another participant.
+  expect_result: User receives file sharing from another participant.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=file with 1 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. It should display a label indicating that you are viewing someone's <file name>. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1

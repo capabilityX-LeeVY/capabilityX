@@ -1,0 +1,10 @@
+test_case:
+  name: cancel_add_address_window
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "cancel add address window"
+      action:
+        type: key
+        value: default
+      optional: true

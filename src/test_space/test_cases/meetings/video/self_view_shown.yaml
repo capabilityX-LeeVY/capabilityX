@@ -1,0 +1,43 @@
+test_case:
+  name: self_view_shown
+  team: RegressShield
+  owner: binbiwan
+  description: user start meeting, open video options, change vbg to 'Executive office'.
+  expect_result: The vbg is changed to 'Executive office' and the focus is returned to the video options button.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Self-view location..., Menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Show in floating window"
+      action:
+        type: key
+        value: tab
+      expect_state: "" 
+    - name: "Save"
+      platforms: ["windows"]  
+      action:
+        type: key
+        value: default
+      expect_state: "Video options"
+    - name: "Close Setting Dialog"
+      platforms: ["mac"]
+      action:
+        type: shortcut
+        value: Close Dialog
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

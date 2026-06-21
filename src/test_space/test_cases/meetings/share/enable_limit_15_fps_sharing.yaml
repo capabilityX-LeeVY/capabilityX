@@ -1,0 +1,51 @@
+test_case:
+  name: enable_limit_15_fps_sharing
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: Enable limit 15 fps sharing in sharing settings to make sure excluded windows are visible in screenshot.
+  expect_result: Limit 15 fps sharing is successfully enabled and excluded windows are visible in screenshot.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change sharing settings"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Avoid unexpected option change due to keyboard navigation
+    - name: "Automatically adjust"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+ 
+    - name: "Advanced settings"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Limit content sharing to 15 frames per second"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Save"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

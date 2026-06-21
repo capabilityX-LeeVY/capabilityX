@@ -1,0 +1,32 @@
+test_case:
+  name: start_share_shortcut
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User starts screen sharing by using shortcut
+  expect_result: User starts screen sharing by using shortcut
+
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Open share dialog by shortcut"
+      action:
+        type: shortcut
+        value: "Start share"
+      expect_state: "Screen or application tab"
+      wait_time: 1
+    - name: "Direct Escape Key Press"
+      action:
+        type: direct_key
+        value: esc
+      expect_state: ""
+      
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation]

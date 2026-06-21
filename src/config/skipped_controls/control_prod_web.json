@@ -1,0 +1,19 @@
+{
+    "cookie_preference_center": "Cookie Preference Center",
+    "help_menu": "Help menu",
+    "read_aloud_page": "Read aloud this page (Ctrl+Shift+U)",
+    "clear_input_meeting_number": "Clear input Meeting number or link (required)",
+    "close": "close",
+    "block": "Block",
+    "clear_input_name": "Clear input Name (required)",
+    "clear_input_email": "Clear input Email Address (required)",
+    "accessing_camera_microphone": "This page is accessing your camera and microphone.",
+    "hide_control_bar": "Hide control bar",
+    "accessing_camera_microphone_duplicate": "This page is accessing your camera and microphone.",
+    "more_actions": "More actions",
+    "self_view_unpinned": "Self-view is currently unpinned - click to pin",
+    "device_settings": "Device settings",
+    "dismiss": "Dismiss",
+    "in_meeting_webex": "In meeting · Meeting · Webex",
+    "app_available_install": "App available. Install Webex"
+}

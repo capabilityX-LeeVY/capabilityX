@@ -1,0 +1,38 @@
+test_case:
+  name: turn_on_calling_dock
+  description: "Verify that the Calling dock can be turned on successfully and the calling dock dialog is displayed"
+  account: bwc.sha+138
+  check_points:
+    - Keyboard Navigation
+    - Focus Ring
+    - Screen Reader
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/app_core/close_ai_assistant
+    - navigations/preconditions/app_core/call_settings
+    - navigations/functional/settings/open_call_preferences
+    - navigations/functional/settings/calling_dock
+
+  steps:
+    - name: "Turn on Calling dock"
+      action:
+        type: key
+        value: default
+
+    - name: "verify calling dock turned on"
+      action:
+        type: function
+        value: capture_fullscreen
+        parameters:
+          image_name: "verify_calling_dock_turned_on"
+      ai_check:
+        image_name: "verify_calling_dock_turned_on"
+        source: "fullscreen"
+        prompt: "Analyze if the Calling dock is turned on successfully. Check: 1) Is the 'Turn on Calling dock' toggle/checkbox in an enabled/on state? 2) Can you see the 'Calling dock' dialog or panel displayed on the right side of the app? 3) Is the calling dock UI visible and properly rendered? Output format: If the calling dock is turned on and the dialog is visible on the right side, respond '✅Success. Calling dock is turned on and dialog is displayed on the right side.' If the toggle is on but dialog is not visible, respond '⚠️Warning. [What is missing].' If the toggle is off or no calling dock UI is visible, respond '❌Failed. [What is wrong].' Only output emoji and 1 sentence."
+
+  post_conditions: null

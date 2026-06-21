@@ -1,0 +1,37 @@
+test_case:
+  name: more_menu_share_something_else
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User opens more menu and opens share dialog by clicking share something else button.
+  expect_result: Share dialog is opened. Focus returns to more button after closing share dialog by ESC key.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Share something else"
+      action:
+        type: key
+        value: default
+      expect_state: "Screen or application tab"
+      wait_time: 1
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+      expect_state: "More sharing options"
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]
+ 

@@ -1,0 +1,17 @@
+{
+    "_comment": "croppedImage: 0 - No cropping, 1 - Cropping enabled, 2 - Cropping enabled with image bytes",
+    "devMode": false,
+    "installer": true,
+    "upload_output": true,
+    "webexApp": false,
+    "messageBot": true,
+    "croppedImage": true,
+    "resetImageFolder": false,
+    "db_enabled": true,
+    "mcp_client": {
+        "filter_old_messages": true,
+        "max_message_age_seconds": 300,
+        "clear_pending_on_start": true,
+        "skip_duplicate_message_ids": true
+    }
+}

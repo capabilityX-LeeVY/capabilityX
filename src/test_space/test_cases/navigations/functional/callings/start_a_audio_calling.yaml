@@ -1,0 +1,18 @@
+test_case:
+  name: start_calling
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "${dial_number}"
+      expect_state: ""
+      
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: "enter"
+      expect_state: "Mute"
+      ui_response: true

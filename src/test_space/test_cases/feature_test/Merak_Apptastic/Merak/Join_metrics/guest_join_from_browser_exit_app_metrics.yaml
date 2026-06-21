@@ -1,0 +1,117 @@
+test_case:
+  name: guest_join_from_browser_metrics
+  description: "Verify that a guest user can join a meeting from browser (Webex app installed but not running), and validate meeting join metrics from Call Analyzer."
+  expect_result: The guest user successfully joins the meeting from browser and CA metrics show successful join result.
+  account: allianz8
+  owner: minl5
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # --- Close Webex client ---
+    - name: "Close Webex client"
+      action:
+        type: shortcut
+        value: "Quit"
+        wait_time: 2
+
+    # --- Open browser and navigate to meeting link ---
+    - name: "Open browser with meeting link"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://cisco.webex.com/meet/minl5"
+        wait_time: 5
+
+        # --- Handle browser dialog to open Webex ---
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    # --- Switch focus to Webex desktop app ---
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MainWindow"
+        wait_time: 8
+
+    # --- Guest join flow ---
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: "Guest Browser User"
+
+    - name: "Type the characters. Required."
+      action:
+        type: input
+        value: clear_input
+      ai_check:
+        prompt: "Analyze if there is a image CAPTCHA, if yes, only return the CAPTCHA text shown in the image in lowercase."
+      optional: true
+
+    - name: "Type the characters. Required."
+      action:
+        type: input
+        value: "{ai_check_result}"
+      optional: true
+
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+
+    # --- Metrics Check (before leaving meeting) ---
+    - name: "Wait call analyzer data"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+          seconds: 900
+
+    - name: "check_pre_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "resultName", "identifiers_webexSiteName", "failureType"]
+        save_to: pre_join_result
+      ai_check:
+        prompt: "analyze the ${pre_join_result}. Only check the record where resultName='pre.join.result': outcome must be 'success'. Output format: ✅Success or ❌Failed, and briefly state which check failed if any."
+      expect_state: ""
+
+    - name: "print pre join result"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The pre join result is ${pre_join_result}"
+
+    - name: "check_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "mediaOutcome", "resultName", "joinTimes_totalJmt"]
+        save_to: join_result
+      ai_check:
+        prompt: "analyze the ${join_result}. Only check the record where resultName='join.result': outcome must be 'success' AND mediaOutcome must be 'skipped' (this guest user waited in lobby for the full duration without being admitted, so skipped is the expected value). Output format: ✅Success or ❌Failed, and briefly state which check failed if any."
+
+    - name: "print join result"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The join result is ${join_result}"
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting

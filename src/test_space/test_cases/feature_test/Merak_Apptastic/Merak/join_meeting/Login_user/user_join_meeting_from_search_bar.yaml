@@ -1,0 +1,62 @@
+# File: test_cases/feature_test/Merak&Apptastic/join_meeting/user_join_meeting_from_search_bar.yaml
+
+test_case:
+  name: user_join_meeting_from_search_bar
+  description: "Signed-in user joins a meeting by entering a meeting link through the top search bar, then clicking Join meeting on the IS page, and verifying the participants list is visible"
+  expect_result: "The signed-in user successfully joins the meeting from search bar and the participants list (plist) is displayed"
+  owner: simizhan
+  account: allianz32
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    # Step 1: Click on the top search bar
+    - name: "Search, meet and call"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Step 2: Input the meeting link into the search bar
+    - name: "Search, meet and call"
+      action:
+        type: input
+        value: "co.webex.com/meets/thzhu"
+      expect_state: ""
+
+    # Step 3: Press Enter to navigate to the meeting
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 5
+      expect_state: ""
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+    # Step 4: Click "Join meeting" on the IS page
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Mute"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+    # Step 5: Open participants panel to verify plist is visible
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+      ai_check: "Task: Verify the participants panel is visible. Instructions: 1) Look for text that shows 'Participants (X)' where X is a number. 2) The participants panel should be open and visible on screen. EXPECTATION: The participants panel is displayed with a participant count. RESPONSE FORMAT: If found, respond with 'PASS: Participants panel is visible with count [number]'. If not found, respond with 'FAIL: Participants panel is not visible'."
+
+  post_conditions:
+    - navigations/postconditions/end_meeting

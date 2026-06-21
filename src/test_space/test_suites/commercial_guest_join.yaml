@@ -1,0 +1,31 @@
+test_suite:
+  name: commercial_guest_join
+  team: Merak
+  owner: minl5
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - join_meeting/Commercial_guest_join/guest_join_meetingLink_excludesPassword
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_meetingLink_includesPassword
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_meetingNumber
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_PMR
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_requiresCaptcha
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_spaceMeeting
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_videoAddress
+    - meetings/actions/end_meeting
+    - join_meeting/Commercial_guest_join/guest_join_EmailIshostCohostEmail
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - join_meeting/Commercial_guest_join/guest_join_InvalidEmail
+    - navigations/basic/uninstall_app
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

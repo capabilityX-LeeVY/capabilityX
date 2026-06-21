@@ -1,0 +1,81 @@
+test_case:
+  name: open_whiteboard_in_meeting
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Verify that a user can open a new whiteboard from within an active meeting via the More options menu.
+  expect_result: A new blank whiteboard is opened successfully inside the meeting.
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "More options"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Whiteboards in more options"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Check if the whiteboard was successfully opened. Requirements: There must be a 'Share' button visible in the screen. Output format: ✅Success or ❌Failed. Reasoning: <describe which elements you see>"
+        wait_time: 20
+    - name: "Close whiteboard for all"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Close whiteboard"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "More options"
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

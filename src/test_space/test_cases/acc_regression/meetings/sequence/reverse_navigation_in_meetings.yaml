@@ -1,0 +1,181 @@
+test_case:
+  name: app_core_in_meetings
+  description: Verify app core in-meeting controls navigation and all controls are accessible with keyboard.
+  expect_result: App core in-meeting controls are verified successfully and all controls are accessible.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+  steps:
+    
+    # Shift + Tab sequence for in-meeting controls
+    
+    - name: "Mute"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Layout"
+    
+    - name: "Layout"
+      action:
+        type: direct_key
+        value: shift+tab
+    
+    - name: "Your network connection and CPU usage are good, allowing you to have the full experience., indicator"
+      action:
+        type: direct_key
+        value: shift+tab
+
+    
+    - name: "You've joined this meeting Meeting Duration seconds"
+      action:
+        type: direct_key
+        value: shift+tab
+      expect_state: "Meeting Info"
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+    
+    - name: "Meeting Info"
+      action:
+        type: key
+        value: shift+tab
+
+    - name: "Moderated mode"
+      action:
+        type: direct_key
+        value: shift+tab
+      optional: true
+      navigated: false
+    
+    - name: "Copy meeting information"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Invite and remind"
+    
+    - name: "Invite and remind"
+      action:
+        type: direct_key
+        value: shift+tab
+    
+    - name: "Waiting for others to join..., list item"
+      action:
+        type: direct_key
+        value: shift+tab
+    
+    - name: "bts1 bts, Video on"
+      action:
+        type: direct_key
+        value: shift+tab
+      expect_state: "Hide meeting controls"
+      optional: true
+    
+    - name: "Hide meeting controls"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Closed captions more options"
+    
+    - name: "Closed captions more options"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Closed captions"
+    
+    - name: "Closed captions"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "More panels"
+    
+    - name: "More panels"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Open chat panel"
+    
+    - name: "Open chat panel"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Open participants panel"
+    
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Show Apps panel"
+    
+    - name: "Show Apps panel"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "End meeting"
+    
+    - name: "End meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "More options"
+    
+    - name: "More options"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Reactions"
+    
+    - name: "Reactions"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Raise"
+    
+    - name: "Raise"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Record"
+    
+    - name: "Record"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Open AI Assistant panel"
+    
+    - name: "Open AI Assistant panel"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Share"
+    
+    - name: "Share"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Video options"
+    
+    - name: "Video options"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Stop video"
+    
+    - name: "Stop video"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Audio options"
+    
+    - name: "Audio options"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Mute"
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_points: ["Keyboard Navigation"]

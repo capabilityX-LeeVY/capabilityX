@@ -1,0 +1,25 @@
+test_case:
+  name: install Webex app
+  owner: weiqli
+  description: User installs the Webex application on their system.
+  expect_result: The Webex application is installed successfully.
+  pre_conditions: null
+  steps:
+    - name: "Install Webex application"
+      platforms: ["windows", "mac"]
+      action:
+        type: function
+        value: install_app
+
+    - name: "Verify license agreement appears"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 5
+      expect_state: ["Agree","Licence Text"]
+      ui_response: true
+      ui_response_threshold_ms: 20000
+
+      
+  check_points: []

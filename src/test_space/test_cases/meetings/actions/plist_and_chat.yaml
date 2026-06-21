@@ -1,0 +1,42 @@
+test_case:
+  name: plist_and_chat
+  owner: huanwan3
+  account: fullmode18
+  description: Encapsulated function to open participants panel, switch to chat, and send a message
+  expect_result: Successfully opens participants panel, switches to chat, and sends a message
+  pre_conditions: []
+  steps:
+    # Open Participants panel
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 5
+    
+    # Switch to Chat panel  
+    - name: "Open chat panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    
+    # Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello from automated test
+      expect_state: ""
+    
+    # Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

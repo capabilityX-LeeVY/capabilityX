@@ -1,0 +1,13 @@
+test_case_batch:
+  name: perf_sanity
+  team: performance
+  owner: gamao
+  platform: windows
+  language: [en]
+  test_cases:
+    - performance/sanity_audio_only.yaml
+    - performance/sanity_video_only.yaml
+    - performance/sanity_vbg.yaml
+    - performance/sanity_video55.yaml
+    - performance/sanity_share_only.yaml
+    - performance/sanity_receive_share.yaml

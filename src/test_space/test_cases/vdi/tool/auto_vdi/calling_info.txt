@@ -1,0 +1,4 @@
+peer_ip: 10.72.208.16:5000
+peer_account: bwc.sha+110@gmail.com
+phone_number: 8310
+tc_account: bwc.sha+109@gmail.com

@@ -1,0 +1,31 @@
+test_case:
+  name: check_audio
+  team: test
+  owner: copeng
+  description: Component - Mute/Unmute audio during meeting using in-meeting controls
+  expect_result: Successfully mute/unmute audio during meeting
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Mute"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      expect_state: ""
+    - name: "Unmute"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      expect_state: ""
+  post_conditions:
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

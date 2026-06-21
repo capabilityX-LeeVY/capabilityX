@@ -1,0 +1,28 @@
+test_case:
+  name: scan_calling_settings
+  description: "Scan the Calling Settings / Call Preferences window to verify keyboard navigation, focus ring, and screen reader accessibility"
+  account: bcld.sofia+207
+  check_points:
+    - Keyboard Navigation
+    - Focus Ring
+    - Screen Reader
+  sr_prompt: sr_samples/calling_sr_wcag_evaluation.md
+  
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/calling_entry/cancel_add_address_window
+    - navigations/preconditions/app_core/call_settings
+    - navigations/functional/settings/open_call_preferences
+
+  steps:
+    - name: scan window
+      navigated: false
+      action:
+        type: acc_sequence
+        value: tab
+
+  post_conditions: null

@@ -1,0 +1,53 @@
+test_case:
+  name: grab_sharing
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User grabs screen sharing from another participant.
+  expect_result: User grabs screen sharing from another participant.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. It should be an alert saying the presenter will stop sharing once you start sharing. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+      wait_time: 5
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+    

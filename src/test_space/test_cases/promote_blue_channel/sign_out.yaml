@@ -1,0 +1,24 @@
+test_case:
+  name: sign_out
+  description: Verify that the user can successfully sign out from the application via the "Profile and preferences" menu and sign in again using a shortcut. The test covers navigating to the profile menu, performing the sign out operation, and confirming that the user can return to the main interface after signing in again.
+  expect_result: The user is signed out successfully and can sign in again.
+  steps:
+    - name: "Profile and preferences"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    - name: "Sign out in profile and preferences"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    - name: "Sign out"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      platforms: ["windows"]
+  check_points: ["Keyboard Navigation"]

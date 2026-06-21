@@ -1,0 +1,55 @@
+test_case:
+  name: quote_message
+  owner: huanwan3
+  account: fullmode18
+  description: Send a message and quote it with a reply
+  expect_result: Original message is quoted with a reply message visible showing the quote reference
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    # Use common action to send text message
+    - include: message/actions/send_text_message
+      params:
+        message_text: "Original message to quote [uuid:{uuid}]"
+
+    # Use common action to open context menu on last message
+    - include: message/actions/open_message_context_menu
+
+    # Navigate down to "Quote message" (8th item in menu)
+    # Menu order: Copy message, Edit message, Start a Thread, Add reaction, Forward message, 
+    #             Remind me in, Pin message, Quote message
+    - include: message/actions/navigate_menu_down
+      params:
+        count: 7
+
+    # Select "Quote message"
+    - name: "Select Quote message"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Type reply message for the quote
+    - name: "Type quote reply"
+      action:
+        type: direct_input
+        value: "Quote reply [uuid:{uuid}]"
+        wait_time: 1
+      expect_state: ""
+
+    # Send the quote reply
+    - name: "Send quote reply"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window. Check if a quoted message is visible. Look for: 1) A message with quote indicator showing the original sender name and 'Go to message' link, 2) The quoted original message text displayed with indentation or visual distinction. Output format: ✅Success if quoted message structure is visible, ❌Failed if no quote found"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

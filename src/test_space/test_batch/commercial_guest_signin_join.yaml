@@ -1,0 +1,23 @@
+test_case_batch:
+  name: commercial_guest_join
+  team: Merak
+  owner: minl5
+  language: [en]
+  test_cases:
+    # - feature_test/Merak_Apptastic/join_meeting/user_join_meeting_from_search_bar
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_InvalidMeetingLink
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_EmailIshostCohostEmail
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_InvalidEmail
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_meetingLink_excludesPassword
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_meetingLink_includesPassword
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_meetingNumber
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_PMR_new
+    # - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_requiresCaptcha
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_spaceMeeting
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_videoAddress
+    - feature_test/Merak_Apptastic/join_meeting/join_meeting_from_bgb
+    - feature_test/Merak_Apptastic/custom_lobby/guest_notify_host_in_lobby
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/guest_join_from_browser
+    - feature_test/Merak_Apptastic/join_meeting/user_join_meeting
+    - feature_test/Merak_Apptastic/join_meeting/Commercial_guest_join/commercial_guest_join_fedramp_meeting
+    - feature_test/Merak_Apptastic/Apptastic/check_webex_app_health

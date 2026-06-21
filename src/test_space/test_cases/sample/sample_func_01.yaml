@@ -1,0 +1,20 @@
+test_case:
+  name: sample05
+  team: RegressShield
+  owner: binbiwan
+  description: user start meeting, open video options, change vbg to 'Home office'.
+  expect_result: The vbg is changed to 'Home office' and the focus is returned to the video options button.
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "test send message"
+      action:
+        type: function
+        value: send_message_to_webex
+        parameters:
+          message: "Automated test message from sample05 test case"
+      expect_state: ""
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 5
+  check_points: [KB_Navigate, Performance]

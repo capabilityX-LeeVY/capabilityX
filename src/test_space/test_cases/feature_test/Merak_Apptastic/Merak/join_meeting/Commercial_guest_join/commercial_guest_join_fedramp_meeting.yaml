@@ -1,0 +1,50 @@
+test_case:
+  name: commercial_guest_join_fedramp_meeting
+  description: Verify that a commercial guest user can successfully join a FedRAMP meeting.
+  expect_result: The guest user successfully joins a FedRAMP meeting.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+      ui_response: true
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: clear_input
+    - name: "Set FedRAMP meeting link in clipboard"
+      action:
+        type: function
+        value: set_clipboard_text
+        parameters:
+          text: ucf-fedramptest.webex.com/meet/thzhucisco
+    - name: "Meeting number or link. Required."
+      action:
+        type: shortcut
+        value: ctrl+v
+    - name: "Next-Join a meeting - Webex"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Name. Required. Textbox"
+      
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: guest
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

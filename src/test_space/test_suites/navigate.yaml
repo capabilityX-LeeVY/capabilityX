@@ -1,0 +1,7 @@
+test_suite:
+  name: navigate
+  team: regress_shield
+  owner: binbiwan
+  language: [en]
+  test_cases:
+    - accessibility/sequence/navigate

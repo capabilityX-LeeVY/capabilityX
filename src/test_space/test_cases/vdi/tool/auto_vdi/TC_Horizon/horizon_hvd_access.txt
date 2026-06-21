@@ -1,0 +1,6 @@
+-serverURL https://10.74.29.95
+-userName vdiauto	
+-password cisco123!@#
+-domainName jvdi.com
+-desktopName vmw-w11-84ic-8
+-nonInteractive

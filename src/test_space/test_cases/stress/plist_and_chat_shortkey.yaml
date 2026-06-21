@@ -1,0 +1,62 @@
+test_case:
+  name: plist_and_chat
+  owner: huanwan3
+  account: fullmode18
+  description: Encapsulated function to open participants panel, switch to chat, and send a message
+  expect_result: Successfully opens participants panel, switches to chat, and sends a message
+  pre_conditions: []
+  steps:
+    # Open Participants panel
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+      ai_check: "Task: Extract participant count from the participants panel. Instructions: 1) Look for text that shows 'Participants (X)' where X is a number. 2) Extract only the number from inside the parentheses. 3) If you cannot find this format, look for any text indicating participant count. EXPECTATION: Find and extract the participant number. RESPONSE FORMAT: If found, respond with 'PARTICIPANTS_COUNT: [number]' where [number] is the extracted count. If not found, respond with 'PARTICIPANTS_COUNT: 0'. Example: 'PARTICIPANTS_COUNT: 20' for 'Participants (20)'."
+
+    # open and close plist
+    - name: "Close Participants"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1 
+
+
+    # Start chat
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 3
+      expect_state: ""
+
+    # Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello from automated test
+        wait_time: 1
+      expect_state: ""
+
+    # Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      expect_state: ""
+
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 3
+      expect_state: ""
+
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 3
+  check_points: [KB_Navigate, Stress]

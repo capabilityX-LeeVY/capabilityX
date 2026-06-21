@@ -1,0 +1,57 @@
+test_case:
+  name: guest_join_PMR
+  description: Verify that a guest user can successfully join a PMR meeting.
+  expect_result: The guest user successfully join a PMR meeting.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ui_response: true
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: cisco.webex.com/meet/yanfzhen
+      expect_state: ""
+    - name: "Next-Join a meeting - Webex"
+      action:
+        type: key
+        value: default
+      expect_state: "Name. Required. Textbox"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: faye
+      expect_state: ""
+
+    - name: "test_fullscreen"
+      action:
+        type: function
+        value: capture_fullscreen
+        parameters:
+          image_name: "test_fullscreen"
+      ai_check:
+        image_name: "test_fullscreen"
+        source: "fullscreen"
+        prompt: "Analyze the fullscreen screenshot and determine if the meeting interface is displayed correctly, Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Mute"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+     
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

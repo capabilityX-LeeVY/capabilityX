@@ -1,0 +1,24 @@
+test_case:
+  name: raise_lower_hand_cycle
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to test complete raise/lower hand cycle
+  expect_result: Hand is raised and then lowered successfully
+  
+  steps:
+    # First click to raise hand
+    - name: "Raise"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+      
+    # Click again to lower hand (toggle functionality)
+    - name: "Raise"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

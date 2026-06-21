@@ -1,0 +1,114 @@
+{
+  "nodes": {
+    "local_dev": {
+      "name": "Local Development",
+      "base_url": "http://localhost:9909",
+      "description": "Local development environment",
+      "environment": "development",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 1.0,
+      "retry_count": 3
+    },
+    "test_server": {
+      "name": "Test Server",
+      "base_url": "http://10.224.118.137:9909",
+      "description": "Remote test environment",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 1.5,
+      "retry_count": 2
+    },
+    "calling_agent_01": {
+      "name": "Calling Agent 01",
+      "base_url": "http://10.224.118.137:9909",
+      "description": "Dedicated agent for calling test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "calling_agent_02": {
+      "name": "Calling Agent 02",
+      "base_url": "http://10.224.118.137:9909",
+      "description": "Dedicated agent for bwc calling test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "calling_agent_08": {
+      "name": "Calling Agent 08",
+      "base_url": "http://wrs-agent-gt01.cisco.com:9909",
+      "description": "Dedicated agent for calling test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "calling_agent_8339": {
+      "name": "Calling Agent 8339",
+      "base_url": "http://10.224.77.128:9909",
+      "description": "Dedicated agent for calling test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "staging": {
+      "name": "Staging Environment",
+      "base_url": "http://staging-api.webex.com:9909",
+      "description": "Staging environment for pre-production testing",
+      "environment": "staging",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "production": {
+      "name": "Production Environment",
+      "base_url": "https://api.webex.com",
+      "description": "Production environment - use with caution",
+      "environment": "production",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 3.0,
+      "retry_count": 1
+    },
+      "meeting_agent_01": {
+      "name": "Meeting Agent 01",
+      "base_url": "http://10.224.118.133:9909",
+      "description": "Dedicated agent for meeting test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+      "weiqin's device": {
+      "name": "Weiqin's Device",
+      "base_url": "http://10.140.217.177:9909",
+      "description": "Dedicated agent for weiqin's debugging",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+      "faye's device": {
+      "name": "Faye's Device",
+      "base_url": "http://10.140.216.181:9909",
+      "description": "Dedicated agent for Faye's debugging",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    },
+    "calling_agent_8340": {
+      "name": "Calling Agent 8340",
+      "base_url": "http://10.140.216.181:9909",
+      "description": "Dedicated agent for calling test functions",
+      "environment": "testing",
+      "health_check_endpoint": "/health",
+      "timeout_multiplier": 2.0,
+      "retry_count": 3
+    }
+  },
+  "default_node": "local_dev",
+  "fallback_node": "test_server"
+}

@@ -1,0 +1,22 @@
+test_case:
+  name: stop_video_before_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component - Stop video before starting meeting using pre-meeting controls
+  expect_result: Successfully stops video before meeting
+  
+  pre_conditions: []
+  
+  steps:
+    - name: "Stop video before meeting"
+      action:
+        type: function
+        value: ensure_video_off_before_meeting
+      expect_state: ""
+  
+  post_conditions: []
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

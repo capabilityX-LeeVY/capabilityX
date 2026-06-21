@@ -1,0 +1,56 @@
+test_case:
+  name: test_meeting_reactions_complete
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - All meeting reaction shortcuts. User signs in, starts meeting, sends all five reactions, and signs out.
+  expect_result: Successfully sends all meeting reactions using keyboard shortcuts
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+    #- meetings/interaction/send_all_reactions_sequence
+  
+  steps: 
+    - name: "Send thumbs up reaction"
+      action:
+        type: shortcut
+        value: alt+shift+4
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send heart reaction"
+      action:
+        type: shortcut
+        value: alt+shift+5
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send laugh reaction"
+      action:
+        type: shortcut
+        value: alt+shift+6
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send surprised reaction"
+      action:
+        type: shortcut
+        value: alt+shift+7
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send sad reaction"
+      action:
+        type: shortcut
+        value: alt+shift+8
+      expect_state: ""
+      wait_time: 1
+
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,52 @@
+test_case:
+  name: add_people_to_space
+  owner: huanwan3
+  account: fullmode18
+  description: Create a new space and add a person to it
+  expect_result: New space is created with 2 people
+
+  pre_conditions:
+    - navigations/basic/sign_in
+
+  steps:
+    # Create a new space
+    - include: message/actions/create_space
+
+    # Open "Add people" dialog with shortcut
+    - name: "Open Add people dialog"
+      action:
+        type: shortcut
+        value: ctrl+shift+p
+        wait_time: 2
+      expect_state: ""
+
+    # Input the email address to add
+    - name: "Input email address"
+      action:
+        type: direct_input
+        value: "fullmode19@appletestci.com"
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter to select the person
+    - name: "Select person"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter again to confirm adding
+    - name: "Confirm add person"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the space header area. Check if there are 2 people in this space by looking for 'People (2)' tab or similar indicator showing 2 members. The space should show that 2 people are now part of this conversation. Output format: ✅Success if 2 people are shown, ❌Failed if not"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+
+  check_points: ["Keyboard Navigation"]

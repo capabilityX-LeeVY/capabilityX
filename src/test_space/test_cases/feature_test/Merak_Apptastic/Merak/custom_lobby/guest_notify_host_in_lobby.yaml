@@ -1,0 +1,55 @@
+# File: test_cases/acc_regression/meetings/actions/guest_notify_host_in_lobby.yaml
+#
+# Source code reference (notify host in lobby):
+#   - products/teams-qt/Qml/Lobby/LobbyRoom.qml — UTPillButton { id: notifyHostButton }
+#   - products/teams-qt/Qml/Lobby/CustomLobbyRoom.qml — same button in customized lobby
+#   - products/teams-qt/Calling/Lobby/LobbyRoomController.h — NotifyHostStatus enum:
+#       None(0) → ShowNotifyHostBtn(1) → NotifyHostWaiting(4) → Succeeded(2) / Failed(3)
+#   - SparkMacDesktop/SparkMacDesktop/AttendeeLobbyWithMediaViewController.swift
+#
+# QML control tree in lobby (LobbyRoom.qml):
+#   notifyHostButton  — visible when status == ShowNotifyHostBtn, text: controller.notifyHostMessage
+#   notifyHostBanner  — visible when Succeeded/Failed, UTAlertBanner (Success or ErrorWithButton)
+#   waitingSpinner    — visible when NotifyHostWaiting, accessible: "Notifying host, loading"
+#
+# Scenario: Guest joins a PMR where the host is absent → enters lobby →
+#           "Notify host" button is shown → click it → verify state transition
+
+test_case:
+  name: guest_notify_host_in_lobby
+  description: "Guest joins a PMR meeting (host absent), lands in lobby, clicks the Notify host button and verifies the notification is sent successfully."
+  expect_result: "Guest enters lobby, Notify host button is visible and clickable, after clicking a success banner or waiting spinner appears."
+  account: allianz8
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # Step 1: Guest join → enters lobby (host not in meeting)
+    # local_api: the referenced YAML's steps are loaded and executed inline.
+    # Both ${key} and {key} placeholder styles are supported.
+    - name: "guest join a meeting and wait in lobby"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_entry/guest_join_a_meeting"
+        parameters:
+          #meeting_link: "${meeting_link}"
+          meeting_link: "https://atsconvergeds1.webex.com/meet/atswebinar7"        
+          name: "NotifyHostTestGuest"
+
+    # Step 2: In lobby — locate and click the "Notify host" button
+    # QML: UTPillButton visible when controller.notifyHostStatus === LobbyRoomController.ShowNotifyHostBtn
+    # Mac: notifyHostButton.isHidden = false when lobbyInfo.notifyHostInfo.status == .showNotifyHostBtn
+    - name: "Notify host"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      ai_check:
+        prompt: "Examine the screenshot and verify that the banner text 'We've let the host know you are here via email' is visible on screen. Output format: ✅Success or ❌Failed"
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting

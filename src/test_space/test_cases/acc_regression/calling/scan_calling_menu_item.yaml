@@ -1,0 +1,29 @@
+test_case:
+  name: scan_calling_menu_item
+  description: "Scan the Calling tab to verify keyboard navigation, focus ring, and screen reader accessibility"
+  account: bwc.sha+138
+  check_points:
+    - Keyboard Navigation
+    - Focus Ring
+  
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/app_core/close_ai_assistant
+
+  steps:
+    - name: "Calling menu item"
+      action:
+        type: key
+        value: default
+
+    - name: scan window
+      navigated: false
+      action:
+        type: acc_sequence
+        value: tab
+
+  post_conditions: null

@@ -1,0 +1,76 @@
+test_case:
+  name: schedule_meeting
+  description: Verify that after signing in, the user can navigate to the Meetings tab, schedule a personal room meeting successfully and become the host of the meeting.
+  expect_result: The user is able to schedule a personal room meeting and receives a notification indicating they are now the host.
+  pre_conditions:
+    # - navigations/basic/sign_in
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Schedule a meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    - name: "Topic"
+      action:
+        type: input
+        value: "test for schedule Meeting"
+        wait_time: 1
+      expect_state: ""
+    - name: "Start time"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "6:00 PM"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "Schedule"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "Meetings Tab list, Meeting recap tab"
+      action:
+        type: key
+        value: left
+        wait_time: 1
+      expect_state: ""
+      optional: true
+    - name: "Meetings Tab list, Calendar tab"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "test for schedule Meeting, from 6:00 PM to 6:30 PM"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "Edit meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "Topic"
+    - name: "Topic"
+      action:
+        type: verify
+        value: "111111"
+        wait_time: 1
+      expect_state: ""
+      
+  post_conditions: null
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

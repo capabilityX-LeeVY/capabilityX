@@ -1,0 +1,25 @@
+test_case:
+  name: send_text_message
+  owner: huanwan3
+  account: fullmode18
+  description: Common action to send a text message
+  expect_result: Text message is sent successfully
+  pre_conditions: []
+
+  steps:
+    - name: "Type message"
+      action:
+        type: direct_input
+        value: "{message_text}"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Send message"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+  post_conditions: []
+  check_point: [Keyboard Navigation]

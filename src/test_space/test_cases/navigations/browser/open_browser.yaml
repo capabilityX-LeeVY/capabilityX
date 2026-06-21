@@ -1,0 +1,14 @@
+test_case:
+  name: open_browser
+  description: Open Microsoft Edge browser and navigate to the specified URL
+  expect_result: Browser opens successfully and navigates to the target site
+  steps:
+    - name: "open_browser"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "${site_url}"
+        wait_time: 5
+      expect_state: ""
+  check_points: []

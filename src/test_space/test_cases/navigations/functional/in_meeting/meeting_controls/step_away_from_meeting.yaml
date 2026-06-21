@@ -1,0 +1,13 @@
+test_case:
+  name: step_away_from_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: "Step away from meeting"
+      action:
+        type: key
+        value: default

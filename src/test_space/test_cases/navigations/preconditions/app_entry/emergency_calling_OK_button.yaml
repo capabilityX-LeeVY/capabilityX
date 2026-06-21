@@ -1,0 +1,10 @@
+test_case:
+  name: emergency_calling_OK_button
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "Emergency Calling OK Button"
+      action:
+        type: key
+        value: default
+      optional: true

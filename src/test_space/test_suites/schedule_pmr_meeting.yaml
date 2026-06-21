@@ -1,0 +1,14 @@
+test_suite:
+  name: schedule_pmr_meeting
+  team: schedule_pmr_meeting
+  account: allianz6
+  owner: hyman
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/schedule/schedule_pmr_meeting
+    - navigations/basic/sign_out
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

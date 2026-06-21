@@ -1,0 +1,84 @@
+test_case:
+  name: share_single_app
+  team: Sharing
+  owner: gamao
+  account: rtuser030
+  description: User shares single app.
+  expect_result: Single app is shared.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    # - navigations/basic/sign_in
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/enable_limit_15_fps_sharing # enable limit 15 fps sharing to make sure share control bar can be captured in screenshot
+  steps:
+    - name: "open_browser"
+      action:
+        type: function
+        value: open_browser
+        params:
+          site_url: "https://web.webex.com/sign-in"
+        wait_time: 10
+      expect_state: ""
+
+    - name: "connect_webex_meeting_main_window"
+      action:
+        type: function
+        value: connect_webex_meeting_main_window
+        parameters:
+          ctrl_id: "CallWindowDialog"
+
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Webex and meeting window (2)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: "Microsoft Edge"
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 5
+      expect_state: ""
+    - name: "Expand my view of what I'm sharing"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Ignore the orange border and the content on the orange background. Only focus on the content in the center of the screenshot. Only browser app should be visible in the center area, address link is 'web.webex.com/sign-in', webex logo is visible in web page. Inside the center area, orange window should also be visible on the top. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"    
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    - name: "close_browser"
+      action:
+        type: function
+        value: close_browser
+        wait_time: 5
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: ["Keyboard Navigation"]

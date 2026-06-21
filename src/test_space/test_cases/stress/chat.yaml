@@ -1,0 +1,42 @@
+test_case:
+  name: chat
+  owner: huanwan3
+  account: fullmode18
+  description: Chat
+  expect_result: Chat
+  pre_conditions: []
+  steps:
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 5
+      expect_state: ""
+        
+    # Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello from automated test
+        wait_time: 3
+      expect_state: ""
+    
+    # Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 5
+      expect_state: ""
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Stress]

@@ -1,0 +1,27 @@
+test_suite:
+  name: message_attachments
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Message attachments test suite - send file, picture, video, screen capture, PMR invite
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+    
+    # Core test cases - Attachments
+    - message/attachments/test_send_file
+    - message/attachments/test_send_picture
+    - message/attachments/test_send_video
+    - message/attachments/test_send_screen_capture
+    - message/attachments/test_send_pmr_invite
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

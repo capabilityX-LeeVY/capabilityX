@@ -1,0 +1,46 @@
+test_case:
+  name: test_chat_in_regular_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Verify chat functionality in regular Webex meeting. User signs in, starts regular meeting, sends chat message, and signs out.
+  expect_result: Successfully completes full chat workflow in regular meeting
+  
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  
+  steps: 
+    # Step 1: Open Chat panel
+    - name: "Chat"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 2: Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 3: Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

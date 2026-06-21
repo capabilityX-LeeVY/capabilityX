@@ -1,0 +1,9 @@
+test_suite:
+  name: control_hub
+  team: web
+  owner: binbiwan
+  platform: web
+  project: control_hub
+  language: [en]
+  test_cases:
+    - web/control_hub/user_hub

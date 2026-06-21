@@ -1,0 +1,14 @@
+test_case:
+  name: navigation_sign_in
+  description: navigate through the sign-in agreement step.
+  expect_result: The user agrees to the terms and conditions and proceeds to the next step.
+
+  steps:
+    - name: "Agree"
+      platforms: ["windows", "mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      optional: true

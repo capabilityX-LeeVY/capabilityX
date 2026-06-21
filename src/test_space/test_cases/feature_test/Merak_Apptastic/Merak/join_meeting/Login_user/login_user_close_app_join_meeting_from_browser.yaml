@@ -1,0 +1,144 @@
+# File: test_cases/feature_test/Merak_Apptastic/join_meeting/Login user/login_user_close_app_join_meeting_from_browser.yaml
+test_case:
+  name: login_user_close_app_join_meeting_from_browser
+  description: "Login Webex app, close the client, then open meeting link in browser, launch Webex app from browser dialog and join the meeting successfully"
+  expect_result: "The signed-in user successfully joins the meeting by launching the Webex app from a browser meeting link, then leaves the meeting"
+  owner: minli
+  account: weshi2
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # Step 1: Sign in to the Webex app
+    - name: "sign_in_to_app"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_entry/sign_in_to_app"
+
+    # Step 2: Close (quit) the Webex client
+    - name: "Close Webex client"
+      action:
+        type: function
+        value: close_webex_app
+        parameters:
+          wait_time: 3
+
+    # Step 3: Open browser with the meeting link
+    - name: "Open browser with meeting link"
+      platforms: [mac,]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://co.webex.com/co/j.php?MTID=m57fd31d6a72d091f0d2ad5badd947153"
+          browser: "safari"
+        wait_time: 6
+
+    - name: "Open browser with meeting link"
+      platforms: [windows,]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://co.webex.com/co/j.php?MTID=m57fd31d6a72d091f0d2ad5badd947153"
+          browser: "edge"
+        wait_time: 6
+
+    - name: "Set focus to edge browser"
+      platforms: [windows,]
+      action:
+        type: function
+        value: set_focus_to_edge_browser
+        parameters:
+          browser: "edge"
+          timeout: 5
+        wait_time: 1
+
+    # Step 4: Always allow Safari to open Webex from this website
+    - name: "Always Allow"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Safari"
+          button_name: "Always Allow,Allow,Open Webex"
+          wait_time: 5
+          retry: 4
+      optional: true
+
+    # Step 5: Click "Launch Webex App" button on the web page (button name varies)
+    - name: "Open Webex"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    - name: "Open Webex app"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    - name: "Launch meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    # Step 6: Handle browser dialog to open Webex
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    - name: "Connect to Webex pre-join window"
+      platforms: [windows,]
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MeetingInterstitialPageView"
+        wait_time: 5
+
+    - name: "Join meeting"
+      platforms: [windows,]
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+    # Step 7: Switch focus from browser back to Webex desktop app pre-join window
+    - name: "Connect to Webex app window"
+      platforms: [mac,]
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          target_button: "Join meeting"
+          wait_time: 20
+        wait_time: 3
+
+    # Step 8: Press Enter to activate the focused "Join meeting" button
+    - name: "Direct Enter Key Press"
+      platforms: [mac,]
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 8
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting_by_shortcut

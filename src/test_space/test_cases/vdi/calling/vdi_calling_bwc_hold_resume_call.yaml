@@ -1,0 +1,101 @@
+test_case:
+  name: vdi_calling_bwc_hold_resume_call
+  team: VDI
+  owner: qihliu
+  description: Test hold and resume call
+  expect_result: Successfully hold or resume call
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_bwc_basic_video_call
+  
+  steps:
+    - name: "Audio options"
+      action:
+        type: key
+        value: default
+      expect_state: "" 
+      
+    - name: "Microphone CABLE Output (VB-Audio Virtual Cable)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    - name: "Hold call"
+      action:
+        type: shortcut
+        value: "Hold Resume Call"
+        wait_time: 5
+      expect_state: ""
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+      expect_state: ""
+    
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 2
+      expect_state: ""
+    
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. A green 'Resume' button should be present in call stripe at bottom of call window. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Resume call"
+      action:
+        type: shortcut
+        value: "Hold Resume Call"
+      expect_state: ""    
+
+    - name: "vdi_read_peer_ip"
+      action:
+        type: function
+        value: vdi_read_peer_ip
+        save_to: peer_ip
+      expect_state: ""   
+
+    - name: "vdi_bothway_audio_detection"
+      action:
+        type: function
+        value: vdi_bothway_audio_detection
+        parameters:
+          tc_ip: "${tc_ip}"        
+          peer_ip: "${peer_ip}"
+        save_to: bothway_ok          
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Verify if succeed to share audio in meeting or call, depending on the value of variable 'bothway_ok'. It should be true (no case-sensitive). The current value is '${bothway_ok}'. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

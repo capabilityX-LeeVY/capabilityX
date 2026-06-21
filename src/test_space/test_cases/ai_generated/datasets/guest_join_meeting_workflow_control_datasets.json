@@ -1,0 +1,366 @@
+{
+    "Join a meeting": {
+        "metadata": {
+            "windows": {
+                "control_name": "Join a meeting",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingStartWidget.joinMeetingButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Onboarding Start"
+            }
+        }
+    },
+    "Sign in": {
+        "metadata": {
+            "windows": {
+                "control_name": "Sign in",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingStartWidget.nextButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Onboarding Start"
+            }
+        }
+    },
+    "Sign up": {
+        "metadata": {
+            "windows": {
+                "control_name": "Sign up",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingStartWidget.createAccountLink",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Onboarding Start"
+            }
+        }
+    },
+    "By using Webex, you agree to the Terms of Service and Privacy Statement. Terms of Service Link Open in your default browser": {
+        "metadata": {
+            "windows": {
+                "control_name": "By using Webex, you agree to the Terms of Service and Privacy Statement. Terms of Service Link Open in your default browser",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.footerLabel",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "General"
+            }
+        }
+    },
+    "More options": {
+        "metadata": {
+            "windows": {
+                "control_name": "More options",
+                "control_id": "SparkApp.MainWindow.OnboardingView.settingsMenuButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Select Webex system mode": {
+        "metadata": {
+            "windows": {
+                "control_name": "Select Webex system mode",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingStartWidget.changeAppConfigurationButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Onboarding Start"
+            }
+        }
+    },
+    "Meeting number or link. Required.": {
+        "metadata": {
+            "windows": {
+                "control_name": "Meeting number or link. Required.",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingInfoWidget.userInput.UTTextField.textInput",
+                "control_type": 50004,
+                "control_type_name": "edit",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Converged Onboarding"
+            }
+        }
+    },
+    "If you’re the host, sign in to start the meeting. Sign in": {
+        "metadata": {
+            "windows": {
+                "control_name": "If you’re the host, sign in to start the meeting. Sign in",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingInfoWidget.signInButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Converged Onboarding"
+            }
+        }
+    },
+    "Go back": {
+        "metadata": {
+            "windows": {
+                "control_name": "Go back",
+                "control_id": "SparkApp.MainWindow.OnboardingView.backButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Next": {
+        "metadata": {
+            "windows": {
+                "control_name": "Next",
+                "control_id": "SparkApp.MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingInfoWidget.nextButton.pillButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Webex",
+                "window_id": "SparkApp.MainWindow",
+                "window_stage": "Converged Onboarding"
+            }
+        }
+    },
+    "Name (required), Textbox, Type in your name": {
+        "metadata": {
+            "windows": {
+                "control_name": "Name (required), Textbox, Type in your name",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.UTTextField_QMLTYPE_296.UTTextFieldBase",
+                "control_type": 50004,
+                "control_type_name": "edit",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Remember me": {
+        "metadata": {
+            "windows": {
+                "control_name": "Remember me",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.rememberMeCheckBox",
+                "control_type": 50002,
+                "control_type_name": "check box",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "By using Webex, you accept the Terms of Service, Privacy Statement Terms of Service Link Open in your default browser": {
+        "metadata": {
+            "windows": {
+                "control_name": "By using Webex, you accept the Terms of Service, Privacy Statement Terms of Service Link Open in your default browser",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.termsServiceLink",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Sign in  Link If you're the host or have a Webex account, sign in.": {
+        "metadata": {
+            "windows": {
+                "control_name": "Sign in  Link If you're the host or have a Webex account, sign in.",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.signInLink",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Mute": {
+        "metadata": {
+            "windows": {
+                "control_name": "Mute",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_Audio",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Audio options": {
+        "metadata": {
+            "windows": {
+                "control_name": "Audio options",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_Audio_Right",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Stop video": {
+        "metadata": {
+            "windows": {
+                "control_name": "Stop video",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_Video",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Video options": {
+        "metadata": {
+            "windows": {
+                "control_name": "Video options",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_Video_Right",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Connect to a device": {
+        "metadata": {
+            "windows": {
+                "control_name": "Connect to a device",
+                "control_id": "SparkApp.CallTitleBar.userDevicePillButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Clear text input": {
+        "metadata": {
+            "windows": {
+                "control_name": "Clear text input",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.UTTextField_QMLTYPE_296.UTToolButton_QMLTYPE_117_QML_301",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Join meeting": {
+        "metadata": {
+            "windows": {
+                "control_name": "Join meeting",
+                "control_id": "SparkApp.MeetingInterstitialPageView.MeetingInterstitialPageForVdi.meetingBodyViewItem.guestJoinButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Get ready to join",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Leave meeting": {
+        "metadata": {
+            "windows": {
+                "control_name": "Leave meeting",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_End",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Hide meeting controls": {
+        "metadata": {
+            "windows": {
+                "control_name": "Hide meeting controls",
+                "control_id": "SparkApp.CallControlBar.UTButtonBase_QMLTYPE_116_QML_354",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "You are waiting in the lobby. Tony Wang Wang's Personal Room,  Thanks for waiting. We'll start the meeting when the host joins.  , list item": {
+        "metadata": {
+            "windows": {
+                "control_name": "You are waiting in the lobby. Tony Wang Wang's Personal Room,  Thanks for waiting. We'll start the meeting when the host joins.  , list item",
+                "control_id": "SparkApp.MeetingContentView.WSplitView_QMLTYPE_95_QML_403.WSplitView_QMLTYPE_95_QML_380.WSplitView_QMLTYPE_95_QML_384.WSplitView_QMLTYPE_95_QML_387.WSplitView_QMLTYPE_95_QML_390.GridVideoPanelForVdi.waitForOthers",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Notify host": {
+        "metadata": {
+            "windows": {
+                "control_name": "Notify host",
+                "control_id": "SparkApp.MeetingContentView.WSplitView_QMLTYPE_95_QML_403.WSplitView_QMLTYPE_95_QML_380.WSplitView_QMLTYPE_95_QML_384.WSplitView_QMLTYPE_95_QML_387.WSplitView_QMLTYPE_95_QML_390.GridVideoPanelForVdi.waitForOthers.UTPillButton_QMLTYPE_147",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Self view, Video on, bottom right corner, window": {
+        "metadata": {
+            "windows": {
+                "control_name": "Self view, Video on, bottom right corner, window",
+                "control_id": "SparkApp.MeetingContentView.WSplitView_QMLTYPE_95_QML_403.VideoPip_QMLTYPE_466",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "More options for bts tony1": {
+        "metadata": {
+            "windows": {
+                "control_name": "More options for bts tony1",
+                "control_id": "SparkApp.MeetingContentView.WSplitView_QMLTYPE_95_QML_403.VideoPip_QMLTYPE_466.Control_QMLTYPE_155.ScannedByVDI",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    },
+    "Unmute": {
+        "metadata": {
+            "windows": {
+                "control_name": "Unmute",
+                "control_id": "SparkApp.CallControlBar.Main_CallStripButton_Audio",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Tony Wang Wang's Personal Room",
+                "window_id": "SparkApp.CallWindowDialog",
+                "window_stage": "General"
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+{
+  "description": "Configuration for navigation test case generation",
+  "version": "1.0",
+  
+  "dataset": {
+    "input_file": "data/go_to_core_controls.json",
+    "custom_dataset_reference": "core/data/control_datasets_with_ui_path",
+    "description": "Dataset to use for test case generation (filtered by selected=true + functional_mappings)"
+  },
+  
+  "generation": {
+    "output_dir": "../../test_cases/navigations",
+    "max_depth": 15,
+    "slice_points": [4, 7],
+    "optional_steps": [
+      " Accept",
+      "Accept"
+    ],
+    "description": "Test case generation settings - generates both preconditions (depth 1-7) and functional (depth 8+)",
+    "categorization": {
+      "enabled": true,
+      "base_path": "navigations",
+      "categories": [
+        {
+          "name": "preconditions/app_entry",
+          "depth_range": [1, 3],
+          "description": "Application entry points (sign in, join meeting, sign up)"
+        },
+        {
+          "name": "preconditions/app_core",
+          "depth_range": [4, 7],
+          "description": "Application core features (pre-meeting setup)"
+        }
+      ],
+      "category_overrides": {
+        "Sign in to app": "preconditions/app_entry",
+        " Sign In ": "preconditions/app_entry"
+      },
+      "functional_categories": {
+        "description": "Manual mapping of control names to functional test directories (depth 8+) - MUST use exact names from dataset",
+        "enabled": true,
+        "mappings": {
+          "Open chat panel": "functional/in_meeting/chat",
+          "Write a message to everyone": "functional/in_meeting/chat",
+          
+          "Share": "functional/in_meeting/share",
+          "Change sharing settings": "functional/in_meeting/share",
+          
+          "Open participants panel": "functional/in_meeting/participants",
+          "Invite and remind": "functional/in_meeting/participants",
+          "Raise": "functional/in_meeting/participants",
+          "Mute all": "functional/in_meeting/participants",
+          
+          "Show Apps panel": "functional/in_meeting/panels",
+          "More panels": "functional/in_meeting/panels",
+          
+          "Open AI Assistant panel": "functional/in_meeting/ai_assistant",
+          "AI Assistant": "functional/in_meeting/ai_assistant",
+          
+          "Record": "functional/in_meeting/meeting_controls",
+          "Reactions": "functional/in_meeting/meeting_controls",
+          "End meeting": "functional/in_meeting/meeting_controls",
+          "Meeting options": "functional/in_meeting/meeting_controls",
+          "More options": "functional/in_meeting/meeting_controls",
+          "Step away from meeting": "functional/in_meeting/meeting_controls",
+          "Layout": "functional/in_meeting/meeting_controls",
+          
+          "Mute": "functional/in_meeting/audio",
+          "Audio options": "functional/in_meeting/audio",
+          "Audio Settings...": "functional/in_meeting/audio",
+          "Smart audio for microphone": "functional/in_meeting/audio",
+          "You're using your computer for audio, Switch audio, Menu item": "functional/in_meeting/audio",
+          
+          "Stop video": "functional/in_meeting/video",
+          "Video options": "functional/in_meeting/video",
+          "Video Settings...": "functional/in_meeting/video",
+          "Change virtual background": "functional/in_meeting/video",
+          "Self-view location...": "functional/in_meeting/video",
+          
+          "Closed captions": "functional/in_meeting/captions",
+          "Closed captions more options": "functional/in_meeting/captions"
+        }
+      }
+    }
+  },
+  
+  "test_case_template": {
+    "pre_conditions_path_prefix": "navigations/preconditions",
+    "check_points": ["Keyboard Navigation"],
+    "description": "Template settings for generated YAML files"
+  },
+  
+  "notes": [
+    "custom_dataset_reference: Points to the dataset JSON file to be referenced in generated YAML files",
+    "  - Use 'datasets/core/data/go_to_core_controls_raw' for original dataset without overrides",
+    "  - Use 'datasets/core/data/go_to_core_controls' for dataset with core_controls_overrides.json applied",
+    "slice_points: Depths where child test cases reference parent test cases",
+    "  - E.g., [4] means depth 5-7 reference depth 4",
+    "max_depth: Maximum depth for test case generation (7 = preconditions only)",
+    "  - Depth 1-3: app_entry (sign in, join meeting)",
+    "  - Depth 4-7: app_core (pre-meeting setup)",
+    "  - Depth 8+: in_meeting operations (now manual in navigations/functional/in_meeting/)",
+    "pre_conditions_path_prefix: Path prefix for pre_conditions references in YAML files",
+    "check_points: List of test validation checkpoints to include in all generated test cases",
+    "  - E.g., ['Keyboard Navigation'] ensures all tests validate keyboard accessibility",
+    "optional_steps: List of step names that should be marked as optional in generated test cases",
+    "  - Used for UI path steps that may not appear (e.g., 'Accept' dialogs, dismissible notifications)",
+    "  - Applies to steps within UI paths, not just final control names",
+    "  - Note: For independent controls, use self_calibration.json with 'optional: true' instead",
+    "categorization: Organize generated test cases into subdirectories by depth",
+    "  - enabled: true/false to enable/disable categorization",
+    "  - base_path: Base path for categorized test cases",
+    "  - categories: List of category definitions with name, depth_range, and description",
+    "  - depth_range: [min, max] inclusive range for category",
+    "  - category_overrides: Manual mapping of control names to categories (overrides depth-based rules)",
+    "  - Example: 'Sign in to app': 'app_entry' forces this control to app_entry regardless of depth",
+    "  - Generated structure: navigations/preconditions/app_entry/ (4 files), .../app_core/ (24 files)",
+    "  - In-meeting tests (depth 8+): Manually created in navigations/functional/in_meeting/ (28 files)",
+    "    * audio/ (3 files): Audio settings, mute controls, audio switching",
+    "    * video/ (4 files): Video settings, virtual background, self-view, video systems",
+    "    * chat/ (2 files): Chat panel, messaging",
+    "    * share/ (3 files): Screen sharing, sharing settings, content types",
+    "    * participants/ (3 files): Participant panel, invitations, raise hand",
+    "    * panels/ (4 files): Apps panel, AI Assistant, whiteboards, more panels",
+    "    * meeting_controls/ (6 files): Recording, reactions, breakout sessions, meeting options",
+    "    * accessibility/ (3 files): Closed captions, sign language interpretation"
+  ]
+}

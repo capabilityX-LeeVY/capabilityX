@@ -1,0 +1,7 @@
+sf_url: http://10.74.29.156/Citrix/VDI-CitrixSF-CRWeb/
+username: vdiauto@jvdi.com
+pwd:cisco123!@#
+domain: jvdi.com
+vm_group: VDI-Win11-Desktop-WoD-CR
+hvd_ip: 10.74.29.184:8080
+eftbranch: 46.3

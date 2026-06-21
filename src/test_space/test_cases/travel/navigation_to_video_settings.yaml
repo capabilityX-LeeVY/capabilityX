@@ -1,0 +1,18 @@
+test_case:
+  name: navigation_settings from video setting
+  description: login and navigate to the settings
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""   
+    - name: "Change virtual background, Menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""

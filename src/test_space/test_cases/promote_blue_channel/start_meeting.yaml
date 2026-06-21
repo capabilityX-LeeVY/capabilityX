@@ -1,0 +1,47 @@
+test_case:
+  name: start_meeting
+  description: Verify that after signing in, the user can navigate to the Meetings tab, start a personal room meeting successfully and become the host of the meeting.
+  expect_result: The user is able to start a personal room meeting and receives a notification indicating they are now the host.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - promote_blue_channel/sign_in
+  steps:
+    - name: "Relaunch Webex application"
+      action:
+        type: function
+        value: relaunch_app
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: ""
+      stop_on_ai_check_failure: true
+      ai_check:
+        prompt: "Check if the primary action button shows 'Start meeting' or 'Accept'. If you see 'Start meeting' or 'Accept', output ✅Success. If you see 'Join meeting' or any other text, output ❌Failed. Reasoning: Button text is '<exact text>'" 
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: ""
+      optional: true
+      stop_on_ai_check_failure: true
+      ai_check:
+        prompt: "Check if the primary action button shows 'Start meeting'. If you see 'Start meeting', output ✅Success. If you see 'Join meeting' or any other text, output ❌Failed. Reasoning: Button text is '<exact text>'" 
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ["Mute","The host or a cohost has turned on reactions in this meeting. Use Ctrl-F6 to read the notification.","View AI Assistant","You're now the host of this meeting. Use Ctrl-F6 to read the notification."]
+      ui_response: true
+      
+  post_conditions: null
+  check_points: ["Keyboard Navigation"]

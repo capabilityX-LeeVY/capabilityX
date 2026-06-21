@@ -1,0 +1,12 @@
+test_case:
+  name: quit_app
+  description: Verify that the user can successfully quit.
+  expect_result: The user is quit successfully.
+  steps:
+    - name: "Quit"
+      action:
+        type: shortcut
+        value: Quit
+        wait_time: 5
+      expect_state: ""
+  check_points: [navigate, performance]

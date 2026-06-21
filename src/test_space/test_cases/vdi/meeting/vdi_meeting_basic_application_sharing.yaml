@@ -1,0 +1,92 @@
+test_case:
+  name: vdi_meeting_basic_application_sharing
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: Complete test - Basic application sharing workflow. User signs in, starts meeting, shares application, stops sharing, and signs out.
+  expect_result: Successfully completes basic application sharing workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Start application sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Sort by"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+
+    - name: "Calculator"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 20
+      expect_state: ""
+
+
+    # Stop screen sharing
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+
+    - name: connect_webex_app_main_window
+      action:
+        type: function
+        value: connect_webex_app_main_window
+      expect_state: ""
+
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+      
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,13 @@
+test_case_batch:
+  name: meetings_interactions_reactions
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Interactions and reactions test batch for meeting-related test cases
+  test_cases:
+    # Interactions & Reactions
+    - meetings/interaction/test_meeting_reactions_complete
+    - meetings/interaction/test_raise_hand_basic
+    - meetings/interaction/test_raise_lower_hand_complete
+    - meetings/interaction/test_single_reaction_thumbs_up

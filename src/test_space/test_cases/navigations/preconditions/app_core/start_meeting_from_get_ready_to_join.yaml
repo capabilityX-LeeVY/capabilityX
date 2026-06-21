@@ -1,0 +1,14 @@
+test_case:
+  name: start_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5

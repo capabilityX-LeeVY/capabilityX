@@ -1,0 +1,47 @@
+test_case:
+  name: sample_terminal_command
+  team: RegressShield
+  owner: GitHub Copilot & gamao
+  description: Open a visible local terminal window, execute a command from YAML, save the session id, and close the terminal session.
+  expect_result: The command runs in a visible terminal window and the same terminal session is closed successfully by session id.
+  pre_conditions: null
+  steps:
+    - name: "open local terminal and run command"
+      action:
+        type: function
+        value: open_terminal_and_run_command
+        parameters:
+          command: "telegraf -config telegraf_winGPU.conf"
+          cwd: "D:/Telegraf"
+          keep_open: true
+        save_to: terminal_session_id
+      expect_state: ""
+
+    - name: "wait for terminal output"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 10
+      expect_state: ""
+
+    # - name: "log terminal session id"
+    #   action:
+    #     type: function
+    #     value: print_hello_world
+    #     parameters:
+    #       message: "Opened terminal session ${terminal_session_id}"
+    #   expect_state: ""
+
+    - name: "close terminal session"
+      action:
+        type: function
+        value: close_terminal_session
+        parameters:
+          session_id: "${terminal_session_id}"
+      expect_state: ""
+
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

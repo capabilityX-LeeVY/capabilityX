@@ -1,0 +1,17 @@
+test_case:
+  name: layout_grid_test
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Test switching to grid layout view
+  expect_result: Successfully switches to grid layout view
+
+  steps:
+    # Switch to grid layout
+    - name: "Switch to Grid Layout"
+      action:
+        type: function
+        value: switch_to_grid_layout
+      expect_state: ""
+      wait_time: 5
+      

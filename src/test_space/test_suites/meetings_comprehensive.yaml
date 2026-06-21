@@ -1,0 +1,36 @@
+test_suite:
+  name: meetings_comprehensive
+  team: RegressShield
+  owner: huanwan3
+  platform: windows
+  language: [en_us]
+  description: Comprehensive test suite for all meeting-related test cases
+  test_cases:
+    # Audio Settings Tests
+    - meetings/audio_setting/test_audio_control_complete_workflow
+    - meetings/audio_setting/test_in_meeting_audio_settings
+    - meetings/audio_setting/test_pre_meeting_audio_settings
+    
+    # Video Settings Tests
+    - meetings/video_setting/test_video_control_complete_workflow
+    - meetings/video_setting/test_in_meeting_video_settings
+    - meetings/video_setting/test_pre_meeting_video_settings
+    
+    # Chat Tests
+    - meetings/chat/test_chat_and_layout_workflow
+    - meetings/chat/test_chat_in_pmr_meeting
+    - meetings/chat/test_chat_in_webex_meeting
+    - meetings/chat/test_chat_with_popout_and_popin
+    
+    # Interaction Tests
+    - meetings/interaction/test_meeting_reactions_complete
+    - meetings/interaction/test_raise_hand_basic
+    - meetings/interaction/test_raise_lower_hand_complete
+    - meetings/interaction/test_single_reaction_thumbs_up
+    
+    # Layout Tests
+    - meetings/layout/test_layout_comprehensive
+    
+    # Screen Sharing Tests
+    - meetings/share/test_basic_screen_sharing
+    - meetings/share/test_screen_sharing_complete

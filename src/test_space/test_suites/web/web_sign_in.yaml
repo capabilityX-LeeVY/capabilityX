@@ -1,0 +1,12 @@
+test_suite:
+  name: web_sign_in
+  team: web
+  account: allianz31
+  owner: binbiwan
+  platform: web
+  project: webex_app
+  language: [en]
+  test_cases:
+    - web/app_core/open_browser
+    - web/app_core/sign_in
+

@@ -1,0 +1,21 @@
+test_case:
+  name: sample_replace_txt_file
+  team: RegressShield
+  owner: GitHub Copilot & gamao
+  description: Overwrite a local text file with new content using replace_txt_file.
+  expect_result: The target file is created/overwritten with the specified content.
+  pre_conditions: null
+  steps:
+    - name: "replace content in a local txt file"
+      action:
+        type: function
+        value: replace_txt_file
+        parameters:
+          file_path: "~/AppData/Local/Desktop/teamsCallingCpuMonitor_caseName.txt"
+          content: "audioOnlyTest"
+      expect_state: ""
+
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

@@ -1,0 +1,233 @@
+{
+    "skipControl_common":[
+        "^\\\\(UTC.*", 
+        "^Upload and open a file.*", 
+        "^iPhone or iPad by Cable.*",
+        "^Move meeting to a video device.*",
+        "^End meeting.*", 
+        "^Add phone number.*",
+        "^adding Miro to Webex.*",
+        "^Add timer.*",
+        "^Emoji and Symbols.*",
+        "^Learn more about access messages after the meeting, view help page in browser.*",
+        "^Add files.*",
+        "^browse.*",
+        "^Use computer for audio.*",
+        "^Share computer audio.*",
+        "^Terms of Service.*",
+        "^Privacy Statement.*",
+        "^Get help.*",
+        "^Notices and disclaimers.*",
+        "^Previous month.*",
+        "^Next month.*",
+        "^Previous day.*",
+        "^Next day.*",
+
+        "^contact us page.*",
+        "^Third-party licenses and notices.*",
+        "^Change Default file download location.*",
+        "^Change Default file location.*",
+        "^Remove all invitees.*",
+        "^Start meeting$",
+        "^Schedule$",
+        "^Share$",
+        "^Access User Portal$",
+        "^Advanced Call Setting.*$",
+        "^Add a virtual background.*",
+        "^Recording options.*",
+        "^Next$",
+        "^Change Default file download location.*",
+        "^Disconnect.*",
+        "^Use the Mac system screen sharing picker.*",
+
+        "^Optimize energy use.*",
+        "^Connect a calendar.*",
+        "^Slido.*",
+        "^View Terms.*",
+        "^Learn more about access messages after the meeting, view help page in browser.*",
+        
+        "^Pop out panels.*",
+        "^Close.*",
+        "^\\\\d{1,2}$",
+        "^Restart Webex.*"
+    ],
+
+    "skipControl_is_page":[
+        "^Test.*$",
+        "^Device settings.*$"
+    ],
+
+    "skipControl_sign_in":[
+
+    ],
+
+    "skipControl_schedule":[
+
+    ],
+
+    "skipControl_settings":[
+        "^Include computer sound.*",
+        "^Export.*",
+        "^Use the Mac system screen sharing picker.*"
+    ],
+
+    "skipControl_full_meeting":[
+        "^Audio Settings.*$",
+        "^Audio settings.*$",
+        "^Video Settings.*$",
+        "^Self-view location.*$",
+        "^Change sharing settings.*$",
+        "Change virtual background",
+        "Customize reaction shortcuts",
+        "^Recognize hand gestures.*$",
+        "^Open AI Assistant panel.*$",
+        "^Whiteboards.*"
+    ],
+
+    "skipControl_app_core":[
+        "^Upload picture.*",
+        "^Other contacts.*",
+        "^Learn more about people insights.*",
+        "^email allianz.*",
+        "^refresh.*",
+        "^Edit current employments.*",
+        "^Profile Actions.*",
+        "^Sign Out.*",
+        ".*opens new tab.*",
+        "^View People Insights Profile.*",
+
+        "^Help Center.*",
+        "^Discover what else is new.*",
+        "^Start a Webex meeting.*",
+        "^Start a Personal Room meeting.*",
+        "^Schedule a meeting.*",
+        "^Schedule a webinar.*",
+        "^Meeting recap.*",
+        "^More start options.*",
+        "^More schedule options.*",
+        "^Join a meeting.*$",
+        "^Calendar.*$",
+
+        "^Whiteboards, \\\\d+ of \\\\d+$",
+        "^Voicemail, \\\\d+ of \\\\d+$",
+        "^Keypad, \\\\d+ of \\\\d+$",
+
+        "^Vidcast, \\\\d+ of \\\\d+$",
+        "^More, has popup, \\\\d+ of \\\\d+$",
+        "^Date, .*, \\\\d{4}$",
+
+        "^Open Settings.*",
+        "^Settings.*",
+        "^Manage quiet hours.*",
+        "^Device settings.*",
+        "^Keyboard shortcuts.*$",
+        "^Open Call Preferences.*$",
+        "^Audio settings.*$",
+
+        "^Health Checker.*$",
+        "^Upload profile picture.*"
+    ],
+
+    "skipControl_calling":[
+        "^End call.*",
+        "^Audio Settings.*",
+        "^Change virtual background.*",
+        "^Hold.*",
+        "^Send to voicemail.*",
+        "^Meet now.*",
+        "^Statistics.*",
+        "^Move to meeting.*",
+        "^Video Settings.*"
+    ],
+    "skipControl_ai_assistant":[
+        "^Unmute.*",
+        "^Mute.*",
+        "^Audio options.*",
+        "^Stop video.*",
+        "^Start video.*",
+        "^Video options.*",
+        "^Share.*",
+        "^Open AI Assistant panel.*",
+        "^Record.*",
+        "^Raise hand.*",
+        "^Reactions.*",
+        "^More options.*",
+        "^End meeting.*",
+        "^Show Apps.*",
+        "^Open participants panel.*",
+        "^Open chat panel.*",
+        "^More panels.*",
+        "^Closed captions more options.*",
+        "^Closed caption options.*",
+        "^Step away from meeting.*",
+        "^More options for .*",
+        "^Invite people.*",
+        "^Copy meeting information.*",
+        "^Meeting Info.*",
+        "^Network problem.*",
+        "^Currently in Grid View, Layout.*",
+
+        "^Summarize more.*",
+        "^Last 15 minutes.*",
+        "^From the summary start.*",
+        "^Was my name mentioned.*",
+        "^What are the action items.*",
+        "^The meeting summary and transcript is on for everyone.*",
+        "^The meeting summary is off for everyone.*",
+        "^Looks like not enough has happened in the meeting yet to get you a summary.*",
+        
+        "^Hide meeting controls.*"
+    ],
+
+    "skipByControlID":[
+        ["Customize reaction shortcuts","f8beea73cfe246a14291c5735a643690690ddc21f8a33982e2ceff29d4001c46"],
+        ["Keyboard Shortcuts","67386e22f9e425f3a1dcb223e9eefe27750926b339d0d4cbfabf4449b1d4fbc7"],
+        ["Message translation","5618c9aaf9fc22f01b3f253351d33652392af70b44f61ed2411ed0164187edbe"],
+        ["View call-in information","74d695a6a58c778104026b9ec95a20199d3a4a96bb913a4b3b3df07c0ed0c1ec"],
+        ["Show Apps","31368837b54ff0dae0414a761798d071ceedd81826f48833c3c1dfa3a578a596"],
+        ["GIFs","1bf9b9a36fe5c0f68908386bc2a447fd1ee8b86848008353e64deb146d998c5a"],
+        ["Statistics","d2001812c5078832bc028964e56fbac6dd3e50e5ac530a965131206953e3f782"],
+        ["Translation language","86693bbc1dac399a4050cc5df8c8b7d65c4465a5b45bee34d15749db9b39e52a"],
+        
+        ["Health Checker","206ce81fa087b49dc0ff52ff1a0db291199f06ad08daa6a3c34da829f9d823a6"],
+        ["Other contacts","254a258959a4e02147464491550513cb9e1c6d28a698f22800379a337d7aa7ff"]
+    ],
+
+    "skipByByControlNameAndLevel":[
+    ],
+    "specialNames":{
+        "mute": "Mute",
+        "unmute": "Unmute",
+        "Hide participants panel": "Hide participants panel",
+        "Reactions": "Reactions",
+        "Done": "Done",
+        "unknown": "Unknown",
+        "StartMeeting": "Start meeting",
+        "Schedule": "Schedule",
+        "Cancel":"Cancel",
+        "AXOutlineDescription": "outline",
+        "WindowsDescriptions":["standard window","system dialog","popover","sheet","dialog","window","floating window"],
+        "WindowsDescriptions_window":["standard window","system dialog","dialog","window"],
+        "SheetDescriptions":["sheet"],
+        "PopoverDescriptions": ["popover"],
+        "linkDescription": ["link","hyperlink"],
+        "AXListDescription_collection": ["Grid","collection","radio button group","List","list"],
+        "AXListDescription_section": ["section"],
+        "AXListItemDescription": ["list item","List item"],
+        "AXUnknownDescription": ["unknown"],
+        "AXButtonDescription": ["button","Button"],
+        "TabDescription": ["tab"],
+        "ListDescription": ["List","list","content list"],
+        "Selected":["Selected, ","selected, "],
+        "Checked":["Checked, ","checked, "],
+        "MenuItem":["Menu item"],
+        "SeparatorRow": ["Not selectable, Separator Row"],
+        "SectionHeader": ["section header"],
+        "CloseButtonDescription":["Discard","Cancel","Close","OK","Done","Save","Continue","Next","Skip","Back","Finish","Apply","Yes","No","Confirm","Later"],
+        "AXSwitchDescription": ["switch"],
+        "EndCall":"^End call.*",
+        "ShareDialogSelectScreen":"^Screen, Use the Spacebar to select a screen.*",
+        "ShareDialogSelectApp":"^Application, Use the Spacebar to select an app.*",
+        "Dialpad": "Dialpad"
+    }
+}

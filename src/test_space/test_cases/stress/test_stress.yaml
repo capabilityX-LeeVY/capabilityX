@@ -1,0 +1,29 @@
+test_case:
+  name: start_meeting_and_do_stress_test
+  owner: huanwan3
+  account: fullmode18
+  description: Verify that after signing in, the user can start a PMR meeting and run stress API tests during the meeting to test system performance under load.
+  expect_result: The user successfully starts a PMR meeting and completes stress testing without system failure.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Run stress API test"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join fullmode18@appletestci.webex.com audio=on video=on send_reactions=on send_chat=off with 100 ucf_api duration 7"
+          duration: 90
+      expect_state: ""
+
+  post_conditions:
+    - stress/chat
+    - stress/share
+    - stress/plist_and_chat_shortkey
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  check_points: [KB_Navigate, Stress]

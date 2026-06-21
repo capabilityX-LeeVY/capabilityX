@@ -1,0 +1,42 @@
+test_case:
+  name: start_calling
+  team: RegressShield
+  owner: binbiwan
+  description: user start calling demo
+  expect_result: The call is successfully initiated.
+  pre_conditions: null
+  steps:
+    - name: "agent initWebex"
+      action:
+        type: api
+        value: "run_init_app_functions_api"
+        agent_node: "calling_agent_08"
+    - name: "Dialpad menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "3088"
+      expect_state: ""
+    - name: "Place call"
+      action:
+        type: key
+        value: "enter"
+      expect_state: ""
+    - name: "call agent"
+      action: 
+        type: api
+        value: "run_calling_functions_api"
+        agent_node: "calling_agent_08"
+        wait_time: 20
+    - name: "End call"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  execution_duration: 1
+  execution_count: 1
+  check_points: [keyboard navigation]

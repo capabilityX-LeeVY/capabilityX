@@ -1,0 +1,33 @@
+test_case:
+  name: settings_from_profile_menu
+  owner: yanfzhen
+  description: settings from profile menu
+  expect_result: settings from profile menu
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Profile and preferences"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Settings in profile menu"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Cancel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3 
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

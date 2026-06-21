@@ -1,0 +1,71 @@
+test_case:
+  name: delete_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Delete a whiteboard.        
+  expect_result: A whiteboard is deleted.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - whiteboard_hub/new_whiteboard
+    - whiteboard_hub/open_whiteboard
+    - whiteboard_hub/rename_whiteboard
+    - whiteboard_hub/search_whiteboard
+  steps:
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "delete whiteboard"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check: 
+        prompt: "There is no whiteboard named \"abc\" in the list. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: "Cancel search whiteboards"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

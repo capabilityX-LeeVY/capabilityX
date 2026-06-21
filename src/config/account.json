@@ -1,0 +1,201 @@
+{
+  "bcld.sofia+207": {
+    "email": "bcld.sofia+207@gmail.com",
+    "password": "Cisco!2345"
+  },
+  "bwc.sha+109": {
+    "email": "bwc.sha+109@gmail.com",
+    "password": "Cisco!2345"
+  },
+  "bwc.sha+100": {
+    "email": "bwc.sha+100@gmail.com",
+    "password": "Cisco!2345"
+  },  
+  "bwc.sha+136": {
+    "email": "bwc.sha+136@gmail.com",
+    "password": "Cisco!2345"
+  },  
+  "bwc.sha+137": {
+    "email": "bwc.sha+137@gmail.com",
+    "password": "Cisco!2345"
+  },  
+  "bwc.sha+138": {
+    "email": "bwc.sha+138@gmail.com",
+    "password": "Cisco!2345"
+  },
+  "bwc.sha+139": {
+    "email": "bwc.sha+139@gmail.com",
+    "password": "Cisco!2345",
+    "phone_number": "8339"
+  },
+  "bwc.sha+140": {
+    "email": "bwc.sha+140@gmail.com",
+    "password": "Cisco!2345",
+    "phone_number": "8340"
+  },
+    "bwc.sha+135": {
+    "email": "bwc.sha+135@gmail.com",
+    "password": "Cisco!2345",
+    "phone_number": "8335"
+  },
+  "fullmode18": {
+    "email": "fullmode18@appletestci.com",
+    "password": "Happy123!@#"
+  },
+    "fullmode19": {
+    "email": "fullmode19@appletestci.com",
+    "password": "Happy123!@#"
+  },
+    "fullmode20": {
+    "email": "fullmode20@appletestci.com",
+    "password": "Happy123!@#"
+  },
+    "rtuser020": {
+      "email": "rtuser020@appletestci.com",
+      "password": "Happy123!@#"
+  },
+    "rtuser030": {
+      "email": "rtuser030@appletestci.com",
+      "password": "Happy123!@#"
+  },
+   "allianz1": {
+    "email": "allianz1.one@gmail.com",
+    "password": "Happy123!@#"
+  },
+  "allianz2": {
+    "email": "allianz2.two@gmail.com",
+    "password": "Happy123!@#"
+  },
+   "allianz3": {
+    "email": "allianz3@yopmail.net",
+    "password": "Happy123!@#"
+  },
+   "allianz4": {
+    "email": "allianz4@yopmail.net",
+    "password": "Happy123!@#"
+  },
+   "allianz5": {
+    "email": "allianz5@yopmail.net",
+    "password": "Happy123!@#"
+  },
+   "allianz6": {
+    "email": "allianz6@yopmail.net",
+    "password": "Happy123!@#"
+  },
+   "allianz7": {
+    "email": "allianz7@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "allianz8": {
+    "email": "allianz8@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "allianz31": {
+    "phone_username": "allianz2",
+    "phone_password": "Happy123!@#",
+    "email": "allianz31@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "allianz32": {
+    "phone_username": "allianz2",
+    "phone_password": "Happy123!@#",
+    "email": "allianz32@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "bts_tony1": {
+    "email": "bts_tony1@mailinator.com",
+    "password": "P@ss1234"
+  },
+  "bts_tony2": {
+    "email": "bts_tony2@mailinator.com",
+    "password": "P@ss1234"
+  },
+  "bts_tony3": {
+    "email": "bts_tony3@mailinator.com",
+    "password": "P@ss1234"
+  },
+  "bts_tony4": {
+    "email": "bts_tony4@mailinator.com",
+    "password": "P@ss1234"
+  },
+   "weiqin5": {
+    "email": "weiqin5.cvgbts@mailinator.com",
+    "password": "P@ss1234"
+  },
+   "weiqin6": {
+    "email": "weiqin6.cvgbts@mailinator.com",
+    "password": "P@ss1234"
+  },
+  "bts1": {
+    "email": "bts1@mailinator.com",
+    "password": "P@ss1234"
+  },
+  "bts12": {
+    "email": "bts12@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "bts13": {
+    "email": "bts13@yopmail.net",
+    "password": "Happy123!@#"
+  },
+   "bluechannel": {
+    "email": "meixiang@appletestci.com ",
+    "password": "Happy123!@#"
+  },
+  "default": {
+    "email": "allianz32@yopmail.net",
+    "password": "Happy123!@#"
+  },
+  "bj001": {
+    "phone_username": "bj001",
+    "phone_password": "Happy123!@#",
+    "email": "bj001@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "bj002": {
+    "phone_username": "bj002",
+    "phone_password": "Happy123!@#",
+    "email": "bj002@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "jianjzha": {
+    "phone_username": "jianjzha",
+    "phone_password": "Happy123!@#",
+    "phone_number": "813290",
+    "email": "jianjzha@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "bennyl": {
+    "phone_username": "bennyl",
+    "phone_password": "Happy123!@#",
+    "phone_number": "813162",
+    "email": "bennyl@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "yancyy": {
+    "phone_username": "yancyy",
+    "phone_password": "Happy123!@#",
+    "phone_number": "813288",
+    "email": "yancyy@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "pilan": {
+    "phone_username": "pilan",
+    "phone_password": "Happy123!@#",
+    "phone_number": "813160",
+    "email": "pilan@allianzci.com",
+    "password": "Happy123!@#"
+  },
+  "weshi2": {
+    "email": "weshi2@appletestci.com",
+    "password": "Happy123!@#"
+  },
+  "webexuser10@appletestci.com": {
+    "email": "webexuser10@appletestci.com",
+    "password": "Happy123!@#"
+  },
+  "safenet001": {
+    "email": "safenet001@wbxlab.us",
+    "password": "P@ss1234"
+  }
+}

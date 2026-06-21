@@ -1,0 +1,61 @@
+test_suite:
+  name: vdi_linux_calling_sanity_testing_N-4
+  team: VDI
+  owner: qihliu
+  message_room: ["7d6b04f0-ff44-11f0-a678-4559f92c6a95", "c0af0ac0-772f-11ef-9431-6382b932281b"]
+  platform: windows
+  language: [en_us]
+  description: VDI Calling Sanity test suite
+
+  test_cases:
+    # Pre-conditions: Sign in and start a locus call
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_locus_basic_video_call    
+
+    # VBG
+    - VDI/calling/vdi_calling_locus_vbg_static  
+    - VDI/calling/vdi_calling_locus_vbg_customized
+
+    # Bothway audio and video
+    - VDI/calling/vdi_calling_locus_bothway_audio_video_call-linux   
+
+    # Sharing
+    - VDI/calling/vdi_calling_locus_basic_screen_sharing
+    - VDI/calling/vdi_calling_locus_basic_receive_screen_sharing
+    
+    # Share computer sound
+    - VDI/calling/vdi_calling_locus_share_audio 
+
+    # Whiteboard
+    - VDI/calling/vdi_calling_locus_basic_whiteboard
+
+    # Post-conditions (Call on Webex)
+    - VDI/calling/vdi_calling_endcall
+    
+    # Pre-conditions: Start a BWC call
+    - VDI/calling/vdi_calling_bwc_basic_video_call
+
+    # VBG
+    - VDI/calling/vdi_calling_bwc_vbg_static
+    - VDI/calling/vdi_calling_bwc_vbg_animated    
+    - VDI/calling/vdi_calling_bwc_vbg_customized    
+
+    # Bothway audio and video
+    - VDI/calling/vdi_calling_bwc_bothway_audio_video_call-linux   
+
+    # Sharing
+    - VDI/calling/vdi_calling_bwc_basic_screen_sharing
+    - VDI/calling/vdi_calling_bwc_basic_receive_screen_sharing
+    
+    # hold & resume call
+    - VDI/calling/vdi_calling_bwc_hold_resume_call-linux    
+
+    # Post-conditions (Webex Calling)
+    - VDI/calling/vdi_calling_endcall
+    - VDI/healthchecker/vdi_reset_database
+    - navigations/basic/quit_app
+    - VDI/log/vdi_compress_wbx_logs
+  check_points: ["Keyboard Navigation"]

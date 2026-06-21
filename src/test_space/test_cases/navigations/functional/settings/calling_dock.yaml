@@ -1,0 +1,14 @@
+test_case:
+  name: calling_dock
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/call_settings
+    - navigations/functional/settings/open_call_preferences
+  
+  steps:
+    - name: "Calling dock Tree item"
+      action:
+        type: key
+        value: default

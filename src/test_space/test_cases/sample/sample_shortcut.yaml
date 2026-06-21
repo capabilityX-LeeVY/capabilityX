@@ -1,0 +1,17 @@
+test_case:
+  name: shortcut_minimize_window
+  team: RegressShield
+  owner: yanfzhen
+  description: Shortcut test case for minimizing window.
+  expect_result: The window is minimized successfully using the shortcut.
+  pre_conditions: null
+  steps:
+    - name: "Minimize window"
+      action:
+        type: shortcut
+        value: "Minimize window"
+
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: []

@@ -1,0 +1,50 @@
+test_case:
+  name: start_webex_meeting
+  description: Start a Webex meeting.
+  expect_result: The user is able to start a Webex meeting and can end it.
+  continue_on_error: true
+  pre_conditions: []
+  steps:
+    - name: "Relaunch Webex application"
+      action:
+        type: function
+        value: relaunch_app
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: default
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ["Mute","The host or a cohost has turned on reactions in this meeting. Use Ctrl-F6 to read the notification.","View AI Assistant","You're now the host of this meeting. Use Ctrl-F6 to read the notification."]
+      ui_response: true
+    - name: "wait 5s"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 5
+    - name: End meeting
+      action:
+        type: key
+        value: default
+      expect_state: "End meeting, Menu item"
+    - name: End meeting, Menu item
+      action:
+        type: direct_key
+        value: enter
+      wait_time: 5
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 70
+  check_points: [Keyboard Navigation]

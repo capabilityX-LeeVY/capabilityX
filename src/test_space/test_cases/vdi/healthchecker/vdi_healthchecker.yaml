@@ -1,0 +1,59 @@
+test_case:
+  name: vdi_healthchecker
+  owner: qihliu
+  account: bwc.sha+100
+  description: health checker from sider bar
+  expect_result: health checker from sider bar
+  pre_conditions:
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+
+  steps:
+    - name: "Help"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "HealthChecker in help"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. 'All services is accessible' should be present in the row where 'VDI' is located. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+      stop_on_ai_check_failure: true
+
+    - name: "RT in Virtual Channel"
+      action:
+        type: key
+        value: default
+        wait_time: 1 
+      expect_state: ""
+     
+
+    - name: "Close Health Checker"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

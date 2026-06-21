@@ -1,0 +1,22 @@
+test_case:
+  name: vdi_calling_bwc_e911ok
+  team: VDI
+  owner: qihliu
+  description: E911 OK.
+  expect_result: Successfully E911 OK
+  
+  pre_conditions: null
+
+  steps:
+    - name: "BWC 911 OK Button"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      optional: true
+    
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]
+      
+      

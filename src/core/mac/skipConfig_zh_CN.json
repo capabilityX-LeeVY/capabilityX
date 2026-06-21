@@ -1,0 +1,225 @@
+{
+    "skipControl_common":[
+    "^\\\\(UTC.*",
+    "^更改缺省文件下载位置.*", 
+    "^更改缺省文件位置.*",
+    "^上传并打开文件.*",
+    "^iPhone 或 iPad（通过电缆）.*",
+    "^将会议转移到视频设备上.*",
+    "^Add phone number.*",
+    "^adding Miro to Webex.*",
+    "^Add timer.*",
+    "^颜文字和符号.*",
+    "^在会议后详细了解访问消息，在浏览器中查看帮助页面.*",
+    "^添加文件.*",
+    "^浏览.*",
+    "^Share computer audio.*",
+    "^结束会议.*",
+    "^服务条款.*",
+    "^隐私声明.*",
+    "^获取帮助.*",
+    "^Notices and disclaimers.*",
+    "^Summarize more.*",
+
+    "^联系我们页面.*",
+    "^第三方许可证和通知.*",
+    "^删除所有受邀者.*",
+    "^开始会议$",
+    "^安排$",
+    "^共享$",
+    "^Access User Portal$",
+    "^Advanced Call Setting.*$",
+    "^添加虚拟背景.*",
+    "^录制选项.*",
+    "^Next$",
+    "^挂断.*",
+    "^使用 Mac 系统屏幕共享选取器.*",
+
+
+    "^优化能源消耗.*",
+    "^连接日历.*",
+    "^Slido.*",
+    
+    "^查看条款.*",
+    "^弹出面板.*",
+    "^关闭.*",
+    "^\\\\d{1,2}$",
+    "^重启 Webex.*"
+    ],
+
+    "skipControl_is_page":[
+        "^测试.*$",
+        "^设备设置.*$"
+    ],
+
+    "skipControl_sign_in":[
+
+    ],
+
+    "skipControl_schedule":[
+
+    ],
+
+    "skipControl_full_meeting":[
+        "^音频设置.*$",
+        "^视频设置.*$",
+        "^本端视频位置.*$",
+        "^更改共享设置.*$",
+        "更改虚拟背景",
+        "自定义回应快捷键",
+        "^识别手势.*$",
+        "^打开 AI Assistant 面板.*$",
+        "^白板.*"
+    ],
+
+    "skipControl_app_core":[
+        "^上传图片.*",
+        "^其他联系人.*",
+        "^Learn more about people insights.*",
+        "^email allianz.*",
+        "^refresh.*",
+        "^Edit current employments.*",
+        "^Profile Actions.*",
+        "^注销.*",
+        ".*opens new tab.*",
+        "^查看People Insights档案.*",
+
+        "^Help Center.*",
+        "^Discover what else is new.*",
+        "^开始 Webex 会议.*",
+        "^开始“个人会议室”会议.*",
+        "^安排会议.*",
+        "^安排网络研讨会.*",
+        "^会议总结.*",
+        "^更多开始选项.*",
+        "^更多安排选项.*",
+        "^加入会议.*$",
+        "^日历.*$",
+        
+        "^白板, \\\\d+/\\\\d+$",
+        "^语音邮件, \\\\d+/\\\\d+$",
+        "^小键盘, \\\\d+/\\\\d+$",
+        "^Vidcast, \\\\d+/\\\\d+$",
+        "^更多,有弹出信息, \\\\d+/\\\\d+$",
+
+        "^日期, .*, \\\\d{4}$",
+
+        "^打开设置.*",
+        "^设置.*",
+        "^管理免打扰时间.*",
+        "^设备设置.*",
+        "^键盘快捷方式.*$",
+        "^打开呼叫首选项.*$",
+        "^Audio settings.*$",
+        "^上传档案照片.*"
+    ],
+    "skipControl_settings":[
+        "^包括计算机提示音.*",
+        "^导出.*",
+        "^使用 Mac 系统屏幕共享选取器.*"
+    ],
+
+    "skipControl_ai_assistant":[
+        "^取消静音.*",
+        "^静音.*",
+        "^音频选项.*",
+        "^停止视频.*",
+        "^开启视频.*",
+        "^视频选项.*",
+        "^共享.*",
+        "^打开 AI Assistant 面板.*",
+        "^录制.*",
+        "^举手.*",
+        "^表情.*",
+        "^更多选项.*",
+        "^结束会议.*",
+        "^显示应用程序.*",
+        "^打开“参加者”面板.*",
+        "^打开“聊天”面板.*",
+        "^更多面板.*",
+        "^Closed captions more options.*",
+        ".*隐藏式字幕选项",
+        "^暂时走开.*",
+        ".*的更多选项",
+        "^邀请人员.*",
+        "^复制会议信息.*",
+        "^会议信息.*",
+        "^网络问题.*",
+        "^当前位于 网格视图, 布局.*",
+
+        "^已为所有人开启 会议 摘要和转录功能.*",
+        "^已为所有人关闭 会议 摘要功能.*",
+        "^会议中似乎尚未发生足够的事情，无法为您获取摘要.*",
+        "^最后15分钟.*",
+        "^概括最后 15 分钟.*",
+        "^从摘要开始.*",
+        "^有人提到我的名字吗.*",
+        "^行动项目有哪些.*",
+        
+        "^隐藏会议控件.*"
+    ],
+
+    "skipByControlID":[
+        ["Customize reaction shortcuts","f8beea73cfe246a14291c5735a643690690ddc21f8a33982e2ceff29d4001c46"],
+        ["键盘快捷方式","4e20d40e71652e52a3eee1e81face4939e5cb6b44e3d312db325c96e4935725d"],
+        ["显示应用程序","66e7d16a0d91fe26e0983cd40a0872f42c2cf9794e9ccc5d18642a325adc3a53"],
+        ["Message translation","5618c9aaf9fc22f01b3f253351d33652392af70b44f61ed2411ed0164187edbe"],
+        ["View call-in information","74d695a6a58c778104026b9ec95a20199d3a4a96bb913a4b3b3df07c0ed0c1ec"],
+        ["GIF","2725350258f4f0aab3a9aa1c4ad8fa31e51ecf9a8f165aad567e9d8a7ddb60fb"],
+        ["统计信息","e0d3be34e5c0652b53233e7809b726573f5b4a79f4730a1c38cea6163b327afc"],
+        ["翻译语言","7b678bd86b58334f05dd6a25303a1ccbbf0ac2d924cb2460d6b92298ccd1a9e9"],
+
+        ["Health Checker","206ce81fa087b49dc0ff52ff1a0db291199f06ad08daa6a3c34da829f9d823a6"],
+        ["Other contacts","254a258959a4e02147464491550513cb9e1c6d28a698f22800379a337d7aa7ff"]
+    ],
+
+    "skipControl_calling":[
+        "^结束通话.*",
+        "^音频设置.*",
+        "^更改虚拟背景.*",
+        "^保持.*",
+        "^发送语音邮件.*",
+        "^即时会议.*",
+        "^统计信息.*",
+        "^迁移至会议.*",
+        "^视频设置.*"
+    ],
+
+    "skipByByControlNameAndLevel":[
+    ],
+    
+    "specialNames":{
+        "mute": "静音",
+        "unmute": "取消静音",
+        "Hide participants panel": "隐藏“参加者”面板",
+        "Reactions": "表情",
+        "Done": "完成",
+        "unknown": "未知",
+        "StartMeeting": "开始会议",
+        "Schedule": "安排",
+        "Cancel":"取消",
+        "AXOutlineDescription": "外框",
+        "WindowsDescriptions":["标准窗口","系统对话框","弹出窗口","表单","对话框","窗口","浮动窗口"],
+        "SheetDescriptions":["表单"],
+        "PopoverDescriptions": ["弹出窗口"],
+        "linkDescription": ["链接","超链接"],
+        "AXListDescription_collection": ["单选按钮组","List","list","集合","网格", "列表"],
+        "AXListDescription_section": ["节"],
+        "AXListItemDescription": ["列表项","list item","List item","列表 个项目","列表 项目"],
+        "AXUnknownDescription": ["未知"],
+        "AXButtonDescription": ["按钮"],
+        "TabDescription": ["标签"],
+        "ListDescription": ["列表","content list"],
+        "Selected":["已选择, ","Selected, ","selected, "],
+        "Checked":["已选中, ","Checked, ","checked, "],
+        "MenuItem":["Menu item"],
+        "SeparatorRow": ["不可选择, 分隔符行","Not selectable, Separator Row"],
+        "SectionHeader": ["部分标题","分组标题","section header"],
+        "CloseButtonDescription":["停止摘要","放弃","取消","确定","OK","完成","保存","继续","下一步","跳过","返回","完成","应用","Yes","No","确认","关闭","退出"],
+        "AXSwitchDescription": ["切换"],
+        "EndCall":"^结束通话.*",
+        "ShareDialogSelectScreen":"^屏幕, 使用空格键选择屏幕.*",
+        "ShareDialogSelectApp":"^应用程序, 使用空格键选择应用程序.*",
+        "Dialpad": "拨号盘"
+    }
+}

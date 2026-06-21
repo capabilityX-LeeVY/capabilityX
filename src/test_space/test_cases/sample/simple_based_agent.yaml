@@ -1,0 +1,72 @@
+﻿test_case:
+  name: simple case run on agent
+  team: wrs
+  owner: weiqli
+  account: weiqin5
+  description: Complete meeting workflow using only dynamic APIs - demonstrates zero-configuration approach
+  expect_result: Meeting operations completed successfully with dynamic API registration
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "sign in"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "weiqin's device"
+        parameters:
+          test_case_name: "navigations/basic/sign_in"
+          installOptions/version: "eft"
+          language: "en_US"
+          account: "weiqin6"
+          platform: "windows"
+
+    - name: "start pmr meeting"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "weiqin's device"
+        parameters:
+          test_case_name: "meetings/actions/start_pmr_meeting"
+
+    - name: "invite user join meeting"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "weiqin's device"
+        parameters:
+          test_case_name: "acc_regression/jmt/basic/invite_people"
+
+    - name: "Switch to in-progress dialog"
+      platforms: ["windows"]
+      action:
+        type: shortcut
+        value: Notification
+    - name: "Join"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 15
+
+    - name: "end meeting"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "weiqin's device"
+        parameters:
+          test_case_name: "meetings/actions/end_meeting_for_all"
+           
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, API_Performance]

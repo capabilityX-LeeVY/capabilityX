@@ -1,0 +1,7 @@
+sf_url: https://10.74.29.95
+username: vdiauto@jvdi.com
+pwd: cisco123!@#
+domain: jvdi.com
+vm_group: vmw-w11-84ic-8
+hvd_ip: 10.75.164.200:8080
+eftbranch: 46.3

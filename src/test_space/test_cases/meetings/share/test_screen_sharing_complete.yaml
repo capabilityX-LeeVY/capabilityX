@@ -1,0 +1,73 @@
+test_case:
+  name: test_screen_sharing_complete
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Screen sharing workflow. User signs in, starts meeting, shares screen, pauses/resumes sharing, stops sharing, and signs out.
+  expect_result: Successfully completes full screen sharing workflow with proper control bar display and focus management
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Start screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Screen or application tab"
+      platforms: [windows]
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Screen or application tab"
+      platforms: [mac]
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1  
+    - name: "Share in share content window"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 5
+    # Pause and resume screen sharing
+    - name: "Pause sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+
+    - name: "Resume sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

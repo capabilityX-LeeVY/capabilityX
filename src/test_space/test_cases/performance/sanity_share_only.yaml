@@ -1,0 +1,85 @@
+test_case:
+  name: performance_audio_only_test
+  owner: huanwan3
+  account: bts12
+  description: Performance test for audio-only meeting - tests meeting with audio enabled and video disabled
+  expect_result: Successfully starts meeting with audio only, measures performance metrics
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/pmr_setup
+    - meetings/audio_setting/mute_before_meeting
+    - meetings/video_setting/stop_video_before_meeting
+    - meetings/actions/pmr_start
+    - navigations/postconditions/end_meeting
+
+    # start pmr again
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+
+  steps: 
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join bts12@converged-bts.webex.com audio=off video=off with 1 ucf_api duration 15"
+          duration: 120
+      expect_state: ""
+  
+    - name: "change case name for telegraf"
+      action:
+        type: function
+        value: replace_txt_file
+        parameters:
+          file_path: "~/AppData/Local/Desktop/teamsCallingCpuMonitor_caseName.txt"
+          content: "shareOnlyTest"
+      expect_state: ""
+
+    # start telegraf
+    - name: "open local terminal and run command"
+      action:
+        type: function
+        value: open_terminal_and_run_command
+        parameters:
+          command: "telegraf -config telegraf_winGPU.conf"
+          cwd: "D:/Telegraf"
+          keep_open: true
+        save_to: terminal_session_id
+      expect_state: ""
+
+    - name: "Wait exactly 360 seconds"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+          seconds: 360
+      expect_state: ""
+
+    # end telegraf
+    - name: "close terminal"
+      action:
+        type: function
+        value: close_terminal_session
+        parameters:
+          session_id: "${terminal_session_id}"
+
+    - name: "restore case name for telegraf"
+      action:
+        type: function
+        value: replace_txt_file
+        parameters:
+          file_path: "~/AppData/Local/Desktop/teamsCallingCpuMonitor_caseName.txt"
+          content: "Default"
+      expect_state: ""
+
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - navigations/postconditions/end_meeting_for_all
+    - navigations/basic/sign_out
+    - navigations/basic/quit_app
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation", "Performance"]

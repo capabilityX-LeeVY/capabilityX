@@ -1,0 +1,42 @@
+test_case:
+  name: guest_join_spaceMeeting
+  description: Webex app is active, click "Join a meeting", then join a space meeting by a video address
+  expect_result: The guest user successfully join a space meeting by video address.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: https://co.webex.com/co/j.php?MTID=m19086128980a5798c85eb6ae1d9cafa0
+    - name: "Next"
+      action:
+        type: key
+        value: default
+    # - name: "Meeting password. Required."
+    #   action:
+    #     type: input
+    #     value: 8aDG4Ze9Qd7
+    # - name: "Next"
+    #   action:
+    #     type: key
+    #     value: default
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: minl5
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+   
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

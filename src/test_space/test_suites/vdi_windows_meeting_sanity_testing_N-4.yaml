@@ -1,0 +1,59 @@
+test_suite:
+  name: vdi_windows_meeting_sanity_testing_N-4
+  team: VDI
+  owner: qihliu
+  message_room: ["7d6b04f0-ff44-11f0-a678-4559f92c6a95", "c0af0ac0-772f-11ef-9431-6382b932281b"]
+  platform: windows
+  language: [en_us]
+  description: VDI Meeting Sanity test suite
+
+  test_cases:
+    # Pre-conditions: Sign in and start meeting
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    #- meetings/actions/start_pmr_meeting
+    - VDI/meeting/vdi_start_pmr_meeting
+
+    # VBG
+    - VDI/meeting/vdi_meeting_vbg_static
+    - VDI/meeting/vdi_meeting_vbg_animated    
+    - VDI/meeting/vdi_meeting_vbg_customized
+
+    # Video layout
+    #- VDI/meeting/vdi_meeting_video_layout_switching
+
+    # Send audio
+    - VDI/meeting/vdi_meeting_send_audio  
+
+    # CC
+    - VDI/meeting/vdi_meeting_closed_captions  
+
+    # Remote audio
+    - VDI/meeting/vdi_meeting_receive_audio    
+
+    # Sharing
+    - VDI/meeting/vdi_meeting_basic_screen_sharing
+    - VDI/meeting/vdi_meeting_basic_application_sharing
+    - VDI/meeting/vdi_meeting_file_sharing
+    - VDI/meeting/vdi_meeting_portion_sharing
+    - VDI/meeting/vdi_meeting_basic_receive_screen_sharing
+    - VDI/meeting/vdi_meeting_receive_file_sharing
+
+    # Annotation
+    - VDI/meeting/vdi_meeting_start_screen_sharing
+    - VDI/meeting/vdi_meeting_start_annotation
+
+    # Whiteboard
+    - VDI/meeting/vdi_meeting_basic_whiteboard
+
+    # Reaction
+    - VDI/meeting/vdi_meeting_send_reaction
+    - VDI/meeting/vdi_meeting_receive_reactions
+
+    # Post-conditions
+    - meetings/actions/end_meeting_for_all
+    - VDI/healthchecker/vdi_reset_database
+    - navigations/basic/quit_app
+    - VDI/log/vdi_compress_wbx_logs
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,30 @@
+test_suite:
+  name: jmt_agent_recommended
+  team: wrs
+  account: weiqin5
+  owner: weiqli
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    
+    - navigations/basic/sign_in:
+        agent_node: "weiqin's device"
+        parameters:
+          account: "weiqin6"
+          language: "en_US"
+
+    - meetings/actions/start_pmr_meeting:
+        agent_node: "weiqin's device"
+
+    - acc_regression/jmt/basic/invite_people:
+        agent_node: "weiqin's device"
+
+    - acc_regression/jmt/join_ongoing_invited_meeting
+
+    - meetings/actions/end_meeting_for_all:
+        agent_node: "weiqin's device"
+    
+  check_points: [Keyboard Navigation, Performance]

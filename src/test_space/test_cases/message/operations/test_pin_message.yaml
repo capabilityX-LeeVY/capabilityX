@@ -1,0 +1,54 @@
+test_case:
+  name: pin_message
+  owner: huanwan3
+  account: fullmode18
+  description: Send a message and pin it using context menu
+  expect_result: Message is successfully pinned in the chat conversation
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    # Use common action to send text message
+    - include: message/actions/send_text_message
+      params:
+        message_text: "Test message for pinning"
+
+    # Use common action to open context menu on last message
+    - include: message/actions/open_message_context_menu
+
+    # Navigate down to "Pin message" (6th item in menu)
+    # Menu order: Copy message, Edit message, Start a Thread, Add reaction, Forward message, Remind me in, Pin message
+    - include: message/actions/navigate_menu_down
+      params:
+        count: 6
+
+    # confirm Pin message
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Select Pin message
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Focus back to message input for screenshot and AI check
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window. Check if the last message shows 'You pinned a message' with a timestamp (like 'You pinned a message. 3:46 PM'). Output format: ✅Success if 'You pinned a message' text is visible, ❌Failed if no pinned message confirmation found"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

@@ -1,0 +1,171 @@
+# File: test_cases/feature_test/Merak_Apptastic/join_meeting/Login_user/not_login_user_exit_app_join_meeting_from_browser_select_sign_in.yaml
+test_case:
+  name: not_login_user_exit_app_join_meeting_from_browser_select_sign_in
+  description: "Single IS Page (co.webex.com): not login Webex app and exit it, then start/join meeting from browser, select Sign in, and sign in with the weshi2 account"
+  expect_result: "The not-signed-in user exits Webex, launches a co.webex.com meeting link from browser, selects Sign in from the pre-join page, signs in with username/password, joins the meeting, then leaves the meeting"
+  owner: minli
+  account: weshi2
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # Step 1: Exit the not-signed-in Webex app before starting from browser
+    - name: "Close Webex client"
+      action:
+        type: function
+        value: close_webex_app
+        parameters:
+          wait_time: 3
+
+    # Step 2: Open the Single IS Page meeting link in browser
+    - name: "Open browser with meeting link"
+      platforms: [mac,]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://co.webex.com/co/j.php?MTID=m57fd31d6a72d091f0d2ad5badd947153"
+          browser: "safari"
+        wait_time: 6
+
+    # Step 3: Allow Safari/browser to open Webex if a permission dialog appears
+    - name: "Always Allow"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Safari"
+          button_name: "Always Allow,Allow,Open Webex"
+          wait_time: 5
+          retry: 4
+      optional: true
+
+    # Step 4: Click browser launch button variants if they appear
+    - name: "Open Webex"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    - name: "Open Webex app"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    - name: "Launch meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    # Step 5: Handle browser dialog to open Webex
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+
+    # Step 6: Switch focus to Webex pre-join window that contains the Sign in option
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          target_button: "sign in"
+          wait_time: 20
+        wait_time: 3
+
+    # Step 7: Select Sign in on the pre-join page
+    - name: "Select Sign in from pre-join page"
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "sign in,Sign in,guest sign in"
+          wait_time: 5
+          retry: 5
+        wait_time: 3
+
+    # Step 8: Input weshi2 account email on the "Sign in and join" page
+    - name: "Email address"
+      action:
+        type: function
+        value: input_macos_text
+        parameters:
+          value: ${email}
+          field_hint: "email"
+          wait_time: 1
+
+    # Step 9: Continue to password page
+    - name: "Next"
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Next"
+          wait_time: 15
+          retry: 3
+
+    - name: "Continue with email"
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Continue with email,Continue"
+          wait_time: 3
+          retry: 2
+      optional: true
+
+    # Step 10: Input weshi2 account password
+    - name: "Password"
+      action:
+        type: function
+        value: input_macos_text
+        parameters:
+          value: ${password}
+          field_hint: "password"
+          wait_time: 1
+
+    # Step 11: Submit sign-in and return to the meeting join flow
+    - name: "Sign In, after entering your password"
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Sign In,Sign in"
+          wait_time: 15
+          retry: 3
+
+    # Step 12: Switch focus back to the Webex pre-join window with Join meeting button
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          target_button: "Join meeting"
+          wait_time: 20
+        wait_time: 3
+
+    # Step 13: Press Enter to activate the focused Join meeting button
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 8
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting_by_shortcut

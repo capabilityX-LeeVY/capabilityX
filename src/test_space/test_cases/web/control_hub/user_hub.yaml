@@ -1,0 +1,58 @@
+test_case:
+  name: sign_in
+  account: allianz31
+  site_url: "https://userhub-by.webex.com/webappng/hub/meeting/home"
+  desciption: Verify that user can sign in successfully to User Hub, and validate keyboard navigation on the settings page
+  expect_result: User is able to sign in successfully and navigate to Email templates under Settings using keyboard only
+  steps:
+
+    - name: "Enter your email address"
+      action:
+        type: input
+        value: "${email}"
+      expect_state: ""
+
+    - name: "Next"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Password"
+      action:
+        type: input
+        value: "${password}"
+      expect_state: ""
+
+    - name: "Sign In"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    - name: "Upcoming"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Settings"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Email templates"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Scheduling"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

@@ -1,0 +1,2856 @@
+{
+    "_comment": "Core controls configuration file. Set 'selected': true for controls you want to extract",
+    "_instructions": [
+        "1. Set 'selected': true for controls you want to include",
+        "2. Or delete unwanted control entries",
+        "3. After saving, run: python extract_core_controls_from_config.py",
+        "4. Recommended: select 3-10 core controls per depth",
+        "5. Re-running this script will preserve your existing selections"
+    ],
+    "depths": {
+        "1": {
+            "total_controls": 6,
+            "description": "All controls at depth 1",
+            "controls": [
+                {
+                    "name": "Join a meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Join a meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Sign in",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Sign up",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign up"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "By using Webex, you agree to the Terms of Service and Privacy Statement. Terms of Service Link Open in your default browser",
+                    "control_type": "custom",
+                    "ui_path": [
+                        "By using Webex, you agree to the Terms of Service and Privacy Statement. Terms of Service Link Open in your default browser"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "More options-Webex",
+                    "control_type": "button",
+                    "ui_path": [
+                        " More options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Select Webex system mode",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Select Webex system mode"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "2": {
+            "total_controls": 2,
+            "description": "All controls at depth 2",
+            "controls": [
+                {
+                    "name": "Email address",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Go back",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        " Go back"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "3": {
+            "total_controls": 1,
+            "description": "All controls at depth 3",
+            "controls": [
+                {
+                    "name": "Next",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "4": {
+            "total_controls": 7,
+            "description": "All controls at depth 4",
+            "controls": [
+                {
+                    "name": "Password",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "Welcome bts_tony2@mailinator.com Password"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Sign in to app",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In "
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Forgot password?",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "Forgot password?"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Need help signing in? opens in a new tab",
+                    "control_type": "link",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "Need help signing in? opens in a new tab"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Terms of Service opens in a new tab",
+                    "control_type": "link",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "Terms of Service opens in a new tab"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Privacy Statement opens in a new tab",
+                    "control_type": "link",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "Privacy Statement opens in a new tab"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "about Webex opens in a new tab",
+                    "control_type": "link",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        "about Webex opens in a new tab"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "5": {
+            "total_controls": 28,
+            "description": "All controls at depth 5",
+            "controls": [
+                {
+                    "name": "Join a meeting-Webex",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Join a meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Schedule a meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Schedule a meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More options for scheduling a meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " More options for scheduling a meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Collapse",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Collapse"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meetings Tab list, Meeting recap tab",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        "Meetings Tab list, Meeting recap tab"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Connect",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Connect"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Dismiss banner",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Dismiss banner"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Sunday, December 14, 2025, Meeting recap to",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        "Sunday, December 14, 2025, Meeting recap, 12:06 PM to 3:12 PM, 1 of 3"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Profile and preferences",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        "Profile and preferences"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Set a status",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        "Set a status"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Search, meet and call",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        "Search, meet and call"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Start a conversation, call, or meet",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a conversation, call, or meet"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Connect to a device",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Connect to a device"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Open Cisco AI Assistant panel (Alt + I)",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Open Cisco AI Assistant panel (Alt + I)"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Meetings menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Meetings menu item , selected, 2 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Calling menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Calling menu item , 3 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Whiteboards menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Whiteboards menu item , 4 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Contacts menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Contacts menu item , 5 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Vidcast menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Vidcast menu item , 6 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Teams menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Teams menu item , 7 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More actions menu item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " More actions menu item, collapsed, submenu , 8 of 8, to activate press SPACEBAR"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Settings",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Settings"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Help",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Help"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Show labels",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Show labels"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Personal Room",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Personal Room"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Copy your Personal Room information",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Copy your Personal Room information"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Start a Webex meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More options for starting a Webex meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " More options for starting a Webex meeting"
+                    ],
+                    "selected": true
+                }
+            ]
+        },
+        "6": {
+            "total_controls": 5,
+            "description": "All controls at depth 6",
+            "controls": [
+                {
+                    "name": "Connecting...",
+                    "control_type": "text",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        "Connecting..."
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Accept",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Decline",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Decline"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Minimize the window",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Minimize the window"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Close the window",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Close the window"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "7": {
+            "total_controls": 5,
+            "description": "All controls at depth 7",
+            "controls": [
+                {
+                    "name": "Start meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Mute-Get ready to join",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Mute"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Audio options in is_page",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Audio options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Video options in is_page",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Video options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Connect to a device in is page",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Connect to a device"
+                    ],
+                    "selected": false
+                }
+            ]
+        },
+        "8": {
+            "total_controls": 26,
+            "description": "All controls at depth 8",
+            "controls": [
+                {
+                    "name": "Mute",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Mute"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Audio options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Audio options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Stop video",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Stop video"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Video options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Video options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Share",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "AI Assistant",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open AI Assistant panel"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Record",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Record"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Raise",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Raise"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Reactions",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "End meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "End meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Show Apps panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Open participants panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Open chat panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More panels",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More panels"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Closed captions",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Closed captions"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Closed captions more options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Closed captions more options"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Hide meeting controls",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Hide meeting controls"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Step away from meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Step away from meeting"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "More options for bts tony2",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options for bts tony2"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Waiting for others to join..., list item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Waiting for others to join..., list item"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Invite and remind",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Invite and remind"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Meeting Info",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meeting Duration",
+                    "control_type": "text",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Duration, 37 seconds"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Your network connection and CPU usage are good, allowing you to have the full experience., indicator",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Your network connection and CPU usage are good, allowing you to have the full experience., indicator"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Layout",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout"
+                    ],
+                    "selected": true
+                }
+            ]
+        },
+        "9": {
+            "total_controls": 111,
+            "description": "All controls at depth 9",
+            "controls": [
+                {
+                    "name": "Unmute",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Mute",
+                        "Unmute"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Smart audio for microphone",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Audio options",
+                        "Smart audio for microphone, combobox, Noise removal, Selected, 1 of 1"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Audio Settings...",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Audio options",
+                        "Audio Settings..., Menu item, 1 of 1"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "You're using your computer for audio, Switch audio, Menu item",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Audio options",
+                        "You're using your computer for audio, Switch audio, Menu item, 1 of 1"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Start video",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Stop video",
+                        "Start video"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "bts tony2, Speaking, Video off, list item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Stop video",
+                        "bts tony2, Speaking, Video off, list item"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "The meeting transcript is being recorded, indicator",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Stop video",
+                        "The meeting transcript is being recorded, indicator"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Change virtual background",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Video options",
+                        "Change virtual background, Menu item, 1 of 2"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Self-view location...",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Video options",
+                        "Self-view location..., Menu item, 2 of 2"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Video Settings...",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Video options",
+                        "Video Settings..., Menu item, 1 of 1"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Screen or application tab",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Shared content types Tab list, Screen or application tab, 1 of 4"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Screen 1",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Screen 1"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Sort by",
+                    "control_type": "combo box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Sort by"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Multi-select help banner, Holding Shift to select multiple applications. Close multi-select help banner",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Multi-select help banner, Holding Shift to select multiple applications. Close multi-select help banner"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Webex and meeting window (3)",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Webex and meeting window (3)"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Expand sharing options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Expand sharing options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Change sharing settings",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Change sharing settings"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Resolution and frame rate",
+                    "control_type": "combo box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Resolution and frame rate"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Include computer sound-Meeting window",
+                    "control_type": "check box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Include computer sound"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Show me in front-Meeting window",
+                    "control_type": "check box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Show me in front"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "More information for Show me in front-Meeting window",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "More information for Show me in front"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Show my Webex app-Meeting window",
+                    "control_type": "check box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Show my Webex app"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "More information for Show my Webex app-Meeting window",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "More information for Show my Webex app"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Hide sharing options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Share",
+                        "Hide sharing options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Start",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open AI Assistant panel",
+                        "Start"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Cancel-Default Webex site",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open AI Assistant panel",
+                        "Cancel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Recording options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Record",
+                        "Recording options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Recording location",
+                    "control_type": "combo box",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Record",
+                        "Recording location"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Change layout",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Record",
+                        "Change layout"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Banner, Start recordings will also turn on AI Assistant. Settings",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Record",
+                        "Banner, Start recordings will also turn on AI Assistant. Settings"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "bts tony2, Video on, raised hand, list item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Raise",
+                        "bts tony2, Video on, raised hand, list item"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Lower hand",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Raise",
+                        "Lower hand"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Choose your skin tone for reactions Set your default skin tone for meeting reactions. Change anytime in Settings > Appearance. No skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Choose your skin tone for reactions Set your default skin tone for meeting reactions. Change anytime in Settings > Appearance. No skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Light skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Light skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Medium-light skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Medium-light skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Medium skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Medium skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Medium-dark skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Medium-dark skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Dark skin tone",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Dark skin tone"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Done",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Reactions",
+                        " Done"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Cisco video system",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Cisco video system, Move meeting to a video device, Menu item, 1 of 1"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "You're using your computer for audio",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "You're using your computer for audio, Switch audio, Menu item, 1 of 1"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meeting",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Meeting, Lock meeting, Toggle button, off, 1 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Invite and remind, Menu item",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Invite and remind, Menu item, 2 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Copy meeting link",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Copy meeting link, Menu item, 3 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Whiteboards, Menu item, New feature available.",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Whiteboards, Menu item, 4 of 10, New feature available."
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Enable breakout sessions",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Enable breakout sessions, Toggle button, off, 5 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Step away from meeting, Menu item",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Step away from meeting, Menu item, 7 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meeting options",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Meeting options, Menu item, 8 of 10"
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Report an issue",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Report an issue, Menu item, 9 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Statistics",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More options",
+                        "Statistics, Menu item, 10 of 10"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Apps panel Tab list",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Apps panel Tab list, My Apps tab, 1 of 2"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Slido, Polling and Q&A in Webex, use arrow keys to navigate the apps, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Slido, Polling and Q&A in Webex, 1 of 10, use arrow keys to navigate the apps, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Lucidspark Whiteboard, Collaborative whiteboard, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Lucidspark Whiteboard, Collaborative whiteboard, 2 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Whiteboard.chat, Designed for teaching, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Whiteboard.chat, Designed for teaching, 3 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Shared Timer, Manage time together, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Shared Timer, Manage time together, 4 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Miro, Infinite whiteboard, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Miro, Infinite whiteboard, 5 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Aaand BOOM, Multiplayer game, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Aaand BOOM, Multiplayer game, 6 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Animations with Showmaster, Stunning animations, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Animations with Showmaster, Stunning animations, 7 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, BasicOps, Projects, Tasks & Notes, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, BasicOps, Projects, Tasks & Notes, 8 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you, Conferences io, Live audience engagement, press enter key to open the app, use Shift + F10 for more options",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Conferences io, Live audience engagement, 9 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Suggestions for you",
+                    "control_type": "list item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Suggestions for you, Crowdpurr, Create trivia and polls, 10 of 10, press enter key to open the app, use Shift + F10 for more options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Hide Apps panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        "Hide Apps panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Expand Applications panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Show Apps panel",
+                        " Expand Applications panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Search",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Search"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Sort",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Sort"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Participants group, 1 participant",
+                    "control_type": "group",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Participants group, 1 participant, Expanded, 1 of 1 level 1"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Mute bts tony2",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Mute bts tony2"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Mute all",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Mute all"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Unmute all",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Unmute all"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "More participant options",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "More participant options"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Close Participants panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Close Participants (1) panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Hide participants panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Hide participants panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Expand Participants panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open participants panel",
+                        "Expand Participants panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Write a message to everyone. Press Shift + Enter for new line",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        "Write a message to everyone. Press Shift + Enter for new line. Ready, set, chat 💬. Share key points, ask questions, and track action items in real time."
+                    ],
+                    "selected": true
+                },
+                {
+                    "name": "Format text",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Format text"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Insert Emoji",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Insert Emoji"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Add Giphy",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Add Giphy"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Add mention",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Add mention"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Pop out panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Pop out panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Close Chat panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Close Chat panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Hide chat panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        "Hide chat panel, selected"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Video on, list item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        "bts tony2, Speaking, Video on, list item"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Chat Tab list, Everyone tab",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        "Chat Tab list, Everyone tab"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Banner, Messages to everyone will be saved after the meeting. Learn more",
+                    "control_type": "link",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        "Banner, Messages to everyone will be saved after the meeting. Learn more"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Close banner",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Open chat panel",
+                        " Close banner"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Slido (polling and Q&A)",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More panels",
+                        "Slido (polling and Q&A), Menu item, not selected, 1 of 3"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Captions",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More panels",
+                        "Captions, Menu item, not selected, 2 of 3"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Content",
+                    "control_type": "menu item",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "More panels",
+                        "Content, Menu item, not selected, 3 of 3"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Add files",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Closed captions",
+                        "Add files"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Select Spoken language",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Closed captions more options",
+                        " Select Spoken language"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Show meeting controls",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Hide meeting controls",
+                        "Show meeting controls"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Expand Content panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Hide meeting controls",
+                        "Expand Content panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Close Content panel",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Hide meeting controls",
+                        "Close Content panel"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Banner, You've stepped away from the meeting. You're muted and your video is off. Back to meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Step away from meeting",
+                        "Banner, You've stepped away from the meeting. You're muted and your video is off. Back to meeting"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Muted, Video off, Stepped away, list item",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Step away from meeting",
+                        "bts tony2, Muted, Video off, Stepped away, list item"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Back to meeting",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Step away from meeting",
+                        "Back to meeting"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "The meeting is locked, indicator",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Invite and remind",
+                        "The meeting is locked, indicator"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Interpretation",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Invite and remind",
+                        "Interpretation"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Topic",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Topic"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Host:",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Host:"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meeting link, Copy meeting link",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Meeting link https://converged-bts.webex.com/converged-bts/j.php?MTID=m40ce66855b258e262f08e82e5d1fcdb7 Copy meeting link"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Meeting number",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Meeting number"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Video address",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Video address"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Audio connection",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Audio connection"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Access code",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Access code"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Host key",
+                    "control_type": "edit",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Meeting Info",
+                        "Host key"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Grid",
+                    "control_type": "button",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout",
+                        "Grid"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Options, Full-screen view Toggle button off",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout",
+                        "Options, Full-screen view Toggle button off"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Automatically hide names Toggle button on",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout",
+                        "Automatically hide names Toggle button on"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "Stop incoming videos Toggle button off",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout",
+                        "Stop incoming videos Toggle button off"
+                    ],
+                    "selected": false
+                },
+                {
+                    "name": "People focus Toggle button off",
+                    "control_type": "custom",
+                    "ui_path": [
+                        " Sign in",
+                        "Email address",
+                        " Next",
+                        " Sign In ",
+                        " Start a Webex meeting",
+                        " Accept",
+                        "Start meeting",
+                        "Layout",
+                        "People focus Toggle button off"
+                    ],
+                    "selected": false
+                }
+            ]
+        }
+    }
+}

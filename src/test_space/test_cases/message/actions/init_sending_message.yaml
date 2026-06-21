@@ -1,0 +1,25 @@
+test_case:
+  name: init_sending_message
+  owner: huanwan3
+  account: fullmode18
+  description: Initialize a messaging conversation by searching and opening a chat with a specific user
+  expect_result: Chat window with the target user is opened and ready for messaging
+  pre_conditions: []
+
+  steps: 
+
+    - name: "Search, meet and call"
+      action:
+        type: input
+        value: fullmode19@appletestci.com
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+
+  post_conditions: []
+  check_point: [Keyboard Navigation]

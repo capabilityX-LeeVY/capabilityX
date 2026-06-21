@@ -1,0 +1,94 @@
+test_case:
+  name: test_layout_comprehensive
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Comprehensive layout switching functionality. User joins meeting, then tests all layout switching scenarios.
+  expect_result: Successfully tests all layout switching scenarios
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Mute audio for layout testing"
+      action:
+        type: function
+        value: ensure_muted_in_meeting
+      expect_state: ""
+      
+    - name: "Stop video for layout testing"
+      action:
+        type: function
+        value: ensure_video_off_in_meeting
+      expect_state: ""
+
+    # add bot to meeting to test layout
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join fullmode18@appletestci.webex.com with 5 ucf_api duration 3"
+          duration: 60
+      expect_state: ""
+
+    - name: "Test Side-by-side Layout"
+      action:
+        type: function
+        value: switch_to_side_by_side_layout
+        parameters:
+          wait_time: 5
+      expect_state: ""
+
+    - name: "Toggle chat panel to reset focus"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Toggle chat panel to reset focus"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Test Stack Layout"
+      action:
+        type: function
+        value: switch_to_stack_layout
+        parameters:
+          wait_time: 5
+      expect_state: ""
+
+    - name: "Toggle chat panel to reset focus"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Toggle chat panel to reset focus"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Test Grid Layout"
+      action:
+        type: function
+        value: switch_to_grid_layout
+        parameters:
+          wait_time: 5
+      expect_state: ""
+      
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+    
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

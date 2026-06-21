@@ -1,0 +1,65 @@
+{
+    "dbConfig": {
+      "BTS": {
+        "host": "wrs-sm.qa.webex.com",
+        "port": 3306,
+        "user": "test",
+        "password": "pass",
+        "dbName": "RegressShield"
+      },
+      "ATS": {
+        "host": "wrs-sm.qa.webex.com",
+        "port": 3306,
+        "user": "test",
+        "password": "pass",
+        "dbName": "RegressShield_ATS"
+      },
+      "testcase_db": {
+        "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+        "port": 3306,
+        "user": "test",
+        "password": "pass",
+        "database": "testcase_db",
+        "charset": "utf8mb4"
+    },
+      "test_case_db": {
+        "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+        "port": 3306,
+        "user": "test",
+        "password": "pass",
+        "dbName": "testcase_db"
+    },    
+      "issue_db": {
+        "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+        "port": 3306,
+        "user": "test",
+        "password": "pass",
+        "dbName": "issue_db"
+    },
+      "control_db": {
+          "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+          "port": 3306,
+          "user": "test",
+          "password": "pass",
+          "database": "control_db",
+          "charset": "utf8mb4"
+      },
+      "jira_crawler_db": {
+          "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+          "port": 3306,
+          "user": "test",
+          "password": "pass",
+          "database": "jira_crawler_db",
+          "charset": "utf8mb4"
+      },
+      "stress_test_db": {
+          "host": "gc-hgh05-level2-lab-irc-5.cisco.com",
+          "port": 3306,
+          "user": "test",
+          "password": "pass",
+          "database": "webex_stress_test",
+          "charset": "utf8mb4"
+      }
+    }
+  }
+  

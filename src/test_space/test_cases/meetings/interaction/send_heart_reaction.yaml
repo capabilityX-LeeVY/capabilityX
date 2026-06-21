@@ -1,0 +1,15 @@
+test_case:
+  name: send_heart_reaction
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to send heart reaction using keyboard shortcut
+  expect_result: Heart reaction is successfully sent using Alt+Shift+5
+
+  steps:
+    - name: "Send heart reaction"
+      action:
+        type: shortcut
+        value: alt+shift+5
+      expect_state: ""
+      wait_time: 1

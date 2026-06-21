@@ -1,0 +1,21 @@
+test_case:
+  name: connect webex app core window
+  team: RegressShield
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "connect_webex_app_core_window"
+      platforms: ["windows"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "MainWindow"
+
+    - name: "connect_webex_app_core_window"
+      platforms: ["mac"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "main_window"

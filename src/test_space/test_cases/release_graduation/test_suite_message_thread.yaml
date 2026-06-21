@@ -1,0 +1,23 @@
+test_suite:
+  name: message_thread
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Message thread test suite - start and manage threads
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+    
+    # Core test cases - Thread
+    - message/thread/test_start_thread
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

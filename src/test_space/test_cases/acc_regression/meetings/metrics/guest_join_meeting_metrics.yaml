@@ -1,0 +1,51 @@
+test_case:
+  name: guest_join_meeting_metrics
+  description: "Verify that a guest user (not signed in) can join a meeting via link and that the Call Analyzer reports a successful join result"
+  account: allianz8
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # local_api: the referenced YAML's steps are loaded and executed inline.
+    # Both ${key} and {key} placeholder styles are supported.
+    - name: "guest join a meeting"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_entry/guest_join_a_meeting"
+        parameters:
+          meeting_link: "cisco.webex.com/meet/yanfzhen"
+          name: "faye"
+
+    - name: "Wait call analyzer data"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+          seconds: 400
+      expect_state: ""
+
+    - name: "get_meeting_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "mediaOutcome", "resultName", "identifiers_webexSiteName"]
+        save_to: result
+      ai_check:
+        prompt: "Ignore the picture which I uploaded to you, and only analyze the ${result} and check the outcome whether success, the resultName whether 'pre.join.result'. Output format: ✅Success or ❌Failed"
+      expect_state: ""
+
+    - name: "get result from call analyzer"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The call analyzer result is ${result}"
+      expect_state: ""
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting

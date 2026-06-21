@@ -1,0 +1,36 @@
+test_case:
+  name: sign_out
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: "Profile and preferences"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      platforms: ["windows"]
+
+    - name: "Sign out in profile and preferences"
+      action:
+        type: key
+        value: default
+      expect_state: "Sign out"
+      ui_response: true
+
+    - name: "Sign out"
+      action:
+        type: key
+        value: default
+      expect_state: "Join a meeting"
+      platforms: ["windows"]
+      ui_response: true
+

@@ -1,0 +1,31 @@
+test_case:
+  name: navigation_calling
+  description: login and navigate to the Calling tab
+  account: allianz8
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Calling menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      optional: true 
+    - name: "Got it"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+      optional: true 
+    - name: "Search or dial"
+      action:
+        type: input
+        value: 3083
+        wait_time: 5
+      expect_state: ""
+    - name: "Audio call"
+      action:
+        type: key
+        value: default
+      expect_state: ""

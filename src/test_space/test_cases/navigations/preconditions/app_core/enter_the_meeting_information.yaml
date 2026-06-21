@@ -1,0 +1,18 @@
+test_case:
+  name: enter_the_meeting_information
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:  
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/join_a_meeting_webex
+
+  steps:
+    - name: "Enter the meeting information"
+      action:
+        type: input
+        value: ${meeting_link}
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: key
+        value: enter

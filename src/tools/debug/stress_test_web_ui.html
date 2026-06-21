@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webex Stress Test Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #00b4db, #0083b0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .server-config {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .server-config h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .parameter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .parameter-group {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        .parameter-group h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .parameter-group h3::before {
+            content: "⚙️";
+            margin-right: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #00b4db;
+            box-shadow: 0 0 0 3px rgba(0, 180, 219, 0.1);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #00b4db;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .start-button {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+            min-width: 200px;
+        }
+
+        .start-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .start-button:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .test-btn {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9em;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .test-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        .test-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .connection-status {
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .connection-status.success {
+            color: #28a745;
+        }
+
+        .connection-status.error {
+            color: #dc3545;
+        }
+
+        .connection-status.testing {
+            color: #007bff;
+        }
+
+        .preview-section {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .preview-section h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .bot-message {
+            background: #ffffff;
+            border: 1px solid #bbdefb;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            color: #424242;
+            word-break: break-all;
+        }
+
+        .status-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .status-section.show {
+            display: block;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #00b4db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .result.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .result.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .result pre {
+            margin-top: 10px;
+            background: rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Webex Stress Test Dashboard</h1>
+            <p>Execute dynamic stress tests with configurable participants and duration</p>
+        </div>
+
+        <div class="form-container">
+            <!-- Server Configuration Section -->
+            <div class="server-config">
+                <h3>🌐 Remote Server Configuration</h3>
+                <div class="form-group">
+                    <label for="server_ip">API Server Address:</label>
+                    <input type="text" id="server_ip" name="server_ip" 
+                           value="localhost:9909" 
+                           placeholder="e.g., 192.168.1.100:9909 or localhost:9909"
+                           required>
+                    <small style="color: #6c757d; margin-top: 5px; display: block;">
+                        Enter the IP address and port of the remote stress test API server
+                    </small>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="testConnection" class="test-btn">
+                        🔗 Test Connection
+                    </button>
+                    <span id="connectionStatus" style="margin-left: 10px;"></span>
+                </div>
+            </div>
+
+            <form id="stressTestForm">
+                <div class="parameter-grid">
+                    <!-- Duration and Participants -->
+                    <div class="parameter-group">
+                        <h3>Test Configuration</h3>
+                        <div class="form-group">
+                            <label for="stress_duration">Stress Duration (minutes):</label>
+                            <select id="stress_duration" name="stress_duration" required>
+                                <option value="180" selected>3 minutes</option>
+                                <option value="600">10 minutes</option>
+                                <option value="1800">30 minutes</option>
+                                <option value="3600">60 minutes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="participant_count">Number of Participants:</label>
+                            <select id="participant_count" name="participant_count" required>
+                                <option value="20" selected>20 participants</option>
+                                <option value="100">100 participants</option>
+                                <option value="30">30 participants</option>
+                                <option value="50">50 participants</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Bot Settings -->
+                    <div class="parameter-group">
+                        <h3>Bot Settings</h3>
+                        <div class="form-group">
+                            <div class="toggle-group">
+                                <label>Enable Audio:</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="enable_audio" name="enable_audio">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="toggle-group">
+                                <label>Enable Video:</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="enable_video" name="enable_video" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="toggle-group">
+                                <label>Send Reactions:</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="enable_reactions" name="enable_reactions" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Settings -->
+                <div class="parameter-group">
+                    <h3>Advanced Settings</h3>
+                    <div class="form-group">
+                        <label for="platform">Platform:</label>
+                        <select id="platform" name="platform">
+                            <option value="windows" selected>Windows</option>
+                            <option value="mac">Mac</option>
+                            <option value="linux">Linux</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="custom_message">Custom Message (optional):</label>
+                        <input type="text" id="custom_message" name="custom_message" placeholder="Leave empty for auto-generated message">
+                    </div>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section">
+                    <h3>🚀 Expected Bot Message Preview:</h3>
+                    <div class="bot-message" id="botMessagePreview">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <button type="submit" class="start-button" id="startButton">
+                    🚀 Start Stress Test
+                </button>
+            </form>
+
+            <!-- Status Section -->
+            <div class="status-section" id="statusSection">
+                <div class="loading" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <span>Executing stress test... Please wait (max 10 minutes)</span>
+                </div>
+                <div class="result" id="resultSection" style="display: none;">
+                    <!-- Results will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form elements
+        const form = document.getElementById('stressTestForm');
+        const startButton = document.getElementById('startButton');
+        const statusSection = document.getElementById('statusSection');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const resultSection = document.getElementById('resultSection');
+        const botMessagePreview = document.getElementById('botMessagePreview');
+        
+        // Server configuration elements
+        const serverIpInput = document.getElementById('server_ip');
+        const testConnectionBtn = document.getElementById('testConnection');
+        const connectionStatus = document.getElementById('connectionStatus');
+
+        // Form inputs
+        const stressDuration = document.getElementById('stress_duration');
+        const participantCount = document.getElementById('participant_count');
+        const enableAudio = document.getElementById('enable_audio');
+        const enableVideo = document.getElementById('enable_video');
+        const enableReactions = document.getElementById('enable_reactions');
+        const platform = document.getElementById('platform');
+        const customMessage = document.getElementById('custom_message');
+
+        // Get API URL based on server input
+        function getApiUrl() {
+            const serverAddress = serverIpInput.value.trim();
+            if (!serverAddress) {
+                return 'http://localhost:9909';
+            }
+            
+            // Add http:// if not present
+            if (!serverAddress.startsWith('http://') && !serverAddress.startsWith('https://')) {
+                return `http://${serverAddress}`;
+            }
+            return serverAddress;
+        }
+
+        // Test connection to API server
+        async function testConnection() {
+            const apiUrl = getApiUrl();
+            testConnectionBtn.disabled = true;
+            testConnectionBtn.textContent = '🔄 Testing...';
+            connectionStatus.className = 'connection-status testing';
+            connectionStatus.textContent = 'Testing connection...';
+
+            try {
+                const response = await fetch(`${apiUrl}/api/who_are_you`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    connectionStatus.className = 'connection-status success';
+                    connectionStatus.textContent = '✅ Connection successful!';
+                } else {
+                    throw new Error(`Server responded with status ${response.status}`);
+                }
+            } catch (error) {
+                connectionStatus.className = 'connection-status error';
+                connectionStatus.textContent = `❌ Connection failed: ${error.message}`;
+            } finally {
+                testConnectionBtn.disabled = false;
+                testConnectionBtn.textContent = '🔗 Test Connection';
+            }
+        }
+
+        // Test connection button event listener
+        testConnectionBtn.addEventListener('click', testConnection);
+
+        // Update preview when any input changes
+        function updatePreview() {
+            const audioSetting = enableAudio.checked ? 'on' : 'off';
+            const videoSetting = enableVideo.checked ? 'on' : 'off';
+            const reactionsSetting = enableReactions.checked ? 'on' : 'off';
+            const chatSetting = 'off';  // Chat is always off now
+            const durationMinutes = Math.floor(parseInt(stressDuration.value) / 60);
+            const participants = participantCount.value;
+
+            const botMessage = `<@personEmail:awebexbot@webex.bot> join fullmode18@appletestci.webex.com audio=${audioSetting} video=${videoSetting} send_reactions=${reactionsSetting} send_chat=${chatSetting} with ${participants} ucf_api duration ${durationMinutes}`;
+            
+            botMessagePreview.textContent = botMessage;
+        }
+
+        // Add event listeners to all form inputs
+        [stressDuration, participantCount, enableAudio, enableVideo, enableReactions].forEach(input => {
+            input.addEventListener('change', updatePreview);
+            input.addEventListener('input', updatePreview);
+        });
+
+        // Initial preview update
+        updatePreview();
+
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable button and show loading
+            startButton.disabled = true;
+            startButton.textContent = 'Running...';
+            statusSection.classList.add('show');
+            loadingIndicator.style.display = 'flex';
+            resultSection.style.display = 'none';
+
+            // Collect form data
+            const formData = {
+                test_case_name: "test_stress",  // Fixed for stress testing
+                platform: platform.value,
+                stress_duration: parseInt(stressDuration.value),  // Already in seconds from select options
+                participant_count: parseInt(participantCount.value),
+                enable_chat_test: false,  // Always false now
+                enable_video: enableVideo.checked,
+                enable_audio: enableAudio.checked,
+                enable_reactions: enableReactions.checked,
+                custom_message: customMessage.value || null
+            };
+
+            console.log('📤 Sending form data:', formData);
+            console.log('📤 Form data types:', {
+                stress_duration: typeof formData.stress_duration,
+                participant_count: typeof formData.participant_count,
+                enable_video: typeof formData.enable_video,
+                enable_audio: typeof formData.enable_audio
+            });
+
+            try {
+                const apiUrl = getApiUrl();
+                console.log('🌐 Using API URL:', apiUrl);
+                
+                const response = await fetch(`${apiUrl}/api/run_stress_test`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                // Hide loading
+                loadingIndicator.style.display = 'none';
+                resultSection.style.display = 'block';
+
+                if (response.ok) {
+                    // Success
+                    resultSection.className = 'result success';
+                    resultSection.innerHTML = `
+                        <strong>✅ Stress Test Started Successfully!</strong>
+                        <p><strong>Execution ID:</strong> ${result.execution_id || 'N/A'}</p>
+                        <p><strong>Estimated Duration:</strong> ${result.estimated_duration || 'N/A'} seconds</p>
+                        <p><strong>Start Time:</strong> ${result.start_time || 'N/A'}</p>
+                        <div style="margin-top: 15px;">
+                            <strong>📤 Sent Parameters:</strong>
+                            <pre>${JSON.stringify(formData, null, 2)}</pre>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <strong>📥 API Response:</strong>
+                            <pre>${JSON.stringify(result, null, 2)}</pre>
+                        </div>
+                    `;
+                } else {
+                    // Error
+                    resultSection.className = 'result error';
+                    resultSection.innerHTML = `
+                        <strong>❌ API Call Failed (${response.status})</strong>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                // Network or other error
+                loadingIndicator.style.display = 'none';
+                resultSection.style.display = 'block';
+                resultSection.className = 'result error';
+                
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    resultSection.innerHTML = `
+                        <strong>❌ Connection Error</strong>
+                        <p>Unable to connect to API server at http://localhost:9909</p>
+                        <p>Please ensure the API server is running:</p>
+                        <pre>cd src/functions/api
+python server.py</pre>
+                    `;
+                } else {
+                    resultSection.innerHTML = `
+                        <strong>❌ Error: ${error.message}</strong>
+                        <pre>${error.stack}</pre>
+                    `;
+                }
+            } finally {
+                // Re-enable button
+                startButton.disabled = false;
+                startButton.textContent = '🚀 Start Stress Test';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+test_suite:
+  name: meetings_screen_sharing
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Screen sharing test batch for meeting-related test cases
+  test_cases:
+    # Screen Sharing
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/test_basic_screen_sharing
+    - meetings/share/test_screen_sharing_complete
+    - meetings/actions/end_meeting
+  check_points: [Keyboard Navigation]

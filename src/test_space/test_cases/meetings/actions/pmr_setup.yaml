@@ -1,0 +1,36 @@
+test_case:
+  name: pmr_setup
+  owner: huanwan3
+  description: User navigates to Personal Room meeting setup by going through the meetings tab and selecting the PMR option.
+  expect_result: The user successfully navigates to PMR setup screen.
+  steps:
+    # - name: "Meetings menu item"
+    #   action:
+    #     type: key
+    #     value: default
+    #   expect_state: ""
+    - name: "More options for starting a Webex meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      optional: true 
+
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation", "Performance"]

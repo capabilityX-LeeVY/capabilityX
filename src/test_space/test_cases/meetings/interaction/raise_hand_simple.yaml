@@ -1,0 +1,16 @@
+test_case:
+  name: raise_hand_simple
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to raise hand in meeting
+  expect_result: Hand is successfully raised
+  
+  steps:
+    # Raise hand
+    - name: "Raise"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

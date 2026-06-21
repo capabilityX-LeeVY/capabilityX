@@ -1,0 +1,15 @@
+test_case:
+  name: relaunch Webex app
+  owner: weiqli
+  description: User relaunches the Webex application on their system.
+  expect_result: The Webex application is relaunched successfully.
+  pre_conditions: null
+  steps:
+    - name: "Relaunch Webex application"
+      platforms: ["windows", "mac"]
+      action:
+        type: function
+        value: relaunch_app
+      wait_time: 5
+      
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,100 @@
+test_case:
+  name: vdi_calling_locus_vbg_animated
+  team: VDI
+  owner: qihliu
+  description: "Virtual background animated image test - Cross-platform"
+  expect_result: Animated background is successfully applied.
+  
+  # Platform support configuration
+  platforms:
+    supported: ["windows", "mac", "web"]
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_locus_basic_video_call
+
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Download Aurora image"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ""
+
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      optional: true      
+      #ui_response: true
+
+    - name: "Apply-VBG"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      optional: true
+      #ui_response: true
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check: 
+        prompt: "Compare the two images. The first is a reference virtual background with a dynamic gradient color style (e.g., from purple to black). The second is a meeting screenshot where a virtual background has been applied. Ignore all people or foreground elements. Focus only on the overall color style and gradient pattern of the background. The backgrounds may not be identical due to dynamic variations, but a successful match should have a similar gradient direction, color tone family, and visual blending style. Determine if the second image shows a background that is visually consistent with the reference. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+        reference: aurora.JPG
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - VDI/healthchecker/vdi_reset_database
+    
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

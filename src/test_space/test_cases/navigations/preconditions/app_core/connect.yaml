@@ -1,0 +1,12 @@
+test_case:
+  name: connect
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Connect"
+      action:
+        type: key
+        value: default

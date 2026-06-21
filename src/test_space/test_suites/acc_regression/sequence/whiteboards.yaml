@@ -1,0 +1,11 @@
+test_suite:
+  name: whiteboards
+  team: regress_shield
+  owner: binbiwan
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - accessibility/sequence/whiteboards

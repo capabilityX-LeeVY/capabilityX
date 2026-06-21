@@ -1,0 +1,12 @@
+test_case:
+  name: more_options_for_starting_a_webex_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "More options for starting a Webex meeting"
+      action:
+        type: key
+        value: default

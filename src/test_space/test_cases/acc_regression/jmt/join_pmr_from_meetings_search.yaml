@@ -1,0 +1,45 @@
+test_case:
+  name: guest_join_pmr
+  owner: weiqli
+  account: bts12
+  description: User joins a Personal Room meeting as an attendee from Meetings search.
+  expect_result: The user successfully joins a Personal Room meeting.
+  continue_on_error: true
+  pre_conditions: []
+  steps:
+    - name: "Join a meeting in meetings tab"
+      action:
+        type: key
+        value: default
+    - name: "Enter the meeting information"
+      action:
+        type: input
+        value: "weiqin6.cvgbts.converged-bts@webex.com"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ["Mute","The host or a cohost has turned on reactions in this meeting. Use Ctrl-F6 to read the notification.","View AI Assistant","You're now the host of this meeting. Use Ctrl-F6 to read the notification."]
+      ui_response: true
+    - name: "Leave meeting button" 
+      action:
+        type: key
+        value: default
+    - name: "Direct Enter Key Press"
+      action:
+        type: key
+        value: enter
+      wait_time: 5
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 70
+  check_points: [Keyboard Navigation]

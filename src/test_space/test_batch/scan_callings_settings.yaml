@@ -1,0 +1,7 @@
+test_case_batch:
+  name: calling_base
+  team: calling
+  owner: ai_generated
+  language: [en]
+  test_cases:
+    - acc_regression/calling/turn_on_calling_dock

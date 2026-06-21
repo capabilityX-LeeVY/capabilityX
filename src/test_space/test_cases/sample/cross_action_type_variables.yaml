@@ -1,0 +1,25 @@
+test_case:
+  name: cross_action_type_variables_example
+  description:  "action type parameter pass:function → input, function → key, function → function"
+  
+  check_points: ["Keyboard Navigation"]
+  
+  steps:
+    - name: "get_date"
+      action:
+        type: function
+        value: get_date
+        save_to: current_date
+        wait_time: 1
+      expect_state: ""
+    
+    - name: "Search region, Ctrl+F"
+      action:
+        type: input
+        value: "${current_date}"
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Verify the search box '${current_date}' is correctly filled in, ignore search result. Output format: ✅Success or ❌Failed"
+    
+    

@@ -1,0 +1,12 @@
+test_case:
+  name: profile_and_preferences
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Profile and preferences"
+      action:
+        type: key
+        value: default

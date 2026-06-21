@@ -1,0 +1,15 @@
+test_case:
+  name: stop_screen_sharing
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to stop screen sharing
+  expect_result: Screen sharing is successfully stopped
+  
+  steps:
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

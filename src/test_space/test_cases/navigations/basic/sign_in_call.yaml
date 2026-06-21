@@ -1,0 +1,43 @@
+test_case:
+  name: sign_in_call
+  description: Verify that a user can successfully sign in with a valid email and password, and the focus moves to the Start Meeting button after login.
+  expect_result: The user is signed in successfully and the focus is on the Start Meeting button.
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "add wait time for UI element"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+            seconds: 20
+        expect_state: ""
+    - name: "Phone Username"
+      action:
+        type: input
+        value: ${phone_username}
+        wait_time: 2
+      expect_state: ""
+    - name: "Phone Password"
+      action:
+        type: input
+        value: ${phone_password}
+        wait_time: 2
+    - name: "Phone Login"
+      action:
+        type: key
+        value: default
+        wait_time: 20
+      expect_state: [" Press OK","MainWindow.E911PopoutBrowser.bottomContainer.e911OkButton"]
+    - name: "911 OK Button"
+      action:
+        type: key
+        value: default
+      expect_state: ["Profile and preferences, Available", " Join a meeting"]
+      ui_response: true
+      ui_response_threshold_ms: 10000
+      performance_cpu_threshold: 80
+      performance_mem_threshold_mb: 2048
+      performance_gpu_threshold: 80
+      execution_duration: 2
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

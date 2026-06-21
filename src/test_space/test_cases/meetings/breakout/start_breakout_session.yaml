@@ -1,0 +1,44 @@
+test_case:
+  name: start_breakout_session
+  team: RegressShield
+  owner: raey
+  description: user start meeting, open moreinformation Menu, turn on "Enable breakout sessions" to open 'Create breakout sessions' window.
+  expect_result: The "Create breakout sessions" window opened. 
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "More options" 
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+    - name: "Enable breakout sessions"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ""
+    - name: "Create breakout sessions"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    - name: "Start breakout sessions"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: "End breakout sessions"
+      ui_response: true
+      ai_check: 
+        prompt: "Check if Breakout session has started successfully. Success indicators are: 1) 'End breakout sessions' button is displayed in the interface (indicating breakout session has started); 2) Breakout session countdown timer is visible. If both elements are present, the breakout session has started successfully. Output format: ✅Success or ❌Failed"
+        reference: end_bo_button.png
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation]

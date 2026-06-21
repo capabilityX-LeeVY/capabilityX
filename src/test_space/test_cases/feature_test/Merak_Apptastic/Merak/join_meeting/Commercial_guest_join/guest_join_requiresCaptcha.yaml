@@ -1,0 +1,143 @@
+test_case:
+  name: guest_join_requiresCaptcha
+  description: Guest user joins a meeting by meeting number with password and CAPTCHA validation required
+  expect_result: The guest user successfully joins a meeting after completing CAPTCHA verification.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ui_response: true
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: 1002 701 6674
+      expect_state: ""
+    - name: "Next"
+      action:
+        type: key
+        value: default
+      expect_state: "Meeting password. Required."
+      ui_response: true
+      ui_response_threshold_ms: 10000
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY
+      optional: true
+      comment: "First attempt with incorrect password to trigger CAPTCHA"
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      optional: true
+      ai_check:
+        prompt: "Does the current screen display an error message about incorrect password? Look for phrases like 'You've entered an incorrect password' or 'Try again' related to password errors. Only return 'yes' or 'no'."
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY
+      optional: true
+      comment: "Second attempt with incorrect password to trigger CAPTCHA"
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      optional: true
+      ai_check:
+        prompt: "Does the current screen display an error message about incorrect password? Look for phrases like 'You've entered an incorrect password' or 'Try again' related to password errors. Only return 'yes' or 'no'."
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY
+      expect_state: ""
+      optional: true
+      comment: "Third attempt with incorrect password to trigger CAPTCHA"
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      optional: true
+      ai_check:
+        prompt: "Does the current screen display an error message about incorrect password? Look for phrases like 'You've entered an incorrect password' or 'Try again' related to password errors. Only return 'yes' or 'no'."
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY
+      expect_state: ""
+      optional: true
+      comment: "Fourth attempt with incorrect password to trigger CAPTCHA"
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      optional: true
+      ai_check:
+        prompt: "Does the current screen display an error message about incorrect password? Look for phrases like 'You've entered an incorrect password' or 'Try again' related to password errors. Only return 'yes' or 'no'."
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY
+      expect_state: ""
+      comment: "Fifth attempt with incorrect password to trigger CAPTCHA"
+      optional: true
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Meeting password. Required."
+      optional: true
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: clear_input
+      optional: true
+    - name: "Refresh captcha&password"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY66
+      ai_check:
+        prompt: "Analyze if there is a image CAPTCHA, if yes, only return the CAPTCHA text shown in the image in lowercase."
+    - name: "Type the characters. Required. &password"
+      action:
+        type: input
+        value: "{ai_check_result}" 
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Name (required), Textbox, Type in your name"
+    - name: "Name (required), Textbox, Type in your name"
+      action:
+        type: input
+        value: "Guest CAPTCHA User"
+      expect_state: ""
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Mute"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+  post_conditions:
+    - navigations/postconditions/end_meeting
+
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

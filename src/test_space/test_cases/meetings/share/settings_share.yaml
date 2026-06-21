@@ -1,0 +1,139 @@
+test_case:
+  name: settings_share
+  team: Sharing
+  owner: gamao
+  account: rtuser030
+  description: change sharing settings and verify the change is successful in meeting
+  expect_result: Sharing settings can be changed successfully.
+
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/enable_limit_15_fps_sharing
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change sharing settings"
+      action:
+        type: key
+        value: default
+      expect_state:
+
+    - name: "Automatically adjust"
+      action:
+        type: key
+        value: down
+      expect_state:  "Best for text and images"
+ 
+    - name: "Include computer sound"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Show me in front"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Show my Webex app"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Save"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+      ai_check:
+        source: "control"
+        prompt: "Analyze the control image. show best for text and images in dropdown menu.Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Direct tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+      ai_check:
+        source: "control"
+        prompt: "Analyze the control image. include computer sound option is checked.Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Direct tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+      ai_check:
+        source: "control"
+        prompt: "Analyze the control image. show me in front option is checked. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Direct tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+      ai_check:
+        source: "control"
+        prompt: "Analyze the control image. show my webex app option is unchecked. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Direct Esc Key Press"
+      action:
+        type: direct_key
+        value: esc
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2   
+      expect_state: ""       
+
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

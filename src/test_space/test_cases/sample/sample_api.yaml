@@ -1,0 +1,22 @@
+test_case:
+  name: enhanced_api_test
+  team: RegressShield
+  owner: binbiwan
+  description: Enhanced API test case using configuration-based approach.
+  expect_result: All API calls execute successfully using the new configuration system.
+  pre_conditions: null
+  steps:
+    - name: "test run test case api"
+      action:
+        type: api
+        value: run_test_case_api
+        parameters:
+          agent_node: "local_dev"
+          test_case_name: "sign_in"
+          platform: "windows"
+      expect_state: "API call executed on local development node"
+
+  post_conditions: null
+  execution_duration: 2
+  execution_count: 1
+  check_points: [API_Response, Performance]

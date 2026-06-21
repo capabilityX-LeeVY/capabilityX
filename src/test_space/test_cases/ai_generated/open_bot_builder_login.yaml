@@ -1,0 +1,20 @@
+test_case:
+  name: open_bot_builder_login
+  description: "Open Microsoft Edge browser and navigate to Webex Bot Builder login page"
+  check_points: [Keyboard Navigation]
+
+  steps:
+    - name: "open browser to bot builder login"
+      action:
+        type: local_api
+        value: "navigations/browser/open_browser"
+        parameters:
+          site_url: "https://dev.webexbotbuilder.com/static/auth/login?email=ayeshreddy.k@imimobile.com&password=imibot@112233!&mode=standalone"
+        wait_time: 5
+
+    - name: "Verify login page loaded"
+      action:
+        type: wait
+        value: "5"
+      ai_check:
+        prompt: "Verify the Webex Bot Builder login page has loaded successfully. The page should display a login form or the application dashboard if auto-login occurred. **OUTPUT RULES:** If verification succeeds, output exactly '✅Success' with NO additional text. If verification fails, output '❌Failed: ' followed by a detailed explanation."

@@ -1,0 +1,39 @@
+test_case:
+  name: vbg_mem
+  team: RegressShield
+  owner: binbiwan
+  description: user start meeting, open video options, change vbg to 'Executive office'.
+  expect_result: The vbg is changed to 'Executive office' and the focus is returned to the video options button.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Executive office"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Save"
+      action:
+        type: key
+        value: default
+      expect_state: "Video options"
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 5
+  check_points: [Keyboard Navigation, Performance]

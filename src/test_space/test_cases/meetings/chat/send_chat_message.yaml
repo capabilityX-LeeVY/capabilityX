@@ -1,0 +1,32 @@
+test_case:
+  name: send_chat_message
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to send a chat message - opens chat, types message, and sends it
+  expect_result: Successfully sends a chat message
+  
+  steps:
+    # Step 1: Open Chat panel
+    - name: "Chat"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 2: Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 3: Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

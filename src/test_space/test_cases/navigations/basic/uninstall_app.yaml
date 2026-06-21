@@ -1,0 +1,14 @@
+test_case:
+  name: uninstall Webex app
+  owner: weiqli
+  description: User uninstalls the Webex application from their system.
+  expect_result: The Webex application is uninstalled successfully.
+  pre_conditions: null
+  steps:
+    - name: "Uninstall Webex application"
+      platforms: ["windows", "mac"]
+      action:
+        type: function
+        value: uninstall_app
+      
+  check_points: []

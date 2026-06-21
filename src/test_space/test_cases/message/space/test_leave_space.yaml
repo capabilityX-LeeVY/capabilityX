@@ -1,0 +1,64 @@
+test_case:
+  name: leave_space
+  owner: huanwan3
+  account: fullmode18
+  description: Create a new space and then leave it
+  expect_result: Successfully left the space
+
+  pre_conditions:
+    - navigations/basic/sign_in
+
+  steps:
+    # Create a new space first
+    - include: message/actions/create_space
+
+    # Click Space settings menu button
+    - name: "Click Space settings menu"
+      action:
+        type: function
+        value: click_space_settings
+        wait_time: 2
+      expect_state: ""
+
+    # Navigate down 9 times to "Leave space" option
+    - name: "Navigate to Leave space"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: down
+          count: 9
+          interval: 0.3
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter to select Leave space
+    - name: "Select Leave space"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Tab to confirm button
+    - name: "Navigate to confirm button"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter to confirm leaving
+    - name: "Confirm leave space"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the Webex window. Check if the space has been left successfully. Signs of success: 1) The space is no longer visible in the conversation list, 2) A different conversation or the main messaging view is shown, 3) No error message is displayed. Output format: ✅Success if the space was left, ❌Failed if still in the space or error occurred"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+
+  check_points: ["Keyboard Navigation"]

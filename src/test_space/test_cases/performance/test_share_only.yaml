@@ -1,0 +1,84 @@
+test_case:
+  name: performance_screen_share_test
+  owner: huanwan3
+  account: bts13
+  description: Performance test for screen sharing functionality - tests meeting with screen sharing enabled
+  expect_result: Successfully starts meeting and enables screen sharing, measures performance metrics
+  pre_conditions:
+    - navigations/basic/sign_in
+    # start telegraf
+    - meetings/actions/pmr_setup
+
+  steps:
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Screen share only setup - mute audio and video
+    - name: "Mute before meeting"
+      action:
+        type: function
+        value: ensure_muted_before_meeting
+      expect_state: ""
+    
+    - name: "Stop video before meeting"
+      action:
+        type: function
+        value: ensure_video_off_before_meeting
+      expect_state: ""
+    
+    # Start PMR meeting
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    # Start screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+      wait_time: 1
+      
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 5
+
+    # Performance measurement
+    - name: "Wait exactly 60 seconds"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 60
+      expect_state: ""
+    
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+ 
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+    # end telegraf
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

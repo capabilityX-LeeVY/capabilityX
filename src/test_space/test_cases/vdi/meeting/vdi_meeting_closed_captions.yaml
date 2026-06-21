@@ -1,0 +1,94 @@
+test_case:
+  name: vdi_meeting_closed_captions
+  team: VDI
+  owner: qihliu
+  account: allianz32
+  description: Test CC in meeting
+  expect_result: Successfully CC is present
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Audio options"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "" 
+      
+    - name: "Microphone CABLE Output (VB-Audio Virtual Cable)"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Closed captions"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""      
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_send_audio"
+      action:
+        type: function
+        value: vdi_send_audio
+        parameters:
+          tc_ip: "${tc_ip}"  
+        wait_time: 2
+      expect_state: ""
+
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 2
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""   
+      ai_check:
+        prompt: "Analyze the window screenshot. There is a sentence 'allianz32: Hello. This is VDI Automation Tool. We are testing audio sending.' at the bottom of meeting window that has window title <someone's Personal Room - VDI>. The word in sentence is case-insensitve and ignore punctuation mark. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Closed captions"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "" 
+
+ 
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+    
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

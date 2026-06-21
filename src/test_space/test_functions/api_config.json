@@ -1,0 +1,203 @@
+﻿{
+  "run_test_case_api": {
+    "url": "{{base_url}}/api/run_test_case",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "test_case_name": "{{test_case_name}}",
+      "platform": "{{platform}}"
+    },
+    "expected_status": 200,
+    "timeout": 300,
+    "description": "Execute a test case via API"
+  },
+  "get_functions_api": {
+    "url": "{{base_url}}/api/functions",
+    "method": "GET",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "expected_status": 200,
+    "timeout": 30,
+    "description": "Get list of available functions"
+  },
+  "health_check_api": {
+    "url": "{{base_url}}/health",
+    "method": "GET",
+    "expected_status": 200,
+    "timeout": 10,
+    "description": "Check API server health"
+  },
+  "custom_api_call": {
+    "url": "{{url}}",
+    "method": "GET",
+    "headers": {},
+    "body": {},
+    "expected_status": 200,
+    "timeout": 30,
+    "description": "Customizable API call with dynamic parameters"
+  },
+  "webex_send_message_api": {
+    "url": "https://webexapis.com/v1/messages",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {{access_token}}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "roomId": "{{room_id}}",
+      "text": "{{message_text}}"
+    },
+    "expected_status": 200,
+    "timeout": 30,
+    "description": "Send message to Webex space"
+  },
+  "run_init_app_functions_api": {
+    "url": "{{base_url}}/api/run_init_app_functions",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "Initialize Webex application via agent API",
+    "agent_node": "calling_agent_01"
+  },
+  "skip_app_reinstall_api": {
+    "url": "{{base_url}}/api/skip_app_reinstall",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "Skip Webex application reinstall via agent API",
+    "agent_node": "calling_agent_01"
+  },
+  "run_calling_functions_api": {
+    "url": "{{base_url}}/api/run_calling_functions",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 120,
+    "description": "Execute calling functions via agent API",
+    "agent_node": "calling_agent_01"
+  },
+    "run_bwc_calling_functions_api": {
+    "url": "{{base_url}}/api/run_bwc_calling_functions",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 120,
+    "description": "Execute calling functions via agent API",
+    "agent_node": "calling_agent_02"
+  },
+    "start_pmr_meeting_api": {
+    "url": "{{base_url}}/api/start_pmr_meeting",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 180,
+    "description": "Start pmr meeting via agent API",
+    "agent_node": "meeting_agent_01"
+  },
+    "end_meeting_api": {
+    "url": "{{base_url}}/api/end_meeting",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "End ongoing meeting via agent API",
+    "agent_node": "meeting_agent_01"
+  },
+    "invite_people_api": {
+    "url": "{{base_url}}/api/invite_people",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "Invite people to ongoing meeting via agent API",
+    "agent_node": "meeting_agent_01"
+  },
+    "start_screen_sharing_api": {
+    "url": "{{base_url}}/api/start_screen_sharing",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "Start screen sharing via agent API",
+    "agent_node": "meeting_agent_01"
+  },
+    "stop_screen_sharing_api": {
+    "url": "{{base_url}}/api/stop_screen_sharing",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {},
+    "expected_status": 200,
+    "timeout": 60,
+    "description": "Stop screen sharing via agent API",
+    "agent_node": "meeting_agent_01"
+  },
+  "run_agent_api": {
+    "url": "{{base_url}}/api/dynamic/run_test_case",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "test_case_name": "{{test_case_name}}",
+      "platform": "{{platform}}"
+    },
+    "expected_status": 200,
+    "timeout": 300,
+    "description": "Dynamically execute any test case without pre-registration",
+    "agent_node": "{{agent_node}}"
+  },
+  "list_test_cases_api": {
+    "url": "{{base_url}}/api/dynamic/test_cases",
+    "method": "GET",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "expected_status": 200,
+    "timeout": 30,
+    "description": "List all available test cases"
+  },
+  "search_test_cases_api": {
+    "url": "{{base_url}}/api/dynamic/search_test_cases",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "keyword": "{{keyword}}"
+    },
+    "expected_status": 200,
+    "timeout": 30,
+    "description": "Search test cases by keyword"
+  }
+}

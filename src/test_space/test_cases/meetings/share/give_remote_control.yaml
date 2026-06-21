@@ -1,0 +1,53 @@
+test_case:
+  name: give_remote_control
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User gives remote control to a participant.
+  expect_result: Give remote control dialog displays correct participant list and information.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Give remote control"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Give remote control dialog should indicate that there is no participant. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com with 2 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Give remote control dialog should display two participants with their names and email addresses. Only focus on visibility of the names and email addresses, do not analyze specific content. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Search"
+      action:
+        type: input
+        value: "John Doe"
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Give remote control dialog should indicate there is no participant matching the search query, and the give control button should be disabled. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

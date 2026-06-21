@@ -1,0 +1,31 @@
+test_case:
+  name: join_meeting_from_bgb
+  description: Verify that a login user can successfully join meeting from BGB  .
+  expect_result: The login user successfully join a meeting from BGB.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/join_a_meeting_webex
+  steps:
+    - name: "Enter the meeting information"
+      action:
+        type: input
+        value: https://testprod.webex.com/meet/allianz32
+      expect_state: ""
+    - name: "https://testprod.webex.com/meet/allianz32, to join press enter"
+      action:
+        type: key
+        value: Enter
+      expect_state: "Mute"
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: "Mute"
+
+  post_conditions:
+    - navigations/postconditions/end_meeting
+
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

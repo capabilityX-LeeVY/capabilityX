@@ -1,0 +1,86 @@
+# File: navigations/functional/check_webex_app_health.yaml
+# owner: guhua
+# CheckWebexAppHealth flow for webex-regress-shield
+# Adapted from: CheckWebexAppStatus[webexapp-44.11].yaml (E2E testing framework)
+
+test_case:
+  name: check_webex_app_health
+  description: >
+    After sign-in, open Health Checker via Help menu,
+    run service connection and cloud connection tests,
+    verify all services are accessible and cloud status is operational,
+    then close Health Checker and confirm no connectivity banner is shown.
+  expect_result: >
+    Health Checker shows "All services are accessible" for service connections
+    and "Operational" for cloud status. No connectivity banner appears on the main window.
+  account: allianz7
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    # - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:    
+    - name: "Help"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+
+    - name: "Check for updates, Menu Item"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "Keyboard shortcuts, Menu Item"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "Health Checker, Menu Item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Test Service Connection"
+      action:
+        type: key
+        value: default
+      ai_check:
+        prompt: >
+          Examine the Health Checker screenshot.
+          Verify that the text "All services are accessible" is visible
+          in the service connection section.
+          Output format: ✅Success or ❌Failed"
+
+    - name: "Test Cloud Connection"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      ai_check:
+        prompt: >
+          Examine the Health Checker screenshot.
+          Verify that the text "Operational" is visible
+          in the cloud connection section.
+          Output format: ✅Success or ❌Failed"
+      
+    - name: "Close Setting Dialog"
+      action:
+        type: shortcut
+        value: Close window
+  post_conditions:
+    - navigations/postconditions/sign_out
+
+  check_points: [Keyboard Navigation, Focus Ring]
+
+
+
+  

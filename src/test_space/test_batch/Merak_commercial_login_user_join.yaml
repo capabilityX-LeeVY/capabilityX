@@ -1,0 +1,15 @@
+test_case_batch:
+  name: login_user_join
+  team: Merak
+  owner: minl5
+  language: [en]
+  test_cases:
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/join_meeting_from_bgb
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/login_user_close_app_join_meeting_from_browser
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/login_user_join_meeting_from_search_bar
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/non_single_join_meeting_from_browser_select_sign_in
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/not_login_user_exit_app_join_meeting_from_browser_select_sign_in
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/not_login_user_join_meeting_from_browser_select_sign_in
+    # - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/user_join_meeting_from_search_bar
+    - feature_test/Merak_Apptastic/Merck/join_meeting/Login_user/user_join_meeting
+    

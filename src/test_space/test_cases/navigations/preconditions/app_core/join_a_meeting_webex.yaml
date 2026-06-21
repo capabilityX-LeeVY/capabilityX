@@ -1,0 +1,14 @@
+test_case:
+  name: join_a_meeting_webex
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:  
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Join a meeting in meetings tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ui_response: true

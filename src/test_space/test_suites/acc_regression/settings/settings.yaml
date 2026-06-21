@@ -1,0 +1,15 @@
+test_suite:
+  name: settings
+  team: webexregressshield
+  owner: yanfzhen
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - acc_regression/settings/from_connect_device
+    - acc_regression/settings/from_profile_menu
+    - acc_regression/settings/from_quiet_hours
+    - acc_regression/settings/from_sider_bar
+    - navigations/basic/sign_out

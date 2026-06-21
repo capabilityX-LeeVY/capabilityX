@@ -1,0 +1,18 @@
+test_case:
+  name: layout_stack_test
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Test switching to stack layout view
+  expect_result: Successfully switches to stack layout view
+
+  steps:
+    # Switch to stack layout
+    - name: "Switch to Stack Layout"
+      action:
+        type: function
+        value: switch_to_stack_layout
+      expect_state: ""
+      wait_time: 5
+      
+

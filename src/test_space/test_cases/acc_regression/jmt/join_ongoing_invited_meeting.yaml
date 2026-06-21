@@ -1,0 +1,31 @@
+test_case:
+  name: guest_join_pmr
+  owner: weiqli
+  description: User joins a Personal Room meeting as an attendee from Meetings search.
+  expect_result: The user successfully joins a Personal Room meeting.
+  pre_conditions: []
+  steps:
+    - name: "Switch to in-progress dialog"
+      platforms: ["windows"]
+      action:
+        type: shortcut
+        value: Notification
+    - name: "Join"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 15
+  
+  execution_duration: 1 
+  execution_count: 1
+  check_points: [Keyboard Navigation]

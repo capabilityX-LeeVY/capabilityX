@@ -1,0 +1,12 @@
+test_case:
+  name: search_meet_and_call
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Search, meet and call"
+      action:
+        type: key
+        value: default

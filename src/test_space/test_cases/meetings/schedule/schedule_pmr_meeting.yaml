@@ -1,0 +1,161 @@
+test_case:
+  name: schedule_pmr_meeting
+  description: Verify that after signing in, the user can navigate to the Meetings tab, and schedule a PMR meeting.
+  expect_result: The user is able to schedule a personal room meeting.
+  pre_conditions:
+      - navigations/basic/sign_in
+  steps:
+    # Find and click Meetings tab
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Find and click Schedule a meeting button
+    - name: "Schedule a meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    # Clear Topic
+    - name: "Clear Input"
+      action:
+        type: key
+        value: default
+      expect_state: "Topic"
+
+    # Verify clear Topic
+    - name: "Topic"
+      action:
+        type: verify
+        value: ""
+        wait_time: 1
+      expect_state: ""
+
+    # Input Topic
+    - name: "Topic"
+      action:
+        type: input
+        value: "PMR Meeting From Automated Test"
+      expect_state: ""
+
+    # Open Personal Room dropdown
+    - name: "Meeting link"
+      action:
+        type: key
+        value: down
+      expect_state: ""
+
+    # Click schedule button
+    - name: "Schedule"
+      action:
+        type: key
+        value: default
+        wait_time: 5  
+      expect_state: ""
+
+    # Go to Calendar tab
+    - name: "Meeting recap tab"
+      action:
+        type: key
+        value: left
+      optional: true
+    
+    # Active Calendar tab
+    - name: "Calendar, Tab"
+      action:
+        type: key
+        value: default
+
+    # Find the scheduled PMR meeting
+    - name: "PMR Meeting From Automated Test, from"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    # Edit the scheduled PMR meeting
+    - name: "Edit meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "Topic"
+
+    # Verify the Topic of the scheduled PMR meeting
+    - name: "Topic"
+      action:
+        type: verify
+        value: "PMR Meeting From Automated Test"
+        wait_time: 1
+      expect_state: ""
+
+    # Update Topic
+    - name: "Clear Input"
+      action:
+        type: key
+        value: default
+      expect_state: "Topic"
+
+    - name: "Topic"
+      action:
+        type: input
+        value: "Updated PMR Meeting From Automated Test"
+      expect_state: ""
+      
+    # Click schedule button to update the meeting
+    - name: "Schedule"
+      action:
+        type: key
+        value: default
+        wait_time: 6  
+      expect_state: ""
+
+    # Find the scheduled PMR meeting
+    - name: ", Updated PMR Meeting From Automated Test,"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+      expect_state: ""
+
+    # Edit the scheduled PMR meeting
+    - name: "Edit meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "Topic"
+
+    # Verify the Topic of the scheduled PMR meeting
+    - name: "Topic"
+      action:
+        type: verify
+        value: "Updated PMR Meeting From Automated Test"
+        wait_time: 1
+      expect_state: ""
+
+    # Delete the scheduled PMR meeting
+    - name: "Delete the meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Confirm delete the meeting"
+      action:
+        type: key 
+        value: default
+        wait_time: 5
+      expect_state: ""
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference pictual for all of meetings deleted in today, it have text like 'When you schedule or are invited to' and 'it'll show up here.'. The second is a meeting list after meeting delete screenshot which should have similar text in calendar meeting list. The meeting list area is typically in the lower half of the second screenshot. Focus only on the text. Determine if the second image has similar text. Output format: ✅Success or ❌Failed"
+        reference: Meeting-deleted.png
+
+  post_conditions: null
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

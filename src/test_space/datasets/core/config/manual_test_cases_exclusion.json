@@ -1,0 +1,19 @@
+{
+  "description": "Manually maintained test cases that should NOT be overwritten by auto-generation",
+  "exclusion_list": [
+    "postconditions/end_meeting.yaml",
+    "postconditions/end_meeting_for_all.yaml",
+    "postconditions/sign_out.yaml"
+  ],
+  "notes": {
+    "directory_info": "These files are in postconditions/ directory, while auto-generated files go to preconditions/ and functional/ directories",
+    "end_meeting.yaml": "Custom 2-step logic for ending meetings (different from auto-generated functional/in_meeting/meeting_controls/end_meeting.yaml)",
+    "end_meeting_for_all.yaml": "Uses keyboard navigation steps (Direct Arrow Down, Direct Enter) not in dataset",
+    "sign_out.yaml": "Custom 3-step sign-out flow through Profile > Sign out submenu (control not in generation dataset)"
+  },
+  "protection_mechanism": "Directory-based: postconditions/ is never used by generation script (uses preconditions/ and functional/)",
+  "verification": {
+    "command": "python verify_key_consistency_v2.py",
+    "expected": "These 3 files will show as using non-dataset keys in final steps, which is acceptable for manual test cases"
+  }
+}

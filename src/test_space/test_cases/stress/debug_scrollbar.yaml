@@ -1,0 +1,69 @@
+test_case:
+  name: test_participant_list_scroll
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Test scrolling in participant list view using container AutomationId
+  expect_result: Successfully scrolls participant list using container-based approach
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Run stress API test"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join fullmode18@appletestci.webex.com audio=on video=on send_reactions=on send_chat=off with 100 ucf_api duration 7"
+          duration: 90
+      expect_state: ""
+  
+    # Open Participants panel
+    - name: "Participants"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    # Test arrow button scrolling (most reliable method)
+    - name: "scroll down using arrow buttons"
+      action:
+        type: function
+        value: scroll_using_arrow_buttons_only
+        parameters:
+          container_automation_id: "participantListView"
+          direction: "down"
+          click_count: 10
+          timeout: 5
+      expect_state: ""
+      
+    - name: "wait 3s"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 3
+      expect_state: ""
+
+    # Test scroll back to top with arrow buttons
+    - name: "scroll to top using arrow buttons"
+      action:
+        type: function
+        value: scroll_using_arrow_buttons_only
+        parameters:
+          container_automation_id: "participantListView"
+          direction: "up"
+          click_count: 15
+          timeout: 5
+      expect_state: ""
+  
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation, Performance]

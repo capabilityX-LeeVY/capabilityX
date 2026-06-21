@@ -1,0 +1,46 @@
+test_case:
+  name: whiteboard_list_view
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Switch between grid view and list view in whiteboard hub.
+  expect_result: Only verify existance of the tabs.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+    - name: "Grid view"
+      action:
+        type: key
+        value: default
+      expect_state: "Grid view"
+      ai_check: 
+        prompt: "verify if the whiteboard layout is grid view.Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: "List view"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check: 
+        prompt: "verify if the whiteboard layout is list view.Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

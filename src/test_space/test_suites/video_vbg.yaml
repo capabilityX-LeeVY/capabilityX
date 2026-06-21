@@ -1,0 +1,18 @@
+test_suite:
+  name: video_vbg
+  team: video_vbg
+  owner: hongtzh2
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_meeting
+    - meetings/video/vbg_static
+    - meetings/video/vbg_dynamic
+    - meetings/video/vbg_upload
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

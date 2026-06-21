@@ -1,0 +1,18 @@
+test_case:
+  name: write_a_message_to_everyone
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: "Open chat panel"
+      action:
+        type: key
+        value: default
+
+    - name: "Write a message to everyone"
+      action:
+        type: key
+        value: default

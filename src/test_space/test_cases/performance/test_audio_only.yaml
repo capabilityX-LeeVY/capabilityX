@@ -1,0 +1,106 @@
+test_case:
+  name: performance_audio_only_test
+  owner: huanwan3
+  account: bts13
+  description: Performance test for audio-only meeting - tests meeting with audio enabled and video disabled
+  expect_result: Successfully starts meeting with audio only, measures performance metrics
+  pre_conditions:
+    - navigations/basic/sign_in
+    # start telegraf
+    - meetings/actions/pmr_setup
+
+  steps:
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Audio only setup - unmute audio, disable video
+    - name: "Unmute before meeting"
+      action:
+        type: function
+        value: ensure_unmuted_before_meeting
+      expect_state: ""
+    
+    - name: "Stop video before meeting"
+      action:
+        type: function
+        value: ensure_video_off_before_meeting
+      expect_state: ""
+    
+    # Start PMR meeting
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 5
+    
+    # End meeting 
+    - name: End meeting
+      action:
+        type: key
+        value: default
+      expect_state: "End meeting, Menu item"
+
+    - name: End meeting, Menu item
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Start PMR meeting again
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    - name: "More options for starting a Webex meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 5
+
+    # Performance measurement
+    - name: "Wait exactly 60 seconds"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 60
+      expect_state: ""
+
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+    # end telegraf
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

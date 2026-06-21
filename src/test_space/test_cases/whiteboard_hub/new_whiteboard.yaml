@@ -1,0 +1,54 @@
+test_case:
+  name: new_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Only verify if a new blank whiteboard is created.        
+  expect_result: A new blank whiteboard is created.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+    - name: "Create a new whiteboard"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      ai_check: 
+        prompt: "Check if a new whiteboard was successfully created. Requirements: 1) There must be a 'Share' button visible in the top-right corner of the whiteboard, 2) There must be a vertical toolbox with drawing tools on the left side, 3) The whiteboard canvas should be blank/empty. Confirm all three conditions are met. Output format: ✅Success or ❌Failed. Reasoning: <describe what elements you see and which requirement(s) are met or missing>"
+        wait_time: 5
+    - name: "Close window"
+      action:
+        type: shortcut
+        value: Close window
+        wait_time: 3
+      expect_state: "Create a new whiteboard"
+    - name: "New Whiteboard in hub"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      ai_check: 
+        prompt: "Check if a new whiteboard was successfully created. Requirements: 1) There must be a 'Share' button visible in the top-right corner of the whiteboard, 2) There must be a vertical toolbox with drawing tools on the left side, 3) The whiteboard canvas should be blank/empty. Confirm all three conditions are met. Output format: ✅Success or ❌Failed. Reasoning: <describe what elements you see and which requirement(s) are met or missing>"
+        wait_time: 5
+    - name: "Close window"
+      action:
+        type: shortcut
+        value: Close window
+        wait_time: 3
+      expect_state: "New Whiteboard in hub"
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

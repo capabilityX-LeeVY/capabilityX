@@ -1,0 +1,22 @@
+test_case:
+  name: sample03
+  team: RegressShield
+  owner: binbiwan
+  account: allianz2
+  description: user start meeting, open video options, change vbg to 'Lookout'.
+  expect_result: The vbg is changed to 'Lookout' and the focus is returned to the video options button.
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "test send message"
+      action:
+        type: function
+        value: send_message_to_webex
+        parameters:
+          message: "Automated test message from sample03 test case"
+      expect_state: ""
+  post_conditions:
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

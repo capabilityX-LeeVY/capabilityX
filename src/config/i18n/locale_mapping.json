@@ -1,0 +1,26 @@
+{
+  "locale_mapping": {
+    "DE": "de_DE",
+    "de_DE": "de_DE", 
+    "de": "de_DE",
+    "EN": "en_US",
+    "en": "en_US",
+    "en_US": "en_US",
+    "zh": "zh_CN",
+    "zh_CN": "zh_CN",
+    "CN": "zh_CN",
+    "fr": "fr_FR",
+    "fr_FR": "fr_FR",
+    "FR": "fr_FR",
+    "es": "es_ES",
+    "es_ES": "es_ES",
+    "ES": "es_ES",
+    "ja": "ja_JP",
+    "ja_JP": "ja_JP",
+    "JP": "ja_JP",
+    "ko": "ko_KR",
+    "ko_KR": "ko_KR",
+    "KR": "ko_KR"
+  },
+  "default_locale": "en_US"
+}

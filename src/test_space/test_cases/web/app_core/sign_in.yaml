@@ -1,0 +1,36 @@
+test_case:
+  name: sign_in
+  custom_dataset: control_datasets_webex_app_web
+  description: Verify that a user can successfully sign in with a valid email and password, and the focus moves to the Start Meeting button after login.
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  
+  steps:
+    - name: "Sign in"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Sign in. Start by entering your email address. Email address"
+      action:
+        type: input
+        value: ${email}
+      expect_state: ""
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    - name: "Password"
+      action:
+        type: input
+        value: ${password}
+      expect_state: ""
+    - name: "Sign in to app"
+      action:
+        type: key
+        value: default
+        wait_time: 15
+      expect_state: ""

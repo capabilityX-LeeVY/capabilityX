@@ -1,0 +1,54 @@
+test_case:
+  name: check_share
+  team: test
+  owner: copeng
+  description: Component - Start/Stop sharing during meeting using in-meeting controls
+  expect_result: Successfully start/stop sharing during meeting
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+      
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "OK in floating Dialog"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      platforms: ["mac"]
+      optional: true
+  post_conditions:
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

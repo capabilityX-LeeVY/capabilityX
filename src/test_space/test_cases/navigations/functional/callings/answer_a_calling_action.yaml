@@ -1,0 +1,25 @@
+test_case:
+  name: answer_calling_ucm
+  team: RegressShield
+  owner: yanfzhen
+  desciption: answer calling
+  expect_result: the calling can be picked up
+  steps:
+    - name: connect_webex_app_main_window
+      action:
+        type: function
+        value: connect_webex_app_main_window
+      skip_report: true
+    - name: Focus on calling window
+      action:
+        type: shortcut
+        value: Notification
+      skip_report: true
+    - name: "Direct Enter key Press"
+      action:
+        type: direct_key
+        value: enter
+      skip_report: true
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

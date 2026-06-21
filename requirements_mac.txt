@@ -1,0 +1,25 @@
+requests
+jira
+pymysql
+pyobjc
+opencv-python
+pyautogui
+openai
+pytesseract
+mss
+django
+celery
+comtypes
+psutil
+markdown
+packaging
+pandas
+pynput
+cryptography
+openpyxl
+paramiko==3.5.1
+ImageHash==4.3.2
+schedule>=1.2.0
+PyYAML>=6.0
+NumPy < 2
+matplotlib

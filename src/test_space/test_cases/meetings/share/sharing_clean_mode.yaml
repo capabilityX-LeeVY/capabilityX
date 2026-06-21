@@ -1,0 +1,60 @@
+test_case:
+  name: sharing_clean_mode
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User accesses clean mode option to hide Webex controls and panels during screen sharing.
+  expect_result: Clean mode successfully hides Webex controls and panels, and can recover from clean mode properly.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Hide Webex controls and panels"
+      action:
+        type: key
+        value: default
+      expect_state: "Close"
+    - name: "test_fullscreen"
+      action:
+        type: function
+        value: capture_fullscreen
+        parameters:
+          image_name: "cleanmode_fullscreen"
+      ai_check:
+        image_name: "cleanmode_fullscreen"
+        source: "fullscreen"
+        prompt: "Analyze the full screenshot. check the orange control bar isn't displayed on the top and one dialog of 'how to show webex control panel again' shows on top right corner. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: "Direct Escape Key Press"
+      action:
+        type: direct_key
+        value: esc
+      expect_state: "More sharing options"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Hide Webex controls and panels"
+      action:
+        type: key
+        value: default
+      expect_state: "Close"
+    - name: "Exit clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+      expect_state: "More sharing options"
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

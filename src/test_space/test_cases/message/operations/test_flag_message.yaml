@@ -1,0 +1,47 @@
+test_case:
+  name: flag_message
+  owner: huanwan3
+  account: fullmode18
+  description: Send a message and flag it for follow-up
+  expect_result: Message is flagged with a flag icon visible next to it
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    # Use common action to send text message
+    - include: message/actions/send_text_message
+      params:
+        message_text: "Test message to flag [uuid:{uuid}]"
+
+    # Use common action to open context menu on last message
+    - include: message/actions/open_message_context_menu
+
+    # Navigate down to "Flag message" (9th item in menu)
+    # Menu order: Copy message, Edit message, Start a Thread, Add reaction, Forward message, 
+    #             Remind me in, Pin message, Quote message, Flag message
+    - include: message/actions/navigate_menu_down
+      params:
+        count: 8
+
+    # Select "Flag message"
+    - name: "Select Flag message"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Focus back to message input for screenshot and AI check
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window. Check if the message has been flagged. Look for a flag icon (🚩 or similar) appearing next to the message timestamp or beside the message. Output format: ✅Success if a flag icon is visible on the message, ❌Failed if no flag found"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

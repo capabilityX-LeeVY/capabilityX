@@ -1,0 +1,75 @@
+test_case:
+  name: more_menu_include_webex
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User excludes/includes Webex windows from screen sharing in local share control bar more menu.
+  expect_result: Webex windows are excluded/included from screen sharing in local share control bar more menu.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/enable_limit_15_fps_sharing # enable limit 15 fps sharing to make sure share control bar can be captured in screenshot
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "Expand my view of what I'm sharing"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze this Webex screenshot and verify TWO independent conditions:
+                Condition 1: A share preview region is visible, highlighted by an orange border.
+                Condition 2: The preview region is showing the Webex app Schedule meeting page as the content selected for sharing. 
+                The dark UI in the middle is the expected Webex Schedule meeting window preview.
+                This is the EXPECTED and CORRECT state.
+                Do NOT treat the orange border as an error state.
+                Do NOT treat the dark center content as blank, broken, or failed rendering.
+                Both conditions must be TRUE for success.
+                Output: ✅Success or ❌Failure. Reasoning: <brief explanation of each condition result>"
+        reference: src/test_space/datasets/img/shareIncludeWebex.png
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Show my Webex app"
+      action:
+        type: key
+        value: default
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+      ai_check:
+        prompt: "Analyze the window screenshot. Ignore the content on the orange background. Only focus on the content in the center of the screenshot. Webex window is a window with \"Start a Webex meeting\" and \"Join a meeting\" options at the top, and meeting schedul displayed under the options. There should be no Webex window in the screenshot. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+    - name: "Show my Webex app"
+      action:
+        type: key
+        value: default
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+      ai_check:
+        prompt: "Analyze this Webex screenshot and verify TWO independent conditions:
+                Condition 1: A share preview region is visible, highlighted by an orange border.
+                Condition 2: The preview region is showing the Webex app Schedule meeting page as the content selected for sharing. 
+                The dark UI in the middle is the expected Webex Schedule meeting window preview.
+                This is the EXPECTED and CORRECT state.
+                Do NOT treat the orange border as an error state.
+                Do NOT treat the dark center content as blank, broken, or failed rendering.
+                Both conditions must be TRUE for success.
+                Output: ✅Success or ❌Failure. Reasoning: <brief explanation of each condition result>"
+        reference: src/test_space/datasets/img/shareIncludeWebex.png
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

@@ -1,0 +1,75 @@
+test_case:
+  name: start_camera_sharing
+  team: RegressShield
+  owner: gamao
+  account: rtuser030
+  description: Component function to start camera sharing
+  expect_result: Camera sharing is successfully started
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: "Camera tab"
+
+    - name: "Camera tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "OBS Virtual Camera"
+      action:
+        type: key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Shared camera view"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the desktop screenshot. I shared my camera, Please check whether there is a person visible in the frame. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Stop File sharing"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

@@ -1,0 +1,64 @@
+test_case:
+  name: tab_verify
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  platforms:
+    supported: ["windows",]
+  description: Switch between four modules:All boards, My boards, shared with me, and Spaces.        
+  expect_result: Only verify existance of the tabs.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+    - name: "All boards"
+      action:
+        type: key
+        value: default
+      expect_state: "All boards"
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: "My boards"
+      action:
+        type: key
+        value: default
+      expect_state: "My boards"
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: "Shared with me"
+      action:
+        type: key
+        value: default
+      expect_state: "Shared with me"
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: "Spaces"
+      action:   
+        type: key
+        value: default
+      expect_state: "Spaces"
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,25 @@
+test_case:
+  name: sign_out_shortcut
+  owner: huanwan3
+  account: fullmode18
+  description: Sign out from Webex app using Alt+Q shortcut
+  expect_result: User is signed out from Webex app
+  pre_conditions: []
+
+  steps:
+    - name: "Sign out using shortcut"
+      action:
+        type: shortcut
+        value: alt+q
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Confirm sign out"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+  post_conditions: []
+  check_point: [Keyboard Navigation]

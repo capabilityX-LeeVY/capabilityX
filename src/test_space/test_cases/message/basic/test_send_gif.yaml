@@ -1,0 +1,59 @@
+test_case:
+  name: send_gif
+  owner: huanwan3
+  account: fullmode18
+  description: Send a GIF in message chat using the Giphy button
+  expect_result: GIF is successfully sent in the chat conversation
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    - name: "Click Giphy button"
+      action:
+        type: function
+        value: click_giphy
+        wait_time: 2
+      expect_state: ""
+
+    # search gif
+    - name: "Direct Input"
+      action:
+        type: direct_input
+        value: "happy"
+        wait_time: 2
+      expect_state: ""
+
+    # Navigate to first gif (tab 3 times)
+    - name: "Navigate to first gif"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: tab
+          count: 3
+          interval: 0.5
+        wait_time: 0.5
+      expect_state: ""
+
+    # select gif
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    # send gif
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 5
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window and check the last message. Determine if the last message contains a GIF image (an animated image, typically showing movement or animation). GIFs usually have a 'GIF' label or show animated content. Output format: ✅Success if the last message is a GIF, ❌Failed if it's not a GIF or no image found"
+
+  post_conditions: 
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

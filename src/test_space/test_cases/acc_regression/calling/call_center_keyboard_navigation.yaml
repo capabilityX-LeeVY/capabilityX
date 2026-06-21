@@ -1,0 +1,129 @@
+test_case:
+  name: call_center_keyboard_navigation
+  team: RegressShield
+  owner: ivodimit
+  account: bcld.sofia+207
+  description: "Verify all UI elements in Call Center agent status popup (footer) and Call Centers menu (Calling dock) are reachable using Tab and Shift+Tab keyboard navigation."
+  expect_result: "All UI elements in both the footer Call Center popup and the Calling dock Call Centers menu are fully accessible via Tab (forward) and Shift+Tab (reverse) keyboard navigation."
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/app_entry/emergency_calling_reminder_cancel
+    - navigations/preconditions/app_core/call_settings
+    - navigations/functional/settings/open_call_preferences
+    - navigations/functional/settings/calling_dock
+    - ai_generated/calling/turn_on_calling_dock
+    - navigations/preconditions/app_entry/dismiss_calling_dock_fte_dialog
+
+  steps:
+
+    # ===== Part 1: Footer — Call Center Agent Status Popup =====
+
+    - name: "Call queues"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      ai_check:
+        prompt: "Analyze the current screen. Check: 1) Is a Call Center agent status popup or panel visible? 2) Are there queue names, agent status options (Available/Unavailable), or sign-in/sign-out controls visible? Output format: If the popup is open with visible elements, respond '✅Success. Call Center popup opened with [list key elements].' If not visible, respond '❌Failed. [Describe what is visible instead].' Only output emoji and 1 sentence."
+      stop_on_ai_check_failure: true
+
+    - name: "reset focus listener"
+      skip_screenshot: true
+      action:
+        type: function
+        value: reset_focus_listener
+
+    - name: "forward navigation through Call Center popup"
+      action:
+        type: acc_sequence
+        value: tab
+
+    - name: "verify forward navigation completeness"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze the current screen after completing a full Tab traversal of the Call Center agent status popup. Check: 1) Is the popup still visible? 2) Were all interactive elements (status controls, queue items, buttons) reachable? 3) Did focus cycle through all elements and return to the starting point? Output format: If all elements appear reachable and popup is intact, respond '✅Success. All Call Center popup elements reachable via Tab.' If the popup closed or focus escaped, respond '❌Failed. [Describe the issue].' Only output emoji and 1 sentence."
+
+    - name: "backward navigation through Call Center popup"
+      action:
+        type: acc_sequence
+        value: shift+tab
+
+    - name: "verify backward navigation completeness"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze the current screen after completing a full Shift+Tab traversal of the Call Center agent status popup. Check: 1) Is the popup still visible? 2) Did focus traverse all elements in reverse order? 3) Did focus return to the starting point? Output format: If all elements are reachable in reverse and popup is intact, respond '✅Success. All Call Center popup elements reachable via Shift+Tab.' If the popup closed or focus escaped, respond '❌Failed. [Describe the issue].' Only output emoji and 1 sentence."
+
+    - name: "Close Call Center popup"
+      action:
+        type: direct_key
+        value: esc
+        wait_time: 1
+
+    # ===== Part 2: Calling Dock — Call Centers Menu =====
+
+    - name: "Focus on Calling dock window"
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "PhoneWidgetView"
+        wait_time: 2
+
+    - name: "Call Centers"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      ai_check:
+        prompt: "Analyze the current screen. Check: 1) Is the Call Centers section or menu visible within the Calling dock? 2) Are there call center queue elements, agent controls, or status options visible? Output format: If Call Centers view is open with visible elements, respond '✅Success. Call Centers menu opened with [list key elements].' If not visible, respond '❌Failed. [Describe what is visible instead].' Only output emoji and 1 sentence."
+      stop_on_ai_check_failure: true
+
+    - name: "reset focus listener for Call Centers"
+      skip_screenshot: true
+      action:
+        type: function
+        value: reset_focus_listener
+
+    - name: "forward navigation through Call Centers menu"
+      action:
+        type: acc_sequence
+        value: tab
+
+    - name: "verify forward navigation in Call Centers"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze the current screen after completing a full Tab traversal of the Call Centers menu in the Calling dock. Check: 1) Is the Call Centers view still visible? 2) Were all interactive elements (queue items, status controls, buttons) reachable? 3) Did focus cycle through all elements and return to the starting point? Output format: If all elements appear reachable, respond '✅Success. All Call Centers menu elements reachable via Tab.' If focus escaped the menu or elements were skipped, respond '❌Failed. [Describe the issue].' Only output emoji and 1 sentence."
+
+    - name: "backward navigation through Call Centers menu"
+      action:
+        type: acc_sequence
+        value: shift+tab
+
+    - name: "verify backward navigation in Call Centers"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze the current screen after completing a full Shift+Tab traversal of the Call Centers menu in the Calling dock. Check: 1) Is the Call Centers view still visible? 2) Did focus traverse all elements in reverse order? 3) Did focus return to the starting point? Output format: If all elements are reachable in reverse, respond '✅Success. All Call Centers menu elements reachable via Shift+Tab.' If focus escaped or elements were unreachable, respond '❌Failed. [Describe the issue].' Only output emoji and 1 sentence."
+
+    - name: "Close Call Centers menu"
+      action:
+        type: direct_key
+        value: esc
+        wait_time: 1
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_points: ["Keyboard Navigation"]

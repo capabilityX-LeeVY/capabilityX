@@ -1,0 +1,48 @@
+test_case:
+  name: setup_sharing_suite
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: Sign in with rtuser030 account for sharing test suite
+  expect_result: User is signed in with rtuser030 account
+  steps:
+    - name: "Sign in"
+      action:
+        type: key
+        value: default
+      expect_state: "Email address"
+      ui_response: true
+    - name: "Email address"
+      action:
+        type: input
+        value: ${email}
+      expect_state: ""
+    - name: "Next"
+      action:
+        type: key
+        value: default
+      expect_state: "Password"
+      ui_response: true
+    - name: "Sign in Continue"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+      optional: true
+    - name: "Password"
+      action:
+        type: input
+        value: ${password}
+      expect_state: ""
+    - name: "Sign in to app"
+      action:
+        type: key
+        value: default
+      expect_state: ["Personal Room", " My personal room", "Profile and preferences, Available", "Join a meeting","Collapse"]
+      ui_response: true
+  pre_conditions: []
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_point: ["Keyboard Navigation", "Performance"]

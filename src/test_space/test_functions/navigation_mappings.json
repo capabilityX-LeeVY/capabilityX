@@ -1,0 +1,455 @@
+{
+  "_description": "Navigation path mappings for WRS test case generation. Maps natural language step descriptions to navigation YAML paths under src/test_space/test_cases/navigations/. Used by add-test-case-meetings-acc-regression prompt to auto-detect meeting area and generate local_api steps.",
+  "_usage": "Match a step description against 'keywords' (case-insensitive) to find the navigation path. Use the 'area' field to determine the test case subdirectory (e.g., acc_regression/meetings/<area>). Null area means not an in-meeting functional navigation.",
+  "mappings": [
+    {
+      "path": "navigations/basic/agree",
+      "area": null,
+      "keywords": ["agree", "accept eula", "accept license agreement"]
+    },
+    {
+      "path": "navigations/basic/install_app",
+      "area": null,
+      "keywords": ["install app", "install application"]
+    },
+    {
+      "path": "navigations/basic/uninstall_app",
+      "area": null,
+      "keywords": ["uninstall app", "uninstall application"]
+    },
+    {
+      "path": "navigations/basic/sign_in",
+      "area": null,
+      "keywords": ["sign in basic", "basic sign in"]
+    },
+    {
+      "path": "navigations/basic/sign_out",
+      "area": null,
+      "keywords": ["sign out basic", "basic sign out"]
+    },
+    {
+      "path": "navigations/basic/quit_app",
+      "area": null,
+      "keywords": ["quit app", "close app"]
+    },
+    {
+      "path": "navigations/basic/relaunch_app",
+      "area": null,
+      "keywords": ["relaunch app", "restart app"]
+    },
+    {
+      "path": "navigations/basic/re-install_app",
+      "area": null,
+      "keywords": ["re-install app", "reinstall app"]
+    },
+    {
+      "path": "navigations/basic/sign_in_without_install_app",
+      "area": null,
+      "keywords": ["sign in without install", "sign in without installing"]
+    },
+    {
+      "path": "navigations/basic/guest_join_PMR",
+      "area": null,
+      "keywords": ["guest join pmr", "guest join meeting room"]
+    },
+    {
+      "path": "navigations/basic/sign_in_call",
+      "area": null,
+      "keywords": ["sign in call"]
+    },
+    {
+      "path": "navigations/preconditions/app_entry/sign_in_to_app",
+      "area": null,
+      "keywords": ["sign in to app", "full sign in", "app sign in"]
+    },
+    {
+      "path": "navigations/preconditions/app_entry/guest_join_a_meeting",
+      "area": "actions",
+      "keywords": ["guest join a meeting", "guest join meeting", "join as guest", "join meeting as guest", "guest join"],
+      "parameters": [
+        {"name": "meeting_link", "description": "Meeting number or link", "required": true},
+        {"name": "name", "description": "Display name to join with", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/preconditions/app_entry/sign_up",
+      "area": null,
+      "keywords": ["sign up", "create account"]
+    },
+    {
+      "path": "navigations/preconditions/calling_entry/cancel_add_address_window",
+      "area": null,
+      "keywords": ["cancel add address window", "cancel add address", "dismiss add address"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/start_meeting",
+      "area": null,
+      "keywords": ["start meeting", "start a meeting"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/settings",
+      "area": null,
+      "keywords": ["open settings", "app settings", "open app settings"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/profile_and_preferences",
+      "area": null,
+      "keywords": ["profile and preferences", "profile preferences", "open profile"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/meetings_menu_item",
+      "area": null,
+      "keywords": ["meetings menu", "meetings tab", "go to meetings"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/calling_menu_item",
+      "area": null,
+      "keywords": ["calling menu", "calling tab", "go to calling"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/contacts_menu_item",
+      "area": null,
+      "keywords": ["contacts menu", "contacts tab", "go to contacts"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/schedule_a_meeting",
+      "area": null,
+      "keywords": ["schedule a meeting", "schedule meeting"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/search_meet_and_call",
+      "area": null,
+      "keywords": ["search meet and call", "meet and call", "search bar"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/set_a_status",
+      "area": null,
+      "keywords": ["set a status", "set status"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/open_cisco_ai_assistant_panel_alt_i",
+      "area": null,
+      "keywords": ["open ai assistant", "open cisco ai assistant", "ai assistant panel alt i"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/connect_to_a_device",
+      "area": null,
+      "keywords": ["connect to a device", "connect device"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/join_a_meeting_webex",
+      "area": null,
+      "keywords": ["join a meeting webex", "join webex meeting"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/teams_menu_item",
+      "area": null,
+      "keywords": ["teams menu", "teams tab"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/whiteboards_menu_item",
+      "area": null,
+      "keywords": ["whiteboards menu", "whiteboard tab"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/start_a_webex_meeting",
+      "area": null,
+      "keywords": ["start a webex meeting"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/start_a_conversation_call_or_meet",
+      "area": null,
+      "keywords": ["start a conversation", "call or meet"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/more_actions_menu_item",
+      "area": null,
+      "keywords": ["more actions menu", "more actions"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/more_options_for_scheduling_a_meeting",
+      "area": null,
+      "keywords": ["more options for scheduling", "scheduling more options"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/more_options_for_starting_a_webex_meeting",
+      "area": null,
+      "keywords": ["more options for starting meeting", "starting meeting more options"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/video_options_in_is_page",
+      "area": "video",
+      "keywords": ["video options in settings page", "video options is page"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/audio_options_in_is_page",
+      "area": "audio",
+      "keywords": ["audio options in settings page", "audio options is page"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/meetings_tab_list_meeting_recap_tab",
+      "area": null,
+      "keywords": ["meeting recap tab", "recap tab"]
+    },
+    {
+      "path": "navigations/preconditions/meeting_entry/connect_disclaimer_dialog",
+      "area": null,
+      "keywords": ["connect disclaimer dialog", "disclaimer dialog"]
+    },
+    {
+      "path": "navigations/preconditions/meeting_entry/connect_main_window",
+      "area": null,
+      "keywords": ["connect main window", "meeting connect main"]
+    },
+    {
+      "path": "navigations/preconditions/meeting_entry/connect_settings_dialog",
+      "area": null,
+      "keywords": ["connect settings dialog", "meeting connect settings"]
+    },
+    {
+      "path": "navigations/postconditions/end_meeting",
+      "area": null,
+      "keywords": ["end meeting", "finish meeting"]
+    },
+    {
+      "path": "navigations/postconditions/end_meeting_for_all",
+      "area": null,
+      "keywords": ["end meeting for all", "end for all"]
+    },
+    {
+      "path": "navigations/postconditions/leave_meeting",
+      "area": null,
+      "keywords": ["leave meeting"]
+    },
+    {
+      "path": "navigations/postconditions/sign_out",
+      "area": null,
+      "keywords": ["sign out", "logout"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/video_settings",
+      "area": "video",
+      "keywords": ["open video settings", "video settings dialog", "video settings panel", "video setting panel", "go to video settings", "navigate to video settings"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/video_options",
+      "area": "video",
+      "keywords": ["open video options", "video options"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/change_virtual_background",
+      "area": "video",
+      "keywords": ["change virtual background", "virtual background", "open vbg panel", "vbg panel", "change background"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/start_video",
+      "area": "video",
+      "keywords": ["start video", "turn on video", "start my video", "enable video"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/stop_video",
+      "area": "video",
+      "keywords": ["stop video", "turn off video", "stop my video"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/self_view_location",
+      "area": "video",
+      "keywords": ["self view location", "self view", "move self view"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/audio/audio_options",
+      "area": "audio",
+      "keywords": ["audio options", "open audio options"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/audio/audio_settings",
+      "area": "audio",
+      "keywords": ["audio settings", "open audio settings"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/audio/mute",
+      "area": "audio",
+      "keywords": ["mute", "mute microphone", "mute audio"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/audio/smart_audio_for_microphone",
+      "area": "audio",
+      "keywords": ["smart audio", "smart audio for microphone", "microphone noise removal"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/audio/youre_using_your_computer_for_audio_switch_audio_menu_item",
+      "area": "audio",
+      "keywords": ["switch audio", "switch audio menu", "computer audio switch", "switch to phone audio"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/more_options",
+      "area": "meeting_controls",
+      "keywords": ["more options", "open more options", "more options menu"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/reactions",
+      "area": "meeting_controls",
+      "keywords": ["reactions", "open reactions", "meeting reactions"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/record",
+      "area": "meeting_controls",
+      "keywords": ["record", "start recording", "open record"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/layout",
+      "area": "meeting_controls",
+      "keywords": ["layout", "change layout", "meeting layout"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/step_away_from_meeting",
+      "area": "meeting_controls",
+      "keywords": ["step away", "step away from meeting"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/meeting_options",
+      "area": "meeting_controls",
+      "keywords": ["meeting options", "open meeting options"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/meeting_controls/end_meeting",
+      "area": "meeting_controls",
+      "keywords": ["end meeting control", "end meeting button in controls"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/chat/open_chat_panel",
+      "area": "chat",
+      "keywords": ["open chat panel", "chat panel", "open chat"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/chat/write_a_message_to_everyone",
+      "area": "chat",
+      "keywords": ["write a message to everyone", "message everyone", "chat message"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/participants/open_participants_panel",
+      "area": "participants",
+      "keywords": ["open participants panel", "participants panel", "open participants"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/participants/invite_and_remind",
+      "area": "participants",
+      "keywords": ["invite and remind", "invite participants", "invite someone"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/participants/mute_all",
+      "area": "participants",
+      "keywords": ["mute all", "mute all participants"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/participants/raise",
+      "area": "participants",
+      "keywords": ["raise hand", "raise", "hand raise"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/share/share",
+      "area": "share",
+      "keywords": ["share content", "share screen", "start sharing", "open share"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/share/change_sharing_settings",
+      "area": "share",
+      "keywords": ["change sharing settings", "sharing settings"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/captions/closed_captions",
+      "area": "captions",
+      "keywords": ["closed captions", "captions", "enable captions", "open captions"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/captions/closed_captions_more_options",
+      "area": "captions",
+      "keywords": ["captions more options", "closed captions more options"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/ai_assistant/ai_assistant",
+      "area": "ai_assistant",
+      "keywords": ["ai assistant in meeting", "open ai assistant in meeting", "meeting ai assistant"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/panels/more_panels",
+      "area": "panels",
+      "keywords": ["more panels", "open more panels"]
+    },
+    {
+      "path": "navigations/functional/in_meeting/panels/show_apps_panel",
+      "area": "panels",
+      "keywords": ["show apps panel", "apps panel", "open apps panel"]
+    },
+    {
+      "path": "navigations/browser/open_browser",
+      "area": null,
+      "keywords": ["open browser", "open edge", "launch browser", "open website", "open url", "open site"],
+      "parameters": [
+        {"name": "site_url", "description": "The URL to navigate to", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/functional/callings/start_a_default_calling",
+      "area": "calling",
+      "keywords": ["start a call", "start calling", "dial", "place a call", "make a call", "call someone", "default call"],
+      "parameters": [
+        {"name": "dial_number", "description": "The phone number or extension to dial", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/functional/callings/start_a_audio_calling",
+      "area": "calling",
+      "keywords": ["start audio call", "audio call", "audio calling", "make audio call", "place audio call"],
+      "parameters": [
+        {"name": "dial_number", "description": "The phone number or extension to dial", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/functional/callings/start_a_video_calling",
+      "area": "calling",
+      "keywords": ["start video call", "video call", "video calling", "make video call", "place video call"],
+      "parameters": [
+        {"name": "dial_number", "description": "The phone number or extension to dial", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/functional/callings/answer_a_calling",
+      "area": "calling",
+      "keywords": ["answer a call", "answer call", "answer calling", "receive call", "pick up call", "incoming call"],
+      "parameters": [
+        {"name": "agent_node", "description": "The calling agent node identifier (e.g. calling_agent_813288)", "required": true}
+      ]
+    },
+    {
+      "path": "navigations/functional/in_meeting/video/vbg_executive_office",
+      "area": "video",
+      "keywords": ["executive office", "vbg executive office", "executive office background", "select executive office"]
+    },
+    {
+      "path": "navigations/functional/settings/save",
+      "area": "settings",
+      "keywords": ["save", "save settings", "apply settings", "save changes"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/call_settings",
+      "area": null,
+      "keywords": ["call settings", "calling settings", "open call settings"]
+    },
+    {
+      "path": "navigations/functional/settings/open_call_preferences",
+      "area": "settings",
+      "keywords": ["open call preferences", "call preferences", "calling preferences"]
+    },
+    {
+      "path": "navigations/functional/settings/calling_dock",
+      "area": "settings",
+      "keywords": ["calling dock", "calling dock settings", "calling dock tree item"]
+    },
+    {
+      "path": "navigations/preconditions/app_core/close_ai_assistant",
+      "area": null,
+      "keywords": ["close ai assistant", "close ai assistant panel", "dismiss ai assistant"]
+    }
+  ]
+}

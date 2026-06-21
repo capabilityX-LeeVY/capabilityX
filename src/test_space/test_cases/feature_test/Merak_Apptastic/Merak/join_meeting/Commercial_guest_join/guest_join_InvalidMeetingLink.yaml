@@ -1,0 +1,32 @@
+test_case:
+  name: guest_join_InvalidMeetingLink
+  description: Verify that a guest user cannot join a meeting using an invalid meeting link (https://invalid.example.com/notameeting).
+  expect_result: The system should display an error message for invalid meeting link format and prevent joining the meeting.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ui_response: true
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: https://invalid.example.com/notameeting
+      expect_state: ""
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Meeting number or link. Required."
+      ui_response: true
+      ui_response_threshold_ms: 10000
+      ai_check:
+        prompt: "Does the current screen display an error message about an invalid meeting number or link? Look for phrases like 'Invalid meeting number or link', 'Try again', or similar error messages indicating the meeting link was not recognized. Only return 'yes' or 'no'."
+
+  check_points: [Keyboard Navigation, Screen Reader, Performance]

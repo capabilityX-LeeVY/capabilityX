@@ -1,0 +1,15 @@
+test_case:
+  name: end_meeting
+  description:
+  steps:
+    - name: End meeting
+      action:
+        type: key
+        value: default
+      expect_state: "End meeting, Menu item"
+    - name: End meeting, Menu item
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  check_points: ["Keyboard Navigation"]

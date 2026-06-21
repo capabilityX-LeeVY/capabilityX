@@ -1,0 +1,41 @@
+test_case:
+  name: start_and_answer_a_calling
+  description: "Verify that a call can be started and answered successfully"
+  account: bwc.sha+138
+  check_points:
+    - Keyboard Navigation
+    - Focus Ring
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/app_core/calling_menu_item
+
+  steps:
+    - name: "start a call"
+      action:
+        type: local_api
+        value: "navigations/functional/callings/start_a_default_calling"
+        parameters:
+          dial_number: "8339"
+
+    - name: "answer a call"
+      action:
+        type: local_api
+        value: "navigations/functional/callings/answer_a_calling"
+        parameters:
+          agent_node: "calling_agent_8339"
+
+    - name: "verify calling success"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze if the calling session was established successfully. Check: 1) Is 'calling...' text still visible (means not connected yet)? 2) Are call controls (Mute, Share, Keypad, More, End call) present? 3) Is there a call duration timer visible? 4) Is there a blue focus ring on Mute button? Output format: If call connected (no 'calling...' text, all controls present, timer visible), respond '✅Success. Call connected with all controls.' If still connecting ('calling...' visible), respond '⚠️Connecting. Call in progress.' If failed or missing elements, respond '❌Failed. [What is wrong].' Only output 1 sentence."
+      stop_on_ai_check_failure: true
+
+  post_conditions:
+    - navigations/postconditions/end_call

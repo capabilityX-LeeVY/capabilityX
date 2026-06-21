@@ -1,0 +1,90 @@
+test_case:
+  name: layout_from_grid_to_side_by_side
+  owner: huanwan3
+  account: fullmode18
+  description: Encapsulated function to navigate layout options from Grid view to Side-by-side view using direct key presses
+  expect_result: Successfully navigates through layout options using keyboard navigation
+  pre_conditions: []
+  steps:
+    # Open Layout menu
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    # Navigate right to Stack view (from Grid view)
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+      wait_time: 3
+    
+    # Select Stack view
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 3
+    
+    # Re-open Layout menu for next selection
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    # Navigate right to Side-by-side view (from stack view)
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+      wait_time: 3
+    
+    # Select Side-by-side view
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 3
+    
+    # Return to default Grid view
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    # Navigate left twice to return to Grid view (from Side-by-side view)
+    - name: "Direct Arrow Left Key Press"
+      action:
+        type: direct_key
+        value: left
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Direct Arrow Left Key Press"
+      action:
+        type: direct_key
+        value: left
+      expect_state: ""
+      wait_time: 1
+    
+    # Select Grid view (back to default)
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 3
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

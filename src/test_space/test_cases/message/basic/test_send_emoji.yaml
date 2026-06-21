@@ -1,0 +1,47 @@
+test_case:
+  name: send_emoji
+  owner: huanwan3
+  account: fullmode18
+  description: Send an emoji in message chat using the Emoji button
+  expect_result: Emoji is successfully sent in the chat conversation
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    - name: "Click Emoji button"
+      action:
+        type: function
+        value: click_emoji
+        wait_time: 2
+      expect_state: ""
+
+    # search smiley emoji
+    - name: "Direct Input"
+      action:
+        type: direct_input
+        value: "smile"
+        wait_time: 1
+      expect_state: ""
+
+    # select first emoji
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    # send emoji
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window and check the last message. Determine if the last message contains a smile/smiley emoji (😊 or similar smiling face). The emoji should be a yellow smiling face icon. Output format: ✅Success if the last message is a smile emoji, ❌Failed if it's not a smile emoji or no emoji found"
+
+  post_conditions: 
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

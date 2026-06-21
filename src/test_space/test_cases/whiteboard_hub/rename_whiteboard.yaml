@@ -1,0 +1,103 @@
+test_case:
+  name: rename_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Rename a whiteboard.        
+  expect_result: A whiteboard is renamed.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "Messaging menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+    - name: "New Whiteboard in hub"
+      action:
+        type: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""  
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "rename whiteboard"
+      action:
+        type: direct_key
+        value: space
+        wait_time: 1
+    - name: "generate unique whiteboard name"
+      action:
+        type: function
+        value: generate_and_save_whiteboard_name
+        save_to: whiteboard_name
+    - name: "input whiteboard new name"
+      action:
+        type: input
+        value: "${whiteboard_name}"
+        wait_time: 1
+    - name: "Direct Enter Key Press"
+      platforms: [windows,]
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check: 
+        prompt: "verify if the whiteboard has been renamed with \"${whiteboard_name}\" successfully. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: "save whiteboard new name"
+      platforms: [mac,]
+      action:
+        type: key
+        value: default
+      ai_check: 
+        prompt: "verify if the whiteboard has been renamed with \"${whiteboard_name}\" successfully. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

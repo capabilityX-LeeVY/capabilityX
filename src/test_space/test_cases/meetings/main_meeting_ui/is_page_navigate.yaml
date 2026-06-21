@@ -1,0 +1,61 @@
+test_case:
+  name: main_meeting_navigate
+  team: RegressShield
+  owner: raey
+  description: User go to is_page and uses TAB key to traverse through all UI controls systematically.
+  expect_result: All meeting controls are accessible via keyboard navigation (TAB/Shift+TAB).
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Mute  (Ctrl + M) in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Audio options in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Stop video (Ctrl + Shift + V) in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: ""  
+    - name: "Video options in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: "" 
+    - name: "Connect to a device in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: "" 
+    - name: "Start meeting in is_page"
+      action:
+        type: key
+        value: default
+      expect_state: "" 
+     # ui_response: true                
+  # post_conditions:
+  #    - meetings/actions/end_meeting
+  #    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation] 

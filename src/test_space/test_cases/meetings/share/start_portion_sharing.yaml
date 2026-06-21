@@ -1,0 +1,88 @@
+test_case:
+  name: start_portion_sharing
+  team: RegressShield
+  owner: gamao
+  account: rtuser030
+  description: Component function to start portion sharing
+  expect_result: Portion sharing is successfully started
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: "Advanced tab"
+
+    - name: "Advanced tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Portion of screen"
+      action:
+        type: key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share the selected portion"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Expand my view of what I'm sharing"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+      ai_check:
+        prompt: "Analyze the window screenshot. Ignore the orange border and the content on the orange background. Only focus on the content in the center of the screenshot. the content should be a portion of the screen being shared, not the entire screen. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"    
+    
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

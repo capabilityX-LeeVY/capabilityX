@@ -1,0 +1,51 @@
+test_case:
+  name: sign_in
+  account: allianz8
+  site_url: "https://testprod.webex.com"
+  desciption: Verify that a user can successfully sign in with a valid email and password, and the focus moves to the Start Meeting button after login.
+  expect_result: The user is signed in successfully and the focus is on the Start Meeting button.
+  steps:
+
+    - name: "Sign in for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Email address for webex web page"
+      action:
+        type: input
+        value: ${email}
+      expect_state: ""
+
+    - name: "Sign in with email address for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Password for webex web page"
+      action:
+        type: input
+        value: ${password}
+      expect_state: ""
+
+    - name: "Sign in with password for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Schedule a meeting"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "Meeting topic (required)"
+      action:
+        type: input
+        value: "test from regress_shield"
+      expect_state: ""
+
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

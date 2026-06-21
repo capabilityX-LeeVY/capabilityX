@@ -1,0 +1,8 @@
+test_suite:
+  name: web_j2ee
+  team: web
+  owner: binbiwan
+  platform: web
+  language: [en]
+  test_cases:
+    - web/j2ee/sign_in

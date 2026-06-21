@@ -1,0 +1,11 @@
+test_case_batch:
+  name: promote_blue_channel
+  team: test
+  owner: copeng
+  language: [en]
+  description: Promote blue channel test batch for meeting-related test cases
+  test_cases:
+    - promote_blue_channel/start_meeting
+    - promote_blue_channel/check_audio
+    - promote_blue_channel/check_share
+    - promote_blue_channel/check_video

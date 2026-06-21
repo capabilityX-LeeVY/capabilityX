@@ -1,0 +1,72 @@
+test_case:
+  name: layout_direct_controls_test
+  owner: huanwan3
+  account: fullmode18
+  description: Test direct access to layout controls (Grid, Stack, Side-by-side) - TODO Fix control mapping issues
+  expect_result: Successfully accesses all layout controls directly
+  pre_conditions: []
+  steps:
+    # Test 1: Grid view (baseline test)
+    - name: "Layout. Check and adjust layout settings."
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    - name: "Layout, Grid view"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    # Reset focus
+    - name: "Participants"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    
+    # Test 2: Stack view (TODO: Fix control mapping - currently fails)
+    - name: "Layout. Check and adjust layout settings."
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    - name: "Stack view"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    # Reset focus
+    - name: "Participants"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    
+    # Test 3: Side-by-side view (TODO: Fix control mapping - currently fails)
+    - name: "Layout. Check and adjust layout settings."
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+    
+    - name: "Side-by-side view"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,18 @@
+test_case:
+  name: youre_using_your_computer_for_audio_switch_audio_menu_item
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: "Audio options"
+      action:
+        type: key
+        value: default
+
+    - name: "You're using your computer for audio, Switch audio, Menu item"
+      action:
+        type: key
+        value: default

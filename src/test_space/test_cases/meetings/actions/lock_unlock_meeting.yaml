@@ -1,0 +1,25 @@
+test_case:
+  name: lock_unlock_meeting
+  team: Sharing
+  owner: jiaxiwan
+  account: fullmode19
+  description: Lock or unlock meeting
+  expect_result: Meeting is locked or unlocked
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "More options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Lock meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+

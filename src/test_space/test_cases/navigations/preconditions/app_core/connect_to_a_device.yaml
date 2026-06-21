@@ -1,0 +1,12 @@
+test_case:
+  name: connect_to_a_device
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Connect to a device"
+      action:
+        type: key
+        value: default

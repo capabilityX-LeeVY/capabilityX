@@ -1,0 +1,88 @@
+test_case:
+  name: guest_join_from_browser_meetingLink
+  description: Guest user opens a meeting link in browser, clicks Launch Webex App, and joins the meeting through the desktop application
+  expect_result: The guest user successfully joins the meeting by launching Webex app from browser
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+  steps:
+    # --- Open browser and navigate to meeting link ---
+    - name: "Open browser with meeting link"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://cisco.webex.com/meet/zhenhzho"
+        wait_time: 5
+      # comment: "Open Edge browser and navigate to meeting link"
+    # --- Click Launch Webex App button in browser ---
+    - name: "Open Webex"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      # comment: "Click the Launch Webex button on the web page"
+    - name: "Open Webex app"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      # comment: "Alternative button name for launching Webex"
+    - name: "Launch meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      # comment: "Alternative button name for launching meeting"
+    # --- Handle browser dialog to open Webex ---
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      # comment: "Browser dialog confirmation to open Webex app"
+    # --- Switch focus to Webex desktop app ---
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MainWindow"
+        wait_time: 3
+      # comment: "Switch focus from browser to Webex application window"
+    # --- Now in Webex desktop app - Guest join flow ---
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: "Guest Browser User"
+      # comment: "Enter guest name (same control name as Guest_join_PMR_new.yaml)"
+    # --- Handle CAPTCHA if present ---
+    - name: "Type the characters. Required."
+      action:
+        type: input
+        value: clear_input
+      ai_check:
+        prompt: "Analyze if there is a image CAPTCHA, if yes, only return the CAPTCHA text shown in the image in lowercase."
+      optional: true
+      # comment: "Clear CAPTCHA field if present"
+    - name: "Type the characters. Required."
+      action:
+        type: input
+        value: "{ai_check_result}"
+      optional: true
+      # comment: "Enter CAPTCHA from AI recognition"
+    # --- Join meeting ---
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+      # comment: "Click Join meeting button and verify successful join"
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

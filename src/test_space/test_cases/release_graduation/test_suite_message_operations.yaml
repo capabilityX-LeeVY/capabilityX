@@ -1,0 +1,29 @@
+test_suite:
+  name: message_operations
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Message operations test suite - edit, delete, copy, pin, flag, quote, add reaction
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+    
+    # Core test cases - Message operations
+    - message/operations/test_edit_message
+    - message/operations/test_copy_message
+    - message/operations/test_pin_message
+    - message/operations/test_flag_message
+    - message/operations/test_quote_message
+    - message/operations/test_add_reaction
+    - message/operations/test_delete_message
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

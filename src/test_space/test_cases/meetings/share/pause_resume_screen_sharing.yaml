@@ -1,0 +1,22 @@
+test_case:
+  name: pause_resume_screen_sharing
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to pause and resume screen sharing
+  expect_result: Screen sharing is successfully paused and resumed
+  
+  steps:
+    - name: "Pause sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+
+    - name: "Pause sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3

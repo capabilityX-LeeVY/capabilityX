@@ -1,0 +1,55 @@
+test_case:
+  name: copy_message
+  owner: huanwan3
+  account: fullmode18
+  description: Send a message, copy it, and paste into input to verify copy worked
+  expect_result: Message is copied and can be pasted into the message input
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    # Use common action to send text message
+    - include: message/actions/send_text_message
+      params:
+        message_text: "Copy test message [uuid:{uuid}]"
+
+    # Use common action to open context menu on last message
+    - include: message/actions/open_message_context_menu
+
+    # "Copy message" is the first item in menu, just press Enter
+    - name: "Select Copy message"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    # Focus on message input
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 1
+      expect_state: ""
+
+    # Paste the copied message using Ctrl+V
+    - name: "Paste copied message"
+      action:
+        type: shortcut
+        value: ctrl+v
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Send pasted message"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""  
+      ai_check:
+        prompt: "Look at the chat window. Check if the latest message contains a copied message format with timestamp and sender info (like 'You 1/26/2026 2:11 PM • [message text]'). The copied message should include the original message text along with metadata. Output format: ✅Success if a message with timestamp format is visible, ❌Failed if no copied message format found"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

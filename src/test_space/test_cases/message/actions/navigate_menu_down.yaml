@@ -1,0 +1,16 @@
+test_case:
+  name: navigate_menu_down
+  owner: huanwan3
+  description: Navigate down in a menu by pressing down arrow key multiple times
+  expect_result: Focus moves to target menu item
+
+  steps:
+    - name: "Navigate down in menu"
+      action:
+        type: function
+        value: navigate_menu_down
+        params:
+          count: "{count}"
+          interval: 0.2
+        wait_time: 0.3
+      expect_state: ""

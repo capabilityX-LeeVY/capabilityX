@@ -1,0 +1,91 @@
+test_case:
+  name: start_a_calling_with_vbg
+  description: "Start a call, answer it, then apply Home office virtual background and verify it is applied in self-view"
+  account: bwc.sha+138
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+    - navigations/preconditions/app_core/calling_menu_item
+
+  steps:
+    - name: "start a call"
+      action:
+        type: local_api
+        value: "navigations/functional/callings/start_a_default_calling"
+        parameters:
+          dial_number: "8339"
+      ai_check:
+        prompt: "Analyze if 'Start a calling' was successful. Check: 1) Is 'calling...' text visible or call connected? 2) Are Mute, Share, Keypad, More buttons present? Output format: If call connected (all buttons present), respond '✅Success. Call connected with all controls.' If still connecting ('calling...' visible), respond '⏳Connecting. Call in progress.' If failed or missing elements, respond '❌Failed. [What's wrong].' Only output emoji and 1 sentence."
+      stop_on_ai_check_failure: true
+
+    - name: "answer a calling"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "calling_agent_8339"
+        parameters:
+          test_case_name: "navigations/functional/callings/answer_a_calling_action"
+          platform: "windows"
+        wait_time: 20
+
+    - name: "verify calling success"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze if the calling session was established successfully. Check: 1) Is 'calling...' text still visible (means not connected yet)? 2) Are call controls (Mute, Share, Keypad, More, End call) present? 3) Is there a call duration timer visible? Output format: If call connected (no 'calling...' text, all controls present, timer visible), respond '✅Success. Call connected with all controls.' If still connecting ('calling...' visible), respond '⚠️Connecting. Call in progress.' If failed or missing elements, respond '❌Failed. [What is wrong].' Only output 1 sentence."
+      stop_on_ai_check_failure: true
+
+    - name: "Start video"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+
+    - name: "Home office"
+      action:
+        type: key
+        value: default
+
+    - name: "Apply"
+      action:
+        type: key
+        value: default
+
+    - name: "Direct Escape Key Press"
+      platforms: ["windows"]
+      action:
+        type: direct_key
+        value: esc
+
+    - name: "Close Setting Dialog"
+      platforms: ["mac"]
+      action:
+        type: shortcut
+        value: Close Dialog
+
+    - name: "verify virtual background"
+      action:
+        type: function
+        value: ai_verify_current_state
+      ai_check:
+        prompt: "Analyze if the virtual background 'Home office' is applied successfully. IMPORTANT: In a calling UI, the main area shows the REMOTE party (their name/avatar — this is normal). Look at the SELF-VIEW THUMBNAIL (small video preview, usually in the bottom-right corner) — this is where the LOCAL user's virtual background is applied. Check: 1) Is there a self-view thumbnail visible showing a video feed? 2) Does the self-view show a room/office scene as the background (Home office VBG)? 3) Are call controls (Mute, Video, Share, Keypad, More, End call) still present at the bottom? Output format: If the self-view thumbnail shows a virtual background (office/room scene), respond '✅Success. Virtual background Home office applied in self-view.' If self-view is visible but background is unclear, respond '⚠️Warning. [What is unclear].' If no self-view is visible or no virtual background is shown, respond '❌Failed. [What is wrong].' Only output emoji and 1 sentence."
+        reference: home_office.jpg
+
+  post_conditions:
+    - navigations/postconditions/end_call

@@ -1,0 +1,34 @@
+test_case_batch:
+  name: Merak_Apptastic
+  team: Merak
+  owner: minl5
+  language: [en]
+  test_cases:
+    # src/test_space/test_batch/Apptastic
+    - feature_test/Merak_Apptastic/Apptastic/check_webex_app_health
+    # src/test_space/test_batch/Merak_custom_lobby
+    - feature_test/Merak_Apptastic/Merak/custom_lobby/guest_notify_host_in_lobby
+    # src/test_space/test_batch/Merak_commercial_guest_user_join
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/commercial_guest_join_fedramp_meeting
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_EmailIshostCohostEmail
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_from_browser
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_InvalidEmail
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_InvalidMeetingLink
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_meetingLink_excludesPassword
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_meetingLink_includesPassword
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_meetingNumber
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_PMR_new
+    # - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_PMR_old
+    # - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_requiresCaptcha
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_spaceMeeting
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Commercial_guest_join/guest_join_videoAddress
+    # src/test_space/test_batch/Merak_commercial_login_user_join.yaml
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/join_meeting_from_bgb
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/login_user_close_app_join_meeting_from_browser
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/login_user_join_meeting_from_search_bar
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/non_single_join_meeting_from_browser_select_sign_in
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/not_login_user_exit_app_join_meeting_from_browser_select_sign_in
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/not_login_user_join_meeting_from_browser_select_sign_in
+    # - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/user_join_meeting_from_search_bar
+    - feature_test/Merak_Apptastic/Merak/join_meeting/Login_user/user_join_meeting
+    

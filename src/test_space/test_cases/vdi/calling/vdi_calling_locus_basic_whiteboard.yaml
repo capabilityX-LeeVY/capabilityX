@@ -1,0 +1,87 @@
+test_case:
+  name: vdi_calling_locus_basic_whiteboard
+  team: VDI
+  owner: qihliu
+  description: Complete test - Basic application sharing workflow. User signs in, starts meeting, start whiteboard, stops sharing, and signs out.
+  expect_result: Successfully completes basic whiteboard workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_locus_basic_video_call
+  
+  steps:
+    # Start whiteboard
+    - name: "More options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Whiteboards, Menu item, New feature available."
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "New whiteboard in My Whiteboards"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Open for all"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: "Share"
+      ui_response: true
+
+    - name: "Shapes in Whiteboards"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Square in Shapes"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Esc Key Press"
+      action:
+        type: direct_key
+        value: esc
+        wait_time: 5
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. There is a grey square shape in white board. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    # Stop whiteboard
+    - name: "Close for all"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Close whiteboard"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+      
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,32 @@
+test_case:
+  name: start_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - sample/sample_sign_in_to_app_mouse
+
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+        
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: default
+
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 5

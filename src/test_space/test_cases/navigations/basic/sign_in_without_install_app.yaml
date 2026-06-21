@@ -1,0 +1,51 @@
+test_case:
+  name: sign_in
+  description: Verify that a user can successfully sign in with a valid email and password, and the focus moves to the Start Meeting button after login.
+  expect_result: The user is signed in successfully and the focus is on the Start Meeting button.
+  pre_conditions: null
+  
+  steps:
+    - name: "Agree"
+      platforms: ["windows", "mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      optional: true
+    - name: "Sign in"
+      action:
+        type: key
+        value: default
+      expect_state: "Email address"
+      ui_response: true
+    - name: "Email address"
+      action:
+        type: input
+        value: ${email}
+      expect_state: ""
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Password"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+    - name: "Password"
+      action:
+        type: input
+        value: ${password}
+      expect_state: ""
+    - name: "Sign in to app"
+      action:
+        type: key
+        value: default
+      expect_state: ["Profile and preferences, Available", "Join a meeting", " Use left and right arrow key to navigate, Personal Room", " Personal Room", "More options for scheduling a meeting", "Add a contact or create a group"]
+      ui_response: true
+      ui_response_threshold_ms: 10000
+      performance_cpu_threshold: 80
+      performance_mem_threshold_mb: 2048
+      performance_gpu_threshold: 80
+      wait_time: 15
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

@@ -1,0 +1,19 @@
+test_suite:
+  name: in_meetings_sequence
+  team: regress_shield
+  owner: binbiwan
+  platform: windows
+  account: allianz32
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+    - acc_regression/meetings/sequence/forward_navigation_in_meetings
+    - acc_regression/meetings/sequence/reverse_navigation_in_meetings
+    - acc_regression/meetings/sequence/group_navigation_in_meetings
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  check_points: ["Keyboard Navigation"]

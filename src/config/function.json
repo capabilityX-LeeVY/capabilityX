@@ -1,0 +1,106 @@
+[
+    {
+        "name": "get_current_time",
+        "description": "Retrieve the current time",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "get_date",
+        "description": "Retrieve the current date",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "greet_user",
+        "description": "Greet the user with their name",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "User name"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        }
+    },
+    {
+        "name": "who_are_you",
+        "description": "Respond to 'Who are you?'",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "call_screen_reader_api",
+        "description": "Call or analyze or validate the screen reader for the given message",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string",
+                    "description": "The message to be sent to the API"
+                }
+            },
+            "required": [
+                "message"
+            ]
+        }
+    },
+    {
+        "name": "start_meeting",
+        "description": "Start a Webex meeting",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "stop_meeting",
+        "description": "Stop the Webex meeting",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "start_video",
+        "description": "Turn on the video in the meeting",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "stop_video",
+        "description": "Turn off the video in the meeting",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        }
+    },
+    {
+        "name": "wait_seconds",
+        "description": "Wait for a specified number of seconds with logging",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "seconds": {
+                    "type": "integer",
+                    "description": "Number of seconds to wait"
+                }
+            },
+            "required": [
+                "seconds"
+            ]
+        }
+    }
+]

@@ -1,0 +1,42 @@
+{
+    "focusRingColor": {
+      "blue": {
+        "lower": [100, 43, 46],
+        "upper": [124, 255, 255]
+      },
+      "green": {
+        "lower": [35, 43, 46],
+        "upper": [77, 255, 255]
+      },
+      "red1": {
+        "lower": [0, 43, 46],
+        "upper": [10, 255, 255]
+      },
+      "red2": {
+        "lower": [156, 43, 46],
+        "upper": [180, 255, 255]
+      },
+      "white": {
+        "lower": [0, 0, 221],
+        "upper": [180, 30, 255]
+      },
+      "orange": {
+        "lower": [11, 43, 46],
+        "upper": [25, 255, 255]
+      },
+      "purple": {
+        "lower": [125, 43, 46],
+        "upper": [155, 255, 255]
+      },
+      "yellow": {
+        "lower": [26, 43, 46],
+        "upper": [34, 255, 255]
+      },
+      "gray": {
+        "lower": [0, 0, 46],
+        "upper": [180, 43, 220]
+      }
+    },
+    "focusRingColorDefault": "blue"
+  }
+  

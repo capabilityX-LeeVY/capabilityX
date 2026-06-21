@@ -1,0 +1,8 @@
+project in (SPARK, Webex, WBX-WAP, "Webex Calling", PROVISION, WXCMIGRATE, WXCAPIBULK, JABBER, WHL) 
+and labels in (508-accessibility, Accessibility, accessibility-Mobile, accessibility-Web, applause_man, ApplauseTest, Allianz-accessibility, applause_man, ApplauseTest, AccTeamTest, Applause-Usability, accessibility, Accessibility-Bug) 
+and type not in (Epic, UX, "Portfolio Feature") 
+and created >= -104w 
+and filter = 101247 
+and (created >= 2024-09-03 and labels != Jabber-FullAudit or labels = Reopen) 
+and labels in (Applause-Cycle-507487) 
+order by issuetype desc, updated desc

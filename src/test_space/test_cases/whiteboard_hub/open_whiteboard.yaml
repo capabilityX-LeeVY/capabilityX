@@ -1,0 +1,33 @@
+test_case:
+  name: open_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Open a whiteboard.        
+  expect_result: A whiteboard is opened.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - whiteboard_hub/new_whiteboard
+  steps:
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+        wait_time: 5
+      ai_check: 
+        prompt: "Check if the whiteboard was successfully opened. Requirements: There must be a 'Share' button visible in the screen. Output format: ✅Success or ❌Failed. Reasoning: <describe which elements you see>"
+    - name: "Close window"
+      action:
+        type: shortcut
+        value: Close window
+        wait_time: 1
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

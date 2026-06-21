@@ -1,0 +1,12 @@
+test_case:
+  name: open_cisco_ai_assistant_panel_alt_i
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Open Cisco AI Assistant panel (Alt + I)"
+      action:
+        type: key
+        value: default

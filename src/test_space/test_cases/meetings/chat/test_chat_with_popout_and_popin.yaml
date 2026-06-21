@@ -1,0 +1,37 @@
+test_case:
+  name: test_chat_with_popout
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Verify chat with popout functionality. User signs in, starts PMR meeting, sends custom chat message, pops out chat panel, and signs out.
+  expect_result: Successfully completes chat workflow with popout functionality
+  
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/chat/send_custom_chat_message
+  
+  steps: 
+    - name: "Pop out panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+
+    - name: "Pop in panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,22 @@
+{
+  "ui_response_settings": {
+    "enabled": true,
+    "default_timeout_seconds": 60,
+    "polling_interval_seconds": 1,
+    "save_to_database": true,
+    "generate_reports": true,
+    "log_level": "INFO"
+  },
+  "ui_response_thresholds": {
+    "fast_response_ms": 500,
+    "moderate_response_ms": 1000,
+    "slow_response_ms": 3000,
+    "timeout_response_ms": 60000
+  },
+  "ui_response_matching": {
+    "exact_match": true,
+    "contains_match": true,
+    "case_sensitive": false,
+    "normalize_whitespace": true
+  }
+}

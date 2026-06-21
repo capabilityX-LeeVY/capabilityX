@@ -1,0 +1,22 @@
+test_case:
+  name: start_video_before_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component - Start video before starting meeting using pre-meeting controls
+  expect_result: Successfully starts video before meeting
+  
+  pre_conditions: []
+  
+  steps:
+    - name: "Start video before meeting"
+      action:
+        type: function
+        value: ensure_video_on_before_meeting
+      expect_state: ""
+  
+  post_conditions: []
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

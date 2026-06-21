@@ -1,0 +1,25 @@
+test_suite:
+  name: message_space
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Message space test suite - add people, copy link, update name, leave space
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    
+    # Core test cases - Space operations
+    - message/space/test_add_people_to_space
+    - message/space/test_copy_space_link
+    - message/space/test_update_space_name
+    - message/space/test_leave_space
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

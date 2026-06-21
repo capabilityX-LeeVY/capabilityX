@@ -1,0 +1,51 @@
+test_case:
+  name: switch_to_side_by_side_layout
+  description: "Test switching to side by side layout in meeting"
+  account: allianz31
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "sign in 1 client"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "faye's device"
+        parameters:
+          test_case_name: "navigations/basic/sign_in"
+          account: "bts1"
+          installOptions/arch: "arm64"
+
+    - name: "join pmr meeting with 1 client"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "faye's device"
+        parameters:
+          test_case_name: "acc_regression/in_meeting/join_pmr_meeting"
+
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+    
+    - name: "Side by side"
+      action:
+        type: key
+        value: default
+
+    - name: "Direct press esc key"
+      action:
+        type: direct_key
+        value: esc
+
+  post_conditions:
+    - navigations/postconditions/end_meeting_for_all
+    - navigations/postconditions/sign_out
+  

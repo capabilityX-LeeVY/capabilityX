@@ -1,0 +1,12 @@
+test_case:
+  name: meetings_tab_list_meeting_recap_tab
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Meetings Tab list, Meeting recap tab"
+      action:
+        type: key
+        value: default

@@ -1,0 +1,219 @@
+test_case:
+  name: main_meeting_navigate_shift_tab
+  team: RegressShield
+  owner: raey
+  description: User starts meeting and uses Shift+TAB key to traverse through all UI controls in reverse order systematically.
+  expect_result: All meeting controls are accessible via reverse keyboard navigation (Shift+TAB).
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  # steps:
+  #   - name: "Wait for meeting to fully load"
+  #     action:
+  #       type: key
+  #       value: default
+  #       wait_time: 6
+  #     expect_state: ""
+    # - name: "Mute"
+    #   action:
+    #     type: key
+    #     value: default
+    #   expect_state: ""
+    # - name: "Audio Options"
+    #   action:
+    #     type: key
+    #     value: default
+    #   expect_state: ""
+    # - name: "Stop video"
+    #   action:
+    #     type: key
+    #     value: default
+    #   expect_state: ""
+    # - name: "Shift+Tab 1"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 2"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+
+    # - name: "Shift+Tab 3"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 4"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 5"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 6"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 7"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 8"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 9"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 10"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 11"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 12"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 13"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 14"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 15"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 16"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 17"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 18"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 19"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 20"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 21"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 22"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 23"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 24"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 25"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 26"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 27"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 28"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 29"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+    # - name: "Shift+Tab 30 (Final)"
+    #   action:
+    #     type: key
+    #     value: shift+tab
+    #     wait_time: 0.5
+    #   expect_state: ""
+      # ui_response: true
+  post_conditions:
+     - meetings/actions/end_meeting
+     - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Focus Ring] 

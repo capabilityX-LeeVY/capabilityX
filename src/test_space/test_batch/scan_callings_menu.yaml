@@ -1,0 +1,7 @@
+test_case_batch:
+  name: scan_calling_menu
+  team: calling
+  owner: ai_generated
+  language: [en]
+  test_cases:
+    - acc_regression/calling/scan_calling_menu_item

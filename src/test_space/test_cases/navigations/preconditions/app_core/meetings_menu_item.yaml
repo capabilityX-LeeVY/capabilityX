@@ -1,0 +1,12 @@
+test_case:
+  name: meetings_menu_item
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default

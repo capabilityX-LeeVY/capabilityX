@@ -1,0 +1,39 @@
+test_case:
+  name: vbg_static
+  description: "Test selecting static virtual background in meeting"
+  
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+    - navigations/functional/in_meeting/video/change_virtual_background
+
+  steps:
+
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+
+    - name: "Apply in settings dialog"
+      platforms: ["mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+    
+    - name: "Close Setting Dialog"
+      platforms: ["mac"]
+      action:
+        type: shortcut
+        value: Close Dialog
+
+  post_conditions:
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  

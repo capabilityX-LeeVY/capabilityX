@@ -1,0 +1,105 @@
+from core.mac.AXClasses import NativeUIElement
+from core.mac.RSKeyboard import CRSKeyboard
+from common.utils.logger import LOGGER_INFO,LOGGER_WARNING,LOGGER_ERROR
+from core.mac.TraversedElementMgr import CTraversed
+from typing import Optional
+
+class AXPopover(NativeUIElement):
+    def __init__(self, element:NativeUIElement):
+        self.element = element
+        super().__init__(self.element.ref)
+        self.screenshotInstance = element.screenshotInstance
+
+    def _traverChild(self,ele:NativeUIElement)-> list['NativeUIElement']:
+        children = self.element.children
+        
+        for c in children:
+            if c.role in ["AXStaticText",]:
+                self.element.otherInfo = c.avaliableInfo
+                self.element.otherInfoType = "AXStaticTextValue"
+                break
+
+        return [self.element,]
+
+    def children(self)-> list['NativeUIElement']:
+        return self._traverChild(self.element)
+        
+
+    def Traveral(self,tabOrder)-> list:
+        subItems:list['NativeUIElement'] = self.children()
+        res = []
+        order = tabOrder
+        for item in subItems:
+            item.level = self.element.level
+            item.productName = self.element.productName
+            item.tabOrder = order
+            item.isDeep = self.element.isDeep
+            item.tableName = self.element.tableName
+            item.pathInfo = self.element.pathInfo
+            item.pathInfo_Names = self.element.pathInfo_Names
+            item.needValidate = self.element.needValidate   
+            
+            item.screenshotInstance = self.element.screenshotInstance 
+            item.CaptureControlScreenshot()
+            
+            inserted = CTraversed.InsertElement(item)
+            if inserted == True:
+                item.navigationKey = "Tab"
+                sql = item.formatToSql()
+                res.append(sql)
+                order = order + 1
+            
+
+        return (res,order)
+    
+    def FindeControlBy(self,controlName = None,controlHash = None,controlNameReg = None) -> tuple[bool,Optional['NativeUIElement']]:
+        subItems:list['NativeUIElement'] = self.children()
+        for item in subItems:
+            enable = item.enabled
+            if enable == False:
+                return (False,None)
+            
+            if item._isSameWith(controlName=controlName,controlHash=controlHash,controlNameReg=controlNameReg) == True:
+                return (True,item)
+                
+        return (False,None)
+    
+    def LocateItem(self,controlName = None,controlHash = None,controlNameReg = None) -> tuple[bool,Optional['NativeUIElement']]:
+        subItems = self.children()
+        if controlName == None and controlHash == None and controlNameReg == None:
+            if len(subItems)>0:
+                return (True, subItems[0])
+            else:
+                return (False,self.element)
+            
+        for index,item in enumerate(subItems):
+            if item.enabled == False:
+                continue
+
+            if item._isSameWith(controlName=controlName,controlHash=controlHash,controlNameReg=controlNameReg) == True:
+                item.level = self.element.level 
+                item.productName = self.element.productName
+                item.processID = self.element.processID
+                item.tabOrder = self.element.tabOrder
+                item.fromControl = self.element.fromControl
+                item.isDeep = self.element.isDeep
+                item.tableName = self.element.tableName
+                item.pathInfo = self.element.pathInfo
+                item.pathInfo_Names = self.element.pathInfo_Names
+                item.needValidate = self.element.needValidate
+                
+                return (True,item)
+            
+        return (False,self.element)
+    
+    @staticmethod
+    def IsAXPopover(element:NativeUIElement) -> bool:
+        if element is None:
+            return False
+                
+        # if element.role_description in ["popover",] and element.role in ["AXPopover",]:
+        #     return True
+        
+        if element.role in ["AXPopover",]:
+            return True       
+        return False 

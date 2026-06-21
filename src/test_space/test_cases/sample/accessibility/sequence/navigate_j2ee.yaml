@@ -1,0 +1,87 @@
+test_case:
+  name: navigate
+  account: allianz8
+  description: navigate through all controls in your test case.
+  expect_result: record traversal of all controls.
+  pre_conditions: null
+    
+  steps:
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+    
+    - name: "Sign in for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Email address for webex web page"
+      action:
+        type: input
+        value: ${email}
+      expect_state: ""
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Sign in with email address for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Password for webex web page"
+      action:
+        type: input
+        value: ${password}
+      expect_state: ""
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Sign in with password for webex web page"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+
+    - name: "navigate"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Generate control datasets"
+      action:
+        type: function
+        value: run_datasets_generator
+        parameters:
+          mode: "incremental"
+      expect_state: ""
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

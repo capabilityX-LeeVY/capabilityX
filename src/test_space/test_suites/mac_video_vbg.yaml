@@ -1,0 +1,15 @@
+test_suite:
+  name: mac_video_vbg
+  team: video_vbg
+  owner: hongtzh2
+  platform: mac
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+    - meetings/video/vbg_static
+    - meetings/video/vbg_dynamic
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out

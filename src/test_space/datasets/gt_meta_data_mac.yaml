@@ -1,0 +1,1704 @@
+GT_meta_data_mac:
+  - Join a meeting:
+      control_name: Join a meeting
+  - Sign in:
+      control_name: Sign in
+  - Phone Username:
+      control_name: Username
+  - Phone Password:
+      control_name: Password
+  - Phone Login:
+      control_name: Login
+  - Sign in. Start by entering your email address. Email address:
+      control_name_regex: ^Email address.*
+  - Email address:
+      control_name_regex: ^Email address.*
+  - Next:
+      control_name: Next
+  - Password:
+      control_name_regex: ^[\s\S]*Password[\s\S]*$
+  - Sign In, after entering your password:
+      control_name: Sign In
+  - Start a Webex meeting:
+      control_name_regex: ^(Start a Webex meeting|Start)$
+  - Start a meeting:
+      control_name_regex: ^(Start a Webex meeting|Start)$
+  - Schedule a meeting:
+      control_name: Schedule a meeting
+  - Meetings menu item:
+      control_name_regex: ^Meetings,.*\d+ of \d+$|^Meetings.*
+  - Contacts menu item:
+      control_name_regex: ^Contacts,.*\d+ of \d+$
+  - Calling menu item:
+      control_name_regex: ^Calling,.*\d+ of \d+$
+  - Whiteboards menu item:
+      control_name_regex: ^Whiteboards,.*\d+ of \d+$
+  - Vidcast menu item:
+      control_name_regex: ^Vidcast,.*\d+ of \d+$
+  - Messaging menu item:
+      control_name_regex: ^Messaging,.*\d+ of \d+$
+  - More actions menu item:
+      control_name_regex: ^More,.*\d+ of \d+$
+  - Accept:
+      control_name: Accept
+  - Start meeting:
+      control_name: Start meeting
+  - ? 'Mute  (Ctrl + M)
+  
+  
+      We''re removing all background noise so no one will hear it'
+    : control_name_regex: ^Mute[\s\S]*
+  - Audio options:
+      control_name: Audio options
+  - Stop video (Ctrl + Shift + V):
+      control_name: Stop video (⌃⇧V)
+  - Video options:
+      control_name: Video options
+  - End meeting:
+      control_name_regex: End meeting
+  - Leave meeting or end meeting for everyone:
+      control_name_regex: ^Leave meeting[\s\S]*$
+  - Blur:
+      control_name: Blur
+  - Add virtual background:
+      control_name: Add virtual background
+  - Executive office:
+      control_name: Executive office
+  - Home office:
+      control_name: Home office
+  - Lookout:
+      control_name: Lookout
+  - Daylight:
+      control_name: Daylight
+  - Fountain:
+      control_name: Fountain
+  - Dark:
+      control_name: Dark
+  - Lava:
+      control_name: Lava
+  - Download Aurora image:
+      control_name_regex: .*Aurora.*
+  - Download Silhouette image:
+      control_name_regex: .*Silhouette.*
+  - Change virtual background:
+      control_name: Change virtual background
+  - Apply:
+      control_name: Apply
+  - Agree:
+      control_name: Agree
+  - Profile and preferences:
+      control_name: Profile and settings
+  - Profile and preferences, Active:
+      control_name: Profile and settings
+  - Sign out in profile and preferences:
+      control_name: Sign out
+  - Sign out:
+      control_name: Sign out
+  - None virtual background:
+      control_name: None
+  - Sign in Continue:
+      control_name: Sign in
+  - Sign in to app:
+      control_name: Sign In
+  - End meeting, Menu item:
+      control_name: End meeting
+  - Apply in settings dialog:
+      control_name: Apply
+  - Reactions:
+      control_name: Reactions (⇧⌘Y)
+  - Done:
+      control_name: Done
+  - Hide participants panel:
+      control_name: Hide participants panel
+  - Mute:
+      control_name_regex: ^Mute[\s\S]*
+  - Search or dial:
+      control_name: Search or dial
+  - Got it:
+      control_name: Got it
+  - Audio Settings..., Menu item:
+      control_name: Audio Settings...
+  - Video Settings..., Menu item:
+      control_name: Video Settings...
+  - Share:
+      control_name: Share
+  - Change sharing settings:
+      control_name: Change sharing settings
+  - Unmute:
+      control_name_regex: ^Unmute[\s\S]*
+  - Self-view location..., Menu item:
+      control_name: Self-view location...
+  - Self-view location...:
+      control_name: Self-view location...
+  - Show in floating window:
+      control_name: Show in floating window
+  - No virtual background:
+      control_name: None
+  - Meetings tab:
+      control_name_regex: ^Meetings,.*\d+ of \d+$
+  - More options for starting a Webex meeting:
+      control_name: More options for starting a Webex meeting
+  - Stop video:
+      control_name: Stop video
+  - Start video:
+      control_name: Start video
+  - Screen or application tab:
+      control_name: Screen or application
+  - Share in share content window:
+      control_name: Share
+  - Stop sharing (Ctrl + Shift + Z):
+      control_name: Stop sharing (⌃⇧Z)
+  - OK in floating Dialog:
+      control_name: OK
+  - Open Cisco AI Assistant panel (Alt + I):
+      control_name: Open AI Assistant panel
+  - Start:
+      control_name: Start
+  - Set button when open AI Assistant panel:
+      control_name: Set
+  - Pause sharing (Alt + Shift + S):
+      control_name_regex: ^Pause sharing[\s\S]*
+  - Resume sharing (Alt + Shift + S):
+      control_name_regex: ^Resume sharing[\s\S]*
+  - Meeting number or link. Required.:
+      control_name_regex: ^Meeting number or link[\s\S]*
+  - Next-Join a meeting - Webex:
+      control_name: Next
+  - Name. Required.:
+      control_name_regex: ^Name[\s\S]*
+  - Email address. Required.:
+      control_name_regex: ^Email address[\s\S]*
+  - Next-Enter your information - Webex:
+      control_name: Next
+  - Join meeting:
+      control_name: Join meeting
+  - Leave meeting:
+      control_name_regex: ^Leave meeting[\s\S]*
+  - Leave meeting button:
+      control_name_regex: ^Leave meeting[\s\S]*
+  - Create a new whiteboard:
+      control_name_regex: ^New whiteboard[\s\S]*
+  - Meeting password. Required.:
+      control_name_regex: ^Meeting password[\s\S]*
+  - Name (required), Textbox, Type in your name:
+      control_name_regex: ^Name[\s\S]*
+  - Type the characters. Required. &password:
+      control_name_regex: ^Type the characters[\s\S]*$
+  - more options for whiteboard:
+      control_name_regex: ^More options for [\s\S]*$
+  - rename whiteboard:
+      control_name: Rename
+  - delete whiteboard:
+      control_name: Delete
+  - share whiteboard:
+      control_name: Share
+  - input whiteboard new name:
+      control_name: Rename whiteboard
+  - save whiteboard new name:
+      control_name: Save
+  - Search whiteboards:
+      control_name: Search whiteboards
+  - input whiteboard name:
+      control_name: Search whiteboards
+  - Cancel search whiteboards:
+      control_name: Clear
+  - input people name:
+      control_name: Search
+  - More options:
+      control_name: More options
+  - Name. Required. Textbox:
+      control_name_regex: ^Name[\s\S]*$
+  - Layout:
+      control_name_regex: ^[\s\S]*Layout[\s\S]*$
+  - Side by side:
+      control_name_regex: ^Side by side[\s\S]*$
+  - Emergency Calling OK Button:
+      control_name: OK
+  - End call:
+      control_name: End call
+  - Search, meet and call:
+      control_name_regex: ^Search, meet and call.*$
+  - Continue with email:
+      control_name: Continue with email
+  - Emergency Calling Reminder Cancel Button:
+      control_name: Cancel
+  - Call settings:
+      control_name_regex: ^\s*Call settings(?:\s*,[\s\S]*)?$
+  - Open Call Preferences:
+      control_name: Open Call Preferences
+  - Calling dock Tree item:
+      control_name_regex: ^\s*Calling(?:\s*,[\s\S]*)?$
+  - Open:
+      control_name_regex: ^Open$
+  - Open Webex:
+      control_name_regex: ^(Open Webex|Open Webex app|Launch Webex App|Open Webex App|Launch
+        meeting)$
+  - Open Webex app:
+      control_name_regex: ^(Open Webex|Open Webex app|Launch Webex App|Open Webex App|Launch
+        meeting)$
+  - Launch meeting:
+      control_name_regex: ^(Open Webex|Open Webex app|Launch Webex App|Open Webex App|Launch
+        meeting)$
+  - Always Allow:
+      control_name: Always Allow
+  - app_version: {}
+  - Join a meeting in meetings tab: {}
+  - Join: {}
+  - Sign up: {}
+  - ? By using Webex, you agree to the Terms of Service and Privacy Statement. Terms
+      of Service Link Open in your default browser
+    : {}
+  - Select Webex system mode: {}
+  - Go back: {}
+  - Notify host: {}
+  - Forgot password?: {}
+  - Need help signing in? opens in a new tab: {}
+  - Terms of Service opens in a new tab: {}
+  - Privacy Statement opens in a new tab: {}
+  - about Webex opens in a new tab: {}
+  - Personal Room: {}
+  - Copy your personal room information: {}
+  - More options for scheduling a meeting: {}
+  - Previous day: {}
+  - choose date: {}
+  - Next day: {}
+  - Today: {}
+  - Calendar view type selector: {}
+  - Connect: {}
+  - Dismiss banner: {}
+  - test for schedule Meeting, from to: {}
+  - Updated PMR Meeting From Automated Test: {}
+  - Edit meeting: {}
+  - Set a status: {}
+  - Search region, Ctrl+F: {}
+  - Start a conversation, call, or meet: {}
+  - Connect to a device in is page: {}
+  - Device Settings: {}
+  - Teams menu item: {}
+  - Settings: {}
+  - Show labels: {}
+  - Connecting...: {}
+  - Decline: {}
+  - Minimize the window: {}
+  - Close the window: {}
+  - AI Assistant: {}
+  - Record: {}
+  - Raise: {}
+  - Show Apps panel: {}
+  - Open chat panel: {}
+  - More panels: {}
+  - Closed captions more options: {}
+  - Hide meeting controls: {}
+  - bts tony2, Video on: {}
+  - Invite and remind: {}
+  - Invite: {}
+  - Copy meeting information: {}
+  - Meeting Info: {}
+  - bts tony2, Muted, Video on: {}
+  - Speaker: {}
+  - Microphone: {}
+  - Smart audio for microphone: {}
+  - Audio Settings...: {}
+  - You're using your computer for audio: {}
+  - Noise removal: {}
+  - Optimize for my voice: {}
+  - Optimize for all voices: {}
+  - Music mode: {}
+  - Ringers and alerts: {}
+  - Volume: {}
+  - Automatically adjust volume: {}
+  - More information for Automatically adjust volume: {}
+  - Unmute temporarily by holding Spacebar: {}
+  - Directional audio: {}
+  - Advanced settings: {}
+  - Save: {}
+  - Cancel: {}
+  - Audio Tree item: {}
+  - Video Tree item: {}
+  - Sharing content Tree item: {}
+  - Notifications Tree item: {}
+  - Appearance Tree item: {}
+  - Accessibility Tree item: {}
+  - Keyboard shortcuts Tree item: {}
+  - Privacy Tree item: {}
+  - Messaging Tree item: {}
+  - Meetings Tree item: {}
+  - Calling Tree item: {}
+  - Devices Tree item: {}
+  - Accessories Tree item: {}
+  - General Tree item: {}
+  - All Devices: {}
+  - Follow system setting (Speaker (Realtek(R) Audio) (Built-in)): {}
+  - Speaker (Realtek(R) Audio) (Built-in): {}
+  - CABLE Input (VB-Audio Virtual Cable) (Virtual): {}
+  - 麦克风 (ManyCam Virtual Microphone) (Virtual): {}
+  - CABLE Output (VB-Audio Virtual Cable) (Virtual): {}
+  - Follow system setting (麦克风 (ManyCam Virtual Microphone) (Virtual)): {}
+  - back: {}
+  - More information for Windows audio signal processing: {}
+  - Windows audio signal processing: {}
+  - Automatic: {}
+  - Use: {}
+  - Bypass: {}
+  - Smart audio Tree item: {}
+  - Lock meeting: {}
+  - Webex uses artificial intelligence to enhance audio. Learn more Link Open in your default browser: {}
+  - Background Tree item: {}
+  - Rotate: {}
+  - Camera: {}
+  - Mirror my video view: {}
+  - Zoom to fit: {}
+  - Enable hardware acceleration: {}
+  - More information for Max camera resolution: {}
+  - Max camera resolution: {}
+  - More information for Self view in meetings: {}
+  - Show with others: {}
+  - Hide: {}
+  - None: {}
+  - Use last connected camera (ManyCam Virtual Webcam): {}
+  - ManyCam Virtual Webcam: {}
+  - Auto (360P): {}
+  - 360p: {}
+  - 720p: {}
+  - Automatically adjust: {}
+  - Best for text and images: {}
+  - Best for video and motion: {}
+  - Include computer sound: {}
+  - Show me in front: {}
+  - More information for Show me in front: {}
+  - Show my Webex app: {}
+  - More information for Show my Webex app: {}
+  - Share all windows from an application: {}
+  - Show video view in a floating window: {}
+  - Limit content sharing to 15 frames per second: {}
+  - Messages Tree item: {}
+  - Calls Tree item: {}
+  - Taskbar notifications. Don’t show when Webex is closed.: {}
+  - Quiet hours schedule: {}
+  - Adjust notification sounds in Audio. Change: {}
+  - All messages (default): {}
+  - Direct messages and @mentions to me: {}
+  - Custom: {}
+  - 'Off': {}
+  - Space notification sound: {}
+  - Direct message notification sound: {}
+  - Favorites notification sound: {}
+  - Reset to default: {}
+  - Beep: {}
+  - Bounce: {}
+  - Calculation: {}
+  - Cute: {}
+  - Drop: {}
+  - Evolve: {}
+  - Idea: {}
+  - Nimba: {}
+  - Open (default): {}
+  - Snap: {}
+  - Tick: {}
+  - Vibes: {}
+  - Allow notifications: {}
+  - Turn off notifications: {}
+  - Turn off while in a meeting or call: {}
+  - Automatically decline calls on all devices while in a meeting or call, and send call to voicemail or another number.: {}
+  - Direct calls ringtone: {}
+  - Sunrise: {}
+  - Ripples: {}
+  - Ringer: {}
+  - Reflections: {}
+  - Playful: {}
+  - Mischief: {}
+  - Mellow: {}
+  - Group Call Invite: {}
+  - Delight: {}
+  - Classic Ringer: {}
+  - Ascent: {}
+  - Light theme: {}
+  - Meetings, Always use dark theme: {}
+  - No skin tone: {}
+  - Light skin tone: {}
+  - Medium-light skin tone: {}
+  - Medium skin tone: {}
+  - Medium-dark skin tone: {}
+  - Dark skin tone: {}
+  - Recognize hand gestures: {}
+  - More information for Recognize hand gestures: {}
+  - Find more settings in Accessibility.: {}
+  - Read the following in meeting notifications when screen reader is on: {}
+  - A participant raises or lowers hand (host only): {}
+  - A participant starts or stops sharing content: {}
+  - Chat messages: {}
+  - Host mutes audio: {}
+  - Host stops video: {}
+  - Dim shared content Automatically dim shared content when it contains flashing images: {}
+  - More information for Manage keyboard shortcuts: {}
+  - Learn more about keyboard navigation: {}
+  - Search shortcuts: {}
+  - More information for Global shortcuts: {}
+  - Search: {}
+  - Bold: {}
+  - Share content: {}
+  - Send reaction: {}
+  - Send reaction Heart Edit Alt + Shift + 8 shortcut: {}
+  - Send reaction Heart More options: {}
+  - Remove: {}
+  - Edit: {}
+  - Hide my availability and status from another person. Add: {}
+  - Lock screen behavior. Turn off camera and mic when screen is locked.: {}
+  - Telemetry data. Enable data viewing.: {}
+  - More information for Enable data viewing: {}
+  - Add a person by name or email: {}
+  - Close: {}
+  - Spell check, Enable spell checking: {}
+  - Spell check language: {}
+  - Show compact view: {}
+  - Show separate tabs for Direct messages and Spaces: {}
+  - Show recommended messages: {}
+  - Expand threads: {}
+  - Seen by Read Receipts. Send and see read receipts.: {}
+  - English (United States): {}
+  - French: {}
+  - German: {}
+  - Italian: {}
+  - Polish: {}
+  - Portuguese (Brazil): {}
+  - Portuguese (Portugal): {}
+  - Romanian: {}
+  - Russian: {}
+  - Serbian (Latin): {}
+  - Spanish: {}
+  - Swedish: {}
+  - English (United Kingdom): {}
+  - Dutch: {}
+  - Danish: {}
+  - Join options Tree item: {}
+  - Layout Tree item: {}
+  - Lobby Tree item: {}
+  - ? Webex, bts_tony2@mailinator.com, You can connect other calendar accounts to see
+      and manage all of your meetings in one place., Connect a calendar
+    : {}
+  - Webex: {}
+  - More information about Microsoft Outlook: {}
+  - More information about Google Calendar: {}
+  - Automatically set status to stepped away.: {}
+  - Learn more about stepping away from meetings: {}
+  - More information for Default Webex site URL: {}
+  - Edit converged-bts.webex.com: {}
+  - Configure Advanced Settings: {}
+  - Personal Room name, bts tony2's Personal Room,More information for Personal Room link: {}
+  - Edit my Personal Room on the Webex site: {}
+  - More information for Join options: {}
+  - Use my last join options: {}
+  - Use my default join options: {}
+  - Audio Connection: {}
+  - Mute me when I join the meeting: {}
+  - Start my video when I join the meeting: {}
+  - Saved phone numbers, Refresh: {}
+  - Manage my Call me phone numbers: {}
+  - Recent phone numbers, Clear: {}
+  - More information for Move meeting: {}
+  - Let me choose every time: {}
+  - Always join again: {}
+  - Use computer for audio: {}
+  - Call me: {}
+  - I will call in: {}
+  - Don't connect to audio: {}
+  - More information for Current video view: {}
+  - More information for Number of videos per page in grid view: {}
+  - Banner, The maximum number of videos you can select has been adjusted to the maximum number supported by your computer.: {}
+  - Number of videos per page in grid view: {}
+  - More information for Default view only: {}
+  - Hide participants without video: {}
+  - Automatically hide names in videos: {}
+  - Join meetings in full-screen view: {}
+  - Stop incoming video when I join meetings: {}
+  - Use people focus to optimize screen space: {}
+  - Always show the active speaker during content sharing: {}
+  - A participant is waiting in the lobby: {}
+  - More information for A participant is waiting in the lobby: {}
+  - Personalize your lobby for all the meetings you host. Edit my lobby: {}
+  - Microsoft 365: {}
+  - Google Calendar: {}
+  - converged-bts.webex.com: {}
+  - Incoming Calls, Answer calls with my video on: {}
+  - Highlight to call, reviewnumber before calling: {}
+  - My devices, refresh: {}
+  - Activate a new device, Enter the code on your personal device when prompted to activate it. Generate activation code: {}
+  - 'Enter the code into your device when prompted, and let the magic begin!, Code will expire at: 2025-11-26 19:10:06, OK': {}
+  - Enable automatic updates: {}
+  - Sign in. Start Webex when my computer starts: {}
+  - More information for Show Webex availability in Microsoft Outlook: {}
+  - Landing screen. Choose what you'd like to see first every time Webex opens.: {}
+  - Recent sessions See devices that are currently signed in or have been active recently. Show Details: {}
+  - Default file location, C:\Users\test\Downloads\, Change: {}
+  - Local time zone: {}
+  - Multitasking. Show floating window for calls and meetings.: {}
+  - Calling: {}
+  - Meetings: {}
+  - Contacts: {}
+  - Messaging: {}
+  - (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi: {}
+  - (UTC+08:00) Kuala Lumpur, Singapore: {}
+  - (UTC+08:00) Perth: {}
+  - (UTC+08:00) Taipei: {}
+  - (UTC+08:45) Eucla: {}
+  - (UTC+09:00) Osaka, Sapporo, Tokyo: {}
+  - (UTC+09:00) Seoul: {}
+  - (UTC+09:00) Yakutsk: {}
+  - (UTC+09:30) Darwin: {}
+  - (UTC+10:00) Brisbane: {}
+  - (UTC+10:00) Guam, Port Moresby: {}
+  - (UTC+10:00) Vladivostok: {}
+  - (UTC+10:30) Adelaide: {}
+  - (UTC+11:00) Bougainville Island: {}
+  - (UTC+11:00) Canberra, Melbourne, Sydney: {}
+  - (UTC+11:00) Chokurdakh: {}
+  - (UTC+11:00) Hobart: {}
+  - (UTC+11:00) Lord Howe Island: {}
+  - (UTC+11:00) Sakhalin: {}
+  - (UTC+11:00) Solomon Is., New Caledonia: {}
+  - (UTC+12:00) Fiji: {}
+  - (UTC+12:00) Norfolk Island: {}
+  - (UTC+13:00) Auckland, Wellington: {}
+  - (UTC+13:00) Coordinated Universal Time+13: {}
+  - (UTC+13:00) Nuku'alofa: {}
+  - (UTC+13:00) Samoa: {}
+  - (UTC+13:45) Chatham Islands: {}
+  - (UTC+14:00) Kiritimati Island: {}
+  - (UTC+07:00) Bangkok, Hanoi, Jakarta: {}
+  - (UTC+06:30) Yangon (Rangoon): {}
+  - (UTC+06:00) Omsk: {}
+  - (UTC+06:00) Dhaka: {}
+  - (UTC+05:45) Kathmandu: {}
+  - (UTC+05:30) Sri Jayawardenepura: {}
+  - (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi: {}
+  - (UTC+05:00) Islamabad, Karachi: {}
+  - (UTC+05:00) Ekaterinburg: {}
+  - (UTC+05:00) Astana: {}
+  - (UTC+05:00) Ashgabat, Tashkent: {}
+  - (UTC+04:30) Kabul: {}
+  - (UTC+04:00) Yerevan: {}
+  - (UTC+04:00) Tbilisi: {}
+  - (UTC+04:00) Saratov: {}
+  - (UTC+04:00) Port Louis: {}
+  - (UTC+04:00) Izhevsk, Samara: {}
+  - (UTC+04:00) Baku: {}
+  - (UTC+04:00) Astrakhan, Ulyanovsk: {}
+  - (UTC+04:00) Abu Dhabi, Muscat: {}
+  - (UTC+03:30) Tehran: {}
+  - (UTC+03:00) Volgograd: {}
+  - (UTC+03:00) Nairobi: {}
+  - (UTC+03:00) Moscow, St. Petersburg, Volgograd: {}
+  - (UTC+03:00) Minsk: {}
+  - (UTC+03:00) Kuwait, Riyadh: {}
+  - (UTC+03:00) Istanbul: {}
+  - (UTC+03:00) Baghdad: {}
+  - (UTC+03:00) Amman: {}
+  - (UTC+02:00) Windhoek: {}
+  - (UTC+02:00) Juba: {}
+  - (UTC+02:00) Jerusalem: {}
+  - (UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius: {}
+  - (UTC+02:00) Harare, Pretoria: {}
+  - (UTC+02:00) Chisinau: {}
+  - (UTC+02:00) Cairo: {}
+  - (UTC+02:00) Athens, Bucharest: {}
+  - (UTC+01:00) West Central Africa: {}
+  - (UTC+01:00) Casablanca: {}
+  - (UTC+01:00) Brussels, Copenhagen, Madrid, Paris: {}
+  - (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague: {}
+  - (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna: {}
+  - (UTC+00:00) Monrovia, Reykjavik: {}
+  - (UTC+00:00) Dublin, Edinburgh, Lisbon, London: {}
+  - (UTC-01:00) Cabo Verde Is.: {}
+  - (UTC-01:00) Azores: {}
+  - (UTC-02:00) South Georgia: {}
+  - (UTC-02:00) Greenland: {}
+  - (UTC-02:00) Coordinated Universal Time-02: {}
+  - (UTC-03:00) Santiago: {}
+  - (UTC-03:00) Salvador: {}
+  - (UTC-03:00) Saint Pierre and Miquelon: {}
+  - (UTC-03:00) SA Eastern Standard Time: {}
+  - (UTC-03:00) Punta Arenas: {}
+  - (UTC-03:00) Montevideo: {}
+  - (UTC-03:00) City of Buenos Aires: {}
+  - (UTC-03:00) Cayenne, Fortaleza: {}
+  - (UTC-03:00) Brasilia: {}
+  - (UTC-03:00) Asuncion: {}
+  - (UTC-03:00) Araguaina: {}
+  - (UTC-03:30) Newfoundland: {}
+  - (UTC-04:00) Georgetown, La Paz, Manaus, San Juan: {}
+  - (UTC-04:00) Caracas: {}
+  - (UTC-04:00) Atlantic Time (Canada): {}
+  - (UTC-05:00) Indiana (East): {}
+  - (UTC-05:00) Eastern Time (US & Canada): {}
+  - (UTC-05:00) Bogota, Lima, Quito, Rio Branco: {}
+  - (UTC-06:00) Saskatchewan: {}
+  - (UTC-06:00) Guadalajara, Mexico City, Monterrey: {}
+  - (UTC-06:00) Chihuahua, La Paz, Mazatlan: {}
+  - (UTC-06:00) Central Time (US & Canada): {}
+  - (UTC-06:00) Central America: {}
+  - (UTC-07:00) Yukon: {}
+  - (UTC-07:00) Mountain Time (US & Canada): {}
+  - (UTC-07:00) Arizona: {}
+  - (UTC-08:00) Baja California: {}
+  - (UTC-08:00) Pacific Time (US & Canada): {}
+  - (UTC-09:00) Alaska: {}
+  - (UTC-09:30) Marquesas Islands: {}
+  - (UTC-10:00) Hawaii: {}
+  - (UTC-11:00) Coordinated Universal Time-11: {}
+  - (UTC-12:00) International Date Line West: {}
+  - Afrikaans: {}
+  - Albanian: {}
+  - Amharic: {}
+  - Arabic: {}
+  - Armenian: {}
+  - Assamese: {}
+  - Azerbaijani: {}
+  - Bangla: {}
+  - Bashkir: {}
+  - Basque: {}
+  - Belarusian: {}
+  - Bhojpuri: {}
+  - Bodo: {}
+  - Bosnian: {}
+  - Bulgarian: {}
+  - Cantonese (Traditional): {}
+  - Catalan: {}
+  - Chhattisgarhi: {}
+  - Chinese (Literary): {}
+  - Chinese Simplified: {}
+  - Chinese Traditional: {}
+  - Croatian: {}
+  - Czech: {}
+  - Dari: {}
+  - Divehi: {}
+  - Dogri: {}
+  - English: {}
+  - Estonian: {}
+  - Faroese: {}
+  - Fijian: {}
+  - Filipino: {}
+  - Finnish: {}
+  - French (Canada): {}
+  - Galician: {}
+  - Ganda: {}
+  - Georgian: {}
+  - Greek: {}
+  - Gujarati: {}
+  - Haitian Creole: {}
+  - Hausa: {}
+  - Hebrew: {}
+  - Hindi: {}
+  - Hmong Daw: {}
+  - Hungarian: {}
+  - Icelandic: {}
+  - Igbo: {}
+  - Indonesian: {}
+  - Inuinnaqtun: {}
+  - Inuktitut: {}
+  - Inuktitut (Latin): {}
+  - Irish: {}
+  - Japanese: {}
+  - Kannada: {}
+  - Kashmiri: {}
+  - Kazakh: {}
+  - Khmer: {}
+  - Kinyarwanda: {}
+  - Klingon (Latin): {}
+  - Klingon (pIqaD): {}
+  - Konkani: {}
+  - Korean: {}
+  - Kurdish (Central): {}
+  - Kurdish (Northern): {}
+  - Kyrgyz: {}
+  - Lao: {}
+  - Latvian: {}
+  - Lingala: {}
+  - Lithuanian: {}
+  - Lower Sorbian: {}
+  - Luxembourgish: {}
+  - Macedonian: {}
+  - Maithili: {}
+  - Malagasy: {}
+  - Malay: {}
+  - Malayalam: {}
+  - Maltese: {}
+  - Manipuri: {}
+  - Māori: {}
+  - Marathi: {}
+  - Mongolian (Cyrillic): {}
+  - Mongolian (Traditional): {}
+  - Myanmar (Burmese): {}
+  - Nepali: {}
+  - Norwegian: {}
+  - Nyanja: {}
+  - Odia: {}
+  - Pashto: {}
+  - Persian: {}
+  - Punjabi: {}
+  - Querétaro Otomi: {}
+  - Rundi: {}
+  - Samoan: {}
+  - Serbian (Cyrillic): {}
+  - Sesotho: {}
+  - Sesotho sa Leboa: {}
+  - Setswana: {}
+  - Shona: {}
+  - Sindhi: {}
+  - Sinhala: {}
+  - Slovak: {}
+  - Slovenian: {}
+  - Somali: {}
+  - Swahili: {}
+  - Tahitian: {}
+  - Tamil: {}
+  - Tatar: {}
+  - Telugu: {}
+  - Thai: {}
+  - Tibetan: {}
+  - Tigrinya: {}
+  - Tongan: {}
+  - Turkish: {}
+  - Turkmen: {}
+  - Ukrainian: {}
+  - Upper Sorbian: {}
+  - Urdu: {}
+  - Uyghur: {}
+  - Uzbek (Latin): {}
+  - Vietnamese: {}
+  - Welsh: {}
+  - Xhosa: {}
+  - Yoruba: {}
+  - Yucatec Maya: {}
+  - Zulu: {}
+  - Audio settings: {}
+  - Disconnect: {}
+  - Call me at your phone number: {}
+  - United States of America: {}
+  - Phone number: {}
+  - Call in: {}
+  - View: {}
+  - Connect audio: {}
+  - US Toll +1-415-655-0000: {}
+  - Show all global call-in numbers: {}
+  - 'Access Code 2003 557 7573 #': {}
+  - 'Attendee ID 231582 #': {}
+  - Clear text input: {}
+  - Find more country or region options. Dropdown Button. Press space or enter to find more country or region options: {}
+  - More information for What if my country or region is not listed?: {}
+  - US Toll, +1-415-655-0000.: {}
+  - Back to Call In info view: {}
+  - bts tony2, Video off: {}
+  - Video Settings...: {}
+  - Silhouette: {}
+  - Screen 1: {}
+  - Sort by: {}
+  - Multi-select help banner, Holding Shift to select multiple applications. Close multi-select help banner: {}
+  - Webex and meeting window (3): {}
+  - Expand sharing options: {}
+  - Resolution and frame rate: {}
+  - More information for Application: {}
+  - Use the arrow keys to move this sharing control bar. Use (Ctrl + Alt + Shift + S) to navigate between floating windows.: {}
+  - Screen: {}
+  - More sharing options: {}
+  - Resume: {}
+  - Expand my view of what I'm sharing: {}
+  - Share something else: {}
+  - Optimization options: {}
+  - Hide Webex controls and panels: {}
+  - Annotate: {}
+  - Annotation privileges: {}
+  - Give remote control: {}
+  - Remote control privilege: {}
+  - Collapse sharing options: {}
+  - Show sharing options: {}
+  - Expand AI assistant panel: {}
+  - Catch me up: {}
+  - Was my name mentioned?: {}
+  - What are the action items?: {}
+  - AI response, The meeting summary and transcript is on for everyone.: {}
+  - Stop summary: {}
+  - Ask me anything about this meeting: {}
+  - More information for Cisco AI Assistant: {}
+  - Meeting options: {}
+  - Pop out panel: {}
+  - Pop out chat panel: {}
+  - Close Cisco AI Assistant panel: {}
+  - Collapse AI assistant panel: {}
+  - ? AI response, Looks like not enough has happened in the meeting yet to get you
+      a summary. Wait a while and then try again. To move to an item press the Arrow
+      keys.
+    : {}
+  - You, Catch me up To move to an item press the Arrow keys.: {}
+  - AI response, The meeting summary and transcript is on for everyone. To move to an item press the Arrow keys.: {}
+  - ? AI response, Looks like not enough has happened in the meeting yet to get you
+      that information. Wait a while and then try again. To move to an item press the
+      Arrow keys.
+    : {}
+  - You, Was my name mentioned? To move to an item press the Arrow keys.: {}
+  - You, What are the action items? To move to an item press the Arrow keys.: {}
+  - Meeting options Tab list, AI Assistant tab: {}
+  - Spoken language for transcript: {}
+  - Start and stop summary: {}
+  - Content availability after the meeting: {}
+  - Start recordings will also turn on AI Assistant.: {}
+  - Pop in panel: {}
+  - Recording options: {}
+  - Recording location: {}
+  - Change layout: {}
+  - Banner, Recordings will include AI-generated summaries and chapters. Close recording information message: {}
+  - Griduse arrow key to navigate.: {}
+  - Stack,unuse arrow key to navigate, press space or enter to select.: {}
+  - Focus,unuse arrow key to navigate, press space or enter to select.: {}
+  - Blank,unuse arrow key to navigate, press space or enter to select.: {}
+  - Follow stage layout when synced: {}
+  - More information for follow stage layout when synced: {}
+  - bts tony2, Video on, raised hand: {}
+  - Cisco video system: {}
+  - Copy meeting link: {}
+  - Whiteboards: {}
+  - Enable breakout sessions: {}
+  - Enable sign language interpretation: {}
+  - Report an issue: {}
+  - Statistics: {}
+  - Search for a room or device: {}
+  - Connect using 9-character code: {}
+  - Enter the 9-character code shown on the Webex device. first 3 characters of the code, input box: {}
+  - middle 3 characters of the code, input box: {}
+  - last 3 characters of the code, input box: {}
+  - Back: {}
+  - Page: {}
+  - The meeting is locked, indicator: {}
+  - ? New feature introduction banner, Now you can choose to let participants continue
+      editing your whiteboards even after you close the whiteboard. Close the new feature
+      introduction banner
+    : {}
+  - Open for all: {}
+  - Sort by Last edited: {}
+  - Order: {}
+  - Meeting options Tab list, General tab: {}
+  - Chat: {}
+  - More information for Chat: {}
+  - Participant privileges: {}
+  - Send reactions: {}
+  - Raise hand: {}
+  - More information for Raise hand: {}
+  - Entry and exit tone: {}
+  - Remote control: {}
+  - Annotation: {}
+  - Participants can chat publicly with Everyone: {}
+  - Host and cohost: {}
+  - Presenter: {}
+  - Other participants: {}
+  - Product area (required). Select product area from the list.: {}
+  - Issue (required). Select Issue from the list.: {}
+  - Tell us about this issue (recommended): {}
+  - ? Your report and log files will be sent to Cisco to resolve technical problems
+      and may be shared with your administrator. By sending this report, you accept
+      the Cisco Online Privacy Statement Link Open in your default browser
+    : {}
+  - More information about Log files: {}
+  - Insights & integrations: {}
+  - Webinar: {}
+  - Other: {}
+  - Joining: {}
+  - Scheduling: {}
+  - Audio: {}
+  - Video: {}
+  - Sharing content: {}
+  - Apps and integrations: {}
+  - Meeting ended unexpectedly: {}
+  - Apps panel Tab list: {}
+  - Suggestions for you: {}
+  - Sort: {}
+  - Participants group, 1 participant: {}
+  - Mute bts tony2: {}
+  - Mute all: {}
+  - Unmute all: {}
+  - More participant options: {}
+  - Close Participants: {}
+  - Expand Participants panel: {}
+  - Invite and remind Tab list: {}
+  - Search by Name or email address: {}
+  - More information: {}
+  - Close Invite and remind panel: {}
+  - Go back to participants panel: {}
+  - Sort by Raised hands (0) Menu item: {}
+  - Unmute bts tony2: {}
+  - bts tony2: {}
+  - Edit display name Menu item: {}
+  - Allow attendees to unmute themselves: {}
+  - Mute on entry Menu item: {}
+  - Collapse Participants panel: {}
+  - Format text: {}
+  - Insert Emoji: {}
+  - Add Giphy: {}
+  - Add mention: {}
+  - Close Message panel: {}
+  - Expand Chat panel: {}
+  - Chat Tab list, Everyone tab: {}
+  - Banner, Messages to everyone will be saved after the meeting. Learn more: {}
+  - Close banner: {}
+  - Turn on Markdown: {}
+  - Markdown Formats: {}
+  - Add special characters around your text to apply formatting: {}
+  - ? List of markdown formatting options organized by category. Style Section header.**Bold**
+      List item._Italic_ List item.> Blockquote List item.Lists Section header.1. First
+      item List item.2. Second Item List item.3. Third Item List item.* Bullet point
+      1 List item.* Bullet point 2 List item.Headings Section header.# Heading 1 List
+      item.## Heading 2 List item.### Heading 3 List item.--- Horizontal line List item.Links
+      Section header.[Link Text](link) List item.Example List item.[Cisco](www.cisco.com)
+      List item.Code Section header.``` language (optional) CODE BLOCK ``` List item.Example
+      List item.``` html <h1>Hello World! </h1> ``` List item.`Unformatted text` List
+      item.
+    : {}
+  - Markdown: {}
+  - Search Emoji or Symbol: {}
+  - 😅 emoji: {}
+  - Recently used emojis category tab: {}
+  - Smileys and animals category tab: {}
+  - People and gestures category tab: {}
+  - Food and drink category tab: {}
+  - Travel and places category tab: {}
+  - Nature and activities category tab: {}
+  - Symbols and objects category tab: {}
+  - Flags category tab: {}
+  - Send Message: {}
+  - Close Chat panel: {}
+  - Cursor: {}
+  - Stop annotating: {}
+  - Stop annotation: {}
+  - Show the thumbnail sidebar: {}
+  - Go to the next page in shared file: {}
+  - Go to the previous page in shared file: {}
+  - Page number: {}
+  - Page thumbnail: {}
+  - Zoom in on shared content: {}
+  - Zoom out on shared content: {}
+  - Fit to viewer, 67%: {}
+  - Shared content view: {}
+  - Request control (Alt + Shift + R): {}
+  - Request to annotate (Alt + Shift + Z): {}
+  - Maximize the shared content: {}
+  - Minimize the shared content: {}
+  - Webex and meeting window (2): {}
+  - Webex - fullmode19_FN fullmode19_LN's Personal Room: {}
+  - Webex - rtuser030_FN rtuser030_LN's Personal Room: {}
+  - Share an individual window only: {}
+  - Slido (polling and Q&A): {}
+  - Captions: {}
+  - Content: {}
+  - Add files: {}
+  - Banner, Files will be deleted after meeting. Close banner: {}
+  - Close Content panel: {}
+  - Expand Content panel: {}
+  - Collapse Content panel: {}
+  - Select Spoken language: {}
+  - English, English: {}
+  - German, Deutsch: {}
+  - Spanish, Español: {}
+  - French, Français: {}
+  - Italian, Italiano: {}
+  - Back to Closed Captions options: {}
+  - Closed caption options menu: {}
+  - Allow manual captioning toggle button off: {}
+  - Show meeting controls: {}
+  - Banner, You've stepped away from the meeting. You're muted and your video is off. Back to meeting: {}
+  - bts tony2, Muted, Video off, Stepped away: {}
+  - Back to meeting: {}
+  - Licence Text: {}
+  - navigate: {}
+  - bts1 bts, Video on: {}
+  - Availability: {}
+  - Manage quiet hours: {}
+  - Settings in profile menu: {}
+  - Write a message to everyone. Press Shift + Enter for new line: {}
+  - End meeting for all: {}
+  - Dialpad menu item: {}
+  - Meeting recap tab: {}
+  - Calendar, Tab: {}
+  - Audio call: {}
+  - 'File name:': {}
+  - 911 OK Button: {}
+  - Answer: {}
+  - Answer bwc: {}
+  - Connect Webex Main Window: {}
+  - Default file location, Change: {}
+  - Audio options in is_page: {}
+  - Stop video (Ctrl + Shift + V) in is_page: {}
+  - Video options in is_page: {}
+  - Connect to a device: {}
+  - Tuesday: {}
+  - bts tony2's meeting: {}
+  - Enter the meeting information: {}
+  - https://testprod.webex.com/meet/allianz32, to join press enter: {}
+  - Clear Input: {}
+  - 'More information for Meeting templates: Webex Meetings Default': {}
+  - Change template: {}
+  - Start date: {}
+  - Start time: {}
+  - End time: {}
+  - End date: {}
+  - Time Zone: {}
+  - Recurrence: {}
+  - Meeting link: {}
+  - More information for Add a space: {}
+  - Create a space with all meeting invitees: {}
+  - bts tony2 Organizer: {}
+  - Remove all invitees: {}
+  - Add a contact or create a group: {}
+  - Schedule: {}
+  - Delete the meeting: {}
+  - Confirm delete the meeting: {}
+  - Description: {}
+  - Generate a one-time meeting link: {}
+  - Use my Personal Room link: {}
+  - Back to basic settings: {}
+  - More information for meeting type: {}
+  - meeting type: {}
+  - Advanced settings Tab list, Security tab: {}
+  - ? Meeting password edit. Must containRequirement met, At least 4 charactersMust
+      not containRequirement met, Easy-to-guess keywords, such as your company name,
+      username, or meeting topicRequirement met, Spaces or unsupported special characters,
+      such as \,`,",/,&,<,>,=,[, and ]
+    : {}
+  - Refresh password: {}
+  - 'Exclude meeting password: Exclude password from email invitation': {}
+  - More information for Join rules: {}
+  - They can join the meeting: {}
+  - They wait in the lobby until they’re admitted: {}
+  - They can’t join the meeting: {}
+  - More information for Auto lock: {}
+  - auto lock, automatically lock my meeting after my meeting starts.: {}
+  - join before host, attendees can join the meeting before the meeting starts.: {}
+  - Can join minutes before meeting start: {}
+  - For more advanced options, schedule or edit the meeting using the Webex site instead.Schedule using Webex site: {}
+  - Webex Meetings Pro meeting: {}
+  - '5': {}
+  - '10': {}
+  - '15': {}
+  - '0': {}
+  - Direct Arrow Down Key Press: {}
+  - Direct Arrow Up Key Press: {}
+  - Direct Arrow Left Key Press: {}
+  - Direct Arrow Right Key Press: {}
+  - Direct Space Key Press: {}
+  - Direct Enter Key Press: {}
+  - Direct Tab Key Press: {}
+  - Direct Escape Key Press: {}
+  - Invitees. Add by name or email.: {}
+  - If you’re the host, sign in to start the meeting. Sign in: {}
+  - Remember me: {}
+  - Type the characters. Required.: {}
+  - Refresh captcha&password: {}
+  - If you're the host or have a Webex account, sign in: {}
+  - Personal Room, lobby window: {}
+  - Self view, Video on, bottom right corner: {}
+  - Self view, Video on, bottom right corner, window: {}
+  - Disclaimer Content View: {}
+  - Follow system setting (Speaker/HP (Realtek High Definition Audio) (Built-in)): {}
+  - Speaker/HP (Realtek High Definition Audio) (Built-in): {}
+  - Follow system setting (Microphone Array (Realtek High Definition Audio) (Built-in)): {}
+  - Microphone Array (Realtek High Definition Audio) (Built-in): {}
+  - Touch up my look: {}
+  - More information for Touch up my look: {}
+  - Correct my lighting: {}
+  - More information for Correct my lighting: {}
+  - Customize brightness, contrast, and saturation: {}
+  - More information for Maximum layout quality: {}
+  - Maximum layout quality: {}
+  - Use last connected camera (Integrated Camera): {}
+  - Integrated Camera: {}
+  - Auto (720P): {}
+  - 1080p: {}
+  - Default (Good): {}
+  - Basic: {}
+  - Good: {}
+  - High: {}
+  - Reset: {}
+  - Adjust more settings in Accessibility. Change: {}
+  - Font size: {}
+  - More information for hiding my availability and status: {}
+  - 'Enter the code into your device when prompted, and let the magic begin!, Code will expire at: 2025-12-22 08:12:29, OK': {}
+  - 'Access Code 2001 337 9734 #': {}
+  - 'Attendee ID 755892 #': {}
+  - Recently used locations, group, United States of America.: {}
+  - bts tony2, Speaking, Video off, list item: {}
+  - Banner, Start recordings will also turn on AI Assistant. Settings: {}
+  - bts tony2, Video on, raised hand, list item: {}
+  - Banner, All fields are required for each channel. Delete any channels that aren't needed.: {}
+  - Select a language: {}
+  - Select an interpreter: {}
+  - Add interpreter: {}
+  - Delete Sign language 1: {}
+  - Add language: {}
+  - Delete Interpreter 2: {}
+  - Delete Interpreter 1: {}
+  - Applying...: {}
+  - Interpretation: {}
+  - Manage interpretation: {}
+  - End sign language interpretation: {}
+  - Discard: {}
+  - Keep writing: {}
+  - ? Suggestions for you, Slido, Polling and Q&A in Webex, use arrow keys to navigate
+      the apps, press enter key to open the app, use Shift + F10 for more options
+    : {}
+  - ? Suggestions for you, Lucidspark Whiteboard, Collaborative whiteboard, press enter
+      key to open the app, use Shift + F10 for more options
+    : {}
+  - ? Suggestions for you, Whiteboard.chat, Designed for teaching, press enter key to
+      open the app, use Shift + F10 for more options
+    : {}
+  - Suggestions for you, Shared Timer, Manage time together, press enter key to open the app, use Shift + F10 for more options: {}
+  - Suggestions for you, Miro, Infinite whiteboard, press enter key to open the app, use Shift + F10 for more options: {}
+  - Suggestions for you, Aaand BOOM, Multiplayer game, press enter key to open the app, use Shift + F10 for more options: {}
+  - ? Suggestions for you, Animations with Showmaster, Stunning animations, press enter
+      key to open the app, use Shift + F10 for more options
+    : {}
+  - Suggestions for you, BasicOps, Projects, Tasks & Notes, press enter key to open the app, use Shift + F10 for more options: {}
+  - ? Suggestions for you, Conferences io, Live audience engagement, press enter key
+      to open the app, use Shift + F10 for more options
+    : {}
+  - Suggestions for you, Crowdpurr, Create trivia and polls, press enter key to open the app, use Shift + F10 for more options: {}
+  - More information for invite people page: {}
+  - Grid: {}
+  - Options, Full-screen view Toggle button off: {}
+  - Automatically hide names Toggle button on: {}
+  - Stop incoming videos Toggle button off: {}
+  - People focus Toggle button off: {}
+  - ? Message, You, Has hyperlinks. Test Report for RegressSheild, use the Up and Down
+      arrow keys to navigate the list, press Enter key to enter the group, then Tab
+      key to navigate to message actions.
+    : {}
+  - Meeting Duration: {}
+  - Muted, Video off, Stepped away, list item: {}
+  - Video on, list item: {}
+  - Whiteboards, Menu item, New feature available.: {}
+  - You're using your computer for audio, Switch audio, Menu item: {}
+  - Sunday, December 14, 2025, Meeting recap to: {}
+  - Activation Code, Copy activation code: {}
+  - Activation Code, copied: {}
+  - Meeting link, Copy: {}
+  - Personal Room number, Copy: {}
+  - Video address, More information for Host PIN: {}
+  - Collapse: {}
+  - Help: {}
+  - Closed captions: {}
+  - Show availability and status: {}
+  - Optimize energy use: {}
+  - Select a preferred language for translation.: {}
+  - Open participants panel: {}
+  - Test: {}
+  - New whiteboard: {}
+  - Write a message to everyone. Press Shift + Enter for new line.: {}
+  - Topic: {}
+  - Meeting link, Copy meeting link: {}
+  - Invite and remind, Menu item: {}
+  - Close Participants panel: {}
+  - Elapsed time: {}
+  - More options-Webex: {}
+  - More options-Sign in - Webex: {}
+  - Join a meeting-Webex: {}
+  - Copy your Personal Room information: {}
+  - Mute-Get ready to join: {}
+  - Stop video-Get ready to join: {}
+  - Step away from meeting: {}
+  - Waiting for others to join..., list item: {}
+  - Noise removal-Webex: {}
+  - Optimize for my voice-Webex: {}
+  - Optimize for all voices-Webex: {}
+  - Music mode-Webex: {}
+  - Stop: {}
+  - Test-Settings: {}
+  - Volume-Settings: {}
+  - Open AI Assistant panel: {}
+  - More options for bts tony2: {}
+  - Your network connection and CPU usage are good, allowing you to have the full experience., indicator: {}
+  - Cancel-Settings: {}
+  - Bronze Dark theme: {}
+  - Jade Dark theme: {}
+  - Lavender Dark theme: {}
+  - Indigo Dark theme: {}
+  - Rose Dark theme: {}
+  - Bronze Light theme: {}
+  - Jade Light theme: {}
+  - Lavender Light theme: {}
+  - Indigo Light theme: {}
+  - Rose Light theme: {}
+  - Themes. Choose how you want webex to look. Rose Light theme: {}
+  - Sort by, Date created: {}
+  - converged-bts.webex.com Edit: {}
+  - Clear: {}
+  - Cancel-Default Webex site: {}
+  - Default file location, C:\Users\clientqa\Downloads\, Change: {}
+  - None-Settings: {}
+  - Enter a valid phone number: {}
+  - The meeting transcript is being recorded, indicator: {}
+  - Aurora: {}
+  - Include computer sound-Meeting window: {}
+  - Show me in front-Meeting window: {}
+  - More information for Show me in front-Meeting window: {}
+  - Show my Webex app-Meeting window: {}
+  - More information for Show my Webex app-Meeting window: {}
+  - Include computer sound-Webex sharing controls: {}
+  - Show me in front-Webex sharing controls: {}
+  - Show my Webex app-Webex sharing controls: {}
+  - Share-Meeting window: {}
+  - Hide sharing options: {}
+  - Record-Record: {}
+  - Cancel-Meeting window: {}
+  - Lower hand: {}
+  - Step away from meeting, Menu item: {}
+  - Sort by Date modified: {}
+  - Sort by, Date modified: {}
+  - Order, Group, Order by, Ascending: {}
+  - Order by, Descending: {}
+  - Sign language 1, Tab for more options.: {}
+  - Start video-Meeting window: {}
+  - Back-Meeting window: {}
+  - Cancel-Report an issue: {}
+  - Expand Applications panel: {}
+  - Invite and remind-Meeting window: {}
+  - Host, presenter, me, Muted: {}
+  - Mute all-Meeting window: {}
+  - 👍 emoji: {}
+  - Close Chat panel-Chat panel: {}
+  - Chat Tab list, Everyone tab-Chat panel: {}
+  - Bold-Chat panel: {}
+  - Turn on Markdown-Chat panel: {}
+  - Format text-Chat panel: {}
+  - Insert Emoji-Chat panel: {}
+  - Add Giphy-Chat panel: {}
+  - Add mention-Chat panel: {}
+  - Send Message-Chat panel: {}
+  - Hide chat panel: {}
+  - ? Write a message to everyone. Press Shift + Enter for new line. Ready, set, chat
+      💬. Share key points, ask questions, and track action items in real time.
+    : {}
+  - Write a message to everyone. Press Shift + Enter for new line.-Meeting window: {}
+  - Collapse Chat panel: {}
+  - 'Host:': {}
+  - Meeting number: {}
+  - Video address: {}
+  - Access code: {}
+  - Host key: {}
+  - More options for bts1 bts: {}
+  - Profile and preferences, Available: {}
+  - Start a meeting in app_core: {}
+  - Meetings Tab list, Meeting recap tab: {}
+  - Off-Settings: {}
+  - Themes. Choose how you want webex to look. Default Dark theme: {}
+  - ? Choose your skin tone for reactions Set your default skin tone for meeting reactions.
+      Change anytime in Settings > Appearance. No skin tone
+    : {}
+  - End interpretation: {}
+  - Show display name with reactions: {}
+  - Add and download files: {}
+  - View participants list: {}
+  - Start Slido (polling and Q&A): {}
+  - Hide Apps panel: {}
+  - Collapse Applications panel: {}
+  - More options for bts tony2-Meeting window: {}
+  - Host, presenter, me, Unmuted: {}
+  - More options for bts tony2-Participants panel: {}
+  - 😀 emoji: {}
+  - Audio connection: {}
+  - Host, presenter, me, speaking: {}
+  - 😘 emoji: {}
+  - More options-Join a meeting - Webex: {}
+  - ? By using Webex, you agree to the Terms of Service and Privacy Statement. Terms
+      of Service Link Open in your default browser-Enter your information - Webex
+    : {}
+  - More options-Enter your information - Webex: {}
+  - Start video-Get ready to join: {}
+  - Leave meeting-Personal Room: {}
+  - Welcome pilan@allianzci.com Password: {}
+  - E911 disclaimer: {}
+  - Call settings, Call, hunt group and forwarding settings, Hunt group enabled on all lines.: {}
+  - Call pickup: {}
+  - Call or meet: {}
+  - Call history menu item: {}
+  - Voicemail menu item: {}
+  - Hunt Group toggle button on: {}
+  - Call Forward: {}
+  - Do Not Forward Calls: {}
+  - Voicemail: {}
+  - Pickup: {}
+  - Other pickup: {}
+  - Enter pickup number: {}
+  - Send a voice message: {}
+  - Call Voicemail: {}
+  - Voicemail Tab list, Inbox voicemails tab: {}
+  - Voicemail list item: {}
+  - Voicemail sender avatar: {}
+  - Pause voice message: {}
+  - Voicemail details: {}
+  - Continue editing: {}
+  - Discard-Webex: {}
+  - Don’t ask again: {}
+  - Voicemail sender name: {}
+  - Voicemail sender phone: {}
+  - test: {}
+  - Voicemail date: {}
+  - Play voice message: {}
+  - Voice message slider: {}
+  - Reply voice message: {}
+  - Forward voice message: {}
+  - Delete voice message: {}
+  - More: {}
+  - Voicemail list item 3: {}
+  - Voicemail sender avatar 2: {}
+  - Video call: {}
+  - View people insights profile: {}
+  - Contact email: {}
+  - Copy email address: {}
+  - Place phone call: {}
+  - Join Personal Room: {}
+  - Work phone number: {}
+  - Audio Call: {}
+  - Audio source settings: {}
+  - Meeting number or link. Required. -Webex: {}
+  - Meeting number or link. Required.-Webex: {}
+  - Next-Webex: {}
+  - ? Tony Wang Wang's Personal Room, lobby window, Thanks for waiting. We'll start
+      the meeting when the host joins. 1 other person is waiting in the lobby., list
+      item
+    : {}
+  - More options for bts_tony2: {}
+  - Press OK: {}
+  - All calls tab: {}
+  - Call history item: {}
+  - Call history contact avatar: {}
+  - Audio call contact: {}
+  - Video call contact: {}
+  - Open Menu item: {}
+  - Move: {}
+  - Owner info: {}
+  - All boards Menu item: {}
+  - Add a contact or create a group, has popup: {}
+  - 'Select a group and then search for one or more people to add them as a new contact. You can also: Create a custom contact': {}
+  - Contact group: {}
+  - Add by name, number, or email: {}
+  - Display name, Display name is required: {}
+  - Phone number Type 1: {}
+  - Phone number 1 input: {}
+  - Personal Room-Webex: {}
+  - Job title: {}
+  - Company name: {}
+  - Country: {}
+  - State: {}
+  - City: {}
+  - Street: {}
+  - Zip Code: {}
+  - Save-Webex: {}
+  - Work: {}
+  - Mobile: {}
+  - Home: {}
+  - SIP: {}
+  - Phone number Type 2: {}
+  - Phone number 2 input: {}
+  - Delete Work number: {}
+  - Top contacts: {}
+  - Other contacts: {}
+  - Group name characters: {}
+  - Cancel-Webex: {}
+  - Copy email address-Webex: {}
+  - Edit contact: {}
+  - 'Email address: pilan@cisco.com. Press enter to send an email to Walker Lan.': {}
+  - First name: {}
+  - Clear First name: {}
+  - Last name: {}
+  - Clear Last name: {}
+  - Display name, Required: {}
+  - Clear display name: {}
+  - Text input field: {}
+  - + Add another phone number: {}
+  - E-mail: {}
+  - Clear E-mail: {}
+  - Personal Room-Contact Profile: {}
+  - Save-Contact Profile: {}
+  - Cancel-Contact Profile: {}
+  - Upload profile picture: {}
+  - '1': {}
+  - 2, A B C: {}
+  - 3, D E F: {}
+  - Check for updates, Menu Item: {}
+  - Keyboard shortcuts, Menu Item: {}
+  - Health Checker, Menu Item: {}
+  - Help Center, Menu Item: {}
+  - What's New, Menu Item: {}
+  - Mobile download: {}
+  - You're on the latest version (46.3.0.34028). Learn more. Link. Open in your default browser.: {}
+  - QR code, menu item.: {}
+  - HealthChecker in help: {}
+  - Close Health Checker: {}
+  - RT in Virtual Channel: {}
+  - Remote Screen 1: {}
+  - Local Screen 1: {}
+  - Advanced tab: {}
+  - Portion of screen: {}
+  - Next for Portion screen: {}
+  - Share the selected portion: {}
+  - Calculator: {}
+  - New whiteboard in My Whiteboards: {}
+  - Shapes in Whiteboards: {}
+  - Square in Shapes: {}
+  - Close for all: {}
+  - Close whiteboard: {}
+  - Switch to Webex App: {}
+  - File tab: {}
+  - Next in File tab: {}
+  - Shared file view: {}
+  - Stop File sharing: {}
+  - File name: {}
+  - All boards: {}
+  - My boards: {}
+  - Shared with me: {}
+  - Spaces: {}
+  - Switch to Paint: {}
+  - Reset database: {}
+  - Yes to reset database: {}
+  - New Whiteboard in hub: {}
+  - Share the whiteboard with people: {}
+  - Remember me-Get ready to join: {}
+  - By using Webex, you accept the Terms of Service, Privacy Statement Terms of Service Link Open in your default browser: {}
+  - Audio options-Get ready to join: {}
+  - Video options-Get ready to join: {}
+  - Join meeting-Get ready to join: {}
+  - ? You are waiting in the lobby. Tony Wang Wang's Personal Room, Thanks for waiting.
+      We'll start the meeting when the host joins., list item
+    : {}
+  - Notify Host: {}
+  - More options for bts tony1: {}
+  - Welcome bts_tony3@mailinator.com Password: {}
+  - Schedule-Webex: {}
+  - Thursday, February 26, 2026, bts tony3's meeting to: {}
+  - Search, meet and call-Webex: {}
+  - My personal room: {}
+  - Copy your Personal Room link: {}
+  - Topic-Meeting window: {}
+  - Advanced settings-Meeting window: {}
+  - bts tony3 Organizer: {}
+  - Popup: {}
+  - For more advanced options, schedule or edit the meeting using the Webex site instead. Schedule using Webex site: {}
+  - Wednesday, March 4, 2026, bts tony3's meeting to: {}
+  - Personal meeting room information popup window: {}
+  - Meeting link https://converged-bts.webex.com/meet/bts_tony3 Copy: {}
+  - Meeting number 2001 949 0653 read only edit: {}
+  - ? Join by Video system Dial bts_tony3.converged-bts@webex.com and enter your host
+      PIN. You can also dial 173.243.2.69 and enter your meeting number. read only edit
+    : {}
+  - 'Join by phone +1-415-655-0000 US Toll Access Code: 2001 949 0653 Host Pin: 2851 read only edit': {}
+  - My Personal Room This is your personal meeting link that's always the same. Copy invite: {}
+  - More options for bts tony3: {}
+  - Speaker, Follow system setting, 扬声器 (Qualcomm(R) Aqstic(TM) Audio Adapter Device) (Built-in), Menu item: {}
+  - Speaker, 扬声器 (Qualcomm(R) Aqstic(TM) Audio Adapter Device) (Built-in), Menu item: {}
+  - Speaker, CABLE In 16ch (VB-Audio Virtual Cable) (Virtual), Menu item: {}
+  - Speaker, CABLE Input (VB-Audio Virtual Cable) (Virtual), Menu item: {}
+  - Microphone, Follow system setting, 麦克风阵列 (Qualcomm(R) Aqstic(TM) ACX Static Endpoints Audio Device) (Built-in), Menu item: {}
+  - Microphone, 麦克风阵列 (Qualcomm(R) Aqstic(TM) ACX Static Endpoints Audio Device) (Built-in), Menu item: {}
+  - Microphone, CABLE Output (VB-Audio Virtual Cable) (Virtual), Menu item: {}
+  - CABLE In 16ch (VB-Audio Virtual Cable) (Virtual): {}
+  - 扬声器 (Qualcomm(R) Aqstic(TM) Audio Adapter Device) (Built-in): {}
+  - Follow system setting (扬声器 (Qualcomm(R) Aqstic(TM) Audio Adapter Device) (Built-in)): {}
+  - 麦克风阵列 (Qualcomm(R) Aqstic(TM) ACX Static Endpoints Audio Device) (Built-in): {}
+  - Follow system setting (麦克风阵列 (Qualcomm(R) Aqstic(TM) ACX Static Endpoints Audio Device) (Built-in)): {}
+  - Use last connected camera (Surface Camera Front): {}
+  - Surface Camera Front: {}
+  - Auto (1080P): {}
+  - Highest: {}
+  - No skin tone-Settings: {}
+  - Light skin tone-Settings: {}
+  - Medium-light skin tone-Settings: {}
+  - Medium skin tone-Settings: {}
+  - Medium-dark skin tone-Settings: {}
+  - Dark skin tone-Settings: {}
+  - General section use Left Arrow to collapse. use Up or Down Arrow for more options: {}
+  - ? Webex, bts_tony3@mailinator.com, You can connect other calendar accounts to see
+      and manage all of your meetings in one place., Connect a calendar
+    : {}
+  - Personal Room name, bts tony3's Personal Room,More information for Personal Room link: {}
+  - Close-Webex: {}
+  - More information for Device discovery and connection: {}
+  - Banner, Some settings are managed by your administrator: {}
+  - Use Wi-Fi network to discover nearby devices: {}
+  - 'Enter the code into your device when prompted, and let the magic begin!, Code will expire at: 2026-03-11 14:43:25, OK': {}
+  - Default file location, C:\Users\yanfz\Downloads\, Change: {}
+  - Calling-Settings: {}
+  - Meetings-Settings: {}
+  - Messaging-Settings: {}
+  - (UTC+00:00) Casablanca: {}
+  - Use computer for audio-Meeting window: {}
+  - Connect-Meeting window: {}
+  - 'Access Code 2007 903 5004 #': {}
+  - 'Attendee ID 911948 #': {}
+  - bts tony3, Video off, list item: {}
+  - Last used: {}
+  - Shared content types Tab list, Screen or application tab: {}
+  - Screen 1-Share Dialog: {}
+  - More information for Application-Share Dialog: {}
+  - Sort by-Share Dialog: {}
+  - Webex and meeting window: {}
+  - Expand sharing options-Share Dialog: {}
+  - Change sharing settings-Share Dialog: {}
+  - Resolution and frame rate-Share Dialog: {}
+  - Include computer sound-Share Dialog: {}
+  - Show me in front-Share Dialog: {}
+  - More information for Show me in front-Share Dialog: {}
+  - Show my Webex app-Share Dialog: {}
+  - More information for Show my Webex app-Share Dialog: {}
+  - Hide sharing options-Share Dialog: {}
+  - Share-Share Dialog: {}
+  - Cancel-Give remote control: {}
+  - Automatically accept all requests Menu item, not: {}
+  - Select the spoken language you want to use for generating the transcript.: {}
+  - Don't show this again: {}
+  - Set: {}
+  - Meeting options-Meeting window: {}
+  - ? This meeting is being transcribed and summarized. The transcription and summary
+      may be saved, depending on the settings., indicator
+    : {}
+  - Summarize more, option, pop up button: {}
+  - Hide AI Assistant panel: {}
+  - English (English): {}
+  - Pop in panel-Cisco AI Assistant panel: {}
+  - Close Cisco AI Assistant panel-Cisco AI Assistant panel: {}
+  - Was my name mentioned?-Cisco AI Assistant panel: {}
+  - What are the action items?-Cisco AI Assistant panel: {}
+  - Ask me anything about this meeting-Cisco AI Assistant panel: {}
+  - More information for Cisco AI Assistant-Cisco AI Assistant panel: {}
+  - Meeting options-Cisco AI Assistant panel: {}
+  - Save to the cloud: {}
+  - bts tony3, Video on, raised hand, list item: {}
+  - Whiteboards, Menu item: {}
+  - Change device: {}
+  - Move meeting to device: {}
+  - Close-Meeting window: {}
+  - The meeting is on Rae Yin DX80. Shared content will appear both here and on the device., list item: {}
+  - Expand Device control panel: {}
+  - Mute device: {}
+  - Device volume control: {}
+  - Hide self-view on device: {}
+  - Device layout: {}
+  - Show videos both here and on the device Toggle button off: {}
+  - Move meeting to computer: {}
+  - Close Device controls panel: {}
+  - Device controls: {}
+  - Collapse Device control panel: {}
+  - Volume down: {}
+  - Volume control: {}
+  - Volume up: {}
+  - Show self-view on device: {}
+  - Overlay: {}
+  - Move meeting: {}
+  - Keep the meeting on this device as well: {}
+  - Search-Meeting window: {}
+  - More options for Rae Yin DX80: {}
+  - Mute Rae Yin DX80: {}
+  - Invite and remind Tab list, People tab: {}
+  - Make presenter Menu item: {}
+  - Unmute Rae Yin DX80: {}
+  - Participants group: {}
+  - Rae Yin DX80, Cohost, Muted, Tab for more options: {}
+  - Other-Report an issue: {}
+  - Export all data: {}
+  - Save problem report files: {}
+  - More information for save problem report file: {}
+  - Export: {}
+  - Cancel-Diagnostics: {}
+  - Apps panel Tab list, My Apps tab: {}
+  - Favorites, Slido, use arrow keys to navigate the apps, press enter key to open the app, use Shift + F10 for more options: {}
+  - Camera tab: {}
+  - OBS Virtual Camera: {}
+  - Shared camera view: {}
+  - My Personal Room Information: {}
+  - Monday, March 9, 2026, bts tony3's meeting to: {}
+  - Meeting link https://converged-bts.webex.com/meet/bts_tony3 Copy-Personal meeting room information popup window: {}
+  - Expand: {}
+  - Start a Webex meeting, Menu Item: {}
+  - OK: {}
+  - Daily Not: {}
+  - General section, tree item: {}
+  - 'Enter the code into your device when prompted, and let the magic begin!, Code will expire at: 2026-03-16 11:45:39, OK': {}
+  - (UTC-02:00) Saint Pierre and Miquelon: {}
+  - (UTC-02:30) Newfoundland: {}
+  - (UTC-03:00) Atlantic Time (Canada): {}
+  - (UTC-04:00) Indiana (East): {}
+  - (UTC-04:00) Eastern Time (US & Canada): {}
+  - (UTC-05:00) Central Time (US & Canada): {}
+  - (UTC-06:00) Mountain Time (US & Canada): {}
+  - (UTC-07:00) Baja California: {}
+  - (UTC-07:00) Pacific Time (US & Canada): {}
+  - (UTC-08:00) Alaska: {}
+  - Use computer for audio-bts tony3's Personal Room: {}
+  - Connect-bts tony3's Personal Room: {}
+  - Global call-in numbers: {}
+  - 'Access Code 2001 949 0653 #': {}
+  - 'Attendee ID 262868 #': {}
+  - Alphabetical Not: {}
+  - Use the arrow keys to move this annotation tool bar.: {}
+  - Laser pointer: {}
+  - Arrow pointer: {}
+  - Pen, Red: {}
+  - Text: {}
+  - Eraser: {}
+  - Clear-Annotation toolbar: {}
+  - Save-Annotation toolbar: {}
+  - Annotation privileges-Annotation toolbar: {}
+  - Pen: {}
+  - 'Pen color: Red': {}
+  - 'Pen width: small': {}
+  - Webex video view: {}
+  - Video view: {}
+  - Hide video view (Ctrl + Alt + P): {}
+  - Show video view (Ctrl + Alt + P): {}
+  - AI Assistant - multitask: {}
+  - Chat - multitask: {}
+  - More panels - multitask: {}
+  - Closed captions - multitask: {}
+  - Language settings - multitask: {}
+  - Enable sign language interpretation - multitask: {}
+  - Move meeting to a video device - multitask: {}
+  - Lock meeting - multitask: {}
+  - Copy meeting link, Menu item: {}
+  - Enable breakout sessions - multitask: {}
+  - Meeting options - multitask: {}
+  - Deutsch (German) Not: {}
+  - Thursday, March 12, 2026, Meeting recap to: {}
+  - Default Dark theme: {}
+  - Collapse threads: {}
+  - 'Enter the code into your device when prompted, and let the magic begin!, Code will expire at: 2026-03-20 00:54:42, OK': {}
+  - Best for text and images in control bar: {}
+  - Best for video and motion in control bar: {}
+  - Last 15 minutes Menu item: {}
+  - Español (Spanish) Not: {}
+  - Summarize more, option, pop up button-Cisco AI Assistant panel: {}
+  - Stop summary-Cisco AI Assistant panel: {}
+  - Save to my computer Not: {}
+  - ' Close-Meeting window': {}
+  - Mute bts tony3: {}
+  - Unmute bts tony3: {}
+  - Close app panel: {}
+  - View terms: {}
+  - Search for GIFs: {}
+  - Write a message to everyone. Press Shift + Enter for new line. -Meeting window: {}
+  - Copy meeting information-Meeting Info group.: {}
+  - Meeting information Tab list, General tab: {}
+  - Show all global call-in numbers-Meeting Info group.: {}
+  - bts tony3, Muted, Video off, list item: {}
+  - Grid view: {}
+  - List view: {}
+  - Take control: {}
+  - Switch list: {}
+  - share whiteboard for people: {}
+  - Whiteboards in more options: {}
+  - Whiteboards in more options of floating window: {}
+  - Close whiteboard for all: {}
+  - Meeting password: {}
+  - answer incoming call: {}
+  - Turn on Calling dock: {}
+  - Close AI Assistant: {}
+  - Call queues: {}
+  - Call Centers: {}
+  - Add address: {}
+  - cancel add address window: {}
+  - Sign in  Link If you're the host or have a Webex account, sign in.: {}

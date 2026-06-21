@@ -1,0 +1,92 @@
+test_case:
+  name: app_core_whiteboards
+  description: Verify app core whiteboards navigation and all controls are accessible with keyboard.
+  expect_result: App core whiteboards is verified successfully and all controls are accessible.
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    # Tab sequence for whiteboards
+    - name: "Whiteboards menu item"
+      action:
+        type: key
+        value: default
+      expect_state: "All boards tab, 1 of 4"
+      ui_response: true
+
+    - name: "All boards tab"
+      action:
+        type: key
+        value: tab
+      expect_state: ["Sort by, Date modified, Order by, Descending", "Sort by, Last edited, Order by, Descending"]
+    
+    - name: "Sort by, Date modified, Order by, Descending"
+      action:
+        type: key
+        value: tab
+      expect_state: "Create a new whiteboard"
+    
+    - name: "Create a new whiteboard"
+      action:
+        type: key
+        value: tab
+      expect_state: "Search whiteboards"
+    
+    - name: "Search whiteboards"
+      action:
+        type: key
+        value: tab
+      expect_state: "Create a new whiteboard"
+    
+    - name: "Create a new whiteboard"
+      action:
+        type: key
+        value: tab
+      expect_state: "You’re not signed in to phone services. Open Settings"
+
+    - name: "You’re not signed in to phone services. Open Settings"
+      action:
+        type: key
+        value: tab
+      expect_state: "Profile and preferences, Available"
+
+    # Shift + Tab sequence for whiteboards
+    - name: "Profile and preferences, Available"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "You’re not signed in to phone services. Open Settings"
+
+    - name: "You’re not signed in to phone services. Open Settings"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Create a new whiteboard"
+    
+    - name: "Create a new whiteboard"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Search whiteboards"
+    
+    - name: "Search whiteboards"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Create a new whiteboard"
+    
+    - name: "Create a new whiteboard"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: ["Sort by, Date modified, Order by, Descending", "Sort by, Last edited, Order by, Descending"]
+    
+    - name: "Sort by, Date modified, Order by, Descending"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "All boards tab, 1 of 4"
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

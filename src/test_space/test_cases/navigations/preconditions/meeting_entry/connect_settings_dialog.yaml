@@ -1,0 +1,21 @@
+test_case:
+  name: Connect to Webex meeting settings window
+  team: RegressShield
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "connect_settings_window"
+      platforms: ["windows"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "OptionsDialog"
+
+    - name: "connect_settings_window"
+      platforms: ["mac"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "_NS:9"

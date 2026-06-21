@@ -1,0 +1,79 @@
+test_case:
+  name: file_sharing_page_navigation
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User can navigate through the pages of the shared file.
+  expect_result: User can navigate through the pages of the shared file.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=file with 1 ucf_api duration 8"
+          duration: 120
+      expect_state: ""  
+      
+    - name: "Go to the next page in shared file"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Page number should be 2. Center of the window should display agenda slide. Ignore the slide layout. Only focus on the content. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Go to the previous page in shared file"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Page number should be 1. Center of the window should display title slide. Ignore the slide layout. Only focus on the content. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Show the thumbnail sidebar"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. The thumbnail sidebar should be visible, and no thumbnail should be blank. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Page thumbnail"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+      wait_time: 1
+      ai_check:
+        prompt: "Analyze this Webex meeting window screenshot and verify TWO independent conditions:
+                Condition 1: The main center area of the window is displaying the content of slide 2 (the second page). You can confirm this by checking which thumbnail is highlighted/selected in the left sidebar — it should be slide 2.
+                Condition 2: The orange 'Presenter' tag/badge is visible on the thumbnail of slide 1 (the first page) in the left sidebar.
+                This is the EXPECTED and CORRECT state — the presenter tag stays on slide 1 even when slide 2 is being viewed. Do NOT treat this as a mismatch or failure. Both conditions must be TRUE for success.
+                Output: ✅Success or ❌Failure. Reasoning: <brief explanation of each condition result>"
+
+    - name: "ask bot leave meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> leave"
+          duration: 10
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1

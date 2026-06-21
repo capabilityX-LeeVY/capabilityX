@@ -1,0 +1,142 @@
+shortcuts:
+  "Quit":
+    windows: Alt+F4
+    mac: Command+Q
+  "Mute":
+    windows: Ctrl+M
+    mac: Command+Shift+m
+  "Unmute":
+    windows: Ctrl+M
+    mac: Command+Shift+m
+  "MuteSimple":
+    windows: Ctrl+M
+    mac: Command+M
+  "enter":
+    windows: Enter
+    mac: Return
+  "Tab":
+    windows: Tab
+    mac: Tab
+  "Go to Meetings":
+    windows: Ctrl+5
+    mac: Command+Shift+B
+  "Leave or end the meeting or call":
+    windows: Ctrl+L
+    mac: Command+L
+  "Thumbs up reaction":
+    windows: Alt+Shift+4
+    mac: Option+Command+4
+  "Heart reaction":
+    windows: Alt+Shift+5
+    mac: Option+Command+8
+  "Laugh reaction":
+    windows: Alt+Shift+6
+    mac: Option+Command+6
+  "Surprised reaction":
+    windows: Alt+Shift+7
+    mac: Option+Command+7
+  "Sad reaction":
+    windows: Alt+Shift+8
+    mac: Option+Command+8
+  "esc":
+    windows: Esc
+    mac: Esc
+  "Close window":
+    windows: Alt+F4
+    mac: Command+W
+  "Close Dialog":
+    windows: Alt+F4
+    mac: Command+W
+  "down":
+    windows: Down
+    mac: Down
+  "up":
+    windows: Up
+    mac: Up
+  "left":
+    windows: Left
+    mac: Left
+  "right":
+    windows: Right
+    mac: Right
+  "Stop sharing":
+    windows: Ctrl+Shift+Z
+    mac: Ctrl+Shift+Z
+  "Start share":
+    windows: Ctrl+Shift+D
+    mac: Ctrl+Shift+D
+  "Stop share":
+    windows: Ctrl+Shift+Z
+    mac: Ctrl+Shift+Z
+  "Edit last message":
+    windows: Shift+Up
+    mac: Shift+Up
+  "ctrl+o":
+    windows: Ctrl+O
+    mac: Option+Command+A
+  "Open file dialog":
+    windows: Ctrl+O
+    mac: Option+Command+A
+  "ctrl+h":
+    windows: Ctrl+H
+    mac: Command+H
+  "Jump to last message":
+    windows: Ctrl+H
+    mac: Command+H
+  "shift+f10":
+    windows: Shift+F10
+    mac: Shift+F10
+  "Open context menu":
+    windows: Shift+F10
+    mac: Shift+F10
+  "alt+q":
+    windows: Alt+Q
+    mac: Option+Q
+  "Sign out":
+    windows: Alt+Q
+    mac: Option+Q
+  "ctrl+alt+i":
+    windows: Ctrl+Alt+I
+    mac: Command+Option+I
+  "Focus on message input":
+    windows: Ctrl+Alt+I
+    mac: Command+Option+I
+  "ctrl+v":
+    windows: Ctrl+V
+    mac: Command+V
+  "Paste":
+    windows: Ctrl+V
+    mac: Command+V
+  "ctrl+c":
+    windows: Ctrl+C
+    mac: Command+C
+  "Copy":
+    windows: Ctrl+C
+    mac: Command+C
+  "ctrl+shift+p":
+    windows: Ctrl+Shift+P
+    mac: Command+Shift+P
+  "Add people":
+    windows: Ctrl+Shift+P
+    mac: Command+Shift+P
+  "ctrl+f":
+    windows: Ctrl+F
+    mac: Command+F
+  "Search":
+    windows: Ctrl+F
+    mac: Command+F
+  "ctrl+1":
+    windows: Ctrl+1
+    mac: Command+1
+  "Focus on selected":
+    windows: Ctrl+1
+    mac: Command+1
+  "space":
+    windows: Space
+    mac: Space
+  "tab":
+    windows: Tab
+    mac: Tab
+  "shift+tab":
+    windows: Shift+Tab
+    mac: Shift+Tab

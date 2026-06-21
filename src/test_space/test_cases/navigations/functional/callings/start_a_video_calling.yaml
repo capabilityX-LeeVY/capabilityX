@@ -1,0 +1,29 @@
+test_case:
+  name: start_calling
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "${dial_number}"
+      expect_state: ""
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "enter"
+      expect_state: "Mute"
+      ui_response: true

@@ -1,0 +1,49 @@
+test_case:
+  name: guest_join_videoAddress
+  description: Webex app is active, click "Join a meeting", then join a meeting by a video address
+  expect_result: The guest user successfully join a meeting by video address.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: 10027016674@convergedats.webex.com
+    - name: "Next"
+      action:
+        type: key
+        value: default
+    - name: "Meeting password. Required."
+      action:
+        type: input
+        value: 7xdFpwGsY66
+    #   ai_check:
+    #     prompt: "Analyze if there is a image CAPTCHA, if yes, only return the CAPTCHA text shown in the image in lowercase."
+    # - name: "Type the characters. Required. &password"
+    #   action:
+    #     type: input
+    #     value: "{ai_check_result}" 
+    #   optional: true
+    - name: "Next"
+      action:
+        type: key
+        value: default
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: minl5
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

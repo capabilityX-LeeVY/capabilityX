@@ -1,0 +1,22 @@
+test_case:
+  name: start_video_in_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component - Start video during meeting using in-meeting controls
+  expect_result: Successfully starts video during meeting
+  
+  pre_conditions: []
+  
+  steps:
+    - name: "Start video in meeting"
+      action:
+        type: function
+        value: ensure_video_on_in_meeting
+      expect_state: ""
+  
+  post_conditions: []
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

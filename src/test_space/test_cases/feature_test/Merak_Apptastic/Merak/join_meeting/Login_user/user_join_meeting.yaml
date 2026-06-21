@@ -1,0 +1,38 @@
+# File: test_cases/feature_test/Merak&Apptastic/join_meeting/user_join_meeting.yaml
+
+test_case:
+  name: user_join_meeting
+  description: "Signed-in user joins a meeting by entering a meeting link through the Meetings tab"
+  account: allianz32
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    # local_api: the referenced YAML's steps are loaded and executed inline.
+    # Both ${key} and {key} placeholder styles are supported.
+    - name: "go to meetings menu"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_core/meetings_menu_item"
+
+    - name: "join a meeting webex"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_core/join_a_meeting_webex"
+
+    - name: "enter the meeting information"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_core/enter_the_meeting_information"
+        parameters:
+          meeting_link: "binbiwan@cisco.webex.com"
+
+    - name: "start meeting from get ready to join"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_core/start_meeting_from_get_ready_to_join"

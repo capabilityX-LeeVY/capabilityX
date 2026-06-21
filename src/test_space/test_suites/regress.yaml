@@ -1,0 +1,15 @@
+test_suite:
+  name: regress
+  team: RegressShield
+  owner: binbiwan
+  platform: windows
+  language: [en_us]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_meeting
+    #- meetings/video/vbg_in_meeting
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out

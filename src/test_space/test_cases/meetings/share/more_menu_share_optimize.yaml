@@ -1,0 +1,51 @@
+test_case:
+  name: more_menu_share_optimize
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User changes sharing optimization options in local share more menu.
+  expect_result: Sharing optimization options are changed.
+  pre_conditions:
+    # - navigations/basic/re-install_app
+    # - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app  
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Optimization options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Best for text and images in control bar"
+      action:
+        type: key
+        value: default
+      expect_state: "Optimization options"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Best for video and motion in control bar"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+      expect_state: "More sharing options"
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: ["Keyboard Navigation"]

@@ -1,0 +1,37 @@
+test_case:
+  name: test_raise_lower_hand_complete
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Full raise and lower hand cycle. User signs in, starts meeting, raises hand, lowers hand, and signs out.
+  expect_result: Successfully completes raise/lower hand workflow with proper state changes
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+    #- meetings/interaction/raise_lower_hand_cycle
+  
+  steps:
+    # First click to raise hand
+    - name: "Raise"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+      
+    # Click again to lower hand (toggle functionality)
+    - name: "Raise"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

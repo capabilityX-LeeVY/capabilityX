@@ -1,0 +1,12 @@
+test_case_batch:
+  name: meetings_audio_settings
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Audio settings test batch for meeting-related test cases
+  test_cases:
+    # Audio Settings
+    - meetings/audio_setting/test_audio_control_complete_workflow
+    - meetings/audio_setting/test_in_meeting_audio_settings
+    - meetings/audio_setting/test_pre_meeting_audio_settings

@@ -1,0 +1,38 @@
+test_case:
+  name: audio_options
+  team: wrs
+  owner: raey
+  description: "Open audio options and press ESC to close the dialog, verify the dialog is closed and underlying page is accessible."
+  expect_result: After opening the audio options dialog and pressing ESC to close it, focus return to audio_options.
+  
+  # Platform support configuration
+  platforms:
+    supported: ["windows", "mac"]
+  
+  pre_conditions:
+    # - navigations/basic/uninstall_app
+    # - navigations/basic/install_app
+    # - navigations/basic/agree
+    # - navigations/preconditions/app_entry/sign_in_to_app
+     - meetings/actions/start_meeting
+  steps:
+    - name: "Audio options"
+      action: 
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the screenshot. Is there a visible popup panel or dropdown menu showing audio-related settings (such as speaker, microphone, or audio device options)? IMPORTANT: Do NOT check or mention focus rings, tooltips, button highlights, or any other UI elements. Only determine whether the audio settings popup panel exists. If the audio settings popup panel is visible, output ONLY: ✅Success. If no such popup is visible, output: ❌Failed. Reasoning: <describe what you see instead>" 
+    - name: "Direct Escape Key Press"
+      action:
+        type: key
+        value: esc
+      ai_check:
+        prompt: "Analyze the screenshot. Check two things: 1) The audio options dropdown or popup panel should be closed — no speaker/microphone settings panel should be visible. 2) There should be a visible focus ring (highlighted border or outline) on the control that originally opened the dropdown menu. The focus ring indicates keyboard focus has returned to the originating control after the menu was dismissed. If both conditions are met, output ONLY the following text with nothing else: ✅Success. Do NOT add any reasoning or explanation when successful. If either condition is not met, output: ❌Failed. Reasoning: <describe what you see>"
+
+  post_conditions:
+  #  - meetings/actions/end_meeting
+  #  - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Focus Ring, Screen Reader, Performance]

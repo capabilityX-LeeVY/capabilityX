@@ -1,0 +1,111 @@
+test_case:
+  name: vdi_meeting_portion_sharing
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: Complete test - Portion sharing workflow. User signs in, starts meeting, shares portion of screen, stops sharing, and signs out.
+  expect_result: Successfully completes portion sharing workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Start portion sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+
+    - name: "Advanced tab"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Portion of screen"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Next for Portion screen"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share the selected portion"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ""
+
+
+    # Stop portion sharing
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+
+    - name: connect_webex_app_main_window
+      action:
+        type: function
+        value: connect_webex_app_main_window
+      expect_state: ""
+
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+    
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+      
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

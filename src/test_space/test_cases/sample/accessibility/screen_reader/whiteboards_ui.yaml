@@ -1,0 +1,44 @@
+test_case:
+  name: accessibility_screen_reader_whiteboards_ui
+  description: Analyze all UI elements in Whiteboards window for screen reader compatibility using AI Vision
+  expect_result: All UI elements are extracted and analyzed, screen reader compatibility report generated successfully
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Whiteboards menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Profile and preferences, Available"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "Resize navigation menu to show labels"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Profile and preferences, Available"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+
+    - name: "analyze ui elements for screen reader"
+      action:
+        type: function
+        value: analyze_ui_elements_for_screen_reader
+        parameters:
+          window_name: "Whiteboards Window"
+          save_image: true
+      expect_state: ""
+      
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

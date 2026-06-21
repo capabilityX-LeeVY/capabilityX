@@ -1,0 +1,43 @@
+test_case:
+  name: send_all_reactions_sequence
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to send all five meeting reactions in sequence
+  expect_result: All five reactions (thumbs up, heart, laugh, surprised, sad) are successfully sent
+  
+  steps:
+    - name: "Send thumbs up reaction"
+      action:
+        type: shortcut
+        value: alt+shift+4
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send heart reaction"
+      action:
+        type: shortcut
+        value: alt+shift+5
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send laugh reaction"
+      action:
+        type: shortcut
+        value: alt+shift+6
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send surprised reaction"
+      action:
+        type: shortcut
+        value: alt+shift+7
+      expect_state: ""
+      wait_time: 1
+    
+    - name: "Send sad reaction"
+      action:
+        type: shortcut
+        value: alt+shift+8
+      expect_state: ""
+      wait_time: 1

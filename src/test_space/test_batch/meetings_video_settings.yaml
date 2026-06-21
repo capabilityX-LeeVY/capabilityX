@@ -1,0 +1,12 @@
+test_case_batch:
+  name: meetings_video_settings
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Video settings test batch for meeting-related test cases
+  test_cases:
+    # Video Settings
+    - meetings/video_setting/test_in_meeting_video_settings
+    - meetings/video_setting/test_pre_meeting_video_settings
+    - meetings/video_setting/test_video_control_complete_workflow

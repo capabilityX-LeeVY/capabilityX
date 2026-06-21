@@ -1,0 +1,153 @@
+# File: test_cases/feature_test/Merak_Apptastic/Merck/join_meeting/First_time_user/no_app_converged_meeting_download_it_now_from_browsers.yaml
+test_case:
+  name: no_app_converged_meeting_download_it_now_from_browsers
+  description: "Webex app is not installed, start/join a converged meeting from browser, and choose Download the Webex app."
+  expect_result: "When the Webex app is not installed, Safari opens the converged meeting link and the user can choose Download the Webex app."
+  owner: minli
+  need_initialization: false
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+
+  steps:
+    - name: "Kill all Safari instances"
+      platforms: [mac,]
+      action:
+        type: function
+        value: close_browser
+        parameters:
+          browser: "safari"
+        wait_time: 2
+      optional: true
+
+    - name: "Open Safari with converged meeting link"
+      platforms: [mac,]
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://converged-bts.webex.com/meet/bts11"
+          browser: "safari"
+        wait_time: 20
+
+    - name: "Close download reminder popup in Safari"
+      platforms: [mac,]
+      action:
+        type: direct_key
+        value: esc
+        wait_time: 2
+      optional: true
+
+    - name: "Click Download the Webex app in Safari"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_window_relative
+        parameters:
+          process_name: "Safari"
+          x_ratio: 0.36
+          y_ratio: 0.43
+          wait_time: 5
+      optional: true
+      ai_check:
+        prompt: "Check whether the browser page is for joining the Webex meeting and the user selected 'Download the Webex app' or the download reminder popup appears. Output format: ✅Success or ❌Failed, and briefly state the reason."
+
+    - name: "Click Allow downloads in Safari dialog if present"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_dialog_button
+        parameters:
+          process_name: "Safari"
+          button_name: "Allow,允许"
+          retry: 3
+        wait_time: 3
+      optional: true
+
+    - name: "Install downloaded Webex app"
+      platforms: [mac,]
+      action:
+        type: function
+        value: install_downloaded_webex_app
+        parameters:
+          timeout: 300
+          fallback_after: 20
+          installer_timeout: 60
+          launch_after_install: true
+        wait_time: 5
+
+    - name: "Fill guest name"
+      platforms: [mac,]
+      action:
+        type: function
+        value: fill_webex_guest_name
+        parameters:
+          process_name: "auto"
+          guest_name: "mia"
+          retry: 10
+        wait_time: 2
+
+    - name: "Refresh verification characters"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Refresh captcha"
+          retry: 5
+        wait_time: 2
+
+    - name: "Extract verification characters"
+      platforms: [mac,]
+      action:
+        type: function
+        value: extract_webex_guest_captcha
+        save_to: webex_guest_captcha
+        parameters:
+          screenshot_name: "webex_guest_captcha"
+        wait_time: 1
+
+    - name: "Fill verification characters"
+      platforms: [mac,]
+      action:
+        type: function
+        value: fill_webex_guest_captcha
+        parameters:
+          process_name: "auto"
+          captcha: "${webex_guest_captcha}"
+          retry: 10
+        wait_time: 2
+
+    - name: "Click Next after entering verification characters"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_webex_guest_next_with_captcha_retry
+        parameters:
+          process_name: "Webex"
+          button_name: "Next"
+          refresh_button_name: "Refresh captcha"
+          retry: 5
+          captcha_retry: 5
+          wait_after_next: 2
+          wait_after_refresh: 1
+        wait_time: 5
+      stop_on_ai_check_failure: true
+      ai_check:
+        prompt: "Assert whether clicking Next successfully entered the Webex pre-join page shown after guest verification. Success criteria: the screenshot should show the 'Get ready to join' / pre-join page with meeting title or personal room name, camera preview area, microphone/video controls, and a 'Join meeting' button. If this page is shown, output [SUCCESS]Success. Failure criteria: still on the 'Enter your information' page, captcha validation error such as 'Incorrect characters. Try again.', Next button page, loading stuck, or any other page. If not on the pre-join page, output [FAILURE]Failed. Briefly state the reason."
+
+    - name: "Click Join meeting button"
+      platforms: [mac,]
+      action:
+        type: function
+        value: click_macos_button
+        parameters:
+          process_name: "Webex"
+          button_name: "Join meeting"
+          retry: 5
+        wait_time: 5
+
+  post_conditions:
+    - navigations/postconditions/leave_meeting

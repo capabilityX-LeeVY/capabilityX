@@ -1,0 +1,18 @@
+test_case:
+  name: answer_a_calling
+  team: RegressShield
+  owner: binbiwan
+  description: Answer an incoming call from a calling agent.
+  expect_result: The incoming call is answered successfully and call controls are visible.
+  pre_conditions: null
+  steps:
+    - name: "answer a calling"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "${agent_node}"
+        parameters:
+          test_case_name: "navigations/functional/callings/answer_a_calling_action"
+        wait_time: 20
+  execution_duration: 1
+  execution_count: 1

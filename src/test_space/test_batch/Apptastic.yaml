@@ -1,0 +1,10 @@
+test_case_batch:
+  name: Apptastic
+  team: Apptastic
+  owner: minl5
+  language: [en]
+  test_cases:
+    - feature_test/Merak_Apptastic/Apptastic/check_webex_app_health
+  
+
+    

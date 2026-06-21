@@ -1,0 +1,23 @@
+# File: test_cases/acc_regression/meetings/actions/guest_join_meeting.yaml
+
+test_case:
+  name: guest_join_meeting
+  description: "Join a meeting by passing meeting_link and name as runtime parameters"
+  account: allianz8
+  check_points: [Keyboard Navigation]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # local_api: the referenced YAML's steps are loaded and executed inline.
+    # Both ${key} and {key} placeholder styles are supported.
+    - name: "guest join a meeting"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_entry/guest_join_a_meeting"
+        parameters:
+          meeting_link: "binbiwan@cisco.webex.com"
+          name: "tony"

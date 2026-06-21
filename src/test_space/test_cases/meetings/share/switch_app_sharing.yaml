@@ -1,0 +1,51 @@
+test_case:
+  name: switch_app_sharing
+  team: Sharing
+  owner: gamao
+  account: rtuser030
+  description: switch to app sharing in settings.
+  expect_result: switch to app sharing in share dialog.
+  pre_conditions:
+  #  - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change sharing settings"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    # Avoid unexpected option change due to keyboard navigation
+    - name: "Automatically adjust"
+      action:
+        type: key
+        value: tab
+      expect_state: ""
+ 
+    - name: "Share an individual window only"
+      action:
+        type: key
+        value: down
+      expect_state: "Share all windows from an application"
+    - name: "direct_tab_key_press"
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Save"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]

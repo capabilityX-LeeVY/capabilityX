@@ -1,0 +1,125 @@
+test_case:
+  name: vdi_calling_locus_basic_receive_screen_sharing
+  team: VDI
+  owner: qihliu
+  description: User receives screen sharing from another participant.
+  expect_result: User receives screen sharing from another participant.
+
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_locus_basic_video_call
+
+  steps:
+    - name: "vdi_read_peer_ip"
+      action:
+        type: function
+        value: vdi_read_peer_ip
+        save_to: peer_ip
+        wait_time: 1
+      expect_state: ""      
+
+    - name: "vdi_peer_start_screen_share"
+      action:
+        type: function
+        value: vdi_peer_start_screen_share
+        parameters:
+          peer_ip: "${peer_ip}"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Jump to next floating panel"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+        wait_time: 1
+      expect_state: ""
+      
+    - name: "Maximize window in Multitasking"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Jump to next floating panel"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+        wait_time: 1
+      expect_state: ""
+      
+    - name: "Maximize window in Multitasking"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+    
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 2
+      expect_state: ""
+    
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. It should display a label indicating that you are viewing someone's screen, with the shared desktop visible in the center of the window. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_peer_stop_share"
+      action:
+        type: function
+        value: vdi_peer_stop_share
+        parameters:
+          peer_ip: "${peer_ip}"
+        wait_time: 1
+      expect_state: ""
+    
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out
+
+  execution_duration: 1
+  execution_count: 1
+  retry_enabled: false  
+  check_point: ["Keyboard Navigation"]

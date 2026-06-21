@@ -1,0 +1,33 @@
+test_suite:
+  name: meeting_sharing_app
+  team: Sharing
+  owner: gamao
+  account: rtuser030
+  platform: windows
+  language: [en_us]
+  check_points: ["Keyboard Navigation"]
+  description: Meeting sharing app test suite
+  test_cases:
+    # Pre-conditions: Sign in with fullmode19 and start meeting
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - meetings/share/setup_sharing_suite
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/enable_limit_15_fps_sharing # enable limit 15 fps sharing to make sure share control bar can be captured in screenshot
+    
+    # # Lock and unlock meeting to avoid auto lock in PMR
+    # - meetings/actions/lock_unlock_meeting
+    # - meetings/actions/lock_unlock_meeting
+
+    - meetings/share/share_single_app
+    - meetings/share/share_multi_app
+    - meetings/share/switch_window_sharing
+    - meetings/share/share_single_window
+    - meetings/share/share_multi_window
+    - meetings/share/switch_app_sharing
+
+    # Post-conditions
+    - navigations/postconditions/end_meeting
+    - navigations/basic/sign_out
+    - navigations/basic/quit_app

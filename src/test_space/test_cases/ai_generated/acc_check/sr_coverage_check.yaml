@@ -1,0 +1,30 @@
+test_case:
+  name: sr_coverage_check
+  account: bcld.sofia+207
+  description: "Validate that all visible window text is accessible via screen reader (OCR vs UIA tree comparison)"
+  check_points: 
+    - Keyboard Navigation
+    - Focus Ring
+    - Screen Reader
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_entry/emergency_calling_OK_button
+
+
+  steps:
+    - name: "Add address"
+      action:
+        type: locate
+
+    - name: "validate sr coverage for current window"
+      action:
+        type: function
+        value: validate_sr_coverage
+        parameters:
+          coverage_threshold: 80.0
+
+  post_conditions: null

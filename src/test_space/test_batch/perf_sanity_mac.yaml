@@ -1,0 +1,13 @@
+test_case_batch:
+  name: perf_sanity_mac
+  team: performance
+  owner: gamao
+  platform: mac
+  language: [en]
+  test_cases:
+    - performance/sanity_video_only_mac
+    - performance/sanity_vbg_mac
+    - performance/sanity_video55_mac
+    - performance/sanity_share_only_mac
+    - performance/sanity_receive_share_mac
+    - performance/sanity_audio_only_mac

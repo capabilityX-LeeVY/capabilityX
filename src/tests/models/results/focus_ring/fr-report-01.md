@@ -1,0 +1,3 @@
+|No.|Image|Control Name|Analysis Result|Compliance|Reference|Suggestion|
+|---|---|---|---|---|---|---|
+|1|<img src="..\..\sample\focus_ring_01.png" alt="Call me dropdown" data-img-mhash="c1bd954624eaa5ad" style="max-width: 300px; height: auto;">|Call me dropdown|No focus ring detected. Border is gray and does not qualify.|❌ Non-Compliant|WCAG 2.4.7 Focus Visible|Add a blue focus ring in the HSV range [100-124, 43-255, 46-255] when focused.|

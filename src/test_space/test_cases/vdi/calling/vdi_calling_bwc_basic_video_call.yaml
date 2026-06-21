@@ -1,0 +1,86 @@
+test_case:
+  name: vdi_calling_bwc_basic_video_call
+  team: VDI
+  owner: qihliu
+  description: Test basic video call.
+  expect_result: Successfully setup a video call
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+
+  steps:
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""  
+
+    - name: "vdi_read_phone_number"
+      action:
+        type: function
+        value: vdi_read_phone_number
+        save_to: peer_phone_number
+        wait_time: 1
+      expect_state: "" 
+  
+    - name: "Calling menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "${peer_phone_number}"
+      expect_state: ""
+
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+    
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+    
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: "enter"        
+
+    - name: "vdi_get_ringback_detection"
+      action:
+        type: function
+        value: vdi_get_ringback_detection
+        parameters:
+          tc_ip: "${tc_ip}"
+        save_to: ringback_detections  
+        wait_time: 5
+      expect_state: ""
+      stop_on_failure: true      
+      stop_on_ai_check_failure: true      
+      ai_check:
+        prompt: "Verify if hearing ringback tone, depending on the value of variable 'ringback_detections'. It should be equal to or greater than 3. The current value is '${ringback_detections}'. >. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+ 
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out
+    
+  execution_duration: 1
+  execution_count: 1
+  retry_enabled: false  
+  check_points: ["Keyboard Navigation"]

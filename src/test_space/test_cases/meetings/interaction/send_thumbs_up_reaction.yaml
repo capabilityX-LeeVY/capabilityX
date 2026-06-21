@@ -1,0 +1,15 @@
+test_case:
+  name: send_thumbs_up_reaction
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to send thumbs up reaction using keyboard shortcut
+  expect_result: Thumbs up reaction is successfully sent
+  
+  steps:
+    - name: "Send thumbs up reaction"
+      action:
+        type: shortcut
+        value: alt+shift+4
+      expect_state: ""
+      wait_time: 1

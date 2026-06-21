@@ -1,0 +1,73 @@
+test_case:
+  name: guest_join_PMR
+  description: Verify that a guest user can successfully join a PMR meeting.
+  expect_result: The guest user successfully join a PMR meeting.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ui_response: true
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: cisco.webex.com/meet/yanfzhen
+      expect_state: ""
+    - name: "Next-Join a meeting - Webex"
+      action:
+        type: key
+        value: default
+      wait_time: 5
+      expect_state: "Name. Required. Textbox"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: faye
+      expect_state: ""
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Mute"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+    - name: "Wait call analyzer data"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+          seconds: 300
+      expect_state: ""
+
+    - name: "get_meeting_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "mediaOutcome", "resultName", "identifiers_webexSiteName"]
+        save_to: result
+      ai_check:
+        prompt: "Ignore the picture which I uploaded to you, and only analyze the ${result} and check the outcome whether success, the resultName whether 'pre.join.result'. Output format: ✅Success or ❌Failed"
+      expect_state: ""
+
+    - name: "get result from call analyzer"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The call analyzer result is ${result}"
+      expect_state: ""
+      
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

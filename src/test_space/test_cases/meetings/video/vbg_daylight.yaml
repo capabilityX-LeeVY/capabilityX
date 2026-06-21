@@ -1,0 +1,58 @@
+test_case:
+  name: vbg_daylight
+  team: RegressShield
+  owner: raey
+  description: user start meeting, open video options, change vbg to 'Daylight'.
+  expect_result: The vbg is changed to 'Daylight' and the focus is returned to the video options button.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: "None,"
+      ui_response: true
+    - name: "Daylight"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Video options"
+      ui_response: true
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference virtual background, and the second is a meeting screenshot with a virtual background applied. Ignore any people or foreground elements in the images. Focus only on the background. Determine if the background in the second image matches the reference background in the first. Output format: ✅Success or ❌Failed"
+        reference: daylight.jpg
+    - name: "Apply in settings dialog"
+      platforms: ["mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+    - name: "Close Setting Dialog"
+      platforms: ["mac"]
+      action:
+        type: shortcut
+        value: Close Dialog
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference virtual background, and the second is a meeting screenshot with a virtual background applied. Ignore any people or foreground elements in the images. Focus only on the background. Determine if the background in the second image matches the reference background in the first. Output format: ✅Success or ❌Failed"
+        reference: daylight.jpg
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

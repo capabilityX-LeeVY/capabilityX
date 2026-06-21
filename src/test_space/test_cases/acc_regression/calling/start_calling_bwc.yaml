@@ -1,0 +1,37 @@
+test_case:
+  name: start_calling_bwc
+  team: RegressShield
+  owner: binbiwan
+  description: user start meeting, open video options, change vbg to 'Executive office'.
+  expect_result: The vbg is changed to 'Executive office' and the focus is returned to the video options button.
+  pre_conditions: null
+  steps:
+    - name: "agent initWebex"
+      action:
+        type: api
+        value: "run_init_app_functions_api"
+        agent_node: "calling_agent_01"
+    - name: "Calling menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "8203"
+      expect_state: ""
+    - name: "Place call"
+      action:
+        type: key
+        value: "enter"
+      expect_state: ""
+    - name: "call agent"
+      action: 
+        type: api
+        value: "run_bwc_calling_functions_api"
+        agent_node: "calling_agent_02"
+        wait_time: 20
+  execution_duration: 1
+  execution_count: 1
+  check_points: [acc]

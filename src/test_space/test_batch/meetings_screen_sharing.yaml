@@ -1,0 +1,15 @@
+test_case_batch:
+  name: meetings_screen_sharing
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Screen sharing test batch for meeting-related test cases
+  test_cases:
+    # Screen Sharing
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/test_basic_screen_sharing
+    - meetings/share/test_screen_sharing_complete
+    - meetings/actions/end_meeting

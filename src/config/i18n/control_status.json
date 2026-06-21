@@ -1,0 +1,33 @@
+{
+    "en_US": {
+      "state": {
+        "checked": "checked",
+        "unchecked": "unchecked",
+        "selected": "selected",
+        "unselected": "unselected",
+        "collapsed": "collapsed",
+        "expanded": "expanded"
+      }
+    },
+    "zh_CN": {
+      "state": {
+        "checked": "已选中",
+        "unchecked": "未选中",
+        "selected": "已选中",
+        "unselected": "未选中",
+        "collapsed": "已折叠",
+        "expanded": "已展开"
+      }
+    },
+    "de_DE": {
+      "state": {
+        "checked": "ausgewählt",
+        "unchecked": "nicht ausgewählt",
+        "selected": "ausgewählt",
+        "unselected": "nicht ausgewählt",
+        "collapsed": "reduziert",
+        "expanded": "erweitert"
+      }
+    }
+  }
+  

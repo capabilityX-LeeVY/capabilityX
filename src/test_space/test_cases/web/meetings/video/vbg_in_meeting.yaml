@@ -1,0 +1,32 @@
+test_case:
+  name: vbg_in_meeting
+  custom_dataset: control_datasets_webex_app_web
+  team: RegressShield
+  owner: binbiwan
+  description: user start meeting, open video options, change vbg to 'Home office'.
+  expect_result: The vbg is changed to 'Home office' and the focus is returned to the video options button.
+  pre_conditions: null
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Home office"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+    - name: "Home office"
+      action:
+        type: key
+        value: enter
+      expect_state: ""
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference virtual background, and the second is a meeting screenshot with a virtual background applied. Ignore any people or foreground elements in the images. Focus only on the background. Determine if the background in the second image matches the reference background in the first. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+        reference: home_office.jpg
+
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

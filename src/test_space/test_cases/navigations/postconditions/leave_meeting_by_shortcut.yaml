@@ -1,0 +1,18 @@
+test_case:
+  name: leave_meeting_by_shortcut
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions: null
+
+  steps:
+    - name: "Leave or end the meeting or call"
+      action:
+        type: shortcut
+        value: "Leave or end the meeting or call"
+        wait_time: 2
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3

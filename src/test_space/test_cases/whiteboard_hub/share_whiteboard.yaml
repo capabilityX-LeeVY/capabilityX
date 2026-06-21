@@ -1,0 +1,178 @@
+test_case:
+  name: share_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Share a whiteboard.        
+  expect_result: A whiteboard is shared.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+  steps:
+    - name: "Messaging menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+        wait_time: 1
+      expect_state: ""
+    - name: "New Whiteboard in hub"
+      action:
+        type: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+        wait_time: 1
+      expect_state: ""
+    #share button
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "input people name"
+      platforms: [windows,]
+      action:
+        type: key
+        value: default      
+        wait_time: 1
+    - name: "input people name"
+      action:
+        type: input
+        value: "fullmode19_FN fullmode19_LN"
+        wait_time: 1
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "share whiteboard for people"
+      platforms: [windows,] 
+      action:
+        type: key
+        value: default      
+        wait_time: 3
+      expect_state: "input people name"
+      ai_check: 
+        prompt: "verify if people named \"fullmode19_FN fullmode19_LN\" show below \"People with access\" title. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: ""
+      platforms: [mac,]
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "Close window"
+      action:
+        type: shortcut
+        value: "Close window"
+        wait_time: 1
+    #more option share
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      platforms: [windows,]
+      action:
+        type: direct_key
+        value: down
+        wait_time: 1
+      expect_state: ""
+    - name: "share whiteboard"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+    - name: "input people name"
+      platforms: [windows,]
+      action:
+        type: key
+        value: default      
+        wait_time: 0.5
+    - name: "input people name"
+      action:
+        type: input
+        value: "fullmode18_FN fullmode18_LN"
+        wait_time: 1
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "Direct Tab Key Press"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "share whiteboard for people"
+      platforms: [windows,] 
+      action:
+        type: key
+        value: default      
+        wait_time: 3
+      expect_state: "input people name"
+      ai_check: 
+        prompt: "verify if people named \"fullmode18_FN fullmode18_LN\" show below \"People with access\" title. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: ""
+      platforms: [mac,]
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+    - name: "Close window"
+      action:
+        type: shortcut
+        value: "Close window"
+        wait_time: 1
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

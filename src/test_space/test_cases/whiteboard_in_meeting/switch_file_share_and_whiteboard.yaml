@@ -1,0 +1,106 @@
+test_case:
+  name: switch_file_share_and_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Verify that a user can switch between file sharing and whiteboard within an active meeting.
+  expect_result: The user can successfully switch between file sharing and whiteboard inside the meeting.
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join fullmode20@appletestci.webex.com sharing=file with 1 ucf_api duration 10"
+          duration: 180
+      expect_state: ""
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join fullmode20@appletestci.webex.com sharing=file with 1 ucf_api duration 10"
+          duration: 180
+      expect_state: ""
+    - name: "Take control"
+      action:
+        type: key
+        value: default
+        wait_time: 3
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      wait_time: 3
+    - name: "More options"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Whiteboards in more options"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Check if the whiteboard was successfully opened. Requirements: There must be a 'Share' button visible in the screen. Output format: ✅Success or ❌Failed. Reasoning: <describe which elements you see>"
+        wait_time: 5
+    - name: "Switch list"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+      wait_time: 5
+      ai_check:
+        prompt: "Analyze the window screenshot and check if the screen was switched to file share. Requirements: There must be 'Webex Toolhub' string visible in the screen. Output format: ✅Success or ❌Failed. Reasoning: <describe which elements you see>"
+        wait_time: 5
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

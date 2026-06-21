@@ -1,0 +1,381 @@
+  GT_meta_data_l18n_mac:
+  - Agree:
+      de_DE: Zustimmen
+      en_US: Agree
+      zh_CN: 同意
+  - Sign in:
+      de_DE: Anmelden
+      en_US: Sign in
+      zh_CN: 登录
+  - ^Email address.*:
+      de_DE: ^E-Mail-Adresse.*
+      en_US: ^Email address.*
+      zh_CN: ^电子邮件地址.*
+  - Next:
+      de_DE: Weiter
+      en_US: Next
+      zh_CN: 下一步
+  - ^[\s\S]*Password[\s\S]*$:
+      de_DE: ^[\s\S]*Passwort$
+      en_US: ^[\s\S]*Password$
+      zh_CN: ^[\s\S]*密码$
+  - Got it:
+      de_DE: Alles klar
+      en_US: Got it
+      zh_CN: 明白了
+  - ^Meetings,.*\d+ of \d+$|^Meetings.*:
+      de_DE: ^Meetings,.*\d+ von \d+$
+      en_US: ^Meetings,.*\d+ of \d+$|^Meetings.*
+      zh_CN: ^会议,.*\d+/\d+$
+  - ^Contacts,.*\d+ of \d+$:
+      de_DE: ^Kontakte,.*\d+ von \d+$
+      en_US: ^Contacts,.*\d+ of \d+$
+      zh_CN: ^联系人,.*\d+/\d+$
+  - ^Calling,.*\d+ of \d+$:
+      de_DE: ^Calling,.*\d+ von \d+$
+      en_US: ^Calling,.*\d+ of \d+$
+  - ^Whiteboards,.*\d+ of \d+$:
+      de_DE: ^Whiteboards,.*\d+ von \d+$
+      en_US: ^Whiteboards,.*\d+ of \d+$
+  - ^Vidcast,.*\d+ of \d+$:
+      de_DE: ^Vidcast,.*\d+ von \d+$
+      en_US: ^Vidcast,.*\d+ of \d+$
+  - ^Messaging,.*\d+ of \d+$:
+      de_DE: ^Messaging,.*\d+ von \d+$
+      en_US: ^Messaging,.*\d+ of \d+$
+  - ^More,.*\d+ of \d+$:
+      de_DE: ^Mehr,.*\d+ von \d+$
+      en_US: ^More,.*\d+ of \d+$
+      zh_CN: ^更多,.*\d+/\d+$
+  - ^(Start a Webex meeting|Start)$:
+      de_DE: ^(Ein Webex-Meeting starten|Start)$
+      en_US: ^(Start a Webex meeting|Start)$
+      zh_CN: ^(开始 Webex 会议|开始)$
+  - Start a Webex meeting:
+      de_DE: Ein Webex-Meeting starten
+      en_US: Start a Webex meeting
+      zh_CN: 开始 Webex 会议
+  - Accept:
+      de_DE: Annehmen
+      en_US: Accept
+      zh_CN: 接受
+  - Join a meeting:
+      de_DE: Meeting beitreten
+      en_US: Join a meeting
+      zh_CN: 加入会议
+  - Sign In:
+      de_DE: Anmelden
+      en_US: Sign In
+      zh_CN: 登录
+  - Schedule a meeting:
+      de_DE: Meeting ansetzen
+      en_US: Schedule a meeting
+      zh_CN: 安排会议
+  - More schedule options:
+      de_DE: Weitere Planungsoptionen
+      en_US: More schedule options
+      zh_CN: 更多安排选项
+  - Start meeting:
+      de_DE: Meeting starten
+      en_US: Start meeting
+      zh_CN: 开始会议
+  - Audio options:
+      de_DE: Audiooptionen
+      en_US: Audio options
+      zh_CN: 音频选项
+  - Video options:
+      de_DE: Video-Optionen
+      en_US: Video options
+      zh_CN: 视频选项
+  - Apply:
+      de_DE: Übernehmen
+      en_US: Apply
+      zh_CN: 应用
+  - None:
+      de_DE: Keine
+      en_US: None
+      zh_CN: 无
+  - Blur:
+      de_DE: Verschwimmen
+      en_US: Blur
+      zh_CN: 模糊
+  - Add virtual background:
+      de_DE: Virtuellen Hintergrund hinzufügen
+      en_US: Add virtual background
+      zh_CN: 添加虚拟背景
+  - Executive office:
+      de_DE: Chefbüro
+      en_US: Executive office
+      zh_CN: 行政办公室
+  - Home office:
+      de_DE: Homeoffice
+      en_US: Home office
+      zh_CN: 居家办公室
+  - Lookout:
+      de_DE: Ausblick
+      en_US: Lookout
+      zh_CN: 注意
+  - Daylight:
+      de_DE: Tageslicht
+      en_US: Daylight
+      zh_CN: 夏令时
+  - Fountain:
+      de_DE: Brunnen
+      en_US: Fountain
+      zh_CN: 喷泉
+  - Dark:
+      en_US: Dark
+      zh_CN: 深色
+  - Lava:
+      de_DE: Lava
+      en_US: Lava
+      zh_CN: 岩浆
+  - .*Aurora.*:
+      de_DE: .*Aurora.*
+      en_US: .*Aurora.*
+      zh_CN: .*Aurora.*
+  - .*Silhouette.*:
+      de_DE: .*Silhouette.*
+      en_US: .*Silhouette.*
+      zh_CN: .*Silhouette.*
+  - End meeting:
+      de_DE: Meeting beenden
+      en_US: End meeting
+      zh_CN: 结束会议
+  - Change virtual background:
+      de_DE: Virtuellen Hintergrund ändern
+      en_US: Change virtual background
+      zh_CN: 更改虚拟背景
+  - Profile and settings:
+      de_DE: Profil und Einstellungen
+      en_US: Profile and settings
+      zh_CN: 档案和设置
+  - Sign out:
+      de_DE: Abmelden
+      en_US: Sign out
+      zh_CN: 注销
+  - Username:
+      de_DE: Benutzername
+      en_US: Username
+      zh_CN: 用户名
+  - Login:
+      de_DE: Anmelden
+      en_US: Login
+      zh_CN: 登录
+  - ^Mute[\s\S]*:
+      de_DE: ^Stummschalten[\s\S]*
+      en_US: ^Mute[\s\S]*
+      zh_CN: ^静音[\s\S]*
+  - ^Unmute[\s\S]*:
+      de_DE: ^Stumm\.[\s\S]*
+      en_US: ^Unmute[\s\S]*
+      zh_CN: ^取消静音[\s\S]*
+  - Stop video:
+      de_DE: Video beenden
+      en_US: Stop video
+      zh_CN: 停止视频
+  - Reactions (⇧⌘Y):
+      de_DE: Reaktionen (⇧⌘Y)
+      en_US: Reactions (⇧⌘Y)
+      zh_CN: 表情 (⇧⌘Y)
+  - Done:
+      de_DE: Fertig
+      en_US: Done
+      zh_CN: 完成
+  - Hide participants panel:
+      de_DE: Teilnehmerbereich ausblenden
+      en_US: Hide participants panel
+      zh_CN: 隐藏“参加者”面板
+  - Search or dial:
+      de_DE: Suchen oder wählen
+      en_US: Search or dial
+      zh_CN: 搜索或拨号
+  - Got it:
+      en_US: Got it
+      zh_CN: 明白了
+  - Audio options:
+      de_DE: Audiooptionen
+      en_US: Audio options
+      zh_CN: 音频选项
+  - Audio Settings...:
+      de_DE: Audioeinstellungen...
+      en_US: Audio Settings...
+      zh_CN: 音频设置...
+  - Video Settings...:
+      de_DE: Videoeinstellungen...
+      en_US: Video Settings...
+      zh_CN: 视频设置...
+  - Share:
+      de_DE: Freigeben
+      en_US: Share
+      zh_CN: 共享内容
+  - Change sharing settings:
+      de_DE: Freigabeeinstellungen ändern
+      en_US: Change sharing settings
+      zh_CN: 更改共享设置
+  - Self-view location...:
+      en_US: Self-view location...
+  - Show in floating window:
+      en_US: Show in floating window
+  - Password:
+      en_US: Password
+  - navigate:
+      en_US: navigate
+  - Start video:
+      de_DE: Video starten
+      en_US: Start video
+      zh_CN: 开始视频
+  - Stop video (⌃⇧V):
+      de_DE: Video beenden
+      en_US: Stop video (⌃⇧V)
+      zh_CN: 停止视频
+  - Screen or application:
+      de_DE: Bildschirm oder Anwendung
+      en_US: Screen or application
+      zh_CN: 屏幕或应用程序
+  - Stop sharing (⌃⇧Z):
+      de_DE: Freigabe beenden (⌃⇧Z)
+      en_US: Stop sharing (⌃⇧Z)
+      zh_CN: 停止共享
+  - OK:
+      de_DE: OK
+      en_US: OK
+      zh_CN: 确定
+  - Open AI Assistant panel:
+      de_DE: Bereich für AI Assistant öffnen
+      en_US: Open AI Assistant panel
+      zh_CN: 打开 AI Assistant 面板
+  - Start:
+      de_DE: Starten
+      en_US: Start
+      zh_CN: 开始
+  - Set:
+      de_DE: Einstellen
+      en_US: Set
+      zh_CN: 设置
+  - ^Pause sharing[\s\S]*:
+      de_DE: ^Freigabe pausieren[\s\S]*
+      en_US: ^Pause sharing[\s\S]*
+      zh_CN: ^暂停共享[\s\S]*
+  - ^Resume sharing[\s\S]*:
+      de_DE: ^Freigabe fortsetzen[\s\S]*
+      en_US: ^Resume sharing[\s\S]*
+      zh_CN: ^恢复共享[\s\S]*
+  - ^Meeting number or link[\s\S]*:
+      de_DE: ^Meeting-Rufnummer oder Link[\s\S]*
+      en_US: ^Meeting number or link[\s\S]*
+      zh_CN: ^会议号或链接[\s\S]*
+  - ^Name[\s\S]*:
+      de_DE: ^Name[\s\S]*
+      en_US: ^Name[\s\S]*
+      zh_CN: ^姓名[\s\S]*
+  - ^Email address[\s\S]*:
+      de_DE: ^E-Mail-Adresse[\s\S]*
+      en_US: ^Email address[\s\S]*
+      zh_CN: ^电子邮件地址[\s\S]*
+  - Join meeting:
+      de_DE: Meeting beitreten
+      en_US: Join meeting
+      zh_CN: 加入会议
+  - ^Leave meeting[\s\S]*:
+      de_DE: ^Meeting verlassen[\s\S]*
+      en_US: ^Leave meeting[\s\S]*
+      zh_CN: ^离开会议[\s\S]*
+  - ^New whiteboard[\s\S]*:
+      de_DE: ^Neues Whiteboard[\s\S]*
+      en_US: ^New whiteboard[\s\S]*
+      zh_CN: ^新建白板[\s\S]*
+  - ^Meeting password[\s\S]*:
+      de_DE: ^Meeting password[\s\S]*
+      en_US: ^Meeting password[\s\S]*
+      zh_CN: ^会议密码[\s\S]*
+  - ^Name[\s\S]*:
+      de_DE: ^Name[\s\S]*
+      en_US: ^Name[\s\S]*
+      zh_CN: ^姓名[\s\S]*
+  - ^Type the characters[\s\S]*$:
+      de_DE: ^Geben Sie die Zeichen ein[\s\S]*$
+      en_US: ^Type the characters[\s\S]*$
+      zh_CN: ^输入字符[\s\S]*$
+  - ^More options for[\s\S]*$:
+      de_DE: ^Weitere Optionen für[\s\S]*$
+      en_US: ^More options for[\s\S]*$
+      zh_CN: ^更多选项[\s\S]*$
+  - Rename:
+      de_DE: Umbenennen
+      en_US: Rename
+      zh_CN: 重命名
+  - Delete:
+      de_DE: Löschen
+      en_US: Delete
+      zh_CN: 删除
+  - Share:
+      de_DE: Freigeben
+      en_US: Share
+      zh_CN: 共享
+  - ^More options for [\s\S]*$:
+      de_DE: ^Weitere Optionen für [\s\S]*$
+      en_US: ^More options for [\s\S]*$
+      zh_CN: ^更多选项[\s\S]*$
+  - Rename whiteboard:
+      de_DE: Whiteboard umbenennen
+      en_US: Rename whiteboard
+      zh_CN: 重命名白板
+  - Save:
+      de_DE: Speichern
+      en_US: Save
+      zh_CN: 保存
+  - Search whiteboards:
+      de_DE: Whiteboards suchen
+      en_US: Search whiteboards
+      zh_CN: 搜索白板
+  - Clear:
+      de_DE: Löschen
+      en_US: Clear
+      zh_CN: 清除
+  - Search:
+      de_DE: Suchen
+      en_US: Search
+      zh_CN: 搜索
+  - More options for starting a Webex meeting:
+      de_DE: Weitere Optionen für das Starten eines Webex-Meetings
+      en_US: More options for starting a Webex meeting
+      zh_CN: 更多开始 Webex 会议的选项
+  - More options:
+      de_DE: Weitere Optionen
+      en_US: More options
+      zh_CN: 更多选项
+  - ^Leave meeting[\s\S]*$:
+      de_DE: ^Meeting verlassen[\s\S]*$
+      en_US: ^Leave meeting[\s\S]*$
+      zh_CN: ^离开会议[\s\S]*$
+    ^Name[\s\S]*$:
+      en_US: ^Name[\s\S]*$
+  - ^Meetings,.*\d+ of \d+$:
+      en_US: ^Meetings,.*\d+ of \d+$
+  - ^[\s\S]*Layout[\s\S]*$:
+      en_US: ^[\s\S]*Layout[\s\S]*$
+  - ^Side by side[\s\S]*$:
+      en_US: ^Side by side[\s\S]*$
+  - End call:
+      en_US: End call
+  - ^Search, meet and call.*$:
+      en_US: ^Search, meet and call.*$
+  - Continue with email:
+      en_US: Continue with email
+  - Cancel:
+      de_DE: Abbrechen
+      en_US: Cancel
+      zh_CN: 取消
+  - ^\s*Call settings(?:\s*,[\s\S]*)?$:
+      en_US: ^\s*Call settings(?:\s*,[\s\S]*)?$
+  - Open Call Preferences:
+      en_US: Open Call Preferences
+  - ^\s*Calling(?:\s*,[\s\S]*)?$:
+      en_US: ^\s*Calling(?:\s*,[\s\S]*)?$
+  - ^Open$:
+      en_US: ^Open$
+  - ^(Open Webex|Open Webex app|Launch Webex App|Open Webex App|Launch meeting)$:
+      en_US: ^(Open Webex|Open Webex app|Launch Webex App|Open Webex App|Launch meeting)$
+  - Always Allow:
+      en_US: Always Allow

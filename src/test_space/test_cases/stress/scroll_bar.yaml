@@ -1,0 +1,67 @@
+test_case:
+  name: scroll_bar
+  owner: huanwan3
+  account: fullmode18
+  description: Scroll
+  expect_result: Scroll
+  pre_conditions: []
+  steps:
+    # Open Participants panel
+    - name: "Participants"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    # Test arrow button scrolling (most reliable method)
+    - name: "scroll down using arrow buttons"
+      action:
+        type: function
+        value: scroll_using_arrow_buttons_only
+        parameters:
+          container_automation_id: "participantListView"
+          direction: "down"
+          click_count: 10
+          timeout: 5
+      expect_state: ""
+      
+    - name: "wait 3s"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 3
+      expect_state: ""
+
+    # Test scroll back to top with arrow buttons
+    - name: "scroll to top using arrow buttons"
+      action:
+        type: function
+        value: scroll_using_arrow_buttons_only
+        parameters:
+          container_automation_id: "participantListView"
+          direction: "up"
+          click_count: 10
+          timeout: 5
+      expect_state: ""
+
+    # Reset focus
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 3
+      expect_state: ""
+        
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 3
+      expect_state: ""
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation, Stress]

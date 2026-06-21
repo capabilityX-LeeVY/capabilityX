@@ -1,0 +1,16 @@
+test_case:
+  name: Connect to Webex meeting main window (Ensure the meeting window is already open before running this case)
+  team: RegressShield
+  account: weiqin5
+  message_room: ["76295280-183c-11f1-95e9-13602a46d1f8", "f231f590-0729-11f1-867a-0fed11fb7fb9"]
+  check_points: ["Keyboard Navigation"]
+  pre_conditions:
+      - navigations/basic/uninstall_app
+      - navigations/basic/install_app
+      - navigations/basic/sign_in
+
+  steps:
+    - name: "connect webex window"
+      action:
+        type: function
+        value: connect_webex_window

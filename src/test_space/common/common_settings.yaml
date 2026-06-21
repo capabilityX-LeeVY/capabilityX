@@ -1,0 +1,62 @@
+# Common Test Case Settings
+# 
+# This file contains default configurations for all test cases
+# Individual test cases can inherit these settings or override them in their own files
+
+# UI Response Time Configuration
+ui_response_settings:
+  default_threshold_ms: 10000       # Default UI response threshold: 10 seconds
+
+# Performance Monitoring Configuration
+performance_settings:
+  default_cpu_threshold: 60               # Default CPU usage threshold: 60%
+  default_mem_threshold_mb: 2500          # Default memory usage threshold: 2500MB (2.5GB)
+  default_gpu_threshold: 60               # Default GPU usage threshold: 60%
+
+# Platform Configuration
+default_platforms: ["windows", "mac"]
+
+# Wait Time Configuration
+default_wait_times:
+  short_wait: 1                          # Short wait: 1 second
+  medium_wait: 3                         # Medium wait: 3 seconds  
+  long_wait: 5                           # Long wait: 5 seconds
+  extra_long_wait: 10                    # Extra long wait: 10 seconds
+
+# Performance threshold configurations for special scenarios
+performance_profiles:
+  # High performance requirement scenarios (e.g., login, meeting join)
+  high_performance:
+    cpu_threshold: 80
+    mem_threshold_mb: 2048
+    gpu_threshold: 80
+    
+  # Standard performance requirement scenarios
+  standard_performance:
+    cpu_threshold: 60
+    mem_threshold_mb: 1024
+    gpu_threshold: 60
+    
+  # Low performance requirement scenarios (e.g., simple navigation)
+  low_performance:
+    cpu_threshold: 40
+    mem_threshold_mb: 512
+    gpu_threshold: 40
+
+# UI Response Configuration Profiles
+ui_response_profiles:
+  # Fast response scenarios
+  fast_response:
+    threshold_ms: 1000
+    
+  # Standard response scenarios  
+  standard_response:
+    threshold_ms: 3000
+    
+  # Slow response scenarios (e.g., complex operations)
+  slow_response:
+    threshold_ms: 7000
+    
+  # Extra slow response scenarios (e.g., large file processing)
+  extra_slow_response:
+    threshold_ms: 15000

@@ -1,0 +1,62 @@
+test_case:
+  name: search_whiteboard
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Search a whiteboard.        
+  expect_result: A whiteboard is searched.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - whiteboard_hub/rename_whiteboard
+  steps:
+    - name: "Messaging menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "More actions menu item"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: "Whiteboards"
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+    - name: "load saved whiteboard name"
+      action:
+        type: function
+        value: load_whiteboard_name
+        save_to: whiteboard_name
+    - name: "Search whiteboards"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+    - name: "input whiteboard name"
+      platforms: [windows,]
+      action:
+        type: key
+        value: default      
+        wait_time: 0.5
+    - name: "input whiteboard name"
+      action:
+        type: input
+        value: "${whiteboard_name}"
+        wait_time: 1
+      ai_check: 
+        prompt: "verify if the whiteboard named \"${whiteboard_name}\" has been searched successfully and only one result is shown. Output format: ✅Success or ❌Failed. Reasoning: <short explanation>"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,113 @@
+test_case:
+  name: vdi_meeting_file_sharing
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: Complete test - Portion sharing workflow. User signs in, starts meeting, file share, stops sharing, and signs out.
+  expect_result: Successfully completes file share workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Start portion sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+
+    - name: "File tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Next in File tab"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""        
+
+    - name: "File name direct_input"
+      action:
+        type: direct_input
+        value: "C:\\WebexVDI-VC-Status.pdf"
+        wait_time: 1
+      expect_state: ""
+      
+    #- name: "File name:"
+    #  action:
+    #    type: input
+    #    value: "C:\\WebexVDI-VC-Status.pdf"
+    #    wait_time: 1
+    #  expect_state: ""
+
+
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 60
+      expect_state: ""
+      
+    - name: "Cancel Uploading-File Share"
+      platforms: ["windows", "mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      optional: true
+
+    - name: "Shared file view"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      stop_on_failure: true      
+      stop_on_ai_check_failure: true
+      ai_check:
+        prompt: "Analyze the window screenshot. The 'WebexVDI Virtual Channel Status' in blue background is visible in meeting window . Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+
+    # Stop portion sharing
+    - name: "Stop File sharing"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  #retry_enabled: false  
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,100 @@
+test_case:
+  name: vdi_meeting_vbg_customized
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: "Virtual background customized image test - Cross-platform"
+  expect_result: Customized background is successfully applied.
+  
+  # Platform support configuration
+  platforms:
+    supported: ["windows", "mac", "web"]
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Add virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "File name:"
+      action:
+        type: input
+        value: Morning.jpg
+      expect_state: ""
+
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 2 
+      expect_state: ""
+
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: "Video options"
+      ui_response: true
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 5
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check: 
+        prompt: "Task: Verify if the correct virtual background image was successfully applied in the meeting. Compare the reference image (first) with the meeting screenshot (second). Focus ONLY on: 1) Overall color scheme and palette 2) General visual style and aesthetic 3) Basic compositional elements. DO NOT analyze text orientation, logo direction, or any specific element positioning - these are irrelevant due to video processing effects. If the meeting screenshot shows the same general visual theme, colors, and style as the reference image, consider it a SUCCESS regardless of any mirroring, rotation, or orientation differences. Ignore all people and foreground elements. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+        reference: Morning-ref.jpg
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+  post_conditions:
+    - meetings/actions/end_meeting
+    - VDI/healthchecker/vdi_reset_database
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,31 @@
+test_case:
+  name: end_meeting_for_all
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: End meeting
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+
+    - name: Leave meeting or end meeting for everyone
+      platforms: ["mac"]
+      action:
+        type: key
+        value: default
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+

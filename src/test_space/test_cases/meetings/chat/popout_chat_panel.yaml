@@ -1,0 +1,16 @@
+test_case:
+  name: popout_chat_panel
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to pop out the chat panel into a separate window
+  expect_result: Successfully pops out the chat panel
+  
+  steps:
+    # Step 1: Pop out the chat panel
+    - name: "Pop out panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

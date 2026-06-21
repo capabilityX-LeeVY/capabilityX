@@ -1,0 +1,10 @@
+test_suite:
+  name: call_center_keyboard_navigation
+  team: RegressShield
+  owner: ivodimit
+  platform: windows
+  account: bcld.sofia+207
+  language: [en]
+  test_cases:
+    - acc_regression/calling/call_center_keyboard_navigation
+  check_points: [Keyboard Navigation]

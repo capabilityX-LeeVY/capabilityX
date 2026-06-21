@@ -1,0 +1,12 @@
+test_case:
+  name: start_a_conversation_call_or_meet
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Start a conversation, call, or meet"
+      action:
+        type: key
+        value: default

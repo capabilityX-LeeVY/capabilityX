@@ -1,0 +1,45 @@
+test_case:
+  name: switch_to_stack_layout
+  description: "Test switching layout from grid to stack mode in meeting"
+  account: allianz31
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "sign in 1 client"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "faye's device"
+        parameters:
+          test_case_name: "navigations/basic/sign_in"
+          account: "bts1"
+          installOptions/arch: "arm64"
+
+    - name: "join pmr meeting with 1 client"
+      action:
+        type: api
+        value: "run_agent_api"
+        agent_node: "faye's device"
+        parameters:
+          test_case_name: "acc_regression/in_meeting/join_pmr_meeting"
+
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+    
+    - name: "Stack"
+      action:
+        type: key
+        value: default
+
+  post_conditions:
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out

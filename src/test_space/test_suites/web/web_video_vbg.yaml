@@ -1,0 +1,14 @@
+test_suite:
+  name: web_video_vbg
+  team: web
+  owner: binbiwan
+  platform: web
+  account: bts1
+  language: [en]
+  test_cases:
+    - web/app_core/open_browser
+    - web/app_core/sign_in
+    - web/meetings/actions/start_meeting
+    - web/meetings/video/vbg_in_meeting
+    - web/meetings/actions/end_meeting
+    - web/app_core/sign_out

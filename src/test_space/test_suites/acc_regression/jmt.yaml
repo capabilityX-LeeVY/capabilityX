@@ -1,0 +1,38 @@
+test_suite:
+  name: jmt
+  team: wrs
+  account: weiqin5
+  owner: weiqli
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - acc_regression/jmt/guest_join_pmr
+    - navigations/basic/relaunch_app
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - acc_regression/jmt/start_webex_meeting
+
+    - navigations/basic/uninstall_app:
+        agent_node: "meeting_agent_01"
+    - navigations/basic/install_app:
+        agent_node: "meeting_agent_01"
+        parameters:
+          installOptions/version: "eft"
+          language: "en_US"
+    - navigations/basic/sign_in:
+        agent_node: "meeting_agent_01"
+        parameters:
+          account: "weiqin6"
+    - meetings/actions/start_pmr_meeting:
+        agent_node: "meeting_agent_01"
+    - acc_regression/jmt/basic/invite_people:
+        agent_node: "meeting_agent_01"
+
+    - acc_regression/jmt/join_pmr_from_meetings_search
+
+    - meetings/actions/end_meeting:
+        agent_node: "meeting_agent_01" 
+
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,14 @@
+test_case:
+  name: clear_saved_correlation_ids
+  description: Clear all saved correlation IDs from the shared JSON store.
+  expect_result: All saved correlation IDs are removed from the shared JSON store.
+  owner: minl5
+
+  steps:
+    - name: "Clear saved correlation IDs"
+      action:
+        type: function
+        value: clear_saved_correlation_ids
+        wait_time: 1
+
+  check_points: [Keyboard Navigation]

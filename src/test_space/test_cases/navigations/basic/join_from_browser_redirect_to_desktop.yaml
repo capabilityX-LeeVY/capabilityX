@@ -1,0 +1,44 @@
+test_case:
+  name: browser_join_redirect_to_desktop_app
+  description: Open a meeting link in the browser, trigger the protocol handler, and connect to the Webex desktop pre-join window.
+  expect_result: The browser opens the meeting link, redirects into the Webex desktop app, and lands on the pre-join window.
+
+  steps:
+    - name: "Kill all browser instances"
+      action:
+        type: function
+        value: close_browser
+        parameters:
+          browser: "edge"
+        wait_time: 2
+
+    - name: "Open browser with meeting link"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "co.webex.com/meet/minl5"
+          browser: "edge"
+        wait_time: 5
+
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MeetingInterstitialPageView"
+        wait_time: 5
+
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: minl5
+      optional: true
+
+  check_points: [Keyboard Navigation]

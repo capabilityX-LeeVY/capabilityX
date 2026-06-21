@@ -1,0 +1,124 @@
+# Core Controls Workflow Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    BUILD CORE CONTROLS WORKFLOW                          │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────┐
+│  SOURCE DATA             │
+│  1182 controls           │
+│  control_datasets_       │
+│  with_ui_path.json       │
+│  (parent directory)      │
+└────────────┬─────────────┘
+             │
+             │ Step 1: Filter & Extract Main Paths
+             ▼
+   ┌────────────────────────────────────┐
+   │  build_core_controls_dataset.py    │
+   │  --max-depth 9                     │
+   │  --only-main-controls              │
+   └────────────┬───────────────────────┘
+                │
+                │ Filters:
+                │ • Remove empty names
+                │ • Keep depth ≤ 9
+                │ • Deduplicate
+                │ • Extract main paths
+                ▼
+   ┌─────────────────────────────────┐
+   │  INTERMEDIATE DATASET           │
+   │  211 controls (depth 1-9)       │
+   │  go_to_core_controls_           │
+   │  datasets.json                  │
+   └────────────┬────────────────────┘
+                │
+                │ Step 2: Generate Configuration
+                ▼
+   ┌────────────────────────────────────┐
+   │  generate_core_controls_config.py  │
+   └────────────┬───────────────────────┘
+                │
+                │ Creates editable config
+                ▼
+   ┌─────────────────────────────────┐
+   │  CONFIGURATION FILES            │
+   │  • core_controls_config.json    │  ← Edit this!
+   │  • core_controls_selection.txt  │  (reference)
+   └────────────┬────────────────────┘
+                │
+                │ Step 3: Manual Selection
+                │ (Set "selected": true)
+                ▼
+   ┌─────────────────────────────────┐
+   │  EDITED CONFIGURATION           │
+   │  Selected 20-50 controls        │
+   │  core_controls_config.json      │
+   └────────────┬────────────────────┘
+                │
+                │ Step 4: Extract Final Dataset
+                ▼
+   ┌────────────────────────────────────┐
+   │  extract_core_controls_from_       │
+   │  config.py                         │
+   └────────────┬───────────────────────┘
+                │
+                │ Extracts selected controls
+                ▼
+   ┌─────────────────────────────────┐
+   │  FINAL OUTPUT                   │
+   │  20-50 core controls            │
+   │  go_to_core_controls.json │ ✓ READY TO USE
+   └─────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+SELECTION STRATEGY (Step 3):
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Depth 1-2: Sign-in Entry                                                │
+│   [ ] Join a meeting        [ ] Sign in        [ ] Email address        │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Depth 3-4: Authentication                                               │
+│   [ ] Next button           [ ] Password       [ ] Sign In button       │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Depth 5: Main Navigation & Actions                                      │
+│   [ ] Start meeting         [ ] Schedule meeting   [ ] Settings         │
+│   [ ] Meetings tab          [ ] Messaging tab      [ ] Calling tab      │
+│   [ ] Contacts tab          [ ] Search box                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Depth 6-7: Meeting Entry                                                │
+│   [ ] Accept disclaimer     [ ] Start meeting button                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Depth 8-9: In-Meeting Controls                                          │
+│   [ ] Mute/Unmute          [ ] Start/Stop video    [ ] Share            │
+│   [ ] Leave meeting        [ ] Participants        [ ] Chat             │
+│   [ ] Record               [ ] More options                             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+CRITICAL PATHS TO MAINTAIN:
+
+Path 1: Sign In → Main App
+  Sign in → Email address → Next → Password → Sign In button → [Depth 5 controls]
+
+Path 2: Start Meeting
+  [From Depth 5] → Start meeting → Accept → Start meeting button → [Depth 9 controls]
+
+Path 3: In-Meeting Operations
+  [From Depth 8] → Mute → Unmute → Video → Share → Leave
+
+═══════════════════════════════════════════════════════════════════════════
+
+TIMELINE:
+
+Phase 1: Initial Filtering   ⏱️  < 1 minute   (Automated)
+Phase 2: Config Generation   ⏱️  < 1 minute   (Automated)
+Phase 3: Manual Selection    ⏱️  10-30 min    (Manual)
+Phase 4: Final Extraction    ⏱️  < 1 minute   (Automated)
+
+Total Time: ~15-35 minutes
+
+═══════════════════════════════════════════════════════════════════════════

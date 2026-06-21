@@ -1,0 +1,97 @@
+test_case:
+  name: vdi_meeting_send_reaction
+  team: VDI
+  owner: qihliu
+  account: bwc.sha+100
+  description: Complete test - Basic application sharing workflow. User signs in, starts meeting, send reactions, stops sharing, and signs out.
+  expect_result: Successfully completes basic send reactions workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    # Send reactions
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""    
+    
+    - name: "Send reaction laugh"
+      action:
+        type: function
+        value: vdi_reaction_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"        
+          reaction_sc: "alt+shift+6"
+        wait_time: 10
+      expect_state: ""
+
+
+    - name: "Send reaction party popper"
+      action:
+        type: function
+        value: vdi_reaction_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+          reaction_sc: "alt+shift+7"          
+        wait_time: 2
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot in Paint. The emoji 'Party popper' (Maybe it also looks like a yellow cone or megaphon and ignore any confetti or other celebratory elements) reaction is showed in meeting window. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+
+    - name: "Send reaction heart"
+      action:
+        type: function
+        value: vdi_reaction_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"        
+          reaction_sc: "alt+shift+8"
+        wait_time: 2
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot in Paint. The 'Heart' emoji reaction is clearly visible in the bottom-right corner of the meeting window, confirming that the reaction is displayed as intended. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+  
+  post_conditions:
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

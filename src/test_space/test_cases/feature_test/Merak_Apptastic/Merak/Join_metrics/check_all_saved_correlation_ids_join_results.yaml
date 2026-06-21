@@ -1,0 +1,31 @@
+test_case:
+  name: check_all_metrics_join_results
+  description: Load all saved correlation IDs in stored order, then query pre.join.result and join.result outcomes for each ID in the same order.
+  expect_result: The saved correlation IDs are read back in the same order they were stored, and both pre.join.result and join.result outcomes are success for each correlation ID.
+  owner: minl5
+
+  steps:
+    - name: "Load all saved correlation IDs"
+      action:
+        type: function
+        value: load_all_saved_correlation_ids
+        save_to: all_saved_correlation_ids
+
+    - name: "Get join results for all saved correlation IDs"
+      action:
+        type: function
+        value: get_all_saved_correlation_ids_join_results
+        parameters:
+          columns: ["outcome", "resultName", "identifiers_webexSiteName", "failureType"]
+        save_to: all_saved_correlation_id_results
+
+    - name: "check_all_saved_pre_join_and_join_results"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "Ordered correlation ID results: ${all_saved_correlation_id_results}"
+      ai_check:
+        prompt: "Analyze ${all_saved_correlation_id_results}. Treat correlationIds order as the expected storage order and verify orderedResults keeps the same first-to-first, second-to-second mapping. Each orderedResults item must represent exactly one correlationId and keep both outcomes in the same record using preJoinOutcome and joinOutcome. For every record, preJoinOutcome must be 'success' and joinOutcome must be 'success'. Output format: [SUCCESS]Success or [FAILURE]Failed, and briefly state which correlationId, order check, or outcome field failed if any."
+
+  check_points: [Keyboard Navigation]

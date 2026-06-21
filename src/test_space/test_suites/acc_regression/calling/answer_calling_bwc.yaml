@@ -1,0 +1,8 @@
+test_suite:
+  name: answer_calling_bwc
+  team: RegressShield
+  owner: yanfzhen
+  platform: windows
+  language: [en]
+  test_cases:
+    - acc_regression/calling/answer_calling_bwc

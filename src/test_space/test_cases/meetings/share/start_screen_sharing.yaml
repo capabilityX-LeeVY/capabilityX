@@ -1,0 +1,35 @@
+test_case:
+  name: start_screen_sharing
+  team: RegressShield
+  owner: gamao
+  account: rtuser030
+  description: Component function to start screen sharing
+  expect_result: Screen sharing is successfully started
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  
+  steps:
+    - name: "Share"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""

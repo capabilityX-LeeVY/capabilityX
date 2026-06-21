@@ -1,0 +1,26 @@
+test_suite:
+  name: message_basic
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Message basic functionality test suite - send message, emoji, gif, mention
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+    
+    # Core test cases - Basic messaging
+    - message/basic/test_send_message
+    - message/basic/test_send_emoji
+    - message/basic/test_send_gif
+    - message/basic/test_send_mention
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

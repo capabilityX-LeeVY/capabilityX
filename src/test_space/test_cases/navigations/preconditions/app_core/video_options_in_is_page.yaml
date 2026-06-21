@@ -1,0 +1,23 @@
+test_case:
+  name: video_options_in_is_page
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/preconditions/app_entry/sign_in_to_app
+
+  steps:
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: default
+
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      optional: true
+
+    - name: "Video options"
+      action:
+        type: key
+        value: default

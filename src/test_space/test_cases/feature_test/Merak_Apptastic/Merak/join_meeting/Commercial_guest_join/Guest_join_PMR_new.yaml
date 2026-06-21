@@ -1,0 +1,44 @@
+test_case:
+  name: guest_join_PMR_new
+  description: Verify that a guest user can successfully join a PMR meeting.
+  expect_result: The guest user successfully join a PMR meeting.
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+  steps:
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: default
+
+    - name: "Meeting number or link. Required."
+      action:
+        type: input
+        value: cisco.webex.com/meet/minl5
+
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: min
+        
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+    
+    - name: "bundle_logs"
+      action:
+        type: function
+        value: bundle_logs
+      
+  post_conditions:
+    - navigations/postconditions/leave_meeting
+
+  check_points: [Keyboard Navigation]

@@ -1,0 +1,22 @@
+test_case:
+  name: unmute_in_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component - Unmute audio during meeting using in-meeting controls
+  expect_result: Successfully unmutes audio during meeting
+  
+  pre_conditions: []
+  
+  steps:
+    - name: "Unmute in meeting"
+      action:
+        type: function
+        value: ensure_unmuted_in_meeting
+      expect_state: ""
+  
+  post_conditions: []
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

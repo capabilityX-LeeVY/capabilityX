@@ -1,0 +1,54 @@
+# File: test_cases/feature_test/Merak_Apptastic/join_meeting/Login user/login_user_join_meeting_from_search_bar.yaml
+test_case:
+  name: login_user_join_meeting_from_search_bar
+  description: "Login with weshi2@appletestci.com, keep the app active, then use the global search bar to input a meeting link and join the meeting successfully"
+  expect_result: "The signed-in user successfully joins the meeting via the global search bar using the provided meeting link"
+  owner: minli
+  account: weshi2
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+
+  steps:
+    # Step 1: Sign in to the app
+    - name: "sign_in_to_app"
+      action:
+        type: local_api
+        value: "navigations/preconditions/app_entry/sign_in_to_app"
+
+    # Step 2: Click on the global search bar
+    - name: "Search, meet and call"
+      action:
+        type: key
+        value: default
+
+    # Step 3: Input the meeting link into the search bar
+    - name: "Search, meet and call"
+      action:
+        type: input
+        value: "https://co.webex.com/co/j.php?MTID=m57fd31d6a72d091f0d2ad5badd947153"
+
+    # Step 4: Press Enter to navigate to the meeting IS page
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 5
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+    # Step 5: Click "Join meeting" on the IS page
+    - name: "Join meeting"
+      action:
+        type: key
+        value: default
+        wait_time: 8
+      expect_state: "Mute"
+      ui_response: true
+      ui_response_threshold_ms: 10000
+
+  post_conditions:
+    - navigations/postconditions/Leave_meeting

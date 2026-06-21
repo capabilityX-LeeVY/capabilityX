@@ -1,0 +1,21 @@
+test_case:
+  name: Connect to Webex meeting main window
+  team: RegressShield
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "connect_meeting_window"
+      platforms: ["windows"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "CallWindowDialog"
+
+    - name: "connect_meeting_window"
+      platforms: ["mac"]
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "PopOutWindow"

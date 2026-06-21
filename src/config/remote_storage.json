@@ -1,0 +1,7 @@
+{
+  "host": "wrs.qa.webex.com",
+  "upload_url": "https://wrs.qa.webex.com/report/api/upload",
+  "web_url": "https://wrs.qa.webex.com/report/dashboard",
+  "web_url_e2e": "https://wrs.qa.webex.com/report",
+  "web_url_jmt": "https://wrs.qa.webex.com/report/jmt-dashboard"
+}

@@ -1,0 +1,72 @@
+test_case:
+  name: vdi_meeting_receive_audio
+  team: VDI
+  owner: qihliu
+  account: allianz32
+  description: Complete test - Comprehensive layout switching functionality. User joins meeting, then tests all layout switching scenarios.
+  expect_result: Successfully tests all layout switching scenarios
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    # add bot to meeting to test audio
+    #- name: "Mute"
+    #  action:
+    #    type: key
+    #    value: default
+    #  expect_state: ""
+    #  wait_time: 1
+    
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join allianz32@testprod.webex.com audio=speaking video=on with 1 ucf_api duration 3"
+          duration: 90
+      expect_state: ""
+      stop_on_failure: true       
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 60
+      expect_state: ""
+
+    - name: "vdi_get_audio_detection"
+      action:
+        type: function
+        value: vdi_get_audio_detection
+        parameters:
+          tc_ip: "${tc_ip}"
+        save_to: audio_present  
+        wait_time: 30
+      expect_state: ""
+      stop_on_failure: true      
+      stop_on_ai_check_failure: true      
+      ai_check:
+        prompt: "Verify if hearing remote audio in meeting, depending on the value of variable 'audio_present'. It should be true (no case-sensitive). The current value is '${audio_present}'. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    #- name: "Unmute"
+    #  action:
+    #    type: key
+    #    value: default
+    #  expect_state: ""
+    #  wait_time: 120
+
+ 
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+    
+  execution_duration: 1
+  execution_count: 1
+  retry_enabled: false
+  check_points: ["Keyboard Navigation"]

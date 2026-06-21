@@ -1,0 +1,50 @@
+test_case:
+  name: test_audio_control_complete_workflow
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Audio control workflow from pre-meeting to in-meeting. Tests muting before meeting, starting meeting, and unmuting during meeting.
+  expect_result: Successfully completes audio control workflow across meeting phases
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/pmr_setup
+  
+  steps:
+    - name: "Unmute before meeting"
+      action:
+        type: function
+        value: ensure_unmuted_before_meeting
+      expect_state: ""
+      
+    - name: "Mute before meeting"
+      action:
+        type: function
+        value: ensure_muted_before_meeting
+      expect_state: ""
+      
+    - name: "Start meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      
+    - name: "Unmute in meeting"
+      action:
+        type: function
+        value: ensure_unmuted_in_meeting
+      expect_state: ""
+      
+    - name: "Mute in meeting"
+      action:
+        type: function
+        value: ensure_muted_in_meeting
+      expect_state: ""
+  
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

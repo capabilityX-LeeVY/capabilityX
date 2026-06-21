@@ -1,0 +1,161 @@
+test_case:
+  name: test_create_and_remove_section
+  owner: huanwan3
+  account: fullmode18
+  description: "Test creating a new section and then removing it in messaging"
+  expect_result: Section is successfully created and then removed
+
+
+  pre_conditions:
+    - navigations/basic/sign_in
+
+  steps:
+    # Part 1: Create a new section
+    - name: "Search for contact"
+      action:
+        type: shortcut
+        value: ctrl+f
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Input contact email"
+      action:
+        type: direct_input
+        value: "fullmode19@appletestci.com"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Confirm"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Focus on selected contact"
+      action:
+        type: shortcut
+        value: ctrl+1
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Open context menu"
+      action:
+        type: shortcut
+        value: shift+f10
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Navigate to Create section"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: down
+          count: 8
+        wait_time: 0.5
+      expect_state: ""
+
+    - name: "Select Create section"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Input section name"
+      action:
+        type: direct_input
+        value: "test section [uuid:{uuid}]"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Confirm section creation"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the left sidebar messaging list. Check if a new section has been created with the name 'test section [uuid:{uuid}]'. The section should appear as a collapsible group header in the space list. Output format: ✅Success if the section is visible, ❌Failed if not found"
+
+    # Part 2: Remove the section
+    - name: "Search for contact again"
+      action:
+        type: shortcut
+        value: ctrl+f
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Input contact email again"
+      action:
+        type: direct_input
+        value: "fullmode19@appletestci.com"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Confirm"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Focus on selected contact"
+      action:
+        type: shortcut
+        value: ctrl+1
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Move up to section header"
+      action:
+        type: direct_key
+        value: up
+        wait_time: 0.5
+      expect_state: ""
+
+    - name: "Open section context menu"
+      action:
+        type: shortcut
+        value: shift+f10
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Navigate to Remove section"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: down
+          count: 8
+        wait_time: 0.5
+      expect_state: ""
+
+    - name: "Select Remove section"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the left sidebar messaging list. Verify that the section named 'test section [uuid:{uuid}]' has been removed. The contact 'fullmode19' should now appear outside any custom section. Output format: ✅Success if the section is removed, ❌Failed if it still exists"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+
+  check_point: [Keyboard Navigation]

@@ -1,0 +1,271 @@
+{
+  "Next": {
+    "metadata": {
+      "web": {
+        "control_name": "Next",
+        "control_id": "",
+        "from_control": "Sign in. Start by entering your email address. Email address",
+        "hierarchical_level": "2.1.1"
+      }
+    }
+  },
+  "Password": {
+    "metadata": {
+      "web": {
+        "control_name": "Password ",
+        "control_id": "IDToken2",
+        "from_control": " Next",
+        "hierarchical_level": "2.1.1.1"
+      }
+    }
+  },
+  "Accept": {
+    "metadata": {
+      "web": {
+        "control_name": "Accept",
+        "control_id": "",
+        "from_control": " Start meeting. Meet in my personal room. Start a personal room meeting",
+        "hierarchical_level": "2.1.1.2.4.2"
+      }
+    }
+  },
+  "Start a meeting": {
+    "metadata": {
+      "web": {
+        "control_name": "Start",
+        "control_id": "join-button",
+        "from_control": " Accept",
+        "hierarchical_level": "2.1.1.2.4.2.1"
+      }
+    }
+  },
+  "Video options": {
+    "metadata": {
+      "web": {
+        "control_name": "Video options",
+        "control_id": "81372e54-9cc0-4d22-a950-f0879ab06b98",
+        "from_control": "Start meeting",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.27.2.1"
+      }
+    }
+  },
+  "End meeting": {
+    "metadata": {
+      "web": {
+        "control_name": "End meeting",
+        "control_id": "",
+        "from_control": "Video options",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.27.3.4"
+      }
+    }
+  },
+  "Leave site": {
+    "metadata": {
+      "web": {
+        "control_name": "Leave",
+        "control_id": "",
+        "from_control": "sign out "
+      }
+    }
+  },
+  "Executive office": {
+    "metadata": {
+      "web": {
+        "control_name": "Executive Office",
+        "control_id": "58a6ea45-29c5-4e89-95ff-27f97c4e0f9c",
+        "from_control": "Video options",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.27.3.4"
+      }
+    }
+  },
+  "Home office": {
+    "metadata": {
+      "web": {
+        "control_name": "Home Office",
+        "control_id": "58a6ea45-29c5-4e89-95ff-27f97c4e0f9c",
+        "from_control": "Video options",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.27.3.4"
+      }
+    }
+  },
+  "Profile and preferences": {
+    "metadata": {
+      "web": {
+        "control_name": "Avatar of bts1 bts, Availability, Available, Open My Profile and Settings Menu",
+        "control_id": "",
+        "from_control": "Sign In"
+      }
+    }
+  },
+  "Sign out in profile and preferences": {
+    "metadata": {
+      "web": {
+        "control_name": "Sign out",
+        "control_id": "md-menu-item-7",
+        "from_control": "Profile and preferences, Active"
+      }
+    }
+  },
+  "Sign in Continue": {
+    "metadata": {
+      "web": {
+        "control_name": " Sign inContinue with ",
+        "control_id": "MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingSignInUpChooserWidget.dataStackedWidget.dataWidget.nextButton",
+        "from_control": " Next"
+      }
+    }
+  },
+  "Sign in to app": {
+    "metadata": {
+      "web": {
+        "control_name": " Sign In ",
+        "control_id": "Button1",
+        "from_control": "root",
+        "hierarchical_level": "2"
+      }
+    }
+  },
+  "Sign in. Start by entering your email address. Email address": {
+    "metadata": {
+      "web": {
+        "control_name": "Email address",
+        "control_id": "auth-email",
+        "from_control": " Sign in",
+        "hierarchical_level": "2.1"
+      }
+    }
+  },
+  "Meetings menu item": {
+    "metadata": {
+      "web": {
+        "control_name": "Meetings",
+        "control_id": "",
+        "from_control": " Sign In ",
+        "hierarchical_level": "2.1.1.2.19"
+      }
+    }
+  },
+  "Start meeting": {
+    "metadata": {
+      "web": {
+        "control_name": "Start meeting",
+        "control_id": "",
+        "from_control": "Meetings",
+        "hierarchical_level": "2.1.1.2.4"
+      }
+    }
+  },
+  "End meeting, Menu item": {
+    "metadata": {
+      "web": {
+        "control_name": "End meeting",
+        "control_id": "037599e4-2b42-48e5-878b-9278b6a89d37",
+        "from_control": "Video options",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.27.3.4.1"
+      }
+    }
+  },
+  "Sign in": {
+    "metadata": {
+      "web": {
+        "control_name": "Sign in",
+        "control_id": "",
+        "from_control": "root",
+        "hierarchical_level": "2"
+      }
+    }
+  },
+  "Sign in web site": {
+    "metadata": {
+      "web": {
+        "control_name": " Sign in",
+        "control_id": "guest_signin_split_button-action",
+        "from_control": "root",
+        "hierarchical_level": "None"
+      }
+    }
+  },
+  "Sign in options": {
+    "metadata": {
+      "web": {
+        "control_name": "Sign in options",
+        "control_id": "guest_signin_split_button-trigger",
+        "from_control": "root",
+        "hierarchical_level": "None"
+      }
+    }
+  },
+  "Enter meeting information": {
+    "metadata": {
+      "web": {
+        "control_name": "Enter meeting information",
+        "control_id": "ipt-joinmeeting",
+        "from_control": "root",
+        "hierarchical_level": "None"
+      }
+    }
+  },
+  "Quit": {
+    "metadata": {
+      "web": {
+        "control_name": "Quit",
+        "control_id": "Quit",
+        "from_control": "Quit"
+      }
+    }
+  },
+  "Camera device": {
+    "metadata": {
+      "web": {
+        "control_name": "Studio Display Camera (05ac:1114)",
+        "control_id": "camera-2c2f3ba05632907f2779ee68d1ccc8f4dffc70dad0d3c5455f1106e6a356e815",
+        "from_control": "Video options Menu"
+      }
+    }
+  },
+  "Check VBG applied": {
+    "metadata": {
+      "web": {
+        "control_name": "Check VBG applied",
+        "control_id": "",
+        "from_control": "Check VBG applied"
+      }
+    }
+  },
+  "navigate": {
+    "metadata": {
+      "web": {
+        "control_name": "navigate",
+        "control_id": "navigate",
+        "from_control": "navigate"
+      }
+    }
+  },
+  "Guest user name": {
+    "metadata": {     
+      "web": {
+        "control_name": "Name",
+        "control_id": "",
+        "from_control": ""
+      }
+    }
+  },  
+  "Meeting password": {
+    "metadata": {     
+      "web": {
+        "control_name": "",
+        "control_id": "meetingInfoPassword",
+        "from_control": ""
+      }
+    }
+  },
+  "Join meeting from browser": {
+    "metadata": {
+      "web": {
+        "control_name": "Join meeting Min Li's Personal Room",
+        "control_id": "join-button",
+        "from_control": ""
+      }
+    }
+  }
+}

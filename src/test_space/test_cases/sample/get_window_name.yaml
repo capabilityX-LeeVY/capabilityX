@@ -1,0 +1,32 @@
+test_case:
+  name: cross_action_type_variables_example
+  description:  "action type parameter pass:function → input, function → key, function → function"
+  
+  check_points: ["Keyboard Navigation"]
+  
+  steps:
+    - name: "connect_webex_meeting_main_window"
+      action:
+        type: function
+        value: connect_webex_meeting_main_window
+        parameters:
+          ctrl_id: "SparkApp.WhiteboardContainerNativeDialog"
+
+    - name: "get_control_window_name"
+      action:
+        type: function
+        value: get_control_window_name
+        save_to: control_window_name
+        wait_time: 3
+      expect_state: ""
+    
+    - name: "get window name from variable"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+      ai_check:
+        prompt: "Verify the current window title whether '${control_window_name}'. Output format: ✅Success or ❌Failed"
+    
+    

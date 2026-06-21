@@ -1,0 +1,20 @@
+test_suite:
+  name: jmt
+  team: wrs
+  account: weiqin6
+  owner: weiqli
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - jmt/guest_join_pmr
+    - navigations/basic/relaunch_app
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - jmt/start_webex_meeting 
+    - jmt/agent/start_pmr_via_agent
+    - jmt/agent/invite_people_via_agent
+    - jmt/join_pmr_from_meetings_search
+    - jmt/agent/end_meeting_via_agent     
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,27 @@
+test_case:
+  name: open_message_context_menu
+  owner: huanwan3
+  account: fullmode18
+  description: Common action to jump to last message and open context menu
+  expect_result: Context menu is opened for the last message
+  pre_conditions: []
+
+  steps:
+    # Jump to the last sent message (Ctrl+H)
+    - name: "Jump to last message"
+      action:
+        type: shortcut
+        value: ctrl+h
+        wait_time: 1
+      expect_state: ""
+
+    # Open context menu (Shift+F10 = right click)
+    - name: "Open context menu"
+      action:
+        type: shortcut
+        value: shift+f10
+        wait_time: 1
+      expect_state: ""
+
+  post_conditions: []
+  check_point: [Keyboard Navigation]

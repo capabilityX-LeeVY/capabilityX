@@ -1,0 +1,189 @@
+test_case:
+  name: guest_join_from_browser_next_tab_metrics
+  description: "Verify that when the Webex desktop client pre-join window is open (but does NOT join), a guest user can open a new browser tab and join the same meeting entirely from the browser, then validate meeting join metrics from Call Analyzer."
+  expect_result: The Webex desktop client stays at the pre-join window without joining. A new browser tab opens and the guest successfully joins the meeting from the browser. CA metrics show a successful join result.
+  account: allianz8
+  owner: minl5
+  check_points: [Keyboard Navigation]
+
+  # pre_conditions:
+  #   - navigations/basic/uninstall_app
+  #   - navigations/basic/install_app
+
+  steps:
+    # --- Kill all browser instances before starting ---
+    - name: "Kill all browser instances"
+      action:
+        type: function
+        value: close_browser
+        parameters:
+          browser: "edge"
+        wait_time: 2
+
+    # --- Open browser and navigate to meeting link ---
+    - name: "Open browser with meeting link"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://cisco.webex.com/meet/minl5"
+          browser: "edge"
+        wait_time: 5
+
+    # --- Click Open on the "Open Webex" dialog to jump to the desktop client ---
+    - name: "Open"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+
+    # --- Connect to Webex app pre-join window ---
+    - name: "Connect to Webex app window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MeetingInterstitialPageView"
+        wait_time: 5
+
+    - name: "Name. Required. Textbox"
+      action:
+        type: input
+        value: minl5
+  
+    # --- Open a new browser tab and join the same meeting from browser (client stays at pre-join, does NOT join) ---
+    - name: "Open browser new tab to join meeting"
+      action:
+        type: function
+        value: open_browser
+        parameters:
+          site_url: "https://cisco.webex.com/meet/minl5"
+          browser: "edge"
+        wait_time: 5
+
+    # --- Switch focus to the new Edge browser window before interacting with it ---
+    - name: "Set focus to edge browser"
+      action:
+        type: function
+        value: set_focus_to_edge_browser
+        parameters:
+          browser: "edge"
+        wait_time: 1
+
+    - name: "Cancel"          # Cancel "Open Webex" dialog → stay in browser
+      action:
+        type: key
+        value: default
+        wait_time: 3
+
+    - name: "Dismiss Join from browser dialog"  # Press Escape to dismiss the "Join from browser" popup (if appears after Cancel)
+      action:
+        type: function
+        value: press_escape_key
+        parameters:
+          browser: "edge"
+        wait_time: 3
+      optional: true
+
+    - name: "Join from this browser"   # Click to enter guest join form
+      action:
+        type: function
+        value: click_browser_button_by_name
+        parameters:
+          button_name: "Join from this browser"
+          browser: "edge"
+        wait_time: 3
+      optional: true
+
+    - name: "Use microphone and camera"   # Click "Use microphone and camera" on the AV permission dialog
+      action:
+        type: function
+        value: click_browser_button_by_name
+        parameters:
+          button_name: "Use microphone and camera"
+          browser: "edge"
+          timeout: 10
+        wait_time: 3
+      optional: true
+
+    - name: "Allow while visiting the site"   # Grant browser mic/camera permission
+      action:
+        type: function
+        value: click_browser_button_by_name
+        parameters:
+          button_name: "Allow while visiting the site"
+          browser: "edge"
+          timeout: 10
+        wait_time: 3
+      optional: true
+
+    - name: "Guest user name"
+      action:
+        type: function
+        value: set_browser_input_value
+        parameters:
+          field_name: "Name"
+          text: "minl5"
+          browser: "edge"
+          timeout: 10
+
+    - name: "Join meeting from browser"
+      action:
+        type: function
+        value: click_browser_button_by_name
+        parameters:
+          button_name: "Join meeting"
+          browser: "edge"
+        wait_time: 10
+
+    # --- Wait for Call Analyzer data to be available ---
+    - name: "Wait call analyzer data"
+      action:
+        type: function
+        value: ui_element_wait_time
+        parameters:
+          seconds: 900
+
+    # --- Check pre-join result metrics ---
+    - name: "check_pre_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "resultName", "identifiers_webexSiteName", "failureType"]
+        save_to: pre_join_result
+      ai_check:
+        prompt: "analyze the ${pre_join_result}. Only check the record where resultName='pre.join.result': outcome must be 'success'. Output format: [SUCCESS]Success or [FAILURE]Failed, and briefly state which check failed if any."
+
+    - name: "print pre join result"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The pre join result is ${pre_join_result}"
+
+    # --- Check join result metrics ---
+    - name: "check_join_result"
+      action:
+        type: function
+        value: get_meeting_join_result
+        parameters:
+          columns: ["outcome", "mediaOutcome", "resultName", "joinTimes_totalJmt"]
+        save_to: join_result
+      ai_check:
+        prompt: "analyze the ${join_result}. Only check the record where resultName='join.result': outcome must be 'success' (the guest joined from a new browser tab while the Webex desktop client pre-join window was open but did not join). Output format: [SUCCESS]Success or [FAILURE]Failed, and briefly state which check failed if any."
+
+    - name: "print join result"
+      action:
+        type: function
+        value: print_hello_world
+        parameters:
+          message: "The join result is ${join_result}"
+
+    - name: "save correlation ID"
+      action:
+        type: function
+        value: save_current_correlation_id
+        save_to: correlation_id
+
+

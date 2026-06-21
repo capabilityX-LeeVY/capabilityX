@@ -1,0 +1,12 @@
+test_suite:
+  name: schedule_meetings
+  team: schedule_meetings
+  owner: hyman
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/schedule/schedule_meetings
+    # - navigations/basic/sign_out

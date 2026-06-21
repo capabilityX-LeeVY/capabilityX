@@ -1,0 +1,22 @@
+test_case:
+  name: unmute_before_meeting
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component - Unmute audio before starting meeting using pre-meeting controls
+  expect_result: Successfully unmutes audio before meeting starts
+  
+  pre_conditions: []
+  
+  steps:
+    - name: "Unmute before meeting"
+      action:
+        type: function
+        value: ensure_unmuted_before_meeting
+      expect_state: ""
+  
+  post_conditions: []
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

@@ -1,0 +1,26 @@
+test_case:
+  name: start_meeting
+  description: Verify that after signing in, the user can navigate to the Meetings tab, start a personal room meeting successfully and become the host of the meeting.
+  expect_result: The user is able to start a personal room meeting and receives a notification indicating they are now the host.
+  steps:
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Start meeting. Meet in my personal room. Start a personal room meeting"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Accept"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Start meeting, , Computer audio, Unmuted, Video on."
+      action:
+        type: key
+        value: default
+      expect_state: "Mute"
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

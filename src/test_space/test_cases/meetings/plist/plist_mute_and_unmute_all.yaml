@@ -1,0 +1,58 @@
+test_case:
+  name: plist_mute_and_unmute_all
+  owner: jinghe2
+  account: bj001
+  description: Hard mute all participants and unmute
+  expect_result: Allowed host hard mute and unmute all attendees in a meeting.
+  pre_conditions: 
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    # Open Participants panel
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 5
+    
+    # Mute all button in participants panel
+    - name: "Mute all"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+    
+    # Unchecked allow attendees to unmute themselves   
+    - name: "Allow attendees to unmute themselves"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2
+
+    # Mute all in popped up dialog after unchecked allow attendees to unmute themselves  
+    - name: "Mute all"
+      action:
+        type: key
+        value: default
+      expect_state: ["Mute all Participants dialog dismissed and all attendees hard muted"]
+      wait_time: 2
+
+    # Allow attendees to unmute themselves in participants panel again
+    - name: "Unmute all"
+      action:
+        type: key
+        value: default
+      expect_state: ["All attendees can unmute themselves"]
+      wait_time: 2   
+        
+  post_conditions: 
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

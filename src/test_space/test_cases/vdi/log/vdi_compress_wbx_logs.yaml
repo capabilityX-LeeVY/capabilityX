@@ -1,0 +1,13 @@
+test_case:
+  name: vdi_compress_wbx_logs
+  description:   Collect Webex App logs
+  
+  check_points: ["Keyboard Navigation"]
+  
+  steps:
+    - name: "vdi_compress_ciscospark_logs"
+      action:
+        type: function
+        value: vdi_compress_ciscospark_logs
+        wait_time: 60
+      expect_state: ""

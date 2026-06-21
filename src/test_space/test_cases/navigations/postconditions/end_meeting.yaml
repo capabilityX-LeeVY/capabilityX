@@ -1,0 +1,40 @@
+test_case:
+  name: end_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+  
+  steps:
+    - name: End meeting
+      action:
+        type: key
+        value: default
+
+    - name: ai observation
+      platforms: ["windows"]
+      ai_observe:
+        prompt: |
+          Look at the screenshot.
+          Situation a: an end meeting menu item is visible.
+          Situation b: an end dialog include End meeting button and cancel button are visible.
+          Output format: reply with exactly 'a' or 'b'."
+        case_a:
+          - name: End meeting, Menu item
+            action:
+              type: key
+              value: default
+        case_b:
+          - name: End meeting in dialog
+            action:
+              type: key
+              value: default
+
+    - name: End meeting, Menu item
+      platforms: ["mac"]
+      action:
+        type: key
+        value: default

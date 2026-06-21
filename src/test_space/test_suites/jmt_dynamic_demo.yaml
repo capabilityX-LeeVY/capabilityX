@@ -1,0 +1,22 @@
+﻿test_suite:
+  name: jmt_dynamic_demo
+  team: wrs
+  account: weiqin5
+  owner: weiqli
+  platform: windows
+  language: [en]
+  description: Demo test suite using dynamic API - no manual configuration in registry.py or routes.py
+  test_cases:
+    # 初始化步骤（使用传统test case）
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    
+    # 使用动态API执行会议流程（无需手动注册）
+    - jmt/agent/start_screen_sharing_dynamic
+    - jmt/agent/stop_screen_sharing_dynamic
+    - jmt/agent/complete_meeting_flow_dynamic
+    
+    # 清理
+    - navigations/basic/sign_out
+  check_points: [Keyboard Navigation, Performance, API_Performance]

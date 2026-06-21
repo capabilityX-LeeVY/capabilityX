@@ -1,0 +1,33 @@
+test_case:
+  name: settings_from_connect_device
+  owner: yanfzhen
+  description: settings from connect device
+  expect_result: settings from connect device
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Connect to a device"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Device Settings"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Cancel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3 
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

@@ -1,0 +1,33 @@
+test_case:
+  name: test_pre_meeting_audio_settings
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Complete test - Pre-meeting audio settings. User signs in, configures audio settings before starting meeting, then starts meeting.
+  expect_result: Successfully configures audio settings before meeting
+  
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/pmr_setup
+  
+  steps:
+    - name: "Unmute before meeting"
+      action:
+        type: function
+        value: ensure_unmuted_before_meeting
+      expect_state: ""
+      
+    - name: "Mute before meeting"
+      action:
+        type: function
+        value: ensure_muted_before_meeting
+      expect_state: ""
+  
+  post_conditions:
+    - meetings/actions/pmr_start
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

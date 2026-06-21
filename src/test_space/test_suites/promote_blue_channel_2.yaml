@@ -1,0 +1,19 @@
+test_suite:
+  name: promote_blue_channel
+  team: promote_blue_channel
+  owner: raey
+  account: allianz3
+  platform: windows
+  language: [en]
+  test_cases:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_meeting
+    - promote_blue_channel/check_audio
+    - promote_blue_channel/check_video
+    - promote_blue_channel/check_share
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  check_points: ["Keyboard Navigation"]

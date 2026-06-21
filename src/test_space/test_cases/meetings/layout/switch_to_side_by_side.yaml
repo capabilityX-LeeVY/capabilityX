@@ -1,0 +1,17 @@
+test_case:
+  name: layout_side_by_side_test
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Test switching to side-by-side layout view
+  expect_result: Successfully switches to side-by-side layout view
+
+  steps:
+    # Switch to side-by-side layout
+    - name: "Switch to Side-by-side Layout"
+      action:
+        type: function
+        value: switch_to_side_by_side_layout
+      expect_state: ""
+      wait_time: 5
+      

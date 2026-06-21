@@ -1,0 +1,23 @@
+test_case:
+  name: end_meeting_for_all
+  team: RegressShield
+  owner: huanwan3
+  description: End the current meeting for all participants by using Ctrl+L shortcut and selecting "End meeting for all"        
+  expect_result: The meeting is successfully ended for all participants and user returns to main interface
+  pre_conditions: []
+  steps:
+    - name: "End meeting"
+      action:
+        type: shortcut
+        value: ctrl+l
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation, Performance]

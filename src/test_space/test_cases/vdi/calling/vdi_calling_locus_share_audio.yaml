@@ -1,0 +1,109 @@
+test_case:
+  name: vdi_calling_locus_share_audio
+  team: VDI
+  owner: qihliu
+  description: Complete test - Basic screen sharing workflow. User signs in, starts meeting, shares screen, stops sharing, and signs out.
+  expect_result: Successfully completes basic screen sharing workflow
+  
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_locus_basic_video_call
+  
+  steps:
+    # Start remote screen sharing
+    - name: "vdi_read_peer_ip"
+      action:
+        type: function
+        value: vdi_read_peer_ip
+        save_to: peer_ip
+        wait_time: 1
+      expect_state: ""  
+      
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Remote Screen 1"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Include computer sound-Share Dialog"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+      expect_state: ""    
+
+    - name: "vdi_play_test_audio"
+      action:
+        type: function
+        value: vdi_play_test_audio
+      expect_state: ""
+
+    - name: "vdi_get_peer_audio_detection"
+      action:
+        type: function
+        value: vdi_get_peer_audio_detection
+        parameters:
+          peer_ip: "${peer_ip}"
+        save_to: audio_present          
+        wait_time: 1
+      expect_state: ""     
+      ai_check:
+        prompt: "Verify if succeed to share audio in meeting or call, depending on the value of variable 'audio_present'. It should be true (no case-sensitive). The current value is '${audio_present}'. Ignore that there should be a clear indication that audio is being shared. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+
+    - name: connect_webex_app_main_window
+      action:
+        type: function
+        value: connect_webex_app_main_window
+      expect_state: ""
+
+    - name: "Clean mode"
+      action:
+        type: shortcut
+        value: "Clean mode"
+        wait_time: 1
+      expect_state: ""
+
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+      
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1 
+  check_points: ["Keyboard Navigation"]

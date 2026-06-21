@@ -1,0 +1,106 @@
+test_case:
+  name: start_whiteboard_when_sharing
+  team: RegressShield
+  owner: manyli
+  account: fullmode20
+  description: Verify that a user can open a whiteboard via the Share content dialog and start sharing it in a meeting.
+  expect_result: A new whiteboard is successfully opened from the Share dialog and actively shared in the meeting.
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+
+  steps:
+    - name: "Jump to meeting window"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+      expect_state: ""
+    - name: "More options"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key    
+        value: down
+      expect_state: ""
+    - name: "Whiteboards in more options of floating window"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+    - name: ""
+      action:
+        type: direct_key
+        value: tab
+      expect_state: ""
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+      wait_time: 1
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+      expect_state: ""
+      ai_check:
+        prompt: "Check if a new whiteboard was successfully opened inside the meeting. Requirements: There must be a 'Share' button visible in the screen. Output format: ✅Success or ❌Failed. Reasoning: <describe what elements you see and which requirement(s) are met or missing>"
+        wait_time: 5
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

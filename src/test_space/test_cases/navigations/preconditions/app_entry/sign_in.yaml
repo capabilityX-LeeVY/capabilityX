@@ -1,0 +1,9 @@
+test_case:
+  name: sign_in
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "Sign in"
+      action:
+        type: key
+        value: default

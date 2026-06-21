@@ -1,0 +1,55 @@
+test_case:
+  name: create_space
+  owner: huanwan3
+  account: fullmode18
+  description: Create a new space with a unique name
+  expect_result: New space is created and visible in the space list
+  pre_conditions: []
+
+  steps:
+    # Click "Start a conversation, call, or meet" button
+    - name: "Start a conversation, call, or meet"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    # Navigate down to "Create a space" option
+    - name: "Navigate to Create a space"
+      action:
+        type: direct_key
+        value: down
+        wait_time: 1
+      expect_state: ""
+
+    # Select "Create a space"
+    - name: "Select Create a space"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Input space name with datetime (includes date)
+    - name: "Input space name"
+      action:
+        type: direct_input
+        value: "test space [{datetime}]"
+        wait_time: 1
+      expect_state: ""
+
+
+
+    # Click Create button
+    - name: "Click Create button"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window. Check if a new space has been created. Look for: 1) The space name 'test space' followed by a timestamp in the header area, 2) A welcome message like 'Let's start chatting' or empty conversation view, 3) The message input showing 'Write a message to test space...'. Output format: ✅Success if the new space is visible, ❌Failed if space creation failed"
+
+  post_conditions: []
+  check_point: [Keyboard Navigation]

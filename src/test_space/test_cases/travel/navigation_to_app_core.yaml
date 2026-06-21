@@ -1,0 +1,13 @@
+test_case:
+  name: navigation_app_core
+  description: login and navigate to the Contacts tab
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    - name: "Contacts menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    

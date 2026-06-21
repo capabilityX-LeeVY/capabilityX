@@ -1,0 +1,26 @@
+test_case:
+  name: ai_agent
+  description: Auto-generated workflow for AI agent
+  check_points:
+    - Keyboard Navigation
+
+  pre_conditions: null
+
+  steps:
+    - name: "open browser to bot builder login"
+      action:
+        type: local_api
+        value: "navigations/browser/open_browser"
+        parameters:
+          site_url: "https://dev.webexbotbuilder.com/static/auth/login?email=ayeshreddy.k@imimobile.com&password=imibot@112233!&mode=standalone"
+        wait_time: 5
+
+    - name: scan window
+      navigated: false
+      action:
+        type: acc_sequence
+        value: tab
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true

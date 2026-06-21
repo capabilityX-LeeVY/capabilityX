@@ -1,0 +1,32 @@
+test_case:
+  name: send_custom_chat_message
+  team: RegressShield
+  owner: huanwan3
+  account: fullmode18
+  description: Component function to send a custom chat message with specified text
+  expect_result: Successfully sends a custom chat message
+  
+  steps:
+    # Step 1: Open Chat panel
+    - name: "Chat"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 2: Type custom message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello from automated test - custom message
+      expect_state: ""
+      wait_time: 1
+    
+    # Step 3: Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2

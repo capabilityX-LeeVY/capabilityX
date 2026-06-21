@@ -1,0 +1,69 @@
+test_case:
+  name: presenter_start_annotation
+  team: Sharing
+  owner: gamao
+  account: rtuser030
+  description: User starts annotation as a presenter.
+  expect_result: User is able to start annotation as a presenter.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "More sharing options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Annotate"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Cursor"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Stop annotating"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Stop annotation"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    - name: "Start annotation shortcut"
+      action:
+        type: shortcut
+        value: "Start annotation"
+
+    - name: "Cursor"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+    - name: "Stop annotation shortcut"
+      action:
+        type: shortcut
+        value: "Stop annotation"
+    
+    - name: "Stop annotation"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,23 @@
+test_case:
+  name: calling_settings
+  description: calling settings
+  expect_result: calling settings
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/call_settings
+    - navigations/functional/settings/open_call_preferences
+
+  steps:
+    - name: "Calling dock Tree item"
+      action:
+        type: key
+        value: default
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

@@ -1,0 +1,8 @@
+test_case_batch:
+  name: calling_base
+  team: calling
+  owner: ai_generated
+  language: [en]
+  test_cases:
+    - acc_regression/calling/start_and_answer_a_calling
+    - acc_regression/calling/start_a_calling_with_vbg

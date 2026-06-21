@@ -1,0 +1,54 @@
+test_suite:
+  name: message_all
+  team: message
+  owner: huanwan3
+  account: fullmode18
+  platform: windows
+  language: [en]
+  description: Complete message test suite - all messaging features in one session
+  
+  test_cases:
+    # Pre-conditions (shared environment)
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+    
+    # ========== Basic Messaging (4) ==========
+    - message/basic/test_send_message
+    - message/basic/test_send_emoji
+    - message/basic/test_send_gif
+    - message/basic/test_send_mention
+    
+    # ========== Attachments (5) ==========
+    - message/attachments/test_send_file
+    - message/attachments/test_send_picture
+    - message/attachments/test_send_video
+    - message/attachments/test_send_screen_capture
+    - message/attachments/test_send_pmr_invite
+    
+    # ========== Message Operations (7) ==========
+    - message/operations/test_edit_message
+    - message/operations/test_copy_message
+    - message/operations/test_pin_message
+    - message/operations/test_flag_message
+    - message/operations/test_quote_message
+    - message/operations/test_add_reaction
+    - message/operations/test_delete_message
+    
+    # ========== Thread (1) ==========
+    - message/thread/test_start_thread
+    
+    # ========== Section (1) ==========
+    - message/section/test_create_and_remove_section
+    
+    # ========== Space Operations (4) ==========
+    - message/space/test_add_people_to_space
+    - message/space/test_copy_space_link
+    - message/space/test_update_space_name
+    - message/space/test_leave_space
+    
+    # Post-conditions (cleanup)
+    - navigations/basic/sign_out
+
+  check_points: [Keyboard Navigation]

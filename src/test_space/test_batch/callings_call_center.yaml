@@ -1,0 +1,7 @@
+test_case_batch:
+  name: calling_call_center
+  team: calling
+  owner: ivodimit
+  language: [en]
+  test_cases:
+    - acc_regression/calling/call_center_keyboard_navigation

@@ -1,0 +1,60 @@
+# merged this case into file_shareing_page_navigation.yaml, can be deleted after the page navigation case is verified.
+
+test_case:
+  name: file_sharing_thumbnail
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User can view the thumbnail of the shared file.
+  expect_result: User can view the thumbnail of the shared file.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=file with 1 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+    - name: "Show the thumbnail sidebar"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. The thumbnail sidebar should be visible, and no thumbnail should be blank. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Page thumbnail"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: ""
+      wait_time: 1
+      ai_check:
+        prompt: "Analyze the window screenshot. 1. Center of the window should display content of the second page in thumbnail sidebar. 2. The orange presenter tag should be still on the thumbnail of the first page. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "ask bot leave meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> leave"
+          duration: 10
+      expect_state: ""
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1

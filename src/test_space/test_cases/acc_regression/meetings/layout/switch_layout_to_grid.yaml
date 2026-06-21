@@ -1,0 +1,38 @@
+test_case:
+  name: switch_to_grid_layout
+  description: "Test switching to grid layout in meeting"
+  
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions:
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - navigations/preconditions/app_core/start_meeting
+
+  steps:
+    - name: "F6"
+      action:
+        type: shortcut
+        value: "f6"
+        
+    - name: "F6"
+      action:
+        type: shortcut
+        value: "f6"
+
+    - name: "Layout"
+      action:
+        type: key
+        value: default
+    
+    - name: "Grid"
+      action:
+        type: key
+        value: default
+
+  post_conditions:
+    - navigations/postconditions/end_meeting
+    - navigations/postconditions/sign_out
+  

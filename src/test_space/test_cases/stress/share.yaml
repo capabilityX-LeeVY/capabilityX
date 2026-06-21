@@ -1,0 +1,57 @@
+test_case:
+  name: share
+  owner: huanwan3
+  account: fullmode18
+  description: Share
+  expect_result: Share
+  pre_conditions: []
+  steps:
+    # Start screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 1
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 10
+
+    # Pause and resume screen sharing
+    - name: "Pause sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 3
+
+    - name: "Resume sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 10
+
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 2     
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Stress]

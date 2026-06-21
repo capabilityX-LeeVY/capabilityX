@@ -1,0 +1,54 @@
+test_case:
+  name: example_stop_on_ai_check_failure
+  team: RegressShield
+  owner: example
+  description: |
+    Example test case demonstrating the stop_on_ai_check_failure feature.
+    This test shows how to stop execution when AI check fails.
+  expect_result: Test stops when AI check fails if stop_on_ai_check_failure is true
+  
+  steps:
+    # Step 1: This step continues even if AI check fails (default behavior)
+    - name: "First action with AI check (continue on failure)"
+      action:
+        type: key
+        value: TAB
+      ai_check:
+        prompt: "Verify the UI element is visible and correctly positioned"
+        reference: reference_image1.jpg
+      # stop_on_ai_check_failure: false  (DEFAULT - continues even if AI check fails)
+    
+    # Step 2: This step STOPS execution if AI check fails
+    - name: "Critical action with AI check (stop on failure)"
+      action:
+        type: key
+        value: ENTER
+      ai_check:
+        prompt: "CRITICAL: Verify the virtual background matches the reference exactly"
+        reference: executive_office.jpg
+      stop_on_ai_check_failure: true  # Stop immediately if AI check fails
+    
+    # Step 3: This step only executes if Step 2's AI check succeeds
+    - name: "Subsequent action (only runs if previous AI check passed)"
+      action:
+        type: key
+        value: TAB
+      expect_state: "NextControl"
+    
+    # Step 4: Example combining both stop features
+    - name: "Combined stop controls"
+      action:
+        type: input
+        value: "test data"
+      stop_on_failure: true  # Stop if action execution fails
+      stop_on_ai_check_failure: true  # Also stop if AI check fails
+      ai_check:
+        prompt: "Verify input was entered correctly"
+  
+  post_conditions:
+    # Post conditions always run regardless of stop_on_ai_check_failure
+    - navigations/basic/cleanup
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate]

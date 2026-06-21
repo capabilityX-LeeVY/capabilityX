@@ -1,0 +1,13 @@
+test_case_batch:
+  name: meetings_chat_features
+  team: meetings
+  owner: huanwan3
+  platform: windows
+  language: [en]
+  description: Chat features test batch for meeting-related test cases
+  test_cases:
+    # Chat Features
+    - meetings/chat/test_chat_and_layout_workflow
+    - meetings/chat/test_chat_in_pmr_meeting
+    - meetings/chat/test_chat_in_webex_meeting
+    - meetings/chat/test_chat_with_popout_and_popin

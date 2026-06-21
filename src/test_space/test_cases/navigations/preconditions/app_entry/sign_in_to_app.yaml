@@ -1,0 +1,72 @@
+test_case:
+  name: sign_in_to_app
+  # custom_dataset: core/data/control_datasets_with_ui_path
+  check_points: ["Keyboard Navigation"]
+
+  steps:
+    - name: "Sign in"
+      action:
+        type: key
+        value: default
+
+    - name: "Email address"
+      action:
+        type: input
+        value: ${email}
+
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      platforms: [windows,]
+
+    - name: "Next"
+      action:
+        type: key
+        value: default
+        wait_time: 15
+      platforms: [mac,]
+
+    - name: "Continue with email"
+      action:
+        type: key
+        value: default
+      optional: true
+
+    - name: "Wait for password field"
+      action:
+        type: function
+        value: wait_seconds
+        parameters:
+          seconds: 2
+      
+    - name: "Password"
+      action:
+        type: input
+        value: ${password}
+
+    - name: "Sign in to app"
+      action:
+        type: key
+        value: default
+      expect_state: ["Profile and preferences, Available", "Join a meeting", " Use left and right arrow key to navigate, Personal Room", " Personal Room"," My personal room", "More options for scheduling a meeting", "Add a contact or create a group","Calls in progress", "Call History Tab list, All calls, See your call history here. You'll find call details including number, date and duration. Everything you need to stay updated. tab, 1 of 2", "My Personal Room Information", " OK"]
+      ui_response: true
+      ui_response_threshold_ms: 25000
+      platforms: [windows,]
+
+    - name: "Sign in to app"
+      action:
+        type: key
+        value: default
+        wait_time: 15
+      expect_state: ["Profile and preferences, Available", "Join a meeting", " Use left and right arrow key to navigate, Personal Room", " Personal Room"," My personal room", "More options for scheduling a meeting", "Add a contact or create a group","Calls in progress", "Call History Tab list, All calls, See your call history here. You'll find call details including number, date and duration. Everything you need to stay updated. tab, 1 of 2", "My Personal Room Information"]
+      platforms: [mac,]
+      
+
+    - name: "Got it"
+      action:
+        type: key
+        value: default
+      platforms: [mac,]
+      optional: true

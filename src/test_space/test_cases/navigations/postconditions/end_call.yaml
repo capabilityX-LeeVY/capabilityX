@@ -1,0 +1,11 @@
+test_case:
+  name: end_meeting
+  check_points: ["Keyboard Navigation"]
+
+  pre_conditions: null
+  
+  steps:
+    - name: End call
+      action:
+        type: key
+        value: default

@@ -1,0 +1,14 @@
+test_case:
+  name: re-install Webex app
+  description: This test case will kill the Webex application if it is running, uninstall it, and then reinstall it using the parameters passed by the user.
+  expect_result: The Webex application is successfully re-installed.
+  steps:
+    - name: "Uninstall Webex application"
+      action:
+        type: function
+        value: uninstall_app
+    - name: "Install Webex application"
+      action:
+        type: function
+        value: install_app
+  check_points: []

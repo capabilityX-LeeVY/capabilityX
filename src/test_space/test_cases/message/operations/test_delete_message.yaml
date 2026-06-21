@@ -1,0 +1,63 @@
+test_case:
+  name: delete_message
+  owner: huanwan3
+  account: fullmode18
+  description: Send a message and delete it using context menu
+  expect_result: Message is successfully deleted from the chat conversation
+  pre_conditions:
+    - navigations/basic/sign_in
+    - message/actions/init_sending_message
+
+  steps:
+    # Use common action to send text message
+    - include: message/actions/send_text_message
+      params:
+        message_text: "Test message to delete [uuid:{uuid}]"
+
+    # Use common action to open context menu on last message
+    - include: message/actions/open_message_context_menu
+
+    # Navigate down to "Delete message" (last item in menu, 10th)
+    # Menu order: Copy message, Edit message, Start a Thread, Add reaction, Forward message, 
+    #             Remind me in, Pin message, Quote message, Flag message, Mark as unread, Delete message
+    - include: message/actions/navigate_menu_down
+      params:
+        count: 10
+
+    # Select "Delete message"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Navigate to Delete button using tab
+    - name: "Navigate to Delete button"
+      action:
+        type: direct_key
+        value: tab
+        wait_time: 1
+      expect_state: ""
+
+    # Confirm deletion in dialog (if confirmation dialog appears)
+    - name: "Confirm delete"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Focus back to message input for screenshot and AI check
+    - name: "Focus on message input"
+      action:
+        type: shortcut
+        value: ctrl+alt+i
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the chat window. Check if the message has been deleted. Look for either: 1) 'You deleted a message' notification, or 2) The test message with UUID is no longer visible in the chat. Output format: ✅Success if message deletion is confirmed, ❌Failed if the test message is still visible"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+  check_point: [Keyboard Navigation]

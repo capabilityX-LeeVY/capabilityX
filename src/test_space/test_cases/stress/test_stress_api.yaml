@@ -1,0 +1,54 @@
+test_case:
+  name: start_meeting_and_do_stress_test_api
+  owner: huanwan3
+  account: fullmode18
+  description: Verify that after signing in, the user can start a PMR meeting and run stress API tests with dynamic parameters from web interface.
+  expect_result: The user successfully starts a PMR meeting and completes stress testing with custom parameters without system failure.
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "Run stress API test with dynamic parameters"
+      action:
+        type: function
+        value: send_stress_message_to_webex_dynamic
+        parameters: {}
+        wait_time: 3
+      expect_state: ""
+
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 5
+      expect_state: ""
+        
+    # Type message in chat input box
+    - name: "Write a message to everyone. Press Shift + Enter for new line"
+      action:
+        type: input
+        value: hello from automated test
+        wait_time: 3
+      expect_state: ""
+    
+    # Send the message
+    - name: "Send Message"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+    - name: "Toggle chat panel using shortcut"
+      action:
+        type: shortcut
+        value: ctrl+e
+        wait_time: 5
+      expect_state: ""
+
+  post_conditions:
+    - stress/plist_and_chat_shortkey
+    - meetings/actions/end_meeting
+    - navigations/basic/sign_out
+  check_points: [KB_Navigate, Stress]

@@ -1,0 +1,25 @@
+test_case:
+  name: answer_calling
+  team: RegressShield
+  owner: yanfzhen
+  description: answer calling
+  expect_result: the calling can be picked up
+  pre_conditions: null
+  need_initialization: false
+  steps:
+    - name: connect_webex_app_main_window
+      action:
+        type: function
+        value: connect_webex_app_main_window
+    - name: Focus on calling window
+      action:
+        type: shortcut
+        value: Notification
+    - name: "Answer"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

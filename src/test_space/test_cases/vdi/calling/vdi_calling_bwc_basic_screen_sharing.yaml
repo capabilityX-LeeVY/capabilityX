@@ -1,0 +1,127 @@
+test_case:
+  name: vdi_calling_bwc_basic_screen_sharing
+  team: VDI
+  owner: qihliu
+  description: Complete test - Basic screen sharing workflow. User signs in, starts meeting, shares screen, stops sharing, and signs out.
+  expect_result: Successfully completes basic screen sharing workflow
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_bwc_basic_video_call
+  
+  steps:
+    # Start remote screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+#      expect_state: ["Remote Screen 1","Local Screen 1"]
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. The 'Remote Screen X', 'Local Screen X' in  ('X' is a figure) should be present in the Screen or application tab. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"      
+#      ui_response: true
+
+    - name: "Remote Screen 1"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ""
+
+
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      expect_state: ""
+
+
+    # Start local screen sharing
+    - name: "Share"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Screen or application tab"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Remote Screen 1"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Arrow Right Key Press"
+      action:
+        type: direct_key
+        value: right
+      expect_state: ""
+
+    - name: "Direct Space Key Press"
+      action:
+        type: direct_key
+        value: space
+      expect_state: "Local Screen 1"
+      ui_response: true
+
+    - name: "Local Screen 1"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Share in share content window"
+      action:
+        type: key
+        value: default
+        wait_time: 10
+      expect_state: ""
+
+
+    # Stop screen sharing
+    - name: "Stop sharing (Ctrl + Shift + Z)"
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+
+      
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - navigations/basic/sign_out 
+  
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

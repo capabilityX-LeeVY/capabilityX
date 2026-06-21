@@ -1,0 +1,37 @@
+test_case:
+  name: request_remote_control
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User can request remote control from another participant.
+  expect_result: User can request remote control from another participant.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+    - name: "Request control (Alt + Shift + R)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. An alert should be displayed to ask you if you want to request control of presenter's screen. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. A notification should pop up in the top right corner to indicate that your request has been sent. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out

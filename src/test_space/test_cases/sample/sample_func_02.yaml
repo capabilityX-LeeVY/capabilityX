@@ -1,0 +1,56 @@
+test_case:
+  name: sample06
+  team: RegressShield
+  owner: binbiwan
+  description: Test UI control function connect_webex_app_main_window using dynamic loading system.
+  expect_result: The window connection function executes successfully using the new dynamic loading approach.
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "connect_webex_app_main_window"
+      action:
+        type: function
+        value: connect_webex_app_main_window
+        parameters:
+          ctrl_id: "MainWindow"
+      expect_state: ""
+    - name: "Settings"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Level 1, Video Tab, collapsed"
+      action:
+        type: key
+        value: right
+      expect_state: ""
+    - name: "Level 2, Background tree item,  Unselected"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Executive office"
+      action:
+        type: key
+        value: default
+    - name: "Save"
+      action:
+        type: key
+        value: default
+      expect_state: "Video options"
+    - name: "connect_webex_meeting_main_window"
+      action:
+        type: function
+        value: connect_webex_meeting_main_window
+        parameters:
+          ctrl_id: "CallWindowDialog"
+      expect_state: ""
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference virtual background, and the second is a meeting screenshot with a virtual background applied. Ignore any people or foreground elements in the images. Focus only on the background. Determine if the background in the second image matches the reference background in the first. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+        reference: src/test_space/datasets/img/vbg/execute_office.jpg
+  
+  post_conditions: null
+  execution_duration: 1
+  execution_count: 1
+  check_points: [KB_Navigate, Performance]

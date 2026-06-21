@@ -1,0 +1,1200 @@
+{
+  "Licence Text": {
+    "metadata": {
+      "windows": {
+        "control_name": "View website Link Open in your default browser",
+        "control_id": "EulaAgreementWindow.licenceText",
+        "control_type": 50020,
+        "control_type_name": "text"
+      }
+    }
+  },
+  "Agree": {
+    "metadata": {
+      "windows": {
+        "control_name": " Agree",
+        "control_id": "EulaAgreementWindow.applyButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "navigate": {
+    "metadata": {
+      "windows": {
+        "control_name": "navigate",
+        "control_id": "navigate",
+        "control_type": 50000,
+        "control_type_name": "button"
+      },
+      "web": {
+        "control_name": "navigate",
+        "control_id": "navigate",
+        "control_type": 50000,
+        "control_type_name": "button"
+      },
+      "mac": {
+        "control_name": "navigate",
+        "control_id": "navigate",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Arrow Down Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Arrow Down Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Arrow Up Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Arrow Up Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Arrow Left Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Arrow Left Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Arrow Right Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Arrow Right Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Space Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Space Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Enter Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Enter Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Tab Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Tab Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Direct Escape Key Press": {
+    "metadata": {
+      "windows": {
+        "control_name": "Direct Escape Key Press",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "bts1 bts, Video on": {
+    "metadata": {
+      "windows": {
+        "control_name": "bts1 bts, Video on",
+        "control_id": null,
+        "control_type": 50025,
+        "control_type_name": "custom"
+      }
+    }
+  },
+  "More options for bts1 bts": {
+    "metadata": {
+      "windows": {
+        "control_name": "More options for bts1 bts",
+        "control_id": "ScannedByVDI",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Profile and preferences": {
+    "metadata": {
+      "windows": {
+        "control_name": " Profile and preferences, Available",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Profile and preferences, Available": {
+    "metadata": {
+      "windows": {
+        "control_name": " Profile and preferences, Available",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Availability": {
+    "metadata": {
+      "windows": {
+        "control_name": "Availability, Available, 1 of 7",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton.applicationMenu.availabilityAction",
+        "control_type": 50011,
+        "control_type_name": "menu item"
+      }
+    }
+  },
+  "Manage quiet hours": {
+    "metadata": {
+      "windows": {
+        "control_name": "Set availability, Manage quiet hours, Menu Item, 3 of 3",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton.applicationMenu.availabilityMenu.manageQuietHoursMenuItem",
+        "control_type": 50011,
+        "control_type_name": "menu item"
+      }
+    }
+  },
+  "Settings in profile menu": {
+    "metadata": {
+      "windows": {
+        "control_name": "Settings, Menu Item, 4 of 7",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton.applicationMenu.settingsAction",
+        "control_type": 50011,
+        "control_type_name": "menu item"
+      }
+    }
+  },
+  "Write a message to everyone. Press Shift + Enter for new line": {
+    "metadata": {
+      "windows": {
+        "control_name": "Write a message to everyone. Press Shift + Enter for new line. Ready, set, chat 💬. Share key points, ask questions, and track action items in real time.",
+        "control_id": "CallWindowDialog.callStackedWidget.callWindowWidget.callDisplayWidget.sideStackedWidget.PopUpPanel.Frame.hostStackedWidget.MeetingChatContentWidget.mainStackedWidget.chatContainerWidget.ContainerContentWidget.conversationRenderer.inputBoxWidget.textEditPlaceholder.conversationMessageInputBox",
+        "control_type": 50004,
+        "control_type_name": "edit"
+      }
+    }
+  },
+  "Leave meeting": {
+    "metadata": {
+      "windows": {
+        "control_name": "Leave meeting, Menu item, 1 of 2",
+        "control_id": "EndCallMenu.EndCallAssignHostEnhancement",
+        "control_type": 50011,
+        "control_type_name": "menu item"
+      }
+    }
+  },
+  "End meeting for all": {
+    "metadata": {
+      "windows": {
+        "control_name": "End meeting for all, Menu item, 2 of 2",
+        "control_id": "EndCallMenu.EndCallForEveryone",
+        "control_type": 50011,
+        "control_type_name": "menu item"
+      }
+    }
+  },
+  "Open AI Assistant panel": {
+    "metadata": {
+      "windows": {
+        "control_name": "Open AI Assistant panel",
+        "control_id": "Main_CallStripButton_AiAssistant",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "More options": {
+    "metadata": {
+      "windows": {
+        "control_name": "More options",
+        "control_id": "Main_CallStripButton_More",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Close Participants": {
+    "metadata": {
+      "windows": {
+        "control_name": "Close Participants",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Screen or application tab": {
+    "metadata": {
+      "windows": {
+        "control_name": "Shared content types Tab list, Screen or application tab, 1 of 4",
+        "control_id": "Tab_Screen or application",
+        "control_type": 50025,
+        "control_type_name": "custom"
+      }
+    }
+  },
+  "Share": {
+    "metadata": {
+      "windows": {
+        "control_name": "Share",
+        "control_id": "Main_CallStripButton_Share",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Share in share content window": {
+    "metadata": {
+      "windows": {
+        "control_name": "Share",
+        "control_id": "ShareButton_Share",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "test for schedule Meeting, from 6:00 PM to 6:30 PM": {
+    "metadata": {
+      "windows": {
+        "control_name": "test for schedule Meeting, from 6:00 PM to 6:30 PM",
+        "control_id": null,
+        "control_type": 50025,
+        "control_type_name": "custom"
+      }
+    }
+  },
+  "6:00 PM": {
+    "metadata": {
+      "windows": {
+        "control_name": "6:00 PM, 37 of 48, not selected",
+        "control_id": null,
+        "control_type": 50025,
+        "control_type_name": "custom"
+      }
+    }
+  },
+  ", Updated PMR Meeting From Automated Test,": {
+    "metadata": {
+      "windows": {
+        "control_name": ", Updated PMR Meeting From Automated Test,",
+        "control_id": null,
+        "control_type": 50025,
+        "control_type_name": "custom"
+      }
+    }
+  },
+  "Delete the meeting": {
+    "metadata": {
+      "windows": {
+        "control_name": " Delete the meeting",
+        "control_id": "MeetingScheduleDialog.scheduleViewContainer.scheduleView.basicWidget.scrollAreaDown.qt_scrollarea_viewport.scrollAreaWidgetContents_2.deleteButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Confirm delete the meeting": {
+    "metadata": {
+      "windows": {
+        "control_name": " Delete",
+        "control_id": "MeetingScheduleDialog.deleteMeetingMessageBox.topContainer.messageContainerWidget.okButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Dialpad menu item": {
+    "metadata": {
+      "windows": {
+        "control_name": " Dialpad menu item, selected, 5 of 8, to activate press SPACEBAR",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.tabSelector.navigationWidget.dialpadTabSelector",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Calling menu item": {
+    "metadata": {
+      "windows": {
+        "control_name": " Calling menu item , selected, 3 of 9, to activate press SPACEBAR",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.tabSelector.navigationWidget.callsTabSelector",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Meeting recap tab": {
+    "metadata": {
+      "windows": {
+        "control_name": "Meeting recap tab",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.sidePanelSplitter.rightSideStack.UnifiedMeetingViewWidget.splitter.mainStackedWidget.calendarMainWidget.stackedWidget.calendarEnabled.meetingViewControls.meetingsTabBar.tab_meetingsTabBar_1",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Calendar, Tab": {
+    "metadata": {
+      "windows": {
+        "control_name": "Calendar, Tab selected tab",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.sidePanelSplitter.rightSideStack.UnifiedMeetingViewWidget.splitter.mainStackedWidget.calendarMainWidget.stackedWidget.calendarEnabled.meetingViewControls.meetingsTabBar.tab_meetingsTabBar_0",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Search or dial": {
+    "metadata": {
+      "windows": {
+        "control_name": " Search or dial",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.sidePanelSplitter.rightSideStack.dialpadView.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.dialTextField.textInput",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Audio call": {
+    "metadata": {
+      "windows": {
+        "control_name": "Audio call 3083",
+        "control_id": "",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Sign out in profile and preferences": {
+    "metadata": {
+      "windows": {
+        "control_name": "Sign Out, Menu Item, 6 of 7",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton.applicationMenu.signOutAction",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Sign out": {
+    "metadata": {
+      "windows": {
+        "control_name": " Sign out",
+        "control_id": "MainWindow.signOutMessageBox.messageContainerWidget.okButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "None virtual background": {
+    "metadata": {
+      "windows": {
+        "control_name": " None",
+        "control_id": "OptionsDialog.contentsContainer.BackgroundTabWidget.Widget.backgroundScrollArea.qt_scrollarea_viewport.VideoBackgroundSettingWidget.virtualbackground_1_unselected",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "File name:": {
+    "metadata": {
+      "windows": {
+        "control_name": "File name:",
+        "control_id": "",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Open": {
+    "metadata": {
+      "windows": {
+        "control_name": "Open",
+        "control_id": "",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Sign in Continue": {
+    "metadata": {
+      "windows": {
+        "control_name": " Sign inContinue with ",
+        "control_id": "MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingSignInUpChooserWidget.dataStackedWidget.dataWidget.nextButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Sign in to app": {
+    "metadata": {
+      "windows": {
+        "control_name": " Sign In ",
+        "control_id": "Button1",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Phone Username": {
+    "metadata": {
+      "windows": {
+        "control_name": "Username",
+        "control_id": "username",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Phone Password": {
+    "metadata": {
+      "windows": {
+        "control_name": "Password",
+        "control_id": "password",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Phone Login": {
+    "metadata": {
+      "windows": {
+        "control_name": "Login",
+        "control_id": "signIn",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Emergency Calling OK Button": {
+    "metadata": {
+      "windows": {
+        "control_name": " OK",
+        "control_id": "MainWindow.SparkMessageBox.messageContainerWidget.okButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "911 OK Button": {
+    "metadata": {
+      "windows": {
+        "control_name": " Press OK",
+        "control_id": "MainWindow.E911PopoutBrowser.bottomContainer.e911OkButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Emergency Calling Reminder Cancel Button": {
+    "metadata": {
+      "windows": {
+        "control_name": " Cancel",
+        "control_id": "SparkApp.E911Reminder.e911ReminderCancelButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Call queues": {
+    "metadata": {
+      "windows": {
+        "control_name": " Call queues",
+        "control_id": "SparkApp.MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationFooterView.leftWidget.callQueuesButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Call Centers": {
+    "metadata": {
+      "windows": {
+        "control_name": "Unavailable",
+        "control_id": "SparkApp.PhoneWidgetView.callQueueSettings",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Meetings tab": {
+    "metadata": {
+      "windows": {
+        "control_name": " Meetings tab, 1 unread messages, selected, 2 of 8, to activate press SPACEBAR",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.tabSelector.navigationWidget.meetTabSelector",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Answer": {
+    "metadata": {
+      "windows": {
+        "control_name": " Answer",
+        "control_id": "0.centralWidget.bottomPart.greenButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Answer bwc": {
+    "metadata": {
+      "windows": {
+        "control_name": " Answer button. To activate, press spacebar or use arrow keys to decline or tab key to navigate",
+        "control_id": "4.centralWidget.bottomPart.greenButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "End meeting, Menu item": {
+    "metadata": {
+      "windows": {
+        "control_name": "End meeting, Menu item",
+        "control_id": "EndCallMenu.EndCall",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Add a contact or create a group": {
+    "metadata": {
+      "windows": {
+        "control_name": " Add a contact or create a group",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.sidePanelSplitter.rightSideStack.ContactsTabWidget.leftHandSide.ContactList.utContextualHeaderWidget.contextualControlsWidget.plusButtonWidget.plusButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Settings": {
+    "metadata": {
+      "windows": {
+        "control_name": " Settings",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.tabSelector.settingsButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Connect Webex Main Window": {
+    "metadata": {
+      "windows": {
+        "control_name": "Webex",
+        "control_id": "MainWindow",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Pop out panel": {
+    "metadata": {
+      "windows": {
+        "control_name": " Pop out panel",
+        "control_id": "CallWindowDialog.callStackedWidget.callWindowWidget.callDisplayWidget.sideStackedWidget.PopUpPanel.Frame.titleBarWidget.popInOutButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "End call": {
+    "metadata": {
+      "windows": {
+        "control_name": "End call",
+        "control_id": "Main_CallStripButton_End",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Default file location, Change": {
+    "metadata": {
+      "windows": {
+        "control_name": " Default file location, C:\\Users\\clientqa\\Downloads\\. Change",
+        "control_id": "GeneralTabWidget.defaultFileLocaltionFrame.changeDefaultFileLocationButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Save in settings dialog": {
+    "metadata": {
+      "windows": {
+        "control_name": " Save",
+        "control_id": "MainWindow.OptionsDialog.contentsContainer.footer.saveButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Cancel": {
+    "metadata": {
+      "windows": {
+        "control_name": " Cancel",
+        "control_id": "MainWindow.OptionsDialog.contentsContainer.footer.cancelButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Save": {
+    "metadata": {
+      "windows": {
+        "control_name": " Save",
+        "control_id": "MainWindow.OptionsDialog.contentsContainer.footer.saveButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Search whiteboards": {
+    "metadata": {
+      "windows": {
+        "control_name": "Search whiteboards",
+        "control_id": null,
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Start a meeting in app_core": {
+    "metadata": {
+      "windows": {
+        "control_name": " Start a Webex meeting",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.sidePanelSplitter.rightSideStack.UnifiedMeetingViewWidget.splitter.mainStackedWidget.calendarMainWidget.meetingsHeadWidget.MeetingsHeadView.expandedLine.startMeetingLayoutWidget.startMeetingButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Mute  (Ctrl + M) in is_page": {
+    "metadata": {
+      "windows": {
+        "control_name": "Mute  (Ctrl + M)",
+        "control_id": "audioButtonLeftCell",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Audio options in is_page": {
+    "metadata": {
+      "windows": {
+        "control_name": "Audio options",
+        "control_id": "audioButtonRightCell",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Stop video (Ctrl + Shift + V) in is_page": {
+    "metadata": {
+      "windows": {
+        "control_name": "Stop video (Ctrl + Shift + V)",
+        "control_id": "videoButtonLeftCell",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Video options in is_page": {
+    "metadata": {
+      "windows": {
+        "control_name": "Video options",
+        "control_id": "videoButtonRightCell",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Connect to a device in is_page": {
+    "metadata": {
+      "windows": {
+        "control_name": "Connect to a device",
+        "control_id": "svgButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Device Settings": {
+    "metadata": {
+      "windows": {
+        "control_name": " Device settings",
+        "control_id": "PopupDeviceSearch.openSettingsButton",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Profile and preferences, Active": {
+    "metadata": {
+      "windows": {
+        "control_name": " Profile and preferences, Active",
+        "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.applicationHeaderView.applicationHeaderWidget.leftWidget.userInfoWidget.avatarButton",
+        "from_control": " Sign In "
+      }
+    }
+  },
+  "Type the characters. Required.": {
+      "metadata": {
+          "windows": {
+              "control_name": "Type the characters. Required.",
+              "control_id": ["MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedGuestInfoWidget.dataStackedWidget.dataWidget.captchaWidgetHolder.captchaInput.UTTextField.textInput", "MainWindow.OnboardingView.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedGuestInfoWidget.captchaWidgetHolder.captchaInput.UTTextField.textInput"],
+              "control_type": 50004,
+              "control_type_name": "edit",
+              "window_name": "Enter your information -  Webex",
+              "window_id": "MainWindow"
+          }
+      }
+  },
+  "Leave meeting button": {
+    "metadata": {
+      "windows": {
+        "control_name": "Leave meeting",
+        "control_id": "Main_CallStripButton_End",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Invite": {
+      "metadata": {
+          "windows": {
+              "control_name": "Invite",
+              "control_id": "",
+              "control_type": 50000,
+              "control_type_name": "button"
+          }
+      }
+  },
+  "Start meeting": {
+    "metadata": {
+      "windows": {
+        "control_name": "Start meeting",
+        "control_id": "animatedJoinButtonItem",
+        "control_type": 50000,
+        "control_type_name": "button"
+      }
+    }
+  },
+  "Meeting password. Required.": {
+    "metadata": {
+      "windows": {
+        "control_name": "Meeting password. Required.",
+        "control_id": "MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingPasswordWidget.dataStackedWidget.dataWidget.passwordInput.UTTextField.textInput",
+        "control_type": 50004,
+        "control_type_name": "edit"
+      }
+    }
+  },
+  "Meeting password": {
+    "metadata": {
+      "windows": {
+        "control_name": "",
+        "control_id": "meetingInfoPassword",
+        "control_type": 50004,
+        "control_type_name": "edit",
+        "window_name": "Meeting Detail - Webex",
+        "window_id": "view_24"
+      }
+    }
+  },
+  "Lock meeting": {
+    "metadata": {
+      "windows": {
+        "control_name": "Meeting, Lock meeting, Toggle button, off, 1 of 10",
+        "control_id": "MoreMenu.Lock",
+        "from_control": "More options",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.5.3"
+      }
+    }
+  },
+  "Resume": {
+    "metadata": {
+      "windows": {
+        "control_name": "Resume",
+        "control_id": "resumeButton",
+        "from_control": "",
+        "hierarchical_level": "2.1.1.2.4.2.1.3.24.3.1.9.4"
+      }
+    }
+  },
+  "Cursor, selected": {
+    "metadata": {
+      "windows": {
+        "control_name": "Cursor, selected",
+        "control_id": "Cursor"
+      }
+    }
+  },
+  "Stop annotating": {
+    "metadata": {
+      "windows": {
+        "control_name": "Stop annotating",
+        "control_id": "Stop annotating"
+      }
+    }
+  },
+  "Stop annotation": {
+    "metadata": {
+      "windows": {
+        "control_name": "Stop annotation",
+        "control_id": "okButton"
+      }
+    }
+  },
+  "Webex and meeting window (2)": {
+    "metadata": {
+      "windows": {
+        "control_name": "Webex and meeting window (2)",
+        "control_id": "SourceButton_2_0"
+      }
+    }
+  },
+  "Show the thumbnail sidebar": {
+    "metadata": {
+      "windows": {
+        "control_name": "Show the thumbnail sidebar",
+        "control_id": "viewThumbnailButton"
+      }
+    }
+  },
+  "Go to the next page in shared file": {
+    "metadata": {
+      "windows": {
+        "control_name": "Go to the next page. Navigate through the shared content on your screen. (PgDn)",
+        "control_id": ""
+      }
+    }
+  },
+  "Go to the previous page in shared file": {
+    "metadata": {
+      "windows": {
+        "control_name": "Go to the previous page. Navigate through the shared content on your screen. (PgUp)",
+        "control_id": ""
+      }
+    }
+  },
+  "Page number": {
+    "metadata": {
+      "windows": {
+        "control_name": "Page number",
+        "control_id": "Page number"
+      }
+    }
+  },
+  "Page thumbnail": {
+    "metadata": {
+      "windows": {
+        "control_name": "Page thumbnail, 1 of 21, selected, the presenter is currently sharing this page.",
+        "control_id": "focusAnchorItem"
+      }
+    }
+  },
+  "Zoom in on shared content": {
+    "metadata": {
+      "windows": {
+        "control_name": "Zoom in on shared content 100%",
+        "control_id": "zoomInButton"
+      }
+    }
+  },
+  "Zoom out on shared content": {
+    "metadata": {
+      "windows": {
+        "control_name": "Zoom out on shared content 100%",
+        "control_id": "zoomOutButton"
+      }
+    }
+  },
+  "Fit to viewer": {
+    "metadata": {
+      "windows": {
+        "control_name": "Fit to viewer, 125%",
+        "control_id": "zoomResetButton"
+      }
+    }
+  },
+  "Shared content view": {
+    "metadata": {
+      "windows": {
+        "control_name": "Shared content view",
+        "control_id": "ContentShareScrollView"
+      }
+    }
+  },
+  "Request control (Alt + Shift + R)": {
+    "metadata": {
+      "windows": {
+        "control_name": "Request control (Alt + Shift + R)",
+        "control_id": "rdcButton"
+      }
+    }
+  },
+  "Request to annotate (Alt + Shift + Z)": {
+    "metadata": {
+      "windows": {
+        "control_name": "Request to annotate (Alt + Shift + Z)",
+        "control_id": "annotateButton"
+      }
+    }
+  },
+  "Maximize the shared content": {
+    "metadata": {
+      "windows": {
+        "control_name": "Maximize the shared content",
+        "control_id": "maximizeButton"
+      }
+    }
+  },
+  "Limit content sharing to 15 frames per second": {
+    "metadata": {
+      "windows": {
+        "control_name": "Limit content sharing to 15 frames per second",
+        "control_id": "OptionsDialog.contentsContainer.ShareTabWidget.shareTabStackedWidget.advancedSettingsPage.advancedSettingsContainer.advancedSettingsCheckBoxGroup.checkBoxOption2.checkBox",
+        "control_type": 50002,
+        "control_type_name": "check box"
+      }
+    }
+  },
+  "Refresh captcha&password": {
+    "metadata": {
+      "windows": {
+        "control_name": " Refresh captcha",
+        "control_id": "MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingPasswordWidget.dataStackedWidget.dataWidget.captchaWidgetHolder.captchaContainer.refreshCaptcha",
+        "control_type": 50000,
+        "control_type_name": "button",
+        "window_name": "Enter your information -  Webex",
+        "window_id": "MainWindow"
+      }
+    }
+  },
+  "Type the characters. Required. &password": {
+    "metadata": {
+      "windows": {
+        "control_name": "Type the characters. Required. ",
+        "control_id": "MainWindow.OnboardingView.onboardingScreen.stackedWidget.normalViewsPage.onboardingStackWidget.OnboardingConvergedMeetingPasswordWidget.dataStackedWidget.dataWidget.captchaWidgetHolder.captchaInput.UTTextField.textInput",
+        "control_type": 50004,
+        "control_type_name": "edit",
+        "window_name": "Enter your information -  Webex",
+        "window_id": "MainWindow"
+      }
+    }
+  },
+  "OK_Can't start or join the webinar,Webinar has not yet started.": {
+    "metadata": {
+      "windows": {
+        "control_name": "OK",
+        "control_id": "",
+        "control_type": 50000,
+        "control_type_name": "button",
+        "window_name": "Can't start or join the webinar,Webinar has not yet started.",
+        "window_id": ""
+      }
+    }
+  },
+  "HealthChecker in help": {
+        "metadata": {
+            "windows": {
+                "control_name": "Health Checker, Menu Item, 3 of 7",
+                "control_id": "MainWindow.ConversationsForm.topLevelStack.mainAreasWidget.tabSelector.helpButton.helpMenu.HealthChecker",
+                "control_type": 50011,
+                "control_type_name": "menu item"
+            }
+        }
+    },
+	"Close Health Checker": {
+    "metadata": {
+        "windows": {
+            "control_name": " Close Health Checker",
+            "control_id": "MainWindow.PopupHealthCheck.healthCheckScrollArea.qt_scrollarea_viewport.healthCheckInfoHolder.dbHealthWidget.closeHealthCheckerButton",
+            "control_type": 50000,
+            "control_type_name": "button",
+            "window_name": "Health checker",
+            "window_id": "PopupHealthChecker"
+            }
+        }
+    },
+	"RT in Virtual Channel": {
+    "metadata": {
+        "windows": {
+            "control_name": " Virtual Channel Roundtrip: 56ms, More information for Roundtrip",
+            "control_id": "MainWindow.PopupHealthCheck.healthCheckScrollArea.qt_scrollarea_viewport.healthCheckInfoHolder.vcTLWidget.VcBox.toSupportToggle.vcDetailsAreaScroll.qt_scrollarea_viewport.vcDetailWidget.vcDetailHolder.HealthCheckVcDetailItemWidget.moreInfoButton",
+            "control_type": 50000,
+            "control_type_name": "button",
+            "window_name": "Health checker",
+            "window_id": "PopupHealthChecker"
+            }
+        }
+    },
+    "Remote Screen 1": {
+        "metadata": {
+            "windows": {
+                "control_name": "Remote Screen 1",
+                "control_id": "SourceButton_1_0",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "Local Screen 1": {
+        "metadata": {
+            "windows": {
+                "control_name": "Local Screen 1",
+                "control_id": "SourceButton_1_1",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "Advanced tab": {
+        "metadata": {
+            "windows": {
+                "control_name": "Advanced tab, 4 of 4",
+                "control_id": "Tab_Advanced",
+                "control_type": 50025,
+                "control_type_name": "custom",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "Portion of screen": {
+        "metadata": {
+            "windows": {
+                "control_name": "Portion of screen",
+                "control_id": "SourceButton_5_0",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "Next for Portion screen": {
+        "metadata": {
+            "windows": {
+                "control_name": "Next",
+                "control_id": "ShareButton_Next",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "Share the selected portion": {
+        "metadata": {
+            "windows": {
+                "control_name": " Share the selected portion",
+                "control_id": "SharePortionControlWidget.startShareButton",
+                "control_type": 50000,
+                "control_type_name": "button"
+            }
+        }
+    },
+    "Calculator": {
+        "metadata": {
+            "windows": {
+                "control_name": "Calculator",
+                "control_id": "SourceButton_2_0",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "Share Dialog",
+                "window_id": "shareDialog"
+            }
+        }
+    },
+    "New whiteboard in My Whiteboards": {
+        "metadata": {
+            "windows": {
+                "control_name": "New whiteboard, selected,1 of 12",
+                "control_id": "newWhiteboardButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "My Whiteboards",
+                "window_id": "WhiteboardPickerView"
+            }
+        }
+    },
+    "Shapes in Whiteboards": {
+        "metadata": {
+            "windows": {
+                "control_name": "Shapes",
+                "control_id": "",
+                "control_type": 50000,
+                "control_type_name": "button"
+            }
+        }
+    },
+    "Square in Shapes": {
+        "metadata": {
+            "windows": {
+                "control_name": "Square",
+                "control_id": "",
+                "control_type": 50013,
+                "control_type_name": "menu item radio button"
+            }
+        }
+    },
+    "Close for all": {
+        "metadata": {
+            "windows": {
+                "control_name": "Close for all",
+                "control_id": "closeForAllButton",
+                "control_type": 50000,
+                "control_type_name": "button",
+                "window_name": "bts tony2's meeting",
+                "window_id": "CallWindowDialog"
+            }
+        }
+    },
+    "Close whiteboard": {
+        "metadata": {
+            "windows": {
+                "control_name": "Close whiteboard",
+                "control_id": "okButton",
+                "control_type": 50000,
+                "control_type_name": "button"
+            }
+        }
+    },
+    "Switch to Webex App": {
+        "metadata": {
+            "windows": {
+                "control_name": "Webex",
+                "control_type": 50007,
+                "control_type_name": "list item"
+            }
+        }
+    }
+}

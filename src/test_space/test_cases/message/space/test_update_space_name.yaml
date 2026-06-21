@@ -1,0 +1,84 @@
+test_case:
+  name: update_space_name
+  owner: huanwan3
+  account: fullmode18
+  description: Create a new space and update its name
+  expect_result: Space name is successfully updated to the new name
+
+  pre_conditions:
+    - navigations/basic/sign_in
+
+  steps:
+    # Create a new space first
+    - include: message/actions/create_space
+
+    # Click Space settings menu button
+    - name: "Click Space settings menu"
+      action:
+        type: function
+        value: click_space_settings
+        wait_time: 2
+      expect_state: ""
+
+    # Press Enter to open settings
+    - name: "Open settings"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 2
+      expect_state: ""
+
+    # Tab 3 times to reach name field
+    - name: "Navigate to name field"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: tab
+          count: 3
+          interval: 0.3
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter to edit name
+    - name: "Edit name field"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 1
+      expect_state: ""
+
+    # Input new space name
+    - name: "Input new space name"
+      action:
+        type: direct_input
+        value: "updated space [{datetime}]"
+        wait_time: 1
+      expect_state: ""
+
+    # Tab 3 times to reach Save button
+    - name: "Navigate to Save button"
+      action:
+        type: function
+        value: repeat_key
+        params:
+          key: tab
+          count: 3
+          interval: 0.3
+        wait_time: 1
+      expect_state: ""
+
+    # Press Enter to save
+    - name: "Save changes"
+      action:
+        type: direct_key
+        value: enter
+        wait_time: 3
+      expect_state: ""
+      ai_check:
+        prompt: "Look at the space header area at the top of the chat window. Check if the space name has been updated to show 'updated space' followed by a timestamp. The new name should be visible in the header where the space title is displayed. Output format: ✅Success if the space name shows 'updated space [datetime]', ❌Failed if the old name is still shown or update failed"
+
+  post_conditions:
+    - navigations/basic/sign_out_shortcut
+
+  check_points: ["Keyboard Navigation"]

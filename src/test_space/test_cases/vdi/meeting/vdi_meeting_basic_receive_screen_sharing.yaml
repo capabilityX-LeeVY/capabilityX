@@ -1,0 +1,110 @@
+test_case:
+  name: vdi_meeting_basic_receive_screen_sharing
+  team: VDI
+  owner: qihliu
+  account: allianz32
+  description: User receives screen sharing from another participant.
+  expect_result: User receives screen sharing from another participant.
+
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/healthchecker/vdi_healthchecker
+    - meetings/actions/start_pmr_meeting
+
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join allianz32@testprod.webex.com audio=off video=on sharing=on location=sjc with 1 ucf_api duration 3"
+          duration: 120
+      expect_state: ""
+      stop_on_failure: true        
+      
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Jump to next floating panel"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+        wait_time: 1
+      expect_state: ""
+      
+    - name: "Maximize window in Multitasking"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+    - name: "Jump to next floating panel"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+        wait_time: 1
+      expect_state: ""
+      
+    - name: "Maximize window in Multitasking"
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 120
+      expect_state: ""
+
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. It should display a label indicating that you are viewing someone's screen, with the shared desktop visible in the center of the window. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+    
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+
+  execution_duration: 1
+  execution_count: 1
+  retry_enabled: false  
+  check_point: ["Keyboard Navigation"]

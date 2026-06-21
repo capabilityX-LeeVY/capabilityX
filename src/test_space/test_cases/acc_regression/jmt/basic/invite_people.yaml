@@ -1,0 +1,34 @@
+test_case:
+  name: invite_people
+  owner: weiqli
+  description: User invites people to an ongoing meeting.
+  expect_result: The user successfully invites people to the meeting.
+  pre_conditions: []
+  steps:
+    - name: "connect_webex_windoww"
+      action:
+        type: function
+        value: connect_webex_window
+        parameters:
+          ctrl_id: "CallWindowDialog" 
+    - name: "Invite and remind"
+      action:
+        type: key
+        value: default
+    - name: "Search by Name or email address"
+      action:
+        type: input
+        value: "weiqin5.cvgbts@mailinator.com"
+    - name: "Direct Enter Key Press"
+      action:
+        type: direct_key
+        value: enter
+    - name: "Invite"
+      action:
+        type: key 
+        value: default
+
+  post_conditions: []
+  execution_duration: 1
+  execution_count: 1
+  check_points: [Keyboard Navigation]

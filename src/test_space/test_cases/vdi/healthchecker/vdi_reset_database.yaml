@@ -1,0 +1,48 @@
+test_case:
+  name: vdi_reset_database
+  owner: qihliu
+  account: bwc.sha+100
+  description: reset database
+  expect_result: reset database
+
+  steps:
+    - name: "Help"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "Direct Arrow Down Key Press"
+      action:
+        type: direct_key
+        value: down
+      expect_state: ""
+
+    - name: "HealthChecker in help"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Reset database"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Yes to reset database"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      platforms: ["windows"]
+      ui_response: true
+      ui_response_threshold_ms: 20000      
+
+  check_points: ["Keyboard Navigation"]

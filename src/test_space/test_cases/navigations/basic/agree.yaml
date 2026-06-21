@@ -1,0 +1,35 @@
+test_case:
+  name: agree
+  description: Verify that a user can successfully agree to the terms and conditions.
+  expect_result: The user agrees to the terms and conditions and proceeds to the next step.
+
+  steps:
+    - name: "connect_webex_app_main_window"
+      platforms: ["windows"]
+      action:
+        type: function
+        value: connect_webex_meeting_main_window
+        parameters:
+          ctrl_id: "EulaAgreementWindow"
+        wait_time: 2
+      expect_state: ""
+      optional: true
+
+    - name: "Agree"
+      platforms: ["mac"]
+      action:
+        type: key
+        value: default
+        wait_time: 2
+      expect_state: ""
+      optional: true
+
+    - name: "Agree"
+      platforms: ["windows"]
+      action:
+        type: mouse
+        value: click
+        target: "Agree"
+        wait_time: 1
+      
+  check_points: [Keyboard Navigation, Screen Reader, Focus Ring, Performance]

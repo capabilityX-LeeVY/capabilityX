@@ -1,0 +1,33 @@
+test_suite:
+  name: whiteboard_meeting
+  team: Sharing
+  owner: gamao
+  platform: windows
+  language: [en]
+  account: fullmode20
+  description: execute whiteboard related test cases 
+  test_cases:
+    # Pre-conditions
+    - navigations/basic/uninstall_app
+    - navigations/basic/install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    
+
+     # Reopen meeting for the following test cases
+    - meetings/actions/start_pmr_meeting
+    - whiteboard_in_meeting/open_whiteboard_in_meeting
+    - meetings/share/start_screen_sharing
+    - whiteboard_in_meeting/start_whiteboard_when_sharing
+    - meetings/actions/end_meeting  
+
+    - meetings/actions/start_pmr_meeting
+    - whiteboard_in_meeting/switch_file_share_and_whiteboard
+    - meetings/actions/end_meeting_for_all
+
+
+    # Post-conditions
+    - navigations/basic/sign_out
+    - navigations/basic/quit_app
+
+  check_points: ["Keyboard Navigation"]

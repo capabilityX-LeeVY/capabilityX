@@ -1,0 +1,8 @@
+test_case_batch:
+  name: Merak_custom_lobby
+  team: Merak
+  owner: minl5
+  language: [en]
+  test_cases:
+    - feature_test/Merak_Apptastic/Merck/custom_lobby/guest_notify_host_in_lobby
+    

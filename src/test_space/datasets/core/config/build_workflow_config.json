@@ -1,0 +1,46 @@
+{
+  "description": "Configuration for core controls dataset build workflow",
+  "version": "1.0",
+  
+  "phase1_filter": {
+    "input_file": "data/control_datasets_with_ui_path.json",
+    "output_file": "data/go_to_core_controls_raw.json",
+    "max_depth": 9,
+    "only_main_controls": true,
+    "description": "Phase 1: Initial filtering and main path extraction"
+  },
+  
+  "phase2_config_generation": {
+    "input_file": "data/go_to_core_controls_raw.json",
+    "output_file": "config/core_controls_config.json",
+    "text_output_file": "core_controls_selection.txt",
+    "description": "Phase 2: Generate editable configuration"
+  },
+  
+  "phase3_extraction": {
+    "input_file": "data/go_to_core_controls_raw.json",
+    "config_file": "config/core_controls_config.json",
+    "output_file": "data/go_to_core_controls.json",
+    "description": "Phase 3: Extract selected controls from configuration"
+  },
+  
+  "phase4_calibration": {
+    "input_file": "data/go_to_core_controls.json",
+    "output_file": "data/go_to_core_controls.json",
+    "config_file": "config/self_calibration.json",
+    "create_backup": true,
+    "description": "Phase 4: Apply self-calibration overrides (optional)"
+  },
+  
+  "phase5_test_generation": {
+    "config_file": "config/test_case_generation_config.json",
+    "description": "Phase 5: Generate test cases (optional, uses separate config)"
+  },
+  
+  "notes": [
+    "All paths are relative to src/datasets/core/",
+    "Phase 1-3 are required for building the core dataset",
+    "Phase 4-5 are optional enhancements",
+    "Edit config files to customize behavior without changing code"
+  ]
+}

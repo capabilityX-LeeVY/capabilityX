@@ -1,0 +1,32 @@
+test_case:
+  name: navigation_full_meeting
+  description: login and navigate to the meetings
+  pre_conditions:
+    - navigations/basic/sign_in
+    - meetings/actions/start_meeting
+  steps:
+    - name: "Reactions"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Done"
+      action:
+        type: key
+        value: default
+        wait_time: 5
+      optional: true
+      expect_state: ""
+    - name: "Hide participants panel"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      optional: true
+    - name: "Mute"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      optional: true 
+

@@ -1,0 +1,49 @@
+test_case:
+  name: app_core_in_meetings
+  description: Verify app core in-meeting controls navigation and all controls are accessible with keyboard.
+  expect_result: App core in-meeting controls are verified successfully and all controls are accessible.
+  pre_conditions:
+    # - navigations/basic/uninstall_app
+    # - navigations/basic/install_app
+    # - navigations/basic/agree
+    # - navigations/preconditions/app_entry/sign_in_to_app
+    # - navigations/preconditions/app_core/start_meeting
+  steps:
+    # Tab sequence for in-meeting controls
+
+    - name: connect_webex_meeting_main_window
+      action:
+        type: function
+        value: connect_webex_meeting_main_window
+
+    - name: "Open participants panel"
+      action:
+        type: key
+        value: default
+
+    - name: "Verify group navigation in participants panel"
+      action:
+        type: shortcut
+        value: fn+f6
+
+    - name: "Verify group navigation in meeting title bar"
+      action:
+        type: shortcut
+        value: fn+f6
+      expect_state: "Mute"
+
+    - name: "Verify group navigation in meeting control bar"
+      action:
+        type: shortcut
+        value: fn+f6
+    
+    - name: "Verify group navigation in video context"
+      action:
+        type: shortcut
+        value: fn+f6
+      expect_state: "Invite and remind"
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_points: ["Keyboard Navigation"]

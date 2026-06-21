@@ -1,0 +1,19 @@
+test_case:
+  name: vdi_calling_endcall
+  team: VDI
+  owner: qihliu
+  description: End call.
+  expect_result: Successfully end call
+  
+  pre_conditions: null
+
+  steps:
+    - name: "End call"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]

@@ -1,0 +1,76 @@
+test_case:
+  name: zoom_sharing
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User can zoom in and out of the shared content.
+  expect_result: User can zoom in and out of the shared content.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/agree
+    - navigations/preconditions/app_entry/sign_in_to_app
+    - meetings/actions/start_pmr_meeting
+  steps:
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 5"
+          duration: 120
+      expect_state: ""
+    # add 2nd bot to increase join rate
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 5"
+          duration: 120
+      expect_state: ""
+    - name: "Zoom out on shared content"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+    - name: "Direct Space Key Press"
+      action:
+        type: key
+        value: space
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. The shared content should be zoomed out to 67% and it should not fill available window space. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Fit to viewer, 67%"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Zoom level should be 100%. Only focus on the zoom level, do not check the shared content. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Zoom in on shared content"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Shared content view"
+      action:
+        type: key
+        value: down
+      expect_state: ""
+      wait_time: 1
+      ai_check:
+        prompt: "Analyze the window screenshot. Zoom level should higher be 100%. The shared content should be zoomed in, and the bottom of the content should be visible. You don't need to be very strict, once main content of the desktop taskbar is visible then it's acceptable. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+  post_conditions:
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1

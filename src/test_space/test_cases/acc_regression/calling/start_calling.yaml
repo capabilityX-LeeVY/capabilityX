@@ -1,0 +1,44 @@
+test_case:
+  name: start_calling
+  team: RegressShield
+  owner: binbiwan
+  description: user start calling, anwser calling success.
+  expect_result: traverse acc for calling window.
+  pre_conditions: null
+  steps:
+    - name: "agent initWebex"
+      action:
+        type: api
+        value: "run_init_app_functions_api"
+        agent_node: "calling_agent_01"
+    - name: "Dialpad menu item"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "Search or dial"
+      action:
+        type: input
+        value: "813162"
+      expect_state: ""
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "tab"
+    - name: "Place call"
+      action:
+        type: key
+        value: "enter"
+      expect_state: "Mute"
+      ui_response: true
+  execution_duration: 1
+  execution_count: 1
+  check_points: [acc]

@@ -1,0 +1,8 @@
+test_case_batch:
+  name: Merak_Join_Metrics
+  team: Merak
+  owner: minl5
+  language: [en]
+  test_cases:
+    - feature_test\Merak_Apptastic\Join_metrics\guest_join_from_browser_metrics
+    

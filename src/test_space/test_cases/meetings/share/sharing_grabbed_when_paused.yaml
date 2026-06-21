@@ -1,0 +1,62 @@
+test_case:
+  name: sharing_grabbed_when_paused
+  team: Sharing
+  owner: jiaxiwan
+  account: rtuser030
+  description: User pauses screen sharing, then sharing is grabbed by others.
+  expect_result: Share control bar shows that sharing was grabbed while paused, and user can resume sharing.
+  pre_conditions:
+    - navigations/basic/re-install_app
+    - navigations/basic/sign_in
+    - meetings/actions/start_pmr_meeting
+    - meetings/share/enable_limit_15_fps_sharing # enable limit 15 fps sharing to make sure share control bar can be captured in screenshot
+    - meetings/share/start_screen_sharing
+  steps:
+    - name: "Pause sharing (Alt + Shift + S)"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 8"
+          duration: 120
+      expect_state: ""
+    - name: "add bot to meeting"
+      action:
+        type: function
+        value: send_stress_message_to_webex
+        parameters:
+          markdown_message: "<@personEmail:awebexbot@webex.bot> join rtuser030@appletestci.webex.com sharing=on with 1 ucf_api duration 8"
+          duration: 120
+      expect_state: ""
+      
+    - name: "Jump to share control bar"
+      action:
+        type: shortcut
+        value: "Jump to next floating panel"
+      expect_state: ""
+    - name: "Use the arrow keys to move this sharing control bar. Use (Ctrl + Alt + Shift + S) to navigate between floating windows."
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      ai_check:
+        prompt: "Analyze the window screenshot. Window background should be gray, it should indicate that your sharing is stopped, and there is a resume button. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+    - name: "Resume"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+      wait_time: 5
+  post_conditions:
+    - meetings/share/stop_screen_sharing
+    - meetings/actions/end_meeting_for_all
+    - navigations/basic/sign_out
+  execution_duration: 1
+  execution_count: 1
+  check_point: [Keyboard Navigation]
+

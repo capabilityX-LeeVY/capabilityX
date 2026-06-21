@@ -1,0 +1,327 @@
+test_case:
+  name: app_core_meetings
+  description: Verify app core meetings navigation and all controls are accessible with keyboard.
+  expect_result: App core meetings is verified successfully and all controls are accessible.
+  pre_conditions:
+    - navigations/basic/sign_in
+  steps:
+    # Tab sequence for meetings
+
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: default
+      expect_state: "Personal Room"
+
+    - name: "Personal Room"
+      action:
+        type: key
+        value: tab
+      expect_state: "Copy my personal room link"
+    
+    - name: "Copy my personal room link"
+      action:
+        type: key
+        value: tab
+      expect_state: "Start a Webex meeting"
+    
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: tab
+      expect_state: "More options for starting a Webex meeting"
+    
+    - name: "More options for starting a Webex meeting"
+      action:
+        type: key
+        value: tab
+      expect_state: "Join a meeting"
+    
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: tab
+      expect_state: "Schedule a meeting"
+    
+    - name: "Schedule a meeting"
+      action:
+        type: key
+        value: tab
+      expect_state: "More options for scheduling a meeting"
+    
+    - name: "More options for scheduling a meeting"
+      action:
+        type: key
+        value: tab
+      expect_state: "Meeting actions, expanded,"
+    
+    - name: "Meeting actions, expanded,"
+      action:
+        type: key
+        value: tab
+      expect_state: "Meetings Tab list, Meeting recap tab"
+    
+    - name: "Meetings Tab list, Meeting recap tab"
+      action:
+        type: key
+        value: tab
+      expect_state: "Connect your calendar to see all your meetings right here. Connect"
+    
+    - name: "Connect your calendar to see all your meetings right here. Connect"
+      action:
+        type: key
+        value: tab
+      expect_state: "Dismiss banner"
+      optional: true
+    
+    - name: "Dismiss banner"
+      action:
+        type: key
+        value: tab
+      expect_state: "Monday, October 27, 2025, Meeting recap. list item. . 10:06 AM to 10:09 AM, button, To activate press enter, press SHIFT+F10 for more options, use up and down arrow keys to navigate list."
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+
+    - name: "Monday, October 27, 2025, Meeting recap. list item. . 10:06 AM to 10:09 AM, button, To activate press enter, press SHIFT+F10 for more options, use up and down arrow keys to navigate list."
+      action:
+        type: key
+        value: tab
+      expect_state: "You’re not signed in to phone services. Open Settings"
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+
+    - name: "You’re not signed in to phone services. Open Settings"
+      action:
+        type: key
+        value: tab
+      expect_state: "Profile and preferences, Available"
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+
+    - name: "Profile and preferences, Available"
+      action:
+        type: key
+        value: tab
+      expect_state: "Set a status"
+
+    - name: "Set a status"
+      action:
+        type: key
+        value: tab
+      expect_state: "Click to go back, right-click or click and hold or press Shift+F10 to see history menu"
+    
+    - name: "Click to go back, right-click or click and hold or press Shift+F10 to see history menu"
+      action:
+        type: key
+        value: tab
+      expect_state: "Search, meet, and call (Ctrl+F)"
+    
+    - name: "Search, meet, and call (Ctrl+F)"
+      action:
+        type: key
+        value: tab
+      expect_state: "Start a conversation, call, or meet"
+    
+    - name: "Start a conversation, call, or meet"
+      action:
+        type: key
+        value: tab
+      expect_state: "Connect to a device"
+    
+    - name: "Connect to a device"
+      action:
+        type: key
+        value: tab
+      expect_state: "Open Cisco AI Assistant panel (Alt + I)"
+    
+    - name: "Open Cisco AI Assistant panel (Alt + I)"
+      action:
+        type: key
+        value: tab
+      expect_state: "Meetings menu item"
+    
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: tab
+      expect_state: "Settings"
+    
+    - name: "Settings"
+      action:
+        type: key
+        value: tab
+      expect_state: "Help menu"
+    
+    - name: "Help menu"
+      action:
+        type: key
+        value: tab
+      expect_state: "Resize navigation menu to show labels"
+    
+    - name: "Resize navigation menu to show labels"
+      action:
+        type: key
+        value: tab
+      expect_state: "Personal Room"
+    
+    # Shift + Tab sequence for meetings
+    - name: "Personal Room"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Resize navigation menu to show labels"
+    
+    - name: "Resize navigation menu to show labels"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Help menu"
+    
+    - name: "Help menu"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Settings"
+    
+    - name: "Settings"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Meetings menu item"
+    
+    - name: "Meetings menu item"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Open Cisco AI Assistant panel (Alt + I)"
+    
+    - name: "Open Cisco AI Assistant panel (Alt + I)"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Connect to a device"
+    
+    - name: "Connect to a device"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Start a conversation, call, or meet"
+    
+    - name: "Start a conversation, call, or meet"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Search, meet, and call (Ctrl+F)"
+    
+    - name: "Search, meet, and call (Ctrl+F)"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Click to go back, right-click or click and hold or press Shift+F10 to see history menu"
+    
+    - name: "Click to go back, right-click or click and hold or press Shift+F10 to see history menu"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Set a status"
+    
+    - name: "Set a status"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Profile and preferences, Available"
+    
+    - name: "Profile and preferences, Available"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "You’re not signed in to phone services. Open Settings"
+      optional: true
+    
+    - name: "You’re not signed in to phone services. Open Settings"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Monday, October 27, 2025, Meeting recap. list item. . 10:06 AM to 10:09 AM, button, To activate press enter, press SHIFT+F10 for more options, use up and down arrow keys to navigate list."
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+    
+    - name: "Monday, October 27, 2025, Meeting recap. list item. . 10:06 AM to 10:09 AM, button, To activate press enter, press SHIFT+F10 for more options, use up and down arrow keys to navigate list."
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Dismiss banner"
+      optional: true
+      navigated: false
+      platforms: ["windows"]
+    
+    - name: "Dismiss banner"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Connect your calendar to see all your meetings right here. Connect"
+      optional: true
+    
+    - name: "Connect your calendar to see all your meetings right here. Connect"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Meetings Tab list, Meeting recap tab"
+    
+    - name: "Meetings Tab list, Meeting recap tab"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Meeting actions, expanded,"
+    
+    - name: "Meeting actions, expanded,"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "More options for scheduling a meeting"
+    
+    - name: "More options for scheduling a meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Schedule a meeting"
+    
+    - name: "Schedule a meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Join a meeting"
+    
+    - name: "Join a meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "More options for starting a Webex meeting"
+    
+    - name: "More options for starting a Webex meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Start a Webex meeting"
+    
+    - name: "Start a Webex meeting"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Copy my personal room link"
+    
+    - name: "Copy my personal room link"
+      action:
+        type: key
+        value: shift+tab
+      expect_state: "Personal Room"
+
+
+  post_conditions: null
+  retry_enabled: false
+  record_traversal: true
+  check_point: [Keyboard Navigation, Screen Reader, Focus Ring, Untranslated&Truncated, Performance]

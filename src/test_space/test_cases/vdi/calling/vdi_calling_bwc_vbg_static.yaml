@@ -1,0 +1,99 @@
+test_case:
+  name: vdi_calling_bwc_vbg_static
+  team: VDI
+  owner: qihliu
+  description: "Virtual background static image test - Cross-platform"
+  expect_result: Executive office background is successfully applied.
+  
+  # Platform support configuration
+  platforms:
+    supported: ["windows", "mac", "web"]
+  
+  pre_conditions:
+    #- navigations/basic/re-install_app
+    - navigations/basic/relaunch_app
+    - navigations/basic/sign_in
+    - VDI/calling/vdi_calling_bwc_e911ok
+    - VDI/healthchecker/vdi_healthchecker
+    - VDI/calling/vdi_calling_bwc_basic_video_call
+
+  steps:
+    - name: "Video options"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Change virtual background"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Executive office"
+      action:
+        type: key
+        value: default
+      expect_state: ""
+
+    - name: "Save"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      optional: true      
+      #ui_response: true
+
+    - name: "Apply-VBG"
+      platforms: ["windows"]
+      action:
+        type: key
+        value: default
+        wait_time: 1
+      expect_state: ""
+      optional: true
+      #ui_response: true
+
+    - name: "vdi_read_tc_ip"
+      action:
+        type: function
+        value: vdi_read_tc_ip
+        save_to: tc_ip
+        wait_time: 1
+      expect_state: ""
+    
+    - name: "vdi_get_screenshot"
+      action:
+        type: function
+        value: vdi_get_screenshot
+        parameters:
+          tc_ip: "${tc_ip}"
+        wait_time: 1
+      expect_state: ""
+    
+    - name: "vdi_open_screenshot"
+      action:
+        type: function
+        value: vdi_open_screenshot
+        wait_time: 2
+      expect_state: ""
+      ai_check: 
+        prompt: "Compare the two images. The first is the reference virtual background, and the second is a meeting screenshot with a virtual background applied. Ignore any people or foreground elements in the images. Focus only on the background. Determine if the background in the second image matches the reference background in the first. Output: ✅Success or ❌Failure. Reasoning: <short explanation>"
+        reference: execute_office.jpg
+    
+    - name: "Mini active app"
+      action:
+        type: shortcut
+        value: "Mini active app"
+        wait_time: 1
+      expect_state: ""
+
+  post_conditions:
+    - VDI/calling/vdi_calling_endcall
+    - VDI/healthchecker/vdi_reset_database
+
+  execution_duration: 1
+  execution_count: 1
+  check_points: ["Keyboard Navigation"]
